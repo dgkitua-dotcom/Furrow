@@ -1,0 +1,789 @@
+{
+  "updated": "19 Jun 2026",
+  "source_note": "Wizara ya Kilimo (Ministry of Agriculture) - Taarifa ya Wiki ya Mwenendo wa Bei za Mazao. Bei za wastani wa jumla kwa kilo katika masoko makuu ya mikoa. Source: MAFC, 2026.",
+  "prices": [
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Dodoma",
+      "gov": 600,
+      "sup": 600,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Arusha",
+      "gov": 700,
+      "sup": 600,
+      "dir": "dn",
+      "chg": "-14.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Dar es Salaam",
+      "gov": 700,
+      "sup": 700,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Morogoro",
+      "gov": 600,
+      "sup": 600,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Tanga",
+      "gov": 700,
+      "sup": 600,
+      "dir": "dn",
+      "chg": "-25.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Iringa",
+      "gov": 500,
+      "sup": 400,
+      "dir": "dn",
+      "chg": "-20.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Mtwara",
+      "gov": 600,
+      "sup": 600,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Shinyanga",
+      "gov": 700,
+      "sup": 700,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Mwanza",
+      "gov": 900,
+      "sup": 900,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Kagera",
+      "gov": 900,
+      "sup": 800,
+      "dir": "dn",
+      "chg": "-11.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Manyara",
+      "gov": 800,
+      "sup": 700,
+      "dir": "dn",
+      "chg": "-12.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Mara",
+      "gov": 700,
+      "sup": 700,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Geita",
+      "gov": 1000,
+      "sup": 1000,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Njombe",
+      "gov": 400,
+      "sup": 400,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Singida",
+      "gov": 600,
+      "sup": 600,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Ruvuma",
+      "gov": 500,
+      "sup": 500,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Mbeya",
+      "gov": 500,
+      "sup": 500,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Songwe",
+      "gov": 400,
+      "sup": 400,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Dodoma",
+      "gov": 2400,
+      "sup": 2600,
+      "dir": "up",
+      "chg": "+8.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Arusha",
+      "gov": 3000,
+      "sup": 3100,
+      "dir": "up",
+      "chg": "+3.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Dar es Salaam",
+      "gov": 2600,
+      "sup": 2600,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Morogoro",
+      "gov": 2600,
+      "sup": 2000,
+      "dir": "dn",
+      "chg": "-23.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Mwanza",
+      "gov": 2400,
+      "sup": 2400,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Kagera",
+      "gov": 2200,
+      "sup": 2200,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Mara",
+      "gov": 1700,
+      "sup": 1700,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Mtwara",
+      "gov": 2600,
+      "sup": 2600,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Iringa",
+      "gov": 2400,
+      "sup": 2300,
+      "dir": "dn",
+      "chg": "-4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Singida",
+      "gov": 2300,
+      "sup": 2300,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Dodoma",
+      "gov": 2300,
+      "sup": 2300,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Arusha",
+      "gov": 1900,
+      "sup": 1900,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Dar es Salaam",
+      "gov": 2500,
+      "sup": 2500,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Morogoro",
+      "gov": 2300,
+      "sup": 2400,
+      "dir": "up",
+      "chg": "+4.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Tanga",
+      "gov": 2200,
+      "sup": 1800,
+      "dir": "dn",
+      "chg": "-18.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Mtwara",
+      "gov": 2200,
+      "sup": 2200,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Iringa",
+      "gov": 2200,
+      "sup": 2200,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Shinyanga",
+      "gov": 2300,
+      "sup": 2300,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Kagera",
+      "gov": 1800,
+      "sup": 2000,
+      "dir": "up",
+      "chg": "+11.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Manyara",
+      "gov": 2400,
+      "sup": 2700,
+      "dir": "up",
+      "chg": "+12.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Njombe",
+      "gov": 1700,
+      "sup": 1600,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Geita",
+      "gov": 2200,
+      "sup": 2200,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Singida",
+      "gov": 2100,
+      "sup": 2100,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Dodoma",
+      "gov": 600,
+      "sup": 500,
+      "dir": "dn",
+      "chg": "-16.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Arusha",
+      "gov": 1300,
+      "sup": 1300,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Dar es Salaam",
+      "gov": 1200,
+      "sup": 1200,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Morogoro",
+      "gov": 1500,
+      "sup": 1500,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Tanga",
+      "gov": 1200,
+      "sup": 1200,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Iringa",
+      "gov": 1800,
+      "sup": 1800,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Shinyanga",
+      "gov": 1800,
+      "sup": 1800,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Mwanza",
+      "gov": 1400,
+      "sup": 1400,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Mara",
+      "gov": 1500,
+      "sup": 1500,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Mtwara",
+      "gov": 2000,
+      "sup": 2000,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Singida",
+      "gov": 1500,
+      "sup": 900,
+      "dir": "dn",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Dodoma",
+      "gov": 1200,
+      "sup": 1300,
+      "dir": "up",
+      "chg": "+8.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Dar es Salaam",
+      "gov": 1200,
+      "sup": 1200,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Tanga",
+      "gov": 1500,
+      "sup": 1000,
+      "dir": "dn",
+      "chg": "-33.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Iringa",
+      "gov": 1900,
+      "sup": 1900,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Manyara",
+      "gov": 2000,
+      "sup": 2000,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Kagera",
+      "gov": 1500,
+      "sup": 1500,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Geita",
+      "gov": 2200,
+      "sup": 2200,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Shinyanga",
+      "gov": 1800,
+      "sup": 1800,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Mara",
+      "gov": 1400,
+      "sup": 1400,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Dodoma",
+      "gov": 1900,
+      "sup": 1900,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Arusha",
+      "gov": 2300,
+      "sup": 2300,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Dar es Salaam",
+      "gov": 1900,
+      "sup": 1900,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Morogoro",
+      "gov": 1700,
+      "sup": 1700,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Tanga",
+      "gov": 2500,
+      "sup": 2000,
+      "dir": "dn",
+      "chg": "-20.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Mtwara",
+      "gov": 3500,
+      "sup": 3500,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Iringa",
+      "gov": 2300,
+      "sup": 2300,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Shinyanga",
+      "gov": 2000,
+      "sup": 2000,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Kagera",
+      "gov": 2600,
+      "sup": 2600,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Manyara",
+      "gov": 2600,
+      "sup": 2300,
+      "dir": "dn",
+      "chg": "-11.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Njombe",
+      "gov": 1700,
+      "sup": 1800,
+      "dir": "up",
+      "chg": "+5.9%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Geita",
+      "gov": 2100,
+      "sup": 2100,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Mwanza",
+      "gov": 1600,
+      "sup": 1600,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Mara",
+      "gov": 2000,
+      "sup": 2000,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Singida",
+      "gov": 1200,
+      "sup": 900,
+      "dir": "dn",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Dodoma",
+      "gov": 900,
+      "sup": 900,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Arusha",
+      "gov": 1000,
+      "sup": 1000,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Morogoro",
+      "gov": 1100,
+      "sup": 1200,
+      "dir": "up",
+      "chg": "+9.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Tanga",
+      "gov": 1300,
+      "sup": 1500,
+      "dir": "up",
+      "chg": "+15.4%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Mtwara",
+      "gov": 1200,
+      "sup": 1200,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Iringa",
+      "gov": 900,
+      "sup": 900,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Kagera",
+      "gov": 900,
+      "sup": 900,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Shinyanga",
+      "gov": 1100,
+      "sup": 1100,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Geita",
+      "gov": 1100,
+      "sup": 1100,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Njombe",
+      "gov": 800,
+      "sup": 800,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Ruvuma",
+      "gov": 700,
+      "sup": 700,
+      "dir": "up",
+      "chg": "New",
+      "source": "MAFC"
+    }
+  ]
+}

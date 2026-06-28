@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FURROW — Tanzania Agricultural Market Intelligence | Powered by Gabrison Capital</title>
+<meta name="description" content="FURROW publishes daily government reference prices for Tanzania's agricultural crops. Live price ticker, tenders, and agri-transport news — powered by Gabrison Capital." />
+<meta name="keywords" content="Tanzania agriculture prices, MAFC crop prices, Tanzania agri tenders, Gabrison Capital, FURROW, maize price Tanzania, cashew nuts Tanzania" />
+<meta property="og:title" content="FURROW — Tanzania Agricultural Market Intelligence" />
+<meta property="og:description" content="Live government reference crop prices for Tanzania. Daily updates from MAFC, TCB, CDT and CBT. Tenders and agri-transport news." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:   #0B1C2E;
+  --deep:   #0F2440;
+  --gold:   #C9A84C;
+  --goldL:  #E2C47E;
+  --goldP:  #F5EDD5;
+  --cream:  #FAF7F0;
+  --tx:     #1A2A3A;
+  --mu:     #5A6A7A;
+  --bdr:    #D4C99A;
+  --grn:    #1E6B4A;
+  --red:    #8B1A1A;
+  --radius: 10px;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--tx); font-size: 15px; line-height: 1.6; overflow-x: hidden; }
+img  { max-width: 100%; display: block; }
+a    { color: inherit; text-decoration: none; }
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.2; }
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+.section    { padding: 76px 0; }
+.section-alt { background: #fff; }
+.section-dark { background: var(--navy); }
+.section-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.section-title { font-size: clamp(26px, 3.5vw, 40px); color: var(--navy); margin-bottom: 14px; }
+.section-title-wht { color: #fff; }
+.section-sub   { font-size: 14px; color: var(--mu); line-height: 1.75; }
+.section-head  { margin-bottom: 48px; }
+.text-center   { text-align: center; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.up   { color: var(--grn); font-weight: 600; }
+.dn   { color: var(--red); font-weight: 600; }
+.flat { color: var(--gold); font-weight: 600; }
+
+/* ── Buttons ── */
+.btn { display: inline-block; padding: 12px 26px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; border: none; font-family: inherit; transition: all .18s; }
+.btn-gold    { background: var(--gold); color: var(--navy); }
+.btn-gold:hover { background: var(--goldL); }
+.btn-navy    { background: var(--navy); color: var(--gold); border: 1px solid var(--gold); }
+.btn-navy:hover { background: var(--gold); color: var(--navy); }
+.btn-outline { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,.45); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+.btn-sm { padding: 7px 16px; font-size: 12px; }
+
+/* ── Cards ── */
+.card { background: #fff; border: 1px solid var(--bdr); border-radius: var(--radius); padding: 26px; transition: box-shadow .2s; }
+.card:hover { box-shadow: 0 6px 28px rgba(11,28,46,.10); }
+
+/* ── Badges ── */
+.badge { display: inline-block; padding: 3px 11px; border-radius: 20px; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.badge-gold  { background: var(--goldP); color: #6B4E00; }
+.badge-green { background: #D1FAE5; color: #065F46; }
+.badge-red   { background: #FEE2E2; color: #7F1D1D; }
+.badge-blue  { background: #DBEAFE; color: #1E3A5F; }
+.badge-gray  { background: #F3F4F6; color: #374151; }
+
+/* ── Nav ── */
+.nav { background: var(--navy); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 999; }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 11px 28px; max-width: 1140px; margin: 0 auto; }
+.nav-logo .wm  { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 21px; color: #fff; letter-spacing: .06em; line-height: 1; }
+.nav-logo .wm u { text-underline-offset: 3px; }
+.nav-logo .tg  { font-size: 8px; color: var(--goldL); letter-spacing: .14em; text-transform: uppercase; font-weight: 300; margin-top: 1px; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a { padding: 6px 13px; color: rgba(255,255,255,.6); font-size: 12px; border-radius: 5px; transition: color .15s; font-weight: 500; }
+.nav-links a:hover { color: var(--gold); }
+.nav-app-btn { background: var(--gold); color: var(--navy) !important; font-weight: 700 !important; border-radius: 5px; padding: 6px 14px !important; }
+.nav-app-btn:hover { background: var(--goldL) !important; color: var(--navy) !important; }
+.nav-ham { display: none; background: none; border: none; color: #fff; font-size: 22px; cursor: pointer; padding: 4px; line-height: 1; }
+.nav-mob { display: none; flex-direction: column; gap: 2px; background: var(--deep); padding: 10px 28px; border-top: 1px solid rgba(201,168,76,.15); }
+.nav-mob a { color: rgba(255,255,255,.75); padding: 9px 0; font-size: 13px; border-bottom: 1px solid rgba(255,255,255,.06); display: block; }
+.nav-mob a:last-child { border-bottom: none; }
+.nav-mob.open { display: flex; }
+
+/* ── Coming soon overlay ── */
+.cs-overlay { display: none; position: fixed; inset: 0; background: rgba(11,28,46,.92); z-index: 9999; align-items: center; justify-content: center; }
+.cs-overlay.open { display: flex; }
+.cs-box { background: var(--navy); border: 1px solid var(--gold); border-radius: 14px; padding: 52px 48px; text-align: center; max-width: 440px; width: 90%; position: relative; }
+.cs-close { position: absolute; top: 16px; right: 18px; background: none; border: none; color: rgba(255,255,255,.4); font-size: 22px; cursor: pointer; line-height: 1; }
+.cs-close:hover { color: var(--gold); }
+.cs-wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 32px; color: #fff; letter-spacing: .06em; margin-bottom: 6px; }
+.cs-wordmark u { text-underline-offset: 3px; }
+.cs-tag { font-size: 9px; color: var(--goldL); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 28px; display: block; }
+.cs-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--gold); margin-bottom: 12px; }
+.cs-sub { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.7; margin-bottom: 28px; }
+.cs-form { display: flex; gap: 8px; }
+.cs-form input { flex: 1; padding: 10px 14px; border: 1px solid rgba(201,168,76,.3); border-radius: 6px; background: rgba(255,255,255,.06); color: #fff; font-size: 13px; font-family: inherit; outline: none; }
+.cs-form input::placeholder { color: rgba(255,255,255,.3); }
+.cs-form input:focus { border-color: var(--gold); }
+.cs-notify { margin-top: 10px; font-size: 11px; color: rgba(255,255,255,.3); }
+
+/* ── TICKER ── */
+.ticker-wrap { background: var(--deep); border-bottom: 1px solid rgba(201,168,76,.2); overflow: hidden; padding: 7px 0; position: sticky; top: 55px; z-index: 998; }
+.ticker-label { position: absolute; left: 0; top: 0; bottom: 0; background: var(--navy); border-right: 1px solid var(--gold); display: flex; align-items: center; padding: 0 14px; font-size: 8px; font-weight: 700; color: var(--gold); letter-spacing: .12em; text-transform: uppercase; z-index: 2; white-space: nowrap; }
+.ticker-track { display: flex; gap: 0; white-space: nowrap; animation: tickerScroll 44s linear infinite; padding-left: 100px; will-change: transform; }
+.ticker-track:hover { animation-play-state: paused; }
+@keyframes tickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.tick { display: inline-flex; align-items: center; gap: 10px; font-size: 11px; color: rgba(255,255,255,.7); padding: 0 28px; border-right: 1px solid rgba(255,255,255,.06); }
+.tick-crop { color: var(--gold); font-weight: 700; font-size: 11px; letter-spacing: .03em; }
+
+/* ── Hero ── */
+.hero { background: linear-gradient(155deg, var(--navy) 0%, #0d2340 55%, #0f2e1a 100%); padding: 80px 0 70px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 50%, rgba(201,168,76,.07) 0%, transparent 60%); pointer-events: none; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.hero-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.hero h1 { font-size: clamp(32px, 4vw, 52px); color: #fff; margin-bottom: 18px; }
+.hero h1 span { color: var(--gold); }
+.hero-sub { font-size: 15px; color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 28px; max-width: 460px; }
+.hero-note { font-size: 11px; color: rgba(255,255,255,.35); line-height: 1.6; max-width: 400px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08); margin-top: 20px; }
+.hero-stats { display: flex; gap: 28px; flex-wrap: wrap; }
+.hs-val { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: var(--gold); line-height: 1; }
+.hs-lbl { font-size: 9px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .07em; margin-top: 3px; }
+
+/* Hero price board */
+.hero-board { background: rgba(255,255,255,.04); border: 1px solid rgba(201,168,76,.25); border-radius: 12px; overflow: hidden; }
+.hb-hdr { background: rgba(201,168,76,.1); padding: 11px 16px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(201,168,76,.12); }
+.hb-hdr-title { font-size: 9px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .09em; }
+.hb-live { display: flex; align-items: center; gap: 5px; }
+.hb-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
+.hb-dot-lbl { font-size: 9px; color: rgba(255,255,255,.35); }
+.hb-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.04); transition: background .12s; }
+.hb-row:last-child { border-bottom: none; }
+.hb-row:hover { background: rgba(255,255,255,.04); }
+.hb-crop { font-size: 12px; font-weight: 600; color: #fff; }
+.hb-region { font-size: 9px; color: rgba(255,255,255,.35); margin-top: 1px; }
+.hb-right { text-align: right; }
+.hb-price { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: #fff; }
+.hb-unit { font-size: 9px; color: rgba(255,255,255,.35); font-family: inherit; }
+.hb-gov { font-size: 9px; color: var(--gold); margin-top: 1px; }
+.hb-chg { font-size: 10px; font-weight: 700; margin-top: 1px; }
+.hb-footer { padding: 9px 16px; background: rgba(201,168,76,.04); text-align: center; border-top: 1px solid rgba(201,168,76,.08); }
+.hb-footer a { font-size: 10px; color: var(--gold); font-weight: 700; }
+
+/* ── Stat strip ── */
+.stat-strip { padding: 44px 0; background: #fff; border-top: 1px solid var(--bdr); border-bottom: 1px solid var(--bdr); }
+.stat-card { background: var(--navy); border-radius: var(--radius); padding: 24px; text-align: center; }
+.sc-val { font-family: 'Cormorant Garamond', serif; font-size: 38px; font-weight: 700; color: var(--gold); line-height: 1; }
+.sc-lbl { font-size: 9px; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .07em; margin-top: 6px; }
+.sc-sub { font-size: 10px; color: rgba(255,255,255,.25); margin-top: 3px; }
+
+/* ── Price board ── */
+.pb { background: var(--cream); border: 1px solid var(--bdr); border-radius: var(--radius); overflow: hidden; }
+.pb-header { background: var(--navy); padding: 12px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+.pb-header-title { font-size: 9px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .09em; }
+.pb-header-right { display: flex; align-items: center; gap: 12px; }
+.pb-updated { font-size: 9px; color: rgba(255,255,255,.35); }
+.pb-filters { padding: 10px 20px; background: #fff; border-bottom: 1px solid var(--bdr); display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.pb-filters select { padding: 5px 10px; border: 1px solid var(--bdr); border-radius: 5px; font-size: 12px; font-family: inherit; color: var(--tx); background: var(--cream); outline: none; cursor: pointer; }
+.pb-filters label { font-size: 11px; color: var(--mu); font-weight: 500; }
+.pb-head { display: grid; grid-template-columns: 2fr 1.2fr 1fr 1fr 1fr; padding: 8px 20px; background: var(--navy); }
+.pb-head span { font-size: 9px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .08em; }
+.pb-row { display: grid; grid-template-columns: 2fr 1.2fr 1fr 1fr 1fr; padding: 11px 20px; border-bottom: 1px solid #F0EBD8; align-items: center; transition: background .12s; }
+.pb-row:hover { background: var(--goldP); }
+.pb-row:last-child { border-bottom: none; }
+.pb-crop-name { font-size: 13px; font-weight: 600; color: var(--navy); }
+.pb-source { font-size: 10px; color: var(--mu); margin-top: 1px; }
+.pb-region-lbl { font-size: 12px; color: var(--mu); }
+.pb-price { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 700; color: var(--navy); }
+.pb-price-sub { font-size: 10px; color: var(--mu); margin-top: 1px; }
+.pb-chg { font-size: 12px; font-weight: 700; }
+.pb-diff { font-size: 10px; color: var(--mu); margin-top: 2px; }
+
+/* ── News / Tenders ── */
+.news-card { background: #fff; border: 1px solid var(--bdr); border-radius: var(--radius); padding: 22px; transition: box-shadow .18s; display: flex; flex-direction: column; gap: 10px; }
+.news-card:hover { box-shadow: 0 4px 20px rgba(11,28,46,.09); }
+.news-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.news-date { font-size: 10px; color: var(--gold); font-weight: 700; }
+.news-title { font-size: 15px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+.news-body { font-size: 13px; color: var(--mu); line-height: 1.7; }
+.news-source { font-size: 11px; color: var(--mu); margin-top: 4px; display: flex; align-items: center; gap: 5px; }
+.news-source::before { content: '—'; color: var(--bdr); }
+
+.tender-card { background: #fff; border: 1px solid var(--bdr); border-left: 4px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; padding: 22px; transition: box-shadow .18s; }
+.tender-card:hover { box-shadow: 0 4px 20px rgba(11,28,46,.09); }
+.tender-ref { font-size: 10px; font-weight: 700; color: var(--gold); font-family: 'Courier New', monospace; background: var(--navy); padding: 2px 8px; border-radius: 3px; display: inline-block; margin-bottom: 8px; }
+.tender-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px; line-height: 1.4; }
+.tender-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
+.tender-meta-item { font-size: 12px; color: var(--mu); display: flex; gap: 5px; align-items: flex-start; }
+.tender-meta-label { font-weight: 600; color: var(--tx); flex-shrink: 0; }
+.tender-status { margin-top: 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+/* ── How it works / roles ── */
+.step { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 30px; }
+.step-num { width: 38px; height: 38px; border-radius: 50%; background: var(--gold); color: var(--navy); font-weight: 700; font-size: 15px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.step-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
+.step-body { font-size: 13px; color: var(--mu); line-height: 1.7; }
+
+.role-card { background: var(--navy); border: 1px solid rgba(201,168,76,.2); border-radius: var(--radius); padding: 26px; transition: border-color .18s; }
+.role-card:hover { border-color: var(--gold); }
+.role-letter { width: 44px; height: 44px; border-radius: 8px; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.25); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 14px; }
+.role-title { font-size: 19px; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-weight: 600; margin-bottom: 4px; }
+.role-sub { font-size: 9px; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 12px; }
+.role-body { font-size: 12px; color: rgba(255,255,255,.6); line-height: 1.75; margin-bottom: 14px; }
+.role-feats { list-style: none; }
+.role-feats li { font-size: 11px; color: rgba(255,255,255,.45); padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.05); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+.role-feats li::before { content: '—'; color: var(--gold); font-weight: 700; flex-shrink: 0; font-size: 13px; }
+.role-fee { margin-top: 14px; display: inline-block; padding: 3px 11px; border-radius: 20px; font-size: 10px; font-weight: 700; background: var(--goldP); color: #6B4E00; }
+
+/* ── Broker ── */
+.broker-strip { background: linear-gradient(135deg, var(--navy) 0%, #0d3020 100%); border-radius: var(--radius); padding: 44px; display: grid; grid-template-columns: 1fr auto; gap: 36px; align-items: start; }
+.broker-tariff-row { display: flex; gap: 14px; margin-bottom: 20px; }
+.broker-tariff { background: rgba(201,168,76,.1); border: 1px solid rgba(201,168,76,.25); border-radius: 8px; padding: 14px 20px; text-align: center; }
+.bt-pct { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: var(--gold); line-height: 1; }
+.bt-lbl { font-size: 9px; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+.guar-list { list-style: none; }
+.guar-list li { font-size: 13px; color: rgba(255,255,255,.65); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.06); display: flex; align-items: flex-start; gap: 12px; line-height: 1.55; }
+.guar-list li .guar-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+.broker-nums { display: flex; flex-direction: column; gap: 12px; min-width: 130px; }
+.bnum { background: rgba(201,168,76,.08); border: 1px solid rgba(201,168,76,.2); border-radius: 8px; padding: 16px; text-align: center; }
+.bnum-val { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 700; color: var(--gold); line-height: 1; }
+.bnum-lbl { font-size: 9px; color: rgba(255,255,255,.35); text-transform: uppercase; letter-spacing: .07em; margin-top: 4px; }
+
+/* ── Languages ── */
+.lang-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.lang-pill { background: #fff; border: 1px solid var(--bdr); border-radius: 8px; padding: 14px 10px; text-align: center; transition: all .15s; }
+.lang-pill:hover { border-color: var(--gold); background: var(--goldP); }
+.lang-flag { font-size: 22px; margin-bottom: 5px; }
+.lang-name { font-size: 11px; font-weight: 600; color: var(--navy); }
+
+/* ── Roadmap ── */
+.roadmap { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; margin-top: 36px; }
+.roadmap::before { content: ''; position: absolute; top: 18px; left: 8%; right: 8%; height: 2px; background: linear-gradient(90deg, var(--grn), var(--gold), rgba(201,168,76,.25), rgba(201,168,76,.1)); z-index: 0; }
+.rm-item { padding: 0 14px; position: relative; z-index: 1; }
+.rm-dot { width: 38px; height: 38px; border-radius: 50%; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; }
+.rm-done { background: var(--grn); color: #fff; }
+.rm-now  { background: var(--gold); color: var(--navy); }
+.rm-next { background: rgba(255,255,255,.08); color: rgba(255,255,255,.22); border: 1px solid rgba(255,255,255,.12); }
+.rm-phase { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--gold); margin-bottom: 5px; }
+.rm-title { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 7px; }
+.rm-body  { font-size: 11px; color: rgba(255,255,255,.45); line-height: 1.65; }
+
+/* ── FAQ ── */
+.faq-item { border-bottom: 1px solid var(--bdr); }
+.faq-q { width: 100%; text-align: left; background: none; border: none; cursor: pointer; padding: 18px 0; display: flex; justify-content: space-between; align-items: center; font-size: 15px; font-weight: 600; color: var(--navy); font-family: inherit; gap: 16px; }
+.faq-q:hover { color: var(--gold); }
+.faq-icon { font-size: 18px; color: var(--gold); flex-shrink: 0; transition: transform .2s; font-style: normal; font-weight: 300; }
+.faq-a { font-size: 13px; color: var(--mu); line-height: 1.75; padding-bottom: 18px; display: none; }
+.faq-item.open .faq-a { display: block; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+/* ── Footer ── */
+.footer { background: #060E19; padding: 52px 0 22px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+.footer-brand-desc { font-size: 12px; color: rgba(255,255,255,.35); line-height: 1.75; margin-top: 10px; max-width: 250px; }
+.footer-col-title { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; color: var(--gold); margin-bottom: 14px; }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 9px; }
+.footer-links a { font-size: 12px; color: rgba(255,255,255,.4); transition: color .15s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.06); padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+.footer-copy { font-size: 11px; color: rgba(255,255,255,.2); }
+.footer-legal { display: flex; gap: 20px; }
+.footer-legal a { font-size: 11px; color: rgba(255,255,255,.2); }
+.footer-legal a:hover { color: var(--gold); }
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .roadmap { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .roadmap::before { display: none; }
+  .lang-grid { grid-template-columns: repeat(4, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .broker-strip { grid-template-columns: 1fr; }
+  .broker-nums { flex-direction: row; min-width: 0; }
+}
+@media (max-width: 768px) {
+  .hero-grid, .grid-2 { grid-template-columns: 1fr; }
+  .hero-board { display: none; }
+  .hero { padding: 52px 0 44px; }
+  .roadmap { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .nav-ham { display: block; }
+  .section { padding: 52px 0; }
+  .pb-head, .pb-row { grid-template-columns: 2fr 1fr 1fr; }
+  .pb-head span:nth-child(2), .pb-row > div:nth-child(2),
+  .pb-head span:nth-child(5), .pb-row > div:nth-child(5) { display: none; }
+  .lang-grid { grid-template-columns: repeat(3, 1fr); }
+  .footer-grid { grid-template-columns: 1fr; }
+  .broker-nums { flex-direction: row; }
+  .tender-meta { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .roadmap { grid-template-columns: 1fr; }
+  .lang-grid { grid-template-columns: repeat(2, 1fr); }
+  .broker-nums { flex-wrap: wrap; }
+  .hero-stats { gap: 16px; }
+  .grid-4 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ COMING SOON OVERLAY ═══ -->
+<div class="cs-overlay" id="csOverlay" onclick="closeCS(event)">
+  <div class="cs-box">
+    <button class="cs-close" onclick="document.getElementById('csOverlay').classList.remove('open')">&#x2715;</button>
+    <div class="cs-wordmark">FU<u>RR</u>OW</div>
+    <span class="cs-tag">powered by Gabrison Capital</span>
+    <h2 class="cs-title">Launching Soon</h2>
+    <p class="cs-sub">The FURROW platform is in final preparation. We are building Tanzania's most transparent agricultural trade network. Be the first to know when we go live.</p>
+    <div class="cs-form">
+      <input type="email" placeholder="your@email.com" id="csEmail" />
+      <button class="btn btn-gold btn-sm" onclick="notifyMe()">Notify Me</button>
+    </div>
+    <p class="cs-notify" id="csMsg"></p>
+  </div>
+</div>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <div class="wm">FU<u>RR</u>OW</div>
+      <div class="tg">powered by Gabrison Capital</div>
+    </div>
+    <div class="nav-links">
+      <a href="#prices">Live Prices</a>
+      <a href="#news">News</a>
+      <a href="#tenders">Tenders</a>
+      <a href="#platform">The Platform</a>
+      <a href="#faq">FAQ</a>
+      <a href="#" onclick="openCS(); return false;" class="nav-app-btn">Launch App</a>
+    </div>
+    <button class="nav-ham" onclick="toggleMenu()" aria-label="Menu">&#9776;</button>
+  </div>
+  <div class="nav-mob" id="navMob">
+    <a href="#prices"   onclick="toggleMenu()">Live Prices</a>
+    <a href="#news"     onclick="toggleMenu()">News</a>
+    <a href="#tenders"  onclick="toggleMenu()">Tenders</a>
+    <a href="#platform" onclick="toggleMenu()">The Platform</a>
+    <a href="#faq"      onclick="toggleMenu()">FAQ</a>
+    <a href="#" onclick="openCS(); toggleMenu(); return false;" style="color:var(--gold);font-weight:700">Launch App</a>
+  </div>
+</nav>
+
+<!-- ═══ LIVE TICKER ═══ -->
+<div class="ticker-wrap" id="tickerWrap">
+  <div class="ticker-label">LIVE &middot; TZS</div>
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">Tanzania Agricultural Market Intelligence</div>
+        <h1>Government crop prices,<br><span>updated daily</span></h1>
+        <p class="hero-sub">FURROW publishes official MAFC, TCB, CDT and CBT reference prices every day so farmers, buyers and industry players can see the true market rate before any transaction.</p>
+        <div class="hero-stats">
+          <div>
+            <div class="hs-val" id="statCrops">42</div>
+            <div class="hs-lbl">Crops tracked</div>
+          </div>
+          <div>
+            <div class="hs-val">30</div>
+            <div class="hs-lbl">Tanzania regions</div>
+          </div>
+          <div>
+            <div class="hs-val">Daily</div>
+            <div class="hs-lbl">Price updates</div>
+          </div>
+          <div>
+            <div class="hs-val">4</div>
+            <div class="hs-lbl">Regulatory bodies</div>
+          </div>
+        </div>
+        <p class="hero-note">Prices sourced from the Ministry of Agriculture Food and Cooperatives (MAFC), Tanzania Coffee Board (TCB), Cotton Development Trust (CDT) and Cashewnut Board of Tanzania (CBT). All prices are indicative government reference rates in Tanzanian Shillings per kilogram.</p>
+      </div>
+
+      <!-- Hero price board -->
+      <div class="hero-board">
+        <div class="hb-hdr">
+          <span class="hb-hdr-title">Reference Prices &mdash; Today</span>
+          <div class="hb-live">
+            <div class="hb-dot"></div>
+            <span class="hb-dot-lbl">Updated <span id="heroDate">19 Jun 2025</span></span>
+          </div>
+        </div>
+        <div id="heroBoard"></div>
+        <div class="hb-footer">
+          <a href="#prices">View full price board &darr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STAT STRIP ═══ -->
+<div class="stat-strip">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-card"><div class="sc-val">MAFC</div><div class="sc-lbl">Ministry of Agriculture</div><div class="sc-sub">Food crops & staples</div></div>
+      <div class="stat-card"><div class="sc-val">TCB</div><div class="sc-lbl">Tanzania Coffee Board</div><div class="sc-sub">Arabica &amp; Robusta</div></div>
+      <div class="stat-card"><div class="sc-val">CDT</div><div class="sc-lbl">Cotton Development Trust</div><div class="sc-sub">Seed cotton</div></div>
+      <div class="stat-card"><div class="sc-val">CBT</div><div class="sc-lbl">Cashewnut Board</div><div class="sc-sub">Raw cashew nuts</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FULL PRICE BOARD ═══ -->
+<section class="section" id="prices">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Market Intelligence</div>
+      <h2 class="section-title">Government Reference Price Board</h2>
+      <p class="section-sub">Official indicative prices as published by Tanzanian regulatory bodies. Updated daily. Hover any row to see the supplier price spread.</p>
+    </div>
+    <div class="pb">
+      <div class="pb-header">
+        <span class="pb-header-title">Tanzania Crop Reference Prices &middot; TZS / kg</span>
+        <div class="pb-header-right">
+          <span class="pb-updated" id="priceLastUpdate">Last updated: &mdash;</span>
+        </div>
+      </div>
+      <div class="pb-filters">
+        <label>Filter by:</label>
+        <select id="filterRegion" onchange="renderBoard()">
+          <option value="">All Regions</option>
+          <option>Dodoma</option><option>Mwanza</option><option>Mbeya</option>
+          <option>Singida</option><option>Dar es Salaam</option>
+          <option>Iringa</option><option>Mtwara</option><option>Arusha</option>
+        </select>
+        <select id="filterSource" onchange="renderBoard()">
+          <option value="">All Sources</option>
+          <option>MAFC</option><option>TCB</option><option>CDT</option><option>CBT</option>
+        </select>
+        <select id="filterDir" onchange="renderBoard()">
+          <option value="">All movements</option>
+          <option value="up">Rising &#9650;</option>
+          <option value="dn">Falling &#9660;</option>
+          <option value="flat">Stable &mdash;</option>
+        </select>
+      </div>
+      <div class="pb-head">
+        <span>Crop</span>
+        <span>Region</span>
+        <span>Gov&rsquo;t Ref. (TZS/kg)</span>
+        <span>Supplier Listed</span>
+        <span>Today&rsquo;s Move</span>
+      </div>
+      <div id="priceBoard"></div>
+    </div>
+    <p style="font-size:11px;color:var(--mu);margin-top:10px;text-align:right">
+      Source: MAFC &middot; TCB &middot; CDT &middot; CBT &middot; Data as at <span id="priceDate">&mdash;</span> &middot; Prices are indicative reference rates only
+    </p>
+  </div>
+</section>
+
+<!-- ═══ NEWS ═══ -->
+<section class="section section-alt" id="news">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Latest Developments</div>
+      <h2 class="section-title">Agri &amp; Transport News</h2>
+      <p class="section-sub">Regulations, export levies, import bans, infrastructure updates and market advisories relevant to Tanzania&rsquo;s agricultural and transport sectors.</p>
+    </div>
+    <div class="grid-3" id="newsGrid">
+      <!-- Populated below -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TENDERS ═══ -->
+<section class="section" id="tenders">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-label">Open Procurement</div>
+      <h2 class="section-title">Tenders &amp; Procurement Opportunities</h2>
+      <p class="section-sub">Active tenders from WFP, NFRA, TFDA, CARE International and government bodies seeking agricultural commodities and transport services.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px" id="tenderGrid">
+      <!-- Populated below -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PLATFORM PREVIEW ═══ -->
+<section class="section section-dark" id="platform">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-label">The FURROW Platform</div>
+      <h2 class="section-title section-title-wht">What FURROW will do for the market</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.55);margin:0 auto;max-width:560px">FURROW is more than a price board. It is a full agricultural trade operating system being built for Tanzania — with four dedicated portals and end-to-end deal management.</p>
+    </div>
+    <div class="grid-2" style="margin-bottom:48px">
+      <!-- How it works -->
+      <div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">How it works</div>
+        <div class="step">
+          <div class="step-num">1</div>
+          <div><div class="step-title" style="color:#fff">Register your role</div><div class="step-body" style="color:rgba(255,255,255,.55)">Sign up as a Supplier, Transporter, or Customer. Your FURROW User ID is assigned instantly. Tanzanian and international participants welcome.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div><div class="step-title" style="color:#fff">Browse verified listings</div><div class="step-body" style="color:rgba(255,255,255,.55)">See live government reference prices alongside every supplier&rsquo;s actual asking price. Filter by crop, region, and grade.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div><div class="step-title" style="color:#fff">Chat and negotiate</div><div class="step-body" style="color:rgba(255,255,255,.55)">Talk directly to suppliers in any of 12 languages. Share sample photos, invoices and certificates in-conversation.</div></div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div><div class="step-title" style="color:#fff">Trade with confidence</div><div class="step-body" style="color:rgba(255,255,255,.55)">Place orders and track them through five stages &mdash; or ask FURROW to act as your agent, verify the stock and take full liability.</div></div>
+        </div>
+      </div>
+      <!-- Feature list -->
+      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:var(--radius);padding:28px">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:18px">Platform features</div>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;align-items:flex-start;gap:12px">
+            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">P</div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff">Live FX-style price board</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">42 crop types across 30 Tanzania regions. Updated daily from official ministry data.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px">
+            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">T</div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff">AI chat translator &middot; 12 languages</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">English, Swahili, French, Arabic, Chinese, Portuguese, Hindi, Spanish, German, Japanese, Korean, Russian.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px">
+            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">M</div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff">FURROW Mediation Service</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">FURROW verifies stock, handles all documentation, holds payment in escrow and takes full liability. 5% local, 10% international.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px">
+            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">O</div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff">5-stage order pipeline</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">Requested &rarr; Awaiting &rarr; Confirmed &rarr; In Transit &rarr; Delivered. Full visibility from first click to last mile.</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px">
+            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">C</div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff">Seasonal crop calendar</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">12-month supply window predictions for every major crop. Know when to buy before the peak arrives.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Roles -->
+    <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">Four dedicated portals</div>
+    <div class="grid-2">
+      <div class="role-card">
+        <div class="role-letter">S</div>
+        <div class="role-title">Suppliers</div>
+        <div class="role-sub">Farmer &middot; Aggregator &middot; Agri-Business</div>
+        <div class="role-body">List your produce with your own prices, see exactly how they compare against the government reference rate, and receive orders directly from verified buyers.</div>
+        <ul class="role-feats">
+          <li>TIN-verified profile with regional listing</li>
+          <li>Up to 5 produce listings per account</li>
+          <li>Incoming order management with analytics</li>
+          <li>Direct buyer chat in 12 languages</li>
+        </ul>
+        <span class="role-fee">From TZS 5,000 / month</span>
+      </div>
+      <div class="role-card">
+        <div class="role-letter">C</div>
+        <div class="role-title">Customers</div>
+        <div class="role-sub">Individual &middot; Corporate &middot; International</div>
+        <div class="role-body">See every supplier&rsquo;s price next to the government reference rate. Order directly or let FURROW verify and mediate the entire deal on your behalf.</div>
+        <ul class="role-feats">
+          <li>Live price board &mdash; all 42 crops, all regions</li>
+          <li>Tanzania supply density map by corridor</li>
+          <li>FURROW Mediation with full liability cover</li>
+          <li>News, regulations and tender alerts</li>
+        </ul>
+        <span class="role-fee">Free to browse</span>
+      </div>
+      <div class="role-card">
+        <div class="role-letter">T</div>
+        <div class="role-title">Transporters</div>
+        <div class="role-sub">All vehicle categories &middot; All corridors</div>
+        <div class="role-body">List your fleet and service corridors. Receive transport job requests from buyers. Accept or decline. Get paid faster because the deal is already confirmed.</div>
+        <ul class="role-feats">
+          <li>Fleet management with live vehicle status</li>
+          <li>17 vehicle categories supported</li>
+          <li>Route and corridor-based job matching</li>
+          <li>Direct customer chat with document sharing</li>
+        </ul>
+        <span class="role-fee">TZS 8,000 / month</span>
+      </div>
+      <div class="role-card">
+        <div class="role-letter">A</div>
+        <div class="role-title">Admin</div>
+        <div class="role-sub">Powered by Gabrison Capital</div>
+        <div class="role-body">The operations team behind FURROW. We post government reference prices daily, publish regulatory bulletins and tenders, and mediate deals end-to-end.</div>
+        <ul class="role-feats">
+          <li>CSV / Excel bulk price import with ledger</li>
+          <li>Bulletins and tenders with file attachments</li>
+          <li>Account verification and management</li>
+          <li>Investor dashboard with GMV and revenue metrics</li>
+        </ul>
+        <span class="role-fee">Operations by Gabrison Capital</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MEDIATION ═══ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="broker-strip">
+      <div>
+        <div class="section-label">FURROW Mediation Service</div>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:#fff;margin-bottom:10px">Can&rsquo;t travel to verify the stock?<br><span style="color:var(--gold)">We go for you.</span></h2>
+        <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:18px;max-width:520px">FURROW acts as your authorised agent. We physically verify the supplier, inspect goods on-site, obtain all documentation, arrange transport, hold your funds in escrow, and release payment only when you confirm delivery.</p>
+        <div class="broker-tariff-row">
+          <div class="broker-tariff"><div class="bt-pct">5%</div><div class="bt-lbl">Local Tanzania deals</div></div>
+          <div class="broker-tariff"><div class="bt-pct">10%</div><div class="bt-lbl">International cross-border</div></div>
+        </div>
+        <ul class="guar-list">
+          <li><span class="guar-icon">&#9679;</span><span>Physical stock verification by a FURROW field agent &mdash; on-site, photographed, confirmed within 48 hours</span></li>
+          <li><span class="guar-icon">&#9679;</span><span>All documentation handled &mdash; phytosanitary, TRA clearance, export permits, bill of lading</span></li>
+          <li><span class="guar-icon">&#9679;</span><span>Escrow payment &mdash; your funds are released to the supplier only when you sign off on delivery</span></li>
+          <li><span class="guar-icon">&#9679;</span><span>Full liability cover &mdash; if stock does not match specification, you receive a 100% refund including the FURROW fee</span></li>
+          <li><span class="guar-icon">&#9679;</span><span>Dispute resolution within 48 hours &mdash; FURROW&rsquo;s ruling is final and binding on both parties</span></li>
+        </ul>
+      </div>
+      <div class="broker-nums">
+        <div class="bnum"><div class="bnum-val">48h</div><div class="bnum-lbl">Stock verified</div></div>
+        <div class="bnum"><div class="bnum-val">100%</div><div class="bnum-lbl">Refund if mismatch</div></div>
+        <div class="bnum"><div class="bnum-val">26</div><div class="bnum-lbl">Regions covered</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ LANGUAGES ═══ -->
+<section class="section">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center">
+      <div>
+        <div class="section-label">Built for East Africa and Beyond</div>
+        <h2 class="section-title">Trade across borders,<br>in your own language</h2>
+        <p style="font-size:14px;color:var(--mu);line-height:1.75;margin-bottom:16px">Every chat on the FURROW platform has an AI-powered translator built in. Type in any language, receive a response in yours. One tap translates any message &mdash; or let auto-translate handle it so the language barrier disappears entirely.</p>
+        <p style="font-size:14px;color:var(--mu);line-height:1.75">Non-Tanzanian participants are fully supported. Register with your country and trade across all 26 FURROW-covered regions without ever needing to travel to Tanzania.</p>
+      </div>
+      <div>
+        <div class="lang-grid" style="margin-bottom:12px">
+          <div class="lang-pill"><div class="lang-flag">&#x1F1EC;&#x1F1E7;</div><div class="lang-name">English</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1F9;&#x1F1FF;</div><div class="lang-name">Swahili</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1EB;&#x1F1F7;</div><div class="lang-name">French</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1F8;&#x1F1E6;</div><div class="lang-name">Arabic</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1E8;&#x1F1F3;</div><div class="lang-name">Chinese</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1E7;&#x1F1F7;</div><div class="lang-name">Portuguese</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1EE;&#x1F1F3;</div><div class="lang-name">Hindi</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1EA;&#x1F1F8;</div><div class="lang-name">Spanish</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1E9;&#x1F1EA;</div><div class="lang-name">German</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1EF;&#x1F1F5;</div><div class="lang-name">Japanese</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1F0;&#x1F1F7;</div><div class="lang-name">Korean</div></div>
+          <div class="lang-pill"><div class="lang-flag">&#x1F1F7;&#x1F1FA;</div><div class="lang-name">Russian</div></div>
+        </div>
+        <p style="font-size:11px;color:var(--mu);text-align:center">Powered by FURROW AI &middot; Translations appear inline in every conversation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROADMAP ═══ -->
+<section class="section section-dark">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-label">Product Roadmap</div>
+      <h2 class="section-title section-title-wht">Built in phases, shipping fast</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.5);margin:0 auto;max-width:500px">From launch to East Africa&rsquo;s leading agricultural trade platform in four deliberate phases.</p>
+    </div>
+    <div class="roadmap">
+      <div class="rm-item">
+        <div class="rm-dot rm-done">&#10003;</div>
+        <div class="rm-phase">Phase 1 &mdash; Complete</div>
+        <div class="rm-title">Foundation</div>
+        <div class="rm-body">Four-portal platform &middot; Live price board &middot; Order management &middot; Chat &middot; Bulletins &middot; Tender board</div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot rm-done">&#10003;</div>
+        <div class="rm-phase">Phase 2 &mdash; Complete</div>
+        <div class="rm-title">Intelligence</div>
+        <div class="rm-body">CSV/Excel price import &middot; AI chat translator &middot; Investor dashboard &middot; Dispute resolution &middot; FURROW Mediation</div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot rm-now">3</div>
+        <div class="rm-phase">Phase 3 &mdash; Q3 2025</div>
+        <div class="rm-title">Commerce</div>
+        <div class="rm-body">M-Pesa &amp; Tigopesa payments &middot; GPS order tracking &middot; Supplier ratings &middot; FURROW Escrow</div>
+      </div>
+      <div class="rm-item">
+        <div class="rm-dot rm-next">4</div>
+        <div class="rm-phase">Phase 4 &mdash; Q1 2026</div>
+        <div class="rm-title">Expansion</div>
+        <div class="rm-body">Uganda &amp; Kenya corridors &middot; Full Swahili/English bilingual UI &middot; FURROW Finance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="section section-alt" id="faq">
+  <div class="container" style="max-width:760px">
+    <div class="section-head text-center">
+      <div class="section-label">Questions</div>
+      <h2 class="section-title">Frequently asked</h2>
+    </div>
+    <div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What is the difference between the government reference price and the supplier price? <i class="faq-icon">+</i></button>
+        <div class="faq-a">The government reference price is the official indicative rate published by the Ministry of Agriculture (MAFC), Tanzania Coffee Board, Cotton Development Trust and Cashewnut Board. It reflects the regulated fair market value. The supplier price is what the individual seller is actually offering. FURROW shows both side by side so any buyer can instantly see who is above or below the official rate &mdash; and by exactly how much.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">How often are prices updated? <i class="faq-icon">+</i></button>
+        <div class="faq-a">Prices are updated daily by the FURROW administration team from official ministry publications. The timestamp at the top of the price board shows when data was last confirmed. The website automatically checks for new data every five minutes &mdash; no page reload needed.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">I am not Tanzanian. Can I use FURROW? <i class="faq-icon">+</i></button>
+        <div class="faq-a">Yes. FURROW is open to international participants. During registration, select &ldquo;Non-Tanzanian&rdquo; and choose your country from the full world dropdown. You can browse all listings and use FURROW&rsquo;s Mediation service to verify stock and handle cross-border documentation &mdash; phytosanitary certificates, TRA clearance, export permits, and bill of lading &mdash; without travelling to Tanzania.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">What does FURROW Mediation cost and what does it cover? <i class="faq-icon">+</i></button>
+        <div class="faq-a">5% of the deal value for Tanzania local transactions. 10% for cross-border or international deals. This covers physical stock verification by a FURROW field agent on-site, all documentation, escrow payment holding, logistics coordination, and full liability cover. If the stock does not match the agreed specification on any measure, you receive a 100% refund including the FURROW fee &mdash; no negotiation required.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">When will the FURROW platform launch? <i class="faq-icon">+</i></button>
+        <div class="faq-a">The FURROW platform is in final preparation. Phases 1 and 2 are fully built and tested. We are completing final compliance checks and preparing for a public launch. Leave your email via the &ldquo;Launch App&rdquo; button and we will notify you the moment registrations open.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:20px;color:#fff;letter-spacing:.06em">FU<u>RR</u>OW</div>
+        <div style="font-size:8px;color:var(--goldL);letter-spacing:.14em;text-transform:uppercase;margin-top:2px">powered by Gabrison Capital</div>
+        <div class="footer-brand-desc">Tanzania&rsquo;s agricultural market intelligence platform. Publishing daily government reference prices, tenders and industry news for the agri and transport sectors.</div>
+        <div style="margin-top:14px;font-size:11px;color:rgba(255,255,255,.2)">Dar es Salaam, Tanzania</div>
+      </div>
+      <div>
+        <div class="footer-col-title">This site</div>
+        <ul class="footer-links">
+          <li><a href="#prices">Live Prices</a></li>
+          <li><a href="#news">News &amp; Regulations</a></li>
+          <li><a href="#tenders">Tenders</a></li>
+          <li><a href="#platform">The Platform</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Platform</div>
+        <ul class="footer-links">
+          <li><a href="#platform">For Suppliers</a></li>
+          <li><a href="#platform">For Customers</a></li>
+          <li><a href="#platform">For Transporters</a></li>
+          <li><a href="#platform">FURROW Mediation</a></li>
+          <li><a href="#platform">Roadmap</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="mailto:info@gabrisoncapital.com">info@gabrisoncapital.com</a></li>
+          <li><a href="https://www.gabrisoncapital.com">gabrisoncapital.com</a></li>
+          <li><a href="#" onclick="openCS();return false;">Platform launch updates</a></li>
+        </ul>
+        <div style="margin-top:16px">
+          <div class="footer-col-title">Monthly platform fees</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.3);line-height:2">
+            Farmer &mdash; TZS 5,000<br>
+            Aggregator &mdash; TZS 10,000<br>
+            Agri-Business &mdash; TZS 50,000<br>
+            Transporter &mdash; TZS 8,000<br>
+            Customer &mdash; Free
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 FURROW &middot; Powered by Gabrison Capital &middot; All rights reserved</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ JAVASCRIPT ═══ -->
+<script>
+/* ── Price data (fallback; overridden by prices.json if available) ── */
+var PRICES = {
+  updated: "2025-06-19",
+  prices: [
+    { crop:"Maize",                region:"Dodoma",        gov:450,  sup:480,  dir:"up",   chg:"+2.3%", source:"MAFC" },
+    { crop:"Rice (paddy)",         region:"Mwanza",        gov:1800, sup:1750, dir:"dn",   chg:"-1.1%", source:"MAFC" },
+    { crop:"Coffee (Arabica)",     region:"Mbeya",         gov:4200, sup:4350, dir:"up",   chg:"+5.8%", source:"TCB"  },
+    { crop:"Sesame",               region:"Singida",       gov:2100, sup:2000, dir:"up",   chg:"+0.9%", source:"MAFC" },
+    { crop:"Cassava",              region:"Dar es Salaam", gov:320,  sup:320,  dir:"flat", chg:"0.0%",  source:"MAFC" },
+    { crop:"Sunflower Seed",       region:"Iringa",        gov:1650, sup:1700, dir:"dn",   chg:"-2.4%", source:"MAFC" },
+    { crop:"Cotton (seed cotton)", region:"Mwanza",        gov:980,  sup:1020, dir:"up",   chg:"+1.7%", source:"CDT"  },
+    { crop:"Cashew Nuts",          region:"Mtwara",        gov:3500, sup:3800, dir:"up",   chg:"+4.2%", source:"CBT"  },
+    { crop:"Sorghum",              region:"Dodoma",        gov:520,  sup:500,  dir:"up",   chg:"+3.1%", source:"MAFC" },
+    { crop:"Common Beans",         region:"Arusha",        gov:1480, sup:1490, dir:"up",   chg:"+0.7%", source:"MAFC" },
+    { crop:"Groundnuts",           region:"Mwanza",        gov:2100, sup:2200, dir:"up",   chg:"+4.8%", source:"MAFC" },
+    { crop:"Tea",                  region:"Mbeya",         gov:3200, sup:3250, dir:"flat", chg:"0.0%",  source:"MAFC" }
+  ]
+};
+
+var NEWS = [
+  { date:"19 Jun 2025", tag:"Tariff Update", color:"blue", title:"TRA revises export levy on raw cashew nuts to 15%", body:"Tanzania Revenue Authority has revised the export levy on raw cashew nuts to 15% effective 1 July 2025. All exporters must obtain updated TRA clearance certificates prior to shipment. Processing companies are exempt.", source:"TRA / CBT" },
+  { date:"18 Jun 2025", tag:"Regulation", color:"gray", title:"MAFC mandates new pesticide residue testing for export produce", body:"The Ministry of Agriculture has introduced mandatory pesticide residue testing protocols for all export-grade produce effective immediately. Approved testing laboratories are located in Dar es Salaam, Arusha and Mwanza.", source:"MAFC" },
+  { date:"15 Jun 2025", tag:"Import Ban", color:"red", title:"Tanzania suspends maize imports from Zambia", body:"Tanzania has suspended importation of maize from Zambia following phytosanitary concerns flagged by TPRI. The ban is in effect until further notice. Domestic supply from Central Zone is reported above seasonal average.", source:"TPRI / MAFC" },
+  { date:"12 Jun 2025", tag:"Infrastructure", color:"gray", title:"Mandatory weighbridge certification for heavy goods on national highways", body:"All trucks transporting produce above five tonnes on national highways must carry updated weighbridge certification from 1 August 2025. Non-compliant vehicles will be impounded at TANROADS checkpoints.", source:"TANROADS" },
+  { date:"08 Jun 2025", tag:"Market Advisory", color:"green", title:"Above-average maize harvest projected for Central Zone", body:"MAFC projects an above-average maize harvest for Dodoma, Singida and Tabora regions this season due to favourable rains. Prices expected to ease between July and September 2025.", source:"MAFC" },
+  { date:"04 Jun 2025", tag:"Coffee", color:"blue", title:"Tanzania Coffee Board raises Arabica floor price for July 2025 auction", body:"TCB has set a new floor price of TZS 4,350 per kg for Arabica grade AA for the July 2025 Moshi auction. This represents a 3.6% increase on the June floor. Export volumes are up 12% year on year.", source:"TCB" }
+];
+
+var TENDERS = [
+  { ref:"WFP/TZA/2025/024", body:"World Food Programme (WFP)", title:"Supply of 5,000 MT yellow maize for Dar es Salaam warehouse delivery", volume:"5,000 MT", deadline:"30 Jun 2025", value:"TZS 2.3 Billion", eligibility:"Registered agri-businesses and aggregators", status:"open", notes:"Grade A only. Phytosanitary certificate required. Delivery to WFP Dar es Salaam warehouse. Bid documents: procurement.wfp.org" },
+  { ref:"NFRA/2025/019",    body:"National Food Reserve Agency (NFRA)", title:"Paddy rice procurement for strategic national reserve replenishment", volume:"10,000 MT", deadline:"15 Jul 2025", value:"TZS 18 Billion", eligibility:"Agri-businesses only", status:"open", notes:"ISO-certified storage required at source. NFRA inspection prior to loading. Contact: procurement@nfra.go.tz" },
+  { ref:"TFDA/2025/011",    body:"Tanzania Food and Drugs Authority (TFDA)", title:"Sorghum meal supply for Northern Zone school feeding programme", volume:"2,200 MT", deadline:"25 Jun 2025", value:"TZS 1.1 Billion", eligibility:"All supplier categories", status:"closing", notes:"Must comply with TFDA nutritional standards. Packed in 25 kg branded bags. Staged delivery over three months." },
+  { ref:"NGO/CARE/007",     body:"CARE International Tanzania", title:"Mixed pulses and legumes for food basket distribution &mdash; Southern Highlands", volume:"800 MT", deadline:"20 Jun 2025", value:"TZS 960 Million", eligibility:"All supplier categories", status:"closing", notes:"Delivery in four tranches. CARE procurement guidelines apply. Contact: tanzania.procurement@care.org" }
+];
+
+/* ── Helpers ── */
+function col(dir){ return dir==='up'?'#1E6B4A':dir==='dn'?'#8B1A1A':'#5A6A7A'; }
+function arrow(dir){ return dir==='up'?'&#9650;':dir==='dn'?'&#9660;':'&mdash;'; }
+function bright(dir){ return dir==='up'?'#4ADE80':dir==='dn'?'#F87171':'#E2C47E'; }
+
+/* ── Ticker ── */
+function buildTicker(){
+  var t = document.getElementById('tickerTrack'); if(!t) return;
+  var doubled = PRICES.prices.concat(PRICES.prices);
+  t.innerHTML = doubled.map(function(p){
+    return '<span class="tick">'
+      +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
+      +'<span>TZS '+p.sup.toLocaleString()+'/kg</span>'
+      +'<span style="color:'+bright(p.dir)+';font-weight:700">'+arrow(p.dir)+p.chg+'</span>'
+      +'<span style="color:rgba(255,255,255,.3);font-size:10px">Gov\'t: '+p.gov.toLocaleString()+'</span>'
+      +'</span>';
+  }).join('');
+}
+
+/* ── Hero board ── */
+function buildHeroBoard(){
+  var el = document.getElementById('heroBoard'); if(!el) return;
+  el.innerHTML = PRICES.prices.slice(0,6).map(function(p){
+    return '<div class="hb-row">'
+      +'<div><div class="hb-crop">'+p.crop+'</div><div class="hb-region">'+p.region+'</div></div>'
+      +'<div class="hb-right">'
+      +'<div class="hb-price">'+p.sup.toLocaleString()+' <span class="hb-unit">TZS/kg</span></div>'
+      +'<div class="hb-gov">Gov\'t ref: '+p.gov.toLocaleString()+'</div>'
+      +'<div class="hb-chg" style="color:'+bright(p.dir)+'">'+arrow(p.dir)+' '+p.chg+'</div>'
+      +'</div></div>';
+  }).join('');
+  var hd = document.getElementById('heroDate'); if(hd) hd.textContent = PRICES.updated;
+}
+
+/* ── Full price board ── */
+function renderBoard(){
+  var el = document.getElementById('priceBoard'); if(!el) return;
+  var fR = (document.getElementById('filterRegion')||{}).value||'';
+  var fS = (document.getElementById('filterSource')||{}).value||'';
+  var fD = (document.getElementById('filterDir')||{}).value||'';
+  var rows = PRICES.prices.filter(function(p){
+    return (!fR||p.region===fR) && (!fS||p.source===fS) && (!fD||p.dir===fD);
+  });
+  if(!rows.length){ el.innerHTML='<div style="padding:24px;text-align:center;color:var(--mu);font-size:13px">No prices match this filter.</div>'; return; }
+  el.innerHTML = rows.map(function(p){
+    var diff = p.sup - p.gov;
+    var pct  = p.gov ? ((diff/p.gov)*100).toFixed(1) : '0.0';
+    var ds   = diff!==0 ? (diff>0?'+':'')+diff.toLocaleString()+' ('+pct+'%)' : '&mdash;';
+    return '<div class="pb-row">'
+      +'<div><div class="pb-crop-name">'+p.crop+'</div><div class="pb-source">'+p.source+'</div></div>'
+      +'<div class="pb-region-lbl">'+p.region+'</div>'
+      +'<div><div class="pb-price">'+p.gov.toLocaleString()+'</div><div class="pb-price-sub">Official reference</div></div>'
+      +'<div><div class="pb-price">'+p.sup.toLocaleString()+'</div><div class="pb-price-sub">Supplier listed</div></div>'
+      +'<div><div class="pb-chg" style="color:'+col(p.dir)+'">'+arrow(p.dir)+' '+p.chg+'</div><div class="pb-diff">'+ds+'</div></div>'
+      +'</div>';
+  }).join('');
+  var lu = document.getElementById('priceLastUpdate'); if(lu) lu.textContent='Last updated: '+PRICES.updated;
+  var pd = document.getElementById('priceDate');       if(pd) pd.textContent=PRICES.updated;
+}
+
+/* ── News ── */
+function buildNews(){
+  var el = document.getElementById('newsGrid'); if(!el) return;
+  var tagColors = { blue:'badge-blue', gray:'badge-gray', red:'badge-red', green:'badge-green' };
+  el.innerHTML = NEWS.map(function(n){
+    return '<div class="news-card">'
+      +'<div class="news-meta"><span class="news-date">'+n.date+'</span><span class="badge '+( tagColors[n.color]||'badge-gray')+'">'+n.tag+'</span></div>'
+      +'<div class="news-title">'+n.title+'</div>'
+      +'<div class="news-body">'+n.body+'</div>'
+      +'<div class="news-source">'+n.source+'</div>'
+      +'</div>';
+  }).join('');
+}
+
+/* ── Tenders ── */
+function buildTenders(){
+  var el = document.getElementById('tenderGrid'); if(!el) return;
+  el.innerHTML = TENDERS.map(function(t){
+    var statusBadge = t.status==='open'
+      ? '<span class="badge badge-green">Open</span>'
+      : '<span class="badge" style="background:#FEF3C7;color:#7C5500">Closing Soon</span>';
+    return '<div class="tender-card">'
+      +'<div class="tender-ref">'+t.ref+'</div>'
+      +'<div class="tender-title">'+t.title+'</div>'
+      +'<div class="tender-meta">'
+      +'<div class="tender-meta-item"><span class="tender-meta-label">Body:</span><span>'+t.body+'</span></div>'
+      +'<div class="tender-meta-item"><span class="tender-meta-label">Volume:</span><span>'+t.volume+'</span></div>'
+      +'<div class="tender-meta-item"><span class="tender-meta-label">Deadline:</span><span>'+t.deadline+'</span></div>'
+      +'<div class="tender-meta-item"><span class="tender-meta-label">Est. value:</span><span>'+t.value+'</span></div>'
+      +'<div class="tender-meta-item"><span class="tender-meta-label">Eligibility:</span><span>'+t.eligibility+'</span></div>'
+      +'<div class="tender-meta-item"><span class="tender-meta-label">Notes:</span><span>'+t.notes+'</span></div>'
+      +'</div>'
+      +'<div class="tender-status">'+statusBadge+'</div>'
+      +'</div>';
+  }).join('');
+}
+
+/* ── Load prices.json then render everything ── */
+async function loadPrices(){
+  try {
+    var res = await fetch('prices.json?v='+Date.now());
+    if(res.ok){
+      var data = await res.json();
+      if(data && data.prices && data.prices.length) PRICES = data;
+    }
+  } catch(e){}
+  buildTicker(); buildHeroBoard(); renderBoard();
+}
+
+loadPrices();
+setInterval(loadPrices, 5*60*1000);
+buildNews();
+buildTenders();
+
+/* ── Nav ── */
+function toggleMenu(){ document.getElementById('navMob').classList.toggle('open'); }
+
+/* ── FAQ ── */
+function toggleFaq(btn){
+  var item = btn.closest('.faq-item');
+  var open = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+  if(!open) item.classList.add('open');
+}
+
+/* ── Coming Soon ── */
+function openCS(){ document.getElementById('csOverlay').classList.add('open'); }
+function closeCS(e){ if(e.target===document.getElementById('csOverlay')) document.getElementById('csOverlay').classList.remove('open'); }
+function notifyMe(){
+  var em = (document.getElementById('csEmail')||{}).value||'';
+  var msg = document.getElementById('csMsg');
+  if(!em||!em.includes('@')){ if(msg) msg.textContent='Please enter a valid email address.'; return; }
+  if(msg){ msg.textContent='Thank you. We will notify you when FURROW launches.'; msg.style.color='#4ADE80'; }
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') document.getElementById('csOverlay').classList.remove('open'); });
+</script>
+
+</body>
+</html>
