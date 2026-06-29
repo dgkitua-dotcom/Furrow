@@ -425,44 +425,29 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
     <div class="section-head">
       <div class="section-label">Market Intelligence</div>
       <h2 class="section-title">Government Reference Price Board</h2>
-      <p class="section-sub">Official indicative prices as published by Tanzanian regulatory bodies. Updated daily. Hover any row to see the supplier price spread.</p>
+      <p class="section-sub">Official indicative prices published by MAFC, TCB, CDT and CBT. Click any crop to see regional breakdown.</p>
     </div>
-    <div class="pb">
-      <div class="pb-header">
-        <span class="pb-header-title">Tanzania Crop Reference Prices &middot; TZS / kg</span>
-        <div class="pb-header-right">
-          <span class="pb-updated" id="priceLastUpdate">Last updated: &mdash;</span>
-        </div>
-      </div>
-      <div class="pb-filters">
-        <label>Filter by:</label>
-        <select id="filterRegion" onchange="renderBoard()">
-          <option value="">All Regions</option>
-          <option>Dodoma</option><option>Mwanza</option><option>Mbeya</option>
-          <option>Singida</option><option>Dar es Salaam</option>
-          <option>Iringa</option><option>Mtwara</option><option>Arusha</option>
-        </select>
-        <select id="filterSource" onchange="renderBoard()">
-          <option value="">All Sources</option>
-          <option>MAFC</option><option>TCB</option><option>CDT</option><option>CBT</option>
-        </select>
-        <select id="filterDir" onchange="renderBoard()">
-          <option value="">All movements</option>
-          <option value="up">Rising &#9650;</option>
-          <option value="dn">Falling &#9660;</option>
-          <option value="flat">Stable &mdash;</option>
-        </select>
-      </div>
-      <div class="pb-head">
-        <span>Crop</span>
-        <span>Region</span>
-        <span>Gov&rsquo;t Ref. (TZS/kg)</span>
-        <span>Supplier Listed</span>
-        <span>Today&rsquo;s Move</span>
-      </div>
-      <div id="priceBoard"></div>
+
+    <!-- Filter bar -->
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px">
+      <label style="font-size:11px;color:var(--mu);font-weight:500">Filter:</label>
+      <select id="filterSource" onchange="renderBoard()" style="padding:6px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:12px;font-family:inherit;color:var(--tx);background:var(--cream);outline:none;cursor:pointer">
+        <option value="">All Sources</option>
+        <option>MAFC</option><option>TCB</option><option>CDT</option><option>CBT</option>
+      </select>
+      <select id="filterDir" onchange="renderBoard()" style="padding:6px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:12px;font-family:inherit;color:var(--tx);background:var(--cream);outline:none;cursor:pointer">
+        <option value="">All movements</option>
+        <option value="up">Rising &#9650;</option>
+        <option value="dn">Falling &#9660;</option>
+        <option value="flat">Stable</option>
+      </select>
+      <span style="font-size:11px;color:var(--mu);margin-left:auto" id="priceLastUpdate">Last updated: &mdash;</span>
     </div>
-    <p style="font-size:11px;color:var(--mu);margin-top:10px;text-align:right">
+
+    <!-- Grouped price cards -->
+    <div id="priceBoard" style="display:flex;flex-direction:column;gap:8px"></div>
+
+    <p style="font-size:11px;color:var(--mu);margin-top:12px;text-align:right">
       Source: MAFC &middot; TCB &middot; CDT &middot; CBT &middot; Data as at <span id="priceDate">&mdash;</span> &middot; Prices are indicative reference rates only
     </p>
   </div>
@@ -906,30 +891,105 @@ function buildHeroBoard(){
   var hd = document.getElementById('heroDate'); if(hd) hd.textContent = PRICES.updated;
 }
 
-/* ── Full price board ── */
+/* ── Full price board — grouped by crop ── */
 function renderBoard(){
   var el = document.getElementById('priceBoard'); if(!el) return;
-  var fR = (document.getElementById('filterRegion')||{}).value||'';
   var fS = (document.getElementById('filterSource')||{}).value||'';
   var fD = (document.getElementById('filterDir')||{}).value||'';
+
   var rows = PRICES.prices.filter(function(p){
-    return (!fR||p.region===fR) && (!fS||p.source===fS) && (!fD||p.dir===fD);
+    return (!fS||p.source===fS) && (!fD||p.dir===fD);
   });
-  if(!rows.length){ el.innerHTML='<div style="padding:24px;text-align:center;color:var(--mu);font-size:13px">No prices match this filter.</div>'; return; }
-  el.innerHTML = rows.map(function(p){
-    var diff = p.sup - p.gov;
-    var pct  = p.gov ? ((diff/p.gov)*100).toFixed(1) : '0.0';
-    var ds   = diff!==0 ? (diff>0?'+':'')+diff.toLocaleString()+' ('+pct+'%)' : '&mdash;';
-    return '<div class="pb-row">'
-      +'<div><div class="pb-crop-name">'+p.crop+'</div><div class="pb-source">'+p.source+'</div></div>'
-      +'<div class="pb-region-lbl">'+p.region+'</div>'
-      +'<div><div class="pb-price">'+p.gov.toLocaleString()+'</div><div class="pb-price-sub">Official reference</div></div>'
-      +'<div><div class="pb-price">'+p.sup.toLocaleString()+'</div><div class="pb-price-sub">Supplier listed</div></div>'
-      +'<div><div class="pb-chg" style="color:'+col(p.dir)+'">'+arrow(p.dir)+' '+p.chg+'</div><div class="pb-diff">'+ds+'</div></div>'
+
+  if(!rows.length){
+    el.innerHTML='<div style="padding:24px;text-align:center;color:var(--mu);font-size:13px">No prices match this filter.</div>';
+    return;
+  }
+
+  // Group by crop name
+  var groups = {};
+  var order  = [];
+  rows.forEach(function(p){
+    if(!groups[p.crop]){ groups[p.crop]=[]; order.push(p.crop); }
+    groups[p.crop].push(p);
+  });
+
+  el.innerHTML = order.map(function(crop){
+    var entries = groups[crop];
+    var rep     = entries[0]; // representative row for summary
+    var multi   = entries.length > 1;
+    var clr     = col(rep.dir);
+    var arw     = arrow(rep.dir);
+    var id      = 'grp_'+crop.replace(/[^a-z0-9]/gi,'_');
+
+    // Summary header card
+    var html = '<div style="background:#fff;border:1px solid var(--bdr);border-radius:8px;overflow:hidden">'
+      // Clickable header row
+      +'<div onclick="toggleGroup(\''+id+'\')" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;align-items:center;padding:13px 18px;cursor:'+(multi?'pointer':'default')+';transition:background .12s;gap:8px" '
+      +'onmouseover="if('+multi+')this.style.background=\'var(--goldP)\'" onmouseout="this.style.background=\'#fff\'">'
+        // Crop name + source
+        +'<div>'
+          +'<div style="font-size:13px;font-weight:700;color:var(--navy)">'+crop+'</div>'
+          +'<div style="font-size:10px;color:var(--mu);margin-top:1px">'+rep.source+(multi?' &middot; '+entries.length+' regions':' &middot; '+rep.region)+'</div>'
+        +'</div>'
+        // Gov price
+        +'<div>'
+          +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+'</div>'
+          +'<div style="font-size:10px;color:var(--mu)">TZS/kg Gov\'t ref.</div>'
+        +'</div>'
+        // Supplier price
+        +'<div>'
+          +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:var(--navy)">'+rep.sup.toLocaleString()+'</div>'
+          +'<div style="font-size:10px;color:var(--mu)">Supplier listed</div>'
+        +'</div>'
+        // Movement
+        +'<div style="font-size:12px;font-weight:700;color:'+clr+'">'+arw+' '+rep.chg+'</div>'
+        // Expand toggle
+        +(multi?'<div id="'+id+'_icon" style="font-size:16px;color:var(--mu);font-weight:300;transition:transform .2s">&#43;</div>':'<div></div>')
       +'</div>';
+
+    // Regional breakdown rows (hidden by default)
+    if(multi){
+      html += '<div id="'+id+'" style="display:none;border-top:1px solid var(--bdr)">'
+        +'<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;padding:7px 18px;background:var(--navy)">'
+          +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
+          +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Gov\'t Ref.</span>'
+          +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Supplier</span>'
+          +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Move</span>'
+          +'<span></span>'
+        +'</div>'
+        +entries.map(function(p,i){
+          var dc=col(p.dir), da=arrow(p.dir);
+          var diff=p.sup-p.gov;
+          var pct=p.gov?((diff/p.gov)*100).toFixed(1):'0.0';
+          var ds=diff!==0?(diff>0?'+':'')+diff.toLocaleString()+' ('+pct+'%)':'—';
+          return '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;align-items:center;padding:9px 18px;border-top:1px solid #F5EDD5;background:'+(i%2===0?'#fff':'var(--cream)')+'">'
+            +'<div style="font-size:12px;color:var(--tx)">'+p.region+'</div>'
+            +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
+            +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.sup.toLocaleString()+'</div>'
+            +'<div><div style="font-size:11px;font-weight:700;color:'+dc+'">'+da+' '+p.chg+'</div><div style="font-size:10px;color:var(--mu)">'+ds+'</div></div>'
+            +'<div></div>'
+          +'</div>';
+        }).join('')
+      +'</div>';
+    }
+
+    html += '</div>';
+    return html;
   }).join('');
+
   var lu = document.getElementById('priceLastUpdate'); if(lu) lu.textContent='Last updated: '+PRICES.updated;
   var pd = document.getElementById('priceDate');       if(pd) pd.textContent=PRICES.updated;
+}
+
+function toggleGroup(id){
+  var el   = document.getElementById(id);
+  var icon = document.getElementById(id+'_icon');
+  if(!el) return;
+  var open = el.style.display !== 'none';
+  el.style.display   = open ? 'none'    : 'block';
+  if(icon) icon.innerHTML = open ? '&#43;' : '&#8722;';
+  if(icon) icon.style.transform = open ? '' : 'rotate(0deg)';
 }
 
 /* ── News ── */
@@ -937,14 +997,41 @@ function buildNews(){
   var el = document.getElementById('newsGrid'); if(!el) return;
   if(!NEWS.length){ el.innerHTML='<div style="padding:24px;color:var(--mu);font-size:13px">Loading news...</div>'; return; }
   var tagColors = { blue:'badge-blue', gray:'badge-gray', red:'badge-red', green:'badge-green' };
-  el.innerHTML = NEWS.map(function(n){
-    return '<div class="news-card">'
-      +'<div class="news-meta"><span class="news-date">'+n.date+'</span><span class="badge '+(tagColors[n.color]||'badge-gray')+'">'+n.tag+'</span></div>'
-      +'<div class="news-title">'+n.title+'</div>'
-      +'<div class="news-body">'+n.body+'</div>'
-      +'<div class="news-source">'+n.source+'</div>'
-      +'</div>';
+  el.innerHTML = NEWS.map(function(n, i){
+    var id = 'news_'+i;
+    return '<div class="news-card" style="gap:0">'
+      // Header — always visible
+      +'<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:10px">'
+        +'<div style="flex:1">'
+          +'<div class="news-meta" style="margin-bottom:8px"><span class="news-date">'+n.date+'</span><span class="badge '+(tagColors[n.color]||'badge-gray')+'">'+n.tag+'</span></div>'
+          +'<div class="news-title">'+n.title+'</div>'
+        +'</div>'
+        // Expand toggle
+        +'<button onclick="toggleNews(\''+id+'\')" id="'+id+'_btn" '
+        +'style="width:28px;height:28px;border-radius:50%;border:1.5px solid var(--bdr);background:#fff;cursor:pointer;font-size:16px;color:var(--mu);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;transition:all .18s;font-weight:300;line-height:1" '
+        +'title="Read more">&#43;</button>'
+      +'</div>'
+      // Body — hidden by default
+      +'<div id="'+id+'" style="display:none;padding-top:10px;border-top:1px solid var(--bdr)">'
+        +'<div class="news-body" style="margin-bottom:10px">'+n.body+'</div>'
+        +'<div class="news-source">'+n.source+'</div>'
+      +'</div>'
+    +'</div>';
   }).join('');
+}
+
+function toggleNews(id){
+  var el  = document.getElementById(id);
+  var btn = document.getElementById(id+'_btn');
+  if(!el) return;
+  var open = el.style.display !== 'none';
+  el.style.display = open ? 'none' : 'block';
+  if(btn){
+    btn.innerHTML = open ? '&#43;' : '&#8722;';
+    btn.style.background      = open ? '#fff'         : 'var(--navy)';
+    btn.style.color           = open ? 'var(--mu)'    : 'var(--gold)';
+    btn.style.borderColor     = open ? 'var(--bdr)'   : 'var(--navy)';
+  }
 }
 
 /* ── Tenders ── */
@@ -1066,7 +1153,9 @@ function showBillboardSlide(active, idx){
   } else {
     if(slot){
       slot.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
-      slot.innerHTML = '<img src="'+ad.image+'" alt="'+ad.advertiser+'" style="width:100%;height:auto;border-radius:8px;display:block;transition:opacity .4s" />';
+      slot.innerHTML = '<img src="'+ad.image+'" alt="'+ad.advertiser+'" '
+        +'onerror="this.parentNode.innerHTML=\'<div style=\\\"width:100%;min-height:100px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;cursor:pointer\\\"><div style=\\\"font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px\\\">'+ad.advertiser+'</div><div style=\\\"font-family:Cormorant Garamond,serif;font-size:20px;font-weight:600;color:#fff\\\">'+ad.title+'</div></div>\'" '
+        +'style="width:100%;height:auto;border-radius:8px;display:block;transition:opacity .4s" />';
     }
   }
 
@@ -1112,7 +1201,9 @@ function renderSidebar(){
         +'</div>';
     } else {
       slot.innerHTML = '<a href="'+ad.url+'" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:8px;overflow:hidden;line-height:0">'
-        +'<img src="'+ad.image+'" alt="'+ad.advertiser+'" style="width:100%;height:auto;display:block;border-radius:8px" />'
+        +'<img src="'+ad.image+'" alt="'+ad.advertiser+'" '
+        +'onerror="this.parentNode.innerHTML=\'<div style=\\\"min-height:160px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center\\\"><div style=\\\"font-size:14px;font-weight:600;color:var(--gold)\\\">'+ad.advertiser+'</div></div>\'" '
+        +'style="width:100%;height:auto;display:block;border-radius:8px" />'
         +'</a>';
     }
   }
