@@ -1,6 +1,6 @@
 {
-  "updated": "19 Jun 2026",
-  "source_note": "Wizara ya Kilimo (Ministry of Agriculture) - Taarifa ya Wiki ya Mwenendo wa Bei za Mazao. Bei za wastani wa jumla kwa kilo katika masoko makuu ya mikoa. Source: MAFC, 2026.",
+  "updated": "28 Jun 2026",
+  "source_note": "MAFC weekly price bulletin (15-19 Jun 2026) + TCB Wastani wa Bei za Sokoni (28 Jun 2026). MAFC prices are regional wholesale averages in TZS/kg. TCB prices are farm gate averages in TZS/kg.",
   "prices": [
     {
       "crop": "Mahindi (Maize)",
@@ -784,6 +784,87 @@
       "dir": "up",
       "chg": "New",
       "source": "MAFC"
+    },
+    {
+      "crop": "Kahawa Arabica — H/Arabica Maganda",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 4902,
+      "sup": 4902,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "TCB"
+    },
+    {
+      "crop": "Kahawa Arabica — CPU",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 10213,
+      "sup": 10213,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "TCB"
+    },
+    {
+      "crop": "Kahawa Arabica — HP",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 8171,
+      "sup": 8171,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "TCB"
+    },
+    {
+      "crop": "Kahawa Robusta — Maganda",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 3650,
+      "sup": 3650,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "TCB"
+    },
+    {
+      "crop": "Kahawa Arabica — Clean (Auction)",
+      "region": "Tanzania (Auction)",
+      "gov": 15618,
+      "sup": 15618,
+      "dir": "flat",
+      "chg": "$6.1/kg",
+      "source": "TCB"
+    },
+    {
+      "crop": "Kahawa Robusta — Clean (Auction)",
+      "region": "Tanzania (Auction)",
+      "gov": 9726,
+      "sup": 9726,
+      "dir": "flat",
+      "chg": "$3.8/kg",
+      "source": "TCB"
+    },
+    {
+      "crop": "Pamba Daraja A (Cotton Grade A)",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 1240,
+      "sup": 1240,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "CDT"
+    },
+    {
+      "crop": "Pamba Daraja B (Cotton Grade B)",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 620,
+      "sup": 620,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "CDT"
+    },
+    {
+      "crop": "Korosho (Cashew Nuts)",
+      "region": "Tanzania (Export)",
+      "gov": 11375,
+      "sup": 11375,
+      "dir": "up",
+      "chg": "+3.5%",
+      "source": "CBT"
     }
   ]
 }

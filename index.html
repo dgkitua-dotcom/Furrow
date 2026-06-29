@@ -468,6 +468,34 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   </div>
 </section>
 
+<!-- ═══ BILLBOARD AD ═══ -->
+<div id="billboardWrap" style="display:none;background:var(--cream);padding:16px 0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)">
+  <div class="container">
+    <div style="position:relative">
+      <!-- Ad label -->
+      <div style="position:absolute;top:6px;left:6px;z-index:2;background:rgba(11,28,46,.55);color:rgba(255,255,255,.5);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px">
+        Advertisement
+      </div>
+      <!-- Billboard image slot — rotates automatically -->
+      <div id="billboardSlot" style="width:100%;overflow:hidden;border-radius:8px;cursor:pointer;line-height:0;min-height:80px;background:var(--goldP);display:flex;align-items:center;justify-content:center">
+        <img id="billboardImg" src="" alt="" style="width:100%;height:auto;border-radius:8px;display:block;transition:opacity .4s" />
+      </div>
+      <!-- Ad caption bar -->
+      <div id="billboardCaption" style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;flex-wrap:wrap;gap:8px">
+        <div>
+          <div id="billboardTitle" style="font-size:13px;font-weight:600;color:var(--navy)"></div>
+          <div id="billboardTagline" style="font-size:11px;color:var(--mu)"></div>
+        </div>
+        <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
+          style="padding:6px 16px;background:var(--navy);color:var(--gold);border-radius:5px;font-size:11px;font-weight:700;white-space:nowrap;text-decoration:none">
+        </a>
+      </div>
+      <!-- Dot indicators -->
+      <div id="billboardDots" style="display:flex;gap:5px;justify-content:center;margin-top:8px"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ NEWS ═══ -->
 <section class="section section-alt" id="news">
   <div class="container">
@@ -476,8 +504,27 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
       <h2 class="section-title">Agri &amp; Transport News</h2>
       <p class="section-sub">Regulations, export levies, import bans, infrastructure updates and market advisories relevant to Tanzania&rsquo;s agricultural and transport sectors.</p>
     </div>
-    <div class="grid-3" id="newsGrid">
-      <!-- Populated below -->
+    <!-- News + sidebar ad layout -->
+    <div style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
+      <div class="grid-3" id="newsGrid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+        <!-- Populated by JS -->
+      </div>
+      <!-- Sidebar ad -->
+      <div id="sidebarWrap" style="display:none;width:300px;flex-shrink:0">
+        <div style="position:relative">
+          <div style="font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:6px">Advertisement</div>
+          <div id="sidebarSlot"></div>
+          <div style="margin-top:8px">
+            <div id="sidebarTitle" style="font-size:12px;font-weight:600;color:var(--navy)"></div>
+            <div id="sidebarTagline" style="font-size:11px;color:var(--mu);margin-top:2px"></div>
+            <a id="sidebarCta" href="#" target="_blank" rel="noopener noreferrer"
+              style="display:inline-block;margin-top:8px;padding:5px 14px;background:var(--navy);color:var(--gold);border-radius:5px;font-size:11px;font-weight:700;text-decoration:none">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
     </div>
   </div>
 </section>
@@ -596,17 +643,17 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
         <span class="role-fee">TZS 8,000 / month</span>
       </div>
       <div class="role-card">
-        <div class="role-letter">A</div>
-        <div class="role-title">Admin</div>
-        <div class="role-sub">Powered by Gabrison Capital</div>
-        <div class="role-body">The operations team behind FURROW. We post government reference prices daily, publish regulatory bulletins and tenders, and mediate deals end-to-end.</div>
+        <div class="role-letter">E</div>
+        <div class="role-title">Equipment &amp; Services</div>
+        <div class="role-sub">Machinery &middot; Solar &middot; Training &middot; Agri-inputs</div>
+        <div class="role-body">List your products and services to Tanzania's entire agricultural value chain — farmers, agri-businesses, transporters and cooperatives — on one verified platform.</div>
         <ul class="role-feats">
-          <li>CSV / Excel bulk price import with ledger</li>
-          <li>Bulletins and tenders with file attachments</li>
-          <li>Account verification and management</li>
-          <li>Investor dashboard with GMV and revenue metrics</li>
+          <li>Trucks, trailers and heavy agricultural equipment</li>
+          <li>Solar EPC and irrigation systems</li>
+          <li>Agri-inputs &mdash; fertilisers, seeds, pesticides</li>
+          <li>Training, certification and consultancy services</li>
         </ul>
-        <span class="role-fee">Operations by Gabrison Capital</span>
+        <span class="role-fee">Contact us for pricing</span>
       </div>
     </div>
   </div>
@@ -785,7 +832,8 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
             Aggregator &mdash; TZS 10,000<br>
             Agri-Business &mdash; TZS 50,000<br>
             Transporter &mdash; TZS 8,000<br>
-            Customer &mdash; Free
+            Customer &mdash; Free<br>
+            Equipment &amp; Services &mdash; On request
           </div>
         </div>
       </div>
@@ -821,21 +869,8 @@ var PRICES = {
   ]
 };
 
-var NEWS = [
-  { date:"19 Jun 2025", tag:"Tariff Update", color:"blue", title:"TRA revises export levy on raw cashew nuts to 15%", body:"Tanzania Revenue Authority has revised the export levy on raw cashew nuts to 15% effective 1 July 2025. All exporters must obtain updated TRA clearance certificates prior to shipment. Processing companies are exempt.", source:"TRA / CBT" },
-  { date:"18 Jun 2025", tag:"Regulation", color:"gray", title:"MAFC mandates new pesticide residue testing for export produce", body:"The Ministry of Agriculture has introduced mandatory pesticide residue testing protocols for all export-grade produce effective immediately. Approved testing laboratories are located in Dar es Salaam, Arusha and Mwanza.", source:"MAFC" },
-  { date:"15 Jun 2025", tag:"Import Ban", color:"red", title:"Tanzania suspends maize imports from Zambia", body:"Tanzania has suspended importation of maize from Zambia following phytosanitary concerns flagged by TPRI. The ban is in effect until further notice. Domestic supply from Central Zone is reported above seasonal average.", source:"TPRI / MAFC" },
-  { date:"12 Jun 2025", tag:"Infrastructure", color:"gray", title:"Mandatory weighbridge certification for heavy goods on national highways", body:"All trucks transporting produce above five tonnes on national highways must carry updated weighbridge certification from 1 August 2025. Non-compliant vehicles will be impounded at TANROADS checkpoints.", source:"TANROADS" },
-  { date:"08 Jun 2025", tag:"Market Advisory", color:"green", title:"Above-average maize harvest projected for Central Zone", body:"MAFC projects an above-average maize harvest for Dodoma, Singida and Tabora regions this season due to favourable rains. Prices expected to ease between July and September 2025.", source:"MAFC" },
-  { date:"04 Jun 2025", tag:"Coffee", color:"blue", title:"Tanzania Coffee Board raises Arabica floor price for July 2025 auction", body:"TCB has set a new floor price of TZS 4,350 per kg for Arabica grade AA for the July 2025 Moshi auction. This represents a 3.6% increase on the June floor. Export volumes are up 12% year on year.", source:"TCB" }
-];
-
-var TENDERS = [
-  { ref:"WFP/TZA/2025/024", body:"World Food Programme (WFP)", title:"Supply of 5,000 MT yellow maize for Dar es Salaam warehouse delivery", volume:"5,000 MT", deadline:"30 Jun 2025", value:"TZS 2.3 Billion", eligibility:"Registered agri-businesses and aggregators", status:"open", notes:"Grade A only. Phytosanitary certificate required. Delivery to WFP Dar es Salaam warehouse. Bid documents: procurement.wfp.org" },
-  { ref:"NFRA/2025/019",    body:"National Food Reserve Agency (NFRA)", title:"Paddy rice procurement for strategic national reserve replenishment", volume:"10,000 MT", deadline:"15 Jul 2025", value:"TZS 18 Billion", eligibility:"Agri-businesses only", status:"open", notes:"ISO-certified storage required at source. NFRA inspection prior to loading. Contact: procurement@nfra.go.tz" },
-  { ref:"TFDA/2025/011",    body:"Tanzania Food and Drugs Authority (TFDA)", title:"Sorghum meal supply for Northern Zone school feeding programme", volume:"2,200 MT", deadline:"25 Jun 2025", value:"TZS 1.1 Billion", eligibility:"All supplier categories", status:"closing", notes:"Must comply with TFDA nutritional standards. Packed in 25 kg branded bags. Staged delivery over three months." },
-  { ref:"NGO/CARE/007",     body:"CARE International Tanzania", title:"Mixed pulses and legumes for food basket distribution &mdash; Southern Highlands", volume:"800 MT", deadline:"20 Jun 2025", value:"TZS 960 Million", eligibility:"All supplier categories", status:"closing", notes:"Delivery in four tranches. CARE procurement guidelines apply. Contact: tanzania.procurement@care.org" }
-];
+var NEWS    = [];
+var TENDERS = [];
 
 /* ── Helpers ── */
 function col(dir){ return dir==='up'?'#1E6B4A':dir==='dn'?'#8B1A1A':'#5A6A7A'; }
@@ -900,10 +935,11 @@ function renderBoard(){
 /* ── News ── */
 function buildNews(){
   var el = document.getElementById('newsGrid'); if(!el) return;
+  if(!NEWS.length){ el.innerHTML='<div style="padding:24px;color:var(--mu);font-size:13px">Loading news...</div>'; return; }
   var tagColors = { blue:'badge-blue', gray:'badge-gray', red:'badge-red', green:'badge-green' };
   el.innerHTML = NEWS.map(function(n){
     return '<div class="news-card">'
-      +'<div class="news-meta"><span class="news-date">'+n.date+'</span><span class="badge '+( tagColors[n.color]||'badge-gray')+'">'+n.tag+'</span></div>'
+      +'<div class="news-meta"><span class="news-date">'+n.date+'</span><span class="badge '+(tagColors[n.color]||'badge-gray')+'">'+n.tag+'</span></div>'
       +'<div class="news-title">'+n.title+'</div>'
       +'<div class="news-body">'+n.body+'</div>'
       +'<div class="news-source">'+n.source+'</div>'
@@ -914,6 +950,13 @@ function buildNews(){
 /* ── Tenders ── */
 function buildTenders(){
   var el = document.getElementById('tenderGrid'); if(!el) return;
+  if(!TENDERS.length){
+    el.innerHTML='<div style="padding:32px 28px;background:#fff;border:1px solid var(--bdr);border-radius:8px;text-align:center">'
+      +'<div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px">No active tenders at this time</div>'
+      +'<div style="font-size:12px;color:var(--mu)">New procurement opportunities will be posted here as they are released. Check back soon.</div>'
+      +'</div>';
+    return;
+  }
   el.innerHTML = TENDERS.map(function(t){
     var statusBadge = t.status==='open'
       ? '<span class="badge badge-green">Open</span>'
@@ -934,22 +977,158 @@ function buildTenders(){
   }).join('');
 }
 
-/* ── Load prices.json then render everything ── */
+/* ── Load prices.json — auto-refresh every 5 minutes ── */
 async function loadPrices(){
   try {
     var res = await fetch('prices.json?v='+Date.now());
-    if(res.ok){
-      var data = await res.json();
-      if(data && data.prices && data.prices.length) PRICES = data;
-    }
+    if(res.ok){ var data = await res.json(); if(data && data.prices && data.prices.length) PRICES = data; }
   } catch(e){}
   buildTicker(); buildHeroBoard(); renderBoard();
 }
 
+/* ── Load news.json ── */
+async function loadNews(){
+  try {
+    var res = await fetch('news.json?v='+Date.now());
+    if(res.ok){ var data = await res.json(); if(data && data.news && data.news.length) NEWS = data.news; }
+  } catch(e){}
+  buildNews();
+}
+
+/* ── Load tenders.json ── */
+async function loadTenders(){
+  try {
+    var res = await fetch('tenders.json?v='+Date.now());
+    if(res.ok){ var data = await res.json(); if(data && data.tenders && data.tenders.length) TENDERS = data.tenders; }
+  } catch(e){}
+  buildTenders();
+}
+
+/* ── Load ads.json and render billboard + sidebar ── */
+var ADS = { billboard: [], sidebar: [], settings: { rotation_seconds: 6, show_billboard: true, show_sidebar: true } };
+var bbIndex = 0;
+var bbTimer = null;
+
+async function loadAds(){
+  try {
+    var res = await fetch('ads.json?v='+Date.now());
+    if(res.ok){ var data = await res.json(); if(data) ADS = data; }
+  } catch(e){}
+  renderBillboard();
+  renderSidebar();
+}
+
+function renderBillboard(){
+  var active = (ADS.billboard||[]).filter(function(a){ return a.active; });
+  var wrap = document.getElementById('billboardWrap');
+  if(!wrap) return;
+  if(!ADS.settings.show_billboard || !active.length){ wrap.style.display='none'; return; }
+  wrap.style.display='block';
+
+  // Build dot indicators
+  var dots = document.getElementById('billboardDots');
+  if(dots && active.length > 1){
+    dots.innerHTML = active.map(function(_,i){
+      return '<span onclick="bbGoTo('+i+')" style="width:7px;height:7px;border-radius:50%;background:'+(i===0?'var(--navy)':'var(--bdr)')+';cursor:pointer;display:inline-block;transition:background .2s" id="bbdot'+i+'"></span>';
+    }).join('');
+  }
+
+  showBillboardSlide(active, 0);
+
+  // Auto-rotate
+  if(bbTimer) clearInterval(bbTimer);
+  if(active.length > 1){
+    bbTimer = setInterval(function(){
+      bbIndex = (bbIndex + 1) % active.length;
+      showBillboardSlide(active, bbIndex);
+    }, (ADS.settings.rotation_seconds || 6) * 1000);
+  }
+}
+
+function showBillboardSlide(active, idx){
+  bbIndex = idx;
+  var ad = active[idx];
+  var slot    = document.getElementById('billboardSlot');
+  var title   = document.getElementById('billboardTitle');
+  var tagline = document.getElementById('billboardTagline');
+  var cta     = document.getElementById('billboardCta');
+
+  // If no image, show a styled text-only placeholder
+  if(!ad.image){
+    if(slot){
+      slot.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
+      slot.innerHTML = '<div style="width:100%;min-height:100px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;cursor:pointer">'
+        +'<div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Advertisement Space</div>'
+        +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:6px">'+ad.title+'</div>'
+        +'<div style="font-size:12px;color:rgba(255,255,255,.55)">'+ad.tagline+'</div>'
+        +'</div>';
+    }
+  } else {
+    if(slot){
+      slot.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
+      slot.innerHTML = '<img src="'+ad.image+'" alt="'+ad.advertiser+'" style="width:100%;height:auto;border-radius:8px;display:block;transition:opacity .4s" />';
+    }
+  }
+
+  if(title)   title.textContent   = ad.advertiser || '';
+  if(tagline) tagline.textContent = '';
+  if(cta){    cta.textContent = ad.cta || 'Enquire Now'; cta.href = ad.url || '#'; }
+  // Update dots
+  active.forEach(function(_,i){
+    var d = document.getElementById('bbdot'+i);
+    if(d) d.style.background = i===idx ? 'var(--navy)' : 'var(--bdr)';
+  });
+}
+
+function bbGoTo(i){
+  var active = (ADS.billboard||[]).filter(function(a){ return a.active; });
+  if(bbTimer) clearInterval(bbTimer);
+  showBillboardSlide(active, i);
+  if(active.length > 1){
+    bbTimer = setInterval(function(){
+      bbIndex = (bbIndex + 1) % active.length;
+      showBillboardSlide(active, bbIndex);
+    }, (ADS.settings.rotation_seconds || 6) * 1000);
+  }
+}
+
+function renderSidebar(){
+  var active = (ADS.sidebar||[]).filter(function(a){ return a.active; });
+  var wrap = document.getElementById('sidebarWrap');
+  if(!wrap) return;
+  if(!ADS.settings.show_sidebar || !active.length){ wrap.style.display='none'; return; }
+  wrap.style.display='block';
+  var ad = active[0];
+  var slot  = document.getElementById('sidebarSlot');
+  var title = document.getElementById('sidebarTitle');
+  var tag   = document.getElementById('sidebarTagline');
+  var cta   = document.getElementById('sidebarCta');
+
+  if(slot){
+    if(!ad.image){
+      slot.innerHTML = '<div style="width:100%;min-height:200px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;cursor:pointer" onclick="window.open(\''+ad.url+'\',\'_blank\')">'
+        +'<div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Ad Space</div>'
+        +'<div style="font-size:14px;font-weight:600;color:#fff;line-height:1.4">'+ad.title+'</div>'
+        +'</div>';
+    } else {
+      slot.innerHTML = '<a href="'+ad.url+'" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:8px;overflow:hidden;line-height:0">'
+        +'<img src="'+ad.image+'" alt="'+ad.advertiser+'" style="width:100%;height:auto;display:block;border-radius:8px" />'
+        +'</a>';
+    }
+  }
+  if(title) { title.textContent = ad.advertiser || ''; }
+  if(tag)   { tag.textContent   = ad.tagline    || ''; }
+  if(cta)   { cta.textContent = ad.cta || 'Enquire Now'; cta.href = ad.url || '#'; }
+}
+
+/* ── Initialise all on page load ── */
 loadPrices();
+loadNews();
+loadTenders();
+loadAds();
+
+/* ── Auto-refresh prices every 5 minutes ── */
 setInterval(loadPrices, 5*60*1000);
-buildNews();
-buildTenders();
 
 /* ── Nav ── */
 function toggleMenu(){ document.getElementById('navMob').classList.toggle('open'); }

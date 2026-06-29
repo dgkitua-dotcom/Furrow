@@ -1,0 +1,45 @@
+{
+  "updated": "29 Jun 2026",
+  "news": [
+    {
+      "date": "Jun 2026",
+      "tag": "Regulation",
+      "color": "blue",
+      "title": "TASAC reminds stakeholders to comply with Inland Clearance Depot Tariff Order GN. 459 of 2022",
+      "body": "Tanzania Shipping Agencies Corporation (TASAC) has reminded all Port Terminal Operators, ICDs, Shipping Agents, Clearing and Forwarding Agents and Consignees to strictly comply with GN. No. 459 of 2022. Regulation 11 requires the party responsible for container transfer delays to bear associated storage costs. Regulation 19 requires Port Terminals or ICDs to compensate consignees for delays where the consignee was ready to take delivery. All regulated service providers must also maintain internal complaint handling mechanisms in line with GN. No. 338 of 2018.",
+      "source": "TASAC / Ministry of Transport"
+    },
+    {
+      "date": "23 Apr 2026",
+      "tag": "Shipping Notice",
+      "color": "blue",
+      "title": "TASAC prohibits demurrage charges on delayed empty container returns caused by ECD operators",
+      "body": "TASAC has directed that shipping agents and related parties are strictly prohibited from charging demurrage or storage penalties on containers where delay in return is caused by refusal or inability of an Empty Container Depot to receive the container, congestion or capacity limitations at the ECD, or any factor beyond the control of the consignee or clearing agent. ECD operators are required to ensure timely receipt, operate within approved capacity, and coordinate with shipping agents. Shipping agents must provide alternative receiving arrangements where the designated ECD is unable to accept containers. This notice takes effect immediately upon issuance.",
+      "source": "TASAC / Ministry of Transport"
+    },
+    {
+      "date": "22 May 2026",
+      "tag": "Port Levy",
+      "color": "green",
+      "title": "TPA reduces Port Infrastructure Development (PID) Levy from 9% to 4.5% effective 1 July 2026",
+      "body": "Tanzania Private Sector Federation (TPSF) has announced that Tanzania Ports Authority (TPA) has officially reviewed and reduced the Port Infrastructure Development Levy from the initially proposed 9% to 4.5% of customs duty, effective 1st July 2026. This represents a 50% reduction following private sector consultations convened by TPSF on 17th March 2026. The levy aims to support port modernisation and expansion programmes estimated at TZS 16.1 trillion. The revised rate lowers the anticipated cost burden on importers by half while enabling TPA to mobilise resources for its infrastructure investment programme.",
+      "source": "TPSF / Tanzania Ports Authority"
+    },
+    {
+      "date": "Jun 2026",
+      "tag": "NSSF Amnesty",
+      "color": "gray",
+      "title": "NSSF offers general amnesty to employers with outstanding statutory contribution arrears",
+      "body": "The National Social Security Fund (NSSF) has announced a general amnesty to all employers with outstanding arrears of statutory contributions and penalties. Employers who remit all outstanding principal amounts on or before 31st August 2026 and remain current by 31st December 2026 will be relieved of 100% of overdue penalties. Those remitting by 31st October 2026 will receive 75% relief, and those remitting by 31st December 2026 receive 50% relief. Employers who are already compliant as of 31st May 2026 and remain current through 31st December 2026 also qualify for 100% penalty relief. The amnesty period runs from 1st June 2026 to 31st December 2026. For enquiries call toll-free: 0800116773.",
+      "source": "NSSF — Public Relations and Member Education Unit"
+    },
+    {
+      "date": "4 Jun 2026",
+      "tag": "Import Compliance",
+      "color": "red",
+      "title": "TBS requires Pre-Shipment Verification of Conformity for all regulated goods from China, Hong Kong, Taiwan, Mongolia and Macau",
+      "body": "Tanzania Bureau of Standards (TBS) has reminded all importers of TBS-regulated goods from China Mainland, Hong Kong, Taiwan, Mongolia and Macau that all such goods must undergo Pre-Shipment Verification of Conformity to Standards (PVoC) in the country of export before shipment to Tanzania. TBS has contracted five authorised inspection agents: CCIC, Intertek International Limited, SGS, TUV Rheinland Middle East, and World Standardization Certification & Testing Group. Importers must liaise with these agents to obtain a Certificate of Conformity (CoC) before shipment. Failure to comply will result in inspection upon arrival and a penalty equal to 15% of the value of the goods. Visit www.tbs.go.tz or call 0800 110 827.",
+      "source": "Tanzania Bureau of Standards (TBS) / Ministry of Industry and Trade"
+    }
+  ]
+}

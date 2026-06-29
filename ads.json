@@ -1,0 +1,45 @@
+{
+  "updated": "29 Jun 2026",
+  "settings": {
+    "rotation_seconds": 6,
+    "show_billboard": true,
+    "show_sidebar": true
+  },
+  "billboard": [
+    {
+      "id": "bb001",
+      "advertiser": "Rex Energy",
+      "title": "Unapohitaji Nishati ya Jua, Chagua Rex.",
+      "tagline": "Quality Solar Solutions — sales@rexsolarenergy.com · +255 712 603 040",
+      "cta": "Visit Rex Energy",
+      "url": "https://www.rexsolarenergy.com",
+      "image": "rex_energy_ad.jpg",
+      "active": true,
+      "expires": "31 Dec 2026"
+    },
+    {
+      "id": "bb002",
+      "advertiser": "Simusolar Tanzania",
+      "title": "Pampu Kilimo Kwanza — Pampu ya Maji Inayotumia Umeme wa Sola",
+      "tagline": "Pata mpaka lita 1,000 za maji kwa saa moja · 0800 780 036 au 0677 028 680",
+      "cta": "Wasiliana na Simusolar",
+      "url": "https://www.simusolar.com",
+      "image": "simusolar_ad.jpg",
+      "active": true,
+      "expires": "31 Dec 2026"
+    }
+  ],
+  "sidebar": [
+    {
+      "id": "sb001",
+      "advertiser": "Rex Energy",
+      "title": "Think Solar. Think Rex.",
+      "tagline": "+255 712 603 040 · www.rexsolarenergy.com",
+      "cta": "Learn More",
+      "url": "https://www.rexsolarenergy.com",
+      "image": "rex_energy_ad.jpg",
+      "active": true,
+      "expires": "31 Dec 2026"
+    }
+  ]
+}
