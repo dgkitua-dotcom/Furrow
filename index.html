@@ -452,6 +452,29 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   </div>
 </section>
 
+<!-- ═══ BILLBOARD AD — compact, right after hero ═══ -->
+<div id="billboardWrap" style="display:none;background:var(--cream);padding:10px 0">
+  <div class="container">
+    <div style="position:relative;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--bdr);border-radius:8px;padding:8px 14px;max-width:680px;margin:0 auto">
+      <!-- Ad label -->
+      <span style="font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);flex-shrink:0;writing-mode:horizontal-tb">Ad</span>
+      <!-- Billboard image slot — small, rotates automatically -->
+      <div id="billboardSlot" style="width:64px;height:44px;flex-shrink:0;overflow:hidden;border-radius:5px;cursor:pointer;line-height:0;background:var(--goldP);display:flex;align-items:center;justify-content:center">
+      </div>
+      <!-- Ad caption -->
+      <div style="flex:1;min-width:0;overflow:hidden">
+        <div id="billboardTitle" style="font-size:11px;font-weight:600;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+        <div id="billboardTagline" style="font-size:10px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+      </div>
+      <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
+        style="padding:5px 12px;background:var(--navy);color:var(--gold);border-radius:5px;font-size:10px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+      </a>
+      <!-- Dot indicators -->
+      <div id="billboardDots" style="display:flex;gap:4px;flex-shrink:0"></div>
+    </div>
+  </div>
+</div>
+
 <!-- ═══ STAT STRIP ═══ -->
 <div class="stat-strip">
   <div class="container">
@@ -498,34 +521,6 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   </div>
 </section>
 
-<!-- ═══ BILLBOARD AD ═══ -->
-<div id="billboardWrap" style="display:none;background:var(--cream);padding:16px 0;border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr)">
-  <div class="container">
-    <div style="position:relative">
-      <!-- Ad label -->
-      <div style="position:absolute;top:6px;left:6px;z-index:2;background:rgba(11,28,46,.55);color:rgba(255,255,255,.5);font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:3px">
-        Advertisement
-      </div>
-      <!-- Billboard image slot — rotates automatically -->
-      <div id="billboardSlot" style="width:100%;overflow:hidden;border-radius:8px;cursor:pointer;line-height:0;min-height:80px;background:var(--goldP);display:flex;align-items:center;justify-content:center">
-        <img id="billboardImg" src="" alt="" style="width:100%;height:auto;border-radius:8px;display:block;transition:opacity .4s" />
-      </div>
-      <!-- Ad caption bar -->
-      <div id="billboardCaption" style="display:flex;align-items:center;justify-content:space-between;margin-top:8px;flex-wrap:wrap;gap:8px">
-        <div>
-          <div id="billboardTitle" style="font-size:13px;font-weight:600;color:var(--navy)"></div>
-          <div id="billboardTagline" style="font-size:11px;color:var(--mu)"></div>
-        </div>
-        <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
-          style="padding:6px 16px;background:var(--navy);color:var(--gold);border-radius:5px;font-size:11px;font-weight:700;white-space:nowrap;text-decoration:none">
-        </a>
-      </div>
-      <!-- Dot indicators -->
-      <div id="billboardDots" style="display:flex;gap:5px;justify-content:center;margin-top:8px"></div>
-    </div>
-  </div>
-</div>
-
 <!-- ═══ NEWS ═══ -->
 <section class="section section-alt" id="news">
   <div class="container">
@@ -543,7 +538,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
       <div id="sidebarWrap" style="display:none;width:300px;flex-shrink:0">
         <div style="position:relative">
           <div style="font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:6px">Advertisement</div>
-          <div id="sidebarSlot"></div>
+          <div id="sidebarSlot" style="width:300px;height:250px;border-radius:8px;overflow:hidden;background:var(--goldP)"></div>
           <div style="margin-top:8px">
             <div id="sidebarTitle" style="font-size:12px;font-weight:600;color:var(--navy)"></div>
             <div id="sidebarTagline" style="font-size:11px;color:var(--mu);margin-top:2px"></div>
@@ -1185,22 +1180,19 @@ function showBillboardSlide(active, idx){
 
     if(!ad.image){
       var ph = document.createElement('div');
-      ph.style.cssText = 'width:100%;min-height:100px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;cursor:pointer';
-      ph.innerHTML = '<div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Advertisement Space</div>'
-        +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:6px">'+ad.title+'</div>'
-        +'<div style="font-size:12px;color:rgba(255,255,255,.55)">'+ad.tagline+'</div>';
+      ph.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer';
+      ph.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;font-weight:700;color:var(--gold);text-align:center;padding:2px">'+ad.advertiser+'</div>';
       slot.appendChild(ph);
     } else {
       var img = document.createElement('img');
       img.src = ad.image;
       img.alt = ad.advertiser;
-      img.style.cssText = 'width:100%;height:auto;border-radius:8px;display:block;transition:opacity .4s';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:5px;display:block;transition:opacity .4s';
       img.onerror = function(){
         slot.innerHTML = '';
         var fb = document.createElement('div');
-        fb.style.cssText = 'width:100%;min-height:100px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;cursor:pointer';
-        fb.innerHTML = '<div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">'+ad.advertiser+'</div>'
-          +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#fff">'+ad.title+'</div>';
+        fb.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer';
+        fb.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;font-weight:700;color:var(--gold);text-align:center;padding:2px">'+ad.advertiser+'</div>';
         slot.appendChild(fb);
       };
       slot.appendChild(img);
@@ -1208,7 +1200,7 @@ function showBillboardSlide(active, idx){
   }
 
   if(title)   title.textContent   = ad.advertiser || '';
-  if(tagline) tagline.textContent = '';
+  if(tagline) tagline.textContent = ad.title || '';
   if(cta){    cta.textContent = ad.cta || 'Enquire Now'; cta.href = ad.url || '#'; }
   // Update dots
   active.forEach(function(_,i){
@@ -1245,7 +1237,7 @@ function renderSidebar(){
     slot.innerHTML = ''; // clear first
     if(!ad.image){
       var ph = document.createElement('div');
-      ph.style.cssText = 'width:100%;min-height:200px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;cursor:pointer';
+      ph.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;cursor:pointer;box-sizing:border-box';
       ph.innerHTML = '<div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Ad Space</div>'
         +'<div style="font-size:14px;font-weight:600;color:#fff;line-height:1.4">'+ad.title+'</div>';
       ph.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
@@ -1255,16 +1247,16 @@ function renderSidebar(){
       link.href = ad.url || '#';
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
-      link.style.cssText = 'display:block;border-radius:8px;overflow:hidden;line-height:0';
+      link.style.cssText = 'display:block;width:100%;height:100%;line-height:0';
 
       var img = document.createElement('img');
       img.src = ad.image;
       img.alt = ad.advertiser;
-      img.style.cssText = 'width:100%;height:auto;display:block;border-radius:8px';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block';
       img.onerror = function(){
         link.innerHTML = '';
         var fb = document.createElement('div');
-        fb.style.cssText = 'min-height:160px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center';
+        fb.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;align-items:center;justify-content:center;padding:20px;text-align:center;box-sizing:border-box';
         fb.innerHTML = '<div style="font-size:14px;font-weight:600;color:var(--gold)">'+ad.advertiser+'</div>';
         link.appendChild(fb);
       };

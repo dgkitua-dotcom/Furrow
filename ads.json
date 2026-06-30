@@ -1,5 +1,9 @@
 {
   "updated": "29 Jun 2026",
+  "_image_size_requirements": {
+    "billboard": "Required image size: 64x44px display (any image works, auto-cropped to fill). For best quality upload a square or landscape image at least 300x200px — it will be cropped to fit.",
+    "sidebar": "Required image size: 300x250px display (any image works, auto-cropped to fill). For best quality upload a square image at least 600x500px — it will be cropped to fit."
+  },
   "settings": {
     "rotation_seconds": 6,
     "show_billboard": true,
