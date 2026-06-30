@@ -1140,22 +1140,31 @@ function showBillboardSlide(active, idx){
   var tagline = document.getElementById('billboardTagline');
   var cta     = document.getElementById('billboardCta');
 
-  // If no image, show a styled text-only placeholder
-  if(!ad.image){
-    if(slot){
-      slot.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
-      slot.innerHTML = '<div style="width:100%;min-height:100px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;cursor:pointer">'
-        +'<div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Advertisement Space</div>'
+  if(slot){
+    slot.innerHTML = ''; // clear first
+    slot.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
+
+    if(!ad.image){
+      var ph = document.createElement('div');
+      ph.style.cssText = 'width:100%;min-height:100px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;cursor:pointer';
+      ph.innerHTML = '<div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Advertisement Space</div>'
         +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:22px;font-weight:600;color:#fff;margin-bottom:6px">'+ad.title+'</div>'
-        +'<div style="font-size:12px;color:rgba(255,255,255,.55)">'+ad.tagline+'</div>'
-        +'</div>';
-    }
-  } else {
-    if(slot){
-      slot.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
-      slot.innerHTML = '<img src="'+ad.image+'" alt="'+ad.advertiser+'" '
-        +'onerror="this.parentNode.innerHTML=\'<div style=\\\"width:100%;min-height:100px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;cursor:pointer\\\"><div style=\\\"font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px\\\">'+ad.advertiser+'</div><div style=\\\"font-family:Cormorant Garamond,serif;font-size:20px;font-weight:600;color:#fff\\\">'+ad.title+'</div></div>\'" '
-        +'style="width:100%;height:auto;border-radius:8px;display:block;transition:opacity .4s" />';
+        +'<div style="font-size:12px;color:rgba(255,255,255,.55)">'+ad.tagline+'</div>';
+      slot.appendChild(ph);
+    } else {
+      var img = document.createElement('img');
+      img.src = ad.image;
+      img.alt = ad.advertiser;
+      img.style.cssText = 'width:100%;height:auto;border-radius:8px;display:block;transition:opacity .4s';
+      img.onerror = function(){
+        slot.innerHTML = '';
+        var fb = document.createElement('div');
+        fb.style.cssText = 'width:100%;min-height:100px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 20px;text-align:center;cursor:pointer';
+        fb.innerHTML = '<div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">'+ad.advertiser+'</div>'
+          +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:600;color:#fff">'+ad.title+'</div>';
+        slot.appendChild(fb);
+      };
+      slot.appendChild(img);
     }
   }
 
@@ -1194,17 +1203,34 @@ function renderSidebar(){
   var cta   = document.getElementById('sidebarCta');
 
   if(slot){
+    slot.innerHTML = ''; // clear first
     if(!ad.image){
-      slot.innerHTML = '<div style="width:100%;min-height:200px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;cursor:pointer" onclick="window.open(\''+ad.url+'\',\'_blank\')">'
-        +'<div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Ad Space</div>'
-        +'<div style="font-size:14px;font-weight:600;color:#fff;line-height:1.4">'+ad.title+'</div>'
-        +'</div>';
+      var ph = document.createElement('div');
+      ph.style.cssText = 'width:100%;min-height:200px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;cursor:pointer';
+      ph.innerHTML = '<div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Ad Space</div>'
+        +'<div style="font-size:14px;font-weight:600;color:#fff;line-height:1.4">'+ad.title+'</div>';
+      ph.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
+      slot.appendChild(ph);
     } else {
-      slot.innerHTML = '<a href="'+ad.url+'" target="_blank" rel="noopener noreferrer" style="display:block;border-radius:8px;overflow:hidden;line-height:0">'
-        +'<img src="'+ad.image+'" alt="'+ad.advertiser+'" '
-        +'onerror="this.parentNode.innerHTML=\'<div style=\\\"min-height:160px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center\\\"><div style=\\\"font-size:14px;font-weight:600;color:var(--gold)\\\">'+ad.advertiser+'</div></div>\'" '
-        +'style="width:100%;height:auto;display:block;border-radius:8px" />'
-        +'</a>';
+      var link = document.createElement('a');
+      link.href = ad.url || '#';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.style.cssText = 'display:block;border-radius:8px;overflow:hidden;line-height:0';
+
+      var img = document.createElement('img');
+      img.src = ad.image;
+      img.alt = ad.advertiser;
+      img.style.cssText = 'width:100%;height:auto;display:block;border-radius:8px';
+      img.onerror = function(){
+        link.innerHTML = '';
+        var fb = document.createElement('div');
+        fb.style.cssText = 'min-height:160px;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:8px;display:flex;align-items:center;justify-content:center;padding:20px;text-align:center';
+        fb.innerHTML = '<div style="font-size:14px;font-weight:600;color:var(--gold)">'+ad.advertiser+'</div>';
+        link.appendChild(fb);
+      };
+      link.appendChild(img);
+      slot.appendChild(link);
     }
   }
   if(title) { title.textContent = ad.advertiser || ''; }
