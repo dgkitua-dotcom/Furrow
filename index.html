@@ -452,25 +452,29 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   </div>
 </section>
 
-<!-- ═══ BILLBOARD AD — compact, right after hero ═══ -->
-<div id="billboardWrap" style="display:none;background:var(--cream);padding:10px 0">
+<!-- ═══ BILLBOARD AD — Instagram-square image, right after hero ═══ -->
+<div id="billboardWrap" style="display:none;background:var(--cream);padding:28px 0">
   <div class="container">
-    <div style="position:relative;display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--bdr);border-radius:8px;padding:8px 14px;max-width:680px;margin:0 auto">
+    <div class="billboard-card" style="max-width:380px;margin:0 auto;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08)">
       <!-- Ad label -->
-      <span style="font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);flex-shrink:0;writing-mode:horizontal-tb">Ad</span>
-      <!-- Billboard image slot — small, rotates automatically -->
-      <div id="billboardSlot" style="width:64px;height:44px;flex-shrink:0;overflow:hidden;border-radius:5px;cursor:pointer;line-height:0;background:var(--goldP);display:flex;align-items:center;justify-content:center">
+      <div style="padding:10px 16px 0">
+        <span style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">Advertisement</span>
+      </div>
+      <!-- Billboard image — Instagram-square, rotates automatically -->
+      <div id="billboardSlot" class="billboard-img-slot" style="width:100%;aspect-ratio:1/1;overflow:hidden;cursor:pointer;line-height:0;background:var(--goldP);display:flex;align-items:center;justify-content:center;margin-top:8px">
       </div>
       <!-- Ad caption -->
-      <div style="flex:1;min-width:0;overflow:hidden">
-        <div id="billboardTitle" style="font-size:11px;font-weight:600;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
-        <div id="billboardTagline" style="font-size:10px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+      <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div style="flex:1;min-width:0">
+          <div id="billboardTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
+          <div id="billboardTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
+        </div>
+        <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
+          style="padding:9px 20px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+        </a>
       </div>
-      <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
-        style="padding:5px 12px;background:var(--navy);color:var(--gold);border-radius:5px;font-size:10px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
-      </a>
       <!-- Dot indicators -->
-      <div id="billboardDots" style="display:flex;gap:4px;flex-shrink:0"></div>
+      <div id="billboardDots" style="display:flex;gap:6px;justify-content:center;padding-bottom:16px"></div>
     </div>
   </div>
 </div>
@@ -535,21 +539,19 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
         <!-- Populated by JS -->
       </div>
       <!-- Sidebar ad -->
-      <div id="sidebarWrap" style="display:none;width:300px;flex-shrink:0">
+      <div id="sidebarWrap" style="display:none;width:320px;flex-shrink:0">
         <div style="position:relative">
-          <div style="font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:6px">Advertisement</div>
-          <div id="sidebarSlot" style="width:300px;height:250px;border-radius:8px;overflow:hidden;background:var(--goldP)"></div>
-          <div style="margin-top:8px">
-            <div id="sidebarTitle" style="font-size:12px;font-weight:600;color:var(--navy)"></div>
-            <div id="sidebarTagline" style="font-size:11px;color:var(--mu);margin-top:2px"></div>
+          <div style="font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:8px">Advertisement</div>
+          <div id="sidebarSlot" style="width:320px;height:320px;border-radius:10px;overflow:hidden;background:var(--goldP)"></div>
+          <div style="margin-top:10px">
+            <div id="sidebarTitle" style="font-size:13px;font-weight:700;color:var(--navy)"></div>
+            <div id="sidebarTagline" style="font-size:12px;color:var(--mu);margin-top:3px;line-height:1.5"></div>
             <a id="sidebarCta" href="#" target="_blank" rel="noopener noreferrer"
-              style="display:inline-block;margin-top:8px;padding:5px 14px;background:var(--navy);color:var(--gold);border-radius:5px;font-size:11px;font-weight:700;text-decoration:none">
+              style="display:inline-block;margin-top:10px;padding:7px 16px;background:var(--navy);color:var(--gold);border-radius:6px;font-size:12px;font-weight:700;text-decoration:none">
             </a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
     </div>
   </div>
 </section>
@@ -1180,19 +1182,19 @@ function showBillboardSlide(active, idx){
 
     if(!ad.image){
       var ph = document.createElement('div');
-      ph.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer';
-      ph.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;font-weight:700;color:var(--gold);text-align:center;padding:2px">'+ad.advertiser+'</div>';
+      ph.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;align-items:center;justify-content:center;cursor:pointer';
+      ph.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--gold);text-align:center;padding:20px">'+ad.advertiser+'</div>';
       slot.appendChild(ph);
     } else {
       var img = document.createElement('img');
       img.src = ad.image;
       img.alt = ad.advertiser;
-      img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:5px;display:block;transition:opacity .4s';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s';
       img.onerror = function(){
         slot.innerHTML = '';
         var fb = document.createElement('div');
-        fb.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);border-radius:5px;display:flex;align-items:center;justify-content:center;cursor:pointer';
-        fb.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:10px;font-weight:700;color:var(--gold);text-align:center;padding:2px">'+ad.advertiser+'</div>';
+        fb.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;align-items:center;justify-content:center;cursor:pointer';
+        fb.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--gold);text-align:center;padding:20px">'+ad.advertiser+'</div>';
         slot.appendChild(fb);
       };
       slot.appendChild(img);
