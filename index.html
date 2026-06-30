@@ -107,6 +107,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .cs-form input::placeholder { color: rgba(255,255,255,.3); }
 .cs-form input:focus { border-color: var(--gold); }
 .cs-notify { margin-top: 10px; font-size: 11px; color: rgba(255,255,255,.3); }
+.billboard-side-card:hover { opacity: 1 !important; transform: scale(.97) !important; }
 
 /* ── News Modal — portrait card with blurred backdrop ── */
 .news-modal-overlay {
@@ -333,6 +334,8 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   .footer-grid { grid-template-columns: 1fr; }
   .broker-nums { flex-direction: row; }
   .tender-meta { grid-template-columns: 1fr; }
+  .billboard-side-card { display: none; }
+  .billboard-card { max-width: 320px !important; flex: 1 !important; }
 }
 @media (max-width: 480px) {
   .roadmap { grid-template-columns: 1fr; }
@@ -452,30 +455,49 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   </div>
 </section>
 
-<!-- ═══ BILLBOARD AD — Instagram-square image, right after hero ═══ -->
+<!-- ═══ BILLBOARD AD — 3-card carousel: fixed centre premium + rotating sides ═══ -->
 <div id="billboardWrap" style="display:none;background:var(--cream);padding:28px 0">
   <div class="container">
-    <div class="billboard-card" style="max-width:380px;margin:0 auto;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08)">
-      <!-- Ad label -->
-      <div style="padding:10px 16px 0">
-        <span style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">Advertisement</span>
-      </div>
-      <!-- Billboard image — Instagram-square, rotates automatically -->
-      <div id="billboardSlot" class="billboard-img-slot" style="width:100%;aspect-ratio:1/1;overflow:hidden;cursor:pointer;line-height:0;background:var(--goldP);display:flex;align-items:center;justify-content:center;margin-top:8px">
-      </div>
-      <!-- Ad caption -->
-      <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <div style="flex:1;min-width:0">
-          <div id="billboardTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
-          <div id="billboardTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
-        </div>
-        <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
-          style="padding:9px 20px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
-        </a>
-      </div>
-      <!-- Dot indicators -->
-      <div id="billboardDots" style="display:flex;gap:6px;justify-content:center;padding-bottom:16px"></div>
+    <div style="text-align:center;margin-bottom:14px">
+      <span style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">Advertisement</span>
     </div>
+    <div class="billboard-3up" style="display:flex;align-items:center;justify-content:center;gap:16px;max-width:920px;margin:0 auto">
+
+      <!-- LEFT — rotating side ad -->
+      <div id="bbSideLeft" class="billboard-side-card" style="flex:1;max-width:220px;background:#fff;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(11,28,46,.06);opacity:.75;transform:scale(.92);transition:opacity .4s,transform .4s;cursor:pointer">
+        <div id="bbSideLeftImg" style="width:100%;aspect-ratio:1/1;overflow:hidden;line-height:0;background:var(--goldP)"></div>
+        <div style="padding:10px 12px">
+          <div id="bbSideLeftTitle" style="font-size:11px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+        </div>
+      </div>
+
+      <!-- CENTRE — fixed premium slot, never rotates -->
+      <div class="billboard-card" style="flex:1.4;max-width:380px;background:#fff;border:1px solid var(--gold);border-radius:14px;overflow:hidden;box-shadow:0 8px 28px rgba(11,28,46,.12);position:relative">
+        <div style="position:absolute;top:10px;right:10px;z-index:2;background:var(--gold);color:var(--navy);font-size:8px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px">Featured</div>
+        <div id="billboardSlot" class="billboard-img-slot" style="width:100%;aspect-ratio:1/1;overflow:hidden;cursor:pointer;line-height:0;background:var(--goldP);display:flex;align-items:center;justify-content:center">
+        </div>
+        <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div style="flex:1;min-width:0">
+            <div id="billboardTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
+            <div id="billboardTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
+          </div>
+          <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
+            style="padding:9px 20px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT — rotating side ad -->
+      <div id="bbSideRight" class="billboard-side-card" style="flex:1;max-width:220px;background:#fff;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(11,28,46,.06);opacity:.75;transform:scale(.92);transition:opacity .4s,transform .4s;cursor:pointer">
+        <div id="bbSideRightImg" style="width:100%;aspect-ratio:1/1;overflow:hidden;line-height:0;background:var(--goldP)"></div>
+        <div style="padding:10px 12px">
+          <div id="bbSideRightTitle" style="font-size:11px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Dot indicators for side rotation -->
+    <div id="billboardDots" style="display:flex;gap:6px;justify-content:center;margin-top:14px"></div>
   </div>
 </div>
 
@@ -1148,64 +1170,99 @@ function renderBillboard(){
   if(!ADS.settings.show_billboard || !active.length){ wrap.style.display='none'; return; }
   wrap.style.display='block';
 
-  // Build dot indicators
+  // Centre = featured ad (first one marked "featured":true, else just the first ad)
+  var featured = active.find(function(a){ return a.featured; }) || active[0];
+  fillAdSlot('billboardSlot', featured, true);
+  document.getElementById('billboardTitle').textContent   = featured.advertiser || '';
+  document.getElementById('billboardTagline').textContent = featured.title || '';
+  var cta = document.getElementById('billboardCta');
+  if(cta){ cta.textContent = featured.cta || 'Enquire Now'; cta.href = featured.url || '#'; }
+  document.querySelector('.billboard-card').onclick = function(e){
+    if(e.target.tagName !== 'A') window.open(featured.url,'_blank');
+  };
+
+  // Side ads = everyone else (excluding the featured one)
+  var sideAds = active.filter(function(a){ return a.id !== featured.id; });
+
+  // Build dot indicators for side rotation
   var dots = document.getElementById('billboardDots');
-  if(dots && active.length > 1){
-    dots.innerHTML = active.map(function(_,i){
-      return '<span onclick="bbGoTo('+i+')" style="width:7px;height:7px;border-radius:50%;background:'+(i===0?'var(--navy)':'var(--bdr)')+';cursor:pointer;display:inline-block;transition:background .2s" id="bbdot'+i+'"></span>';
-    }).join('');
+  if(dots){
+    if(sideAds.length > 1){
+      dots.innerHTML = sideAds.map(function(_,i){
+        return '<span onclick="bbGoTo('+i+')" style="width:7px;height:7px;border-radius:50%;background:'+(i===0?'var(--navy)':'var(--bdr)')+';cursor:pointer;display:inline-block;transition:background .2s" id="bbdot'+i+'"></span>';
+      }).join('');
+    } else {
+      dots.innerHTML = '';
+    }
   }
 
-  showBillboardSlide(active, 0);
+  if(!sideAds.length){
+    // No other ads — hide side cards gracefully
+    document.getElementById('bbSideLeft').style.visibility  = 'hidden';
+    document.getElementById('bbSideRight').style.visibility = 'hidden';
+    return;
+  }
+  document.getElementById('bbSideLeft').style.visibility  = 'visible';
+  document.getElementById('bbSideRight').style.visibility = 'visible';
 
-  // Auto-rotate
+  showSideAds(sideAds, 0);
+
+  // Auto-rotate sides only
   if(bbTimer) clearInterval(bbTimer);
-  if(active.length > 1){
+  if(sideAds.length > 1){
     bbTimer = setInterval(function(){
-      bbIndex = (bbIndex + 1) % active.length;
-      showBillboardSlide(active, bbIndex);
+      bbIndex = (bbIndex + 1) % sideAds.length;
+      showSideAds(sideAds, bbIndex);
     }, (ADS.settings.rotation_seconds || 6) * 1000);
   }
 }
 
-function showBillboardSlide(active, idx){
-  bbIndex = idx;
-  var ad = active[idx];
-  var slot    = document.getElementById('billboardSlot');
-  var title   = document.getElementById('billboardTitle');
-  var tagline = document.getElementById('billboardTagline');
-  var cta     = document.getElementById('billboardCta');
-
-  if(slot){
-    slot.innerHTML = ''; // clear first
-    slot.onclick = function(){ if(ad.url) window.open(ad.url,'_blank'); };
-
-    if(!ad.image){
-      var ph = document.createElement('div');
-      ph.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;align-items:center;justify-content:center;cursor:pointer';
-      ph.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--gold);text-align:center;padding:20px">'+ad.advertiser+'</div>';
-      slot.appendChild(ph);
-    } else {
-      var img = document.createElement('img');
-      img.src = ad.image;
-      img.alt = ad.advertiser;
-      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s';
-      img.onerror = function(){
-        slot.innerHTML = '';
-        var fb = document.createElement('div');
-        fb.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;align-items:center;justify-content:center;cursor:pointer';
-        fb.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--gold);text-align:center;padding:20px">'+ad.advertiser+'</div>';
-        slot.appendChild(fb);
-      };
-      slot.appendChild(img);
-    }
+/* Fills an image slot element with an ad's image (or styled fallback) */
+function fillAdSlot(elId, ad, isLarge){
+  var slot = document.getElementById(elId);
+  if(!slot) return;
+  slot.innerHTML = '';
+  var fontSize = isLarge ? '24px' : '13px';
+  var pad      = isLarge ? '20px' : '10px';
+  if(!ad.image){
+    var ph = document.createElement('div');
+    ph.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;align-items:center;justify-content:center';
+    ph.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:'+fontSize+';font-weight:700;color:var(--gold);text-align:center;padding:'+pad+'">'+ad.advertiser+'</div>';
+    slot.appendChild(ph);
+  } else {
+    var img = document.createElement('img');
+    img.src = ad.image;
+    img.alt = ad.advertiser;
+    img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s';
+    img.onerror = function(){
+      slot.innerHTML = '';
+      var fb = document.createElement('div');
+      fb.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;align-items:center;justify-content:center';
+      fb.innerHTML = '<div style="font-family:\'Cormorant Garamond\',serif;font-size:'+fontSize+';font-weight:700;color:var(--gold);text-align:center;padding:'+pad+'">'+ad.advertiser+'</div>';
+      slot.appendChild(fb);
+    };
+    slot.appendChild(img);
   }
+}
 
-  if(title)   title.textContent   = ad.advertiser || '';
-  if(tagline) tagline.textContent = ad.title || '';
-  if(cta){    cta.textContent = ad.cta || 'Enquire Now'; cta.href = ad.url || '#'; }
+/* Shows side ads — left gets current index, right gets next index (so they're always different) */
+function showSideAds(sideAds, idx){
+  bbIndex = idx;
+  var leftAd  = sideAds[idx % sideAds.length];
+  var rightAd = sideAds[(idx + 1) % sideAds.length];
+
+  fillAdSlot('bbSideLeftImg', leftAd, false);
+  document.getElementById('bbSideLeftTitle').textContent = leftAd.advertiser || '';
+  var leftCard = document.getElementById('bbSideLeft');
+  leftCard.onclick = function(){ if(leftAd.url) window.open(leftAd.url,'_blank'); };
+
+  fillAdSlot('bbSideRightImg', rightAd, false);
+  document.getElementById('bbSideRightTitle').textContent = rightAd.advertiser || '';
+  var rightCard = document.getElementById('bbSideRight');
+  rightCard.onclick = function(){ if(rightAd.url) window.open(rightAd.url,'_blank'); };
+
   // Update dots
-  active.forEach(function(_,i){
+  sideAds.forEach(function(_,i){
     var d = document.getElementById('bbdot'+i);
     if(d) d.style.background = i===idx ? 'var(--navy)' : 'var(--bdr)';
   });
@@ -1213,12 +1270,14 @@ function showBillboardSlide(active, idx){
 
 function bbGoTo(i){
   var active = (ADS.billboard||[]).filter(function(a){ return a.active; });
+  var featured = active.find(function(a){ return a.featured; }) || active[0];
+  var sideAds = active.filter(function(a){ return a.id !== featured.id; });
   if(bbTimer) clearInterval(bbTimer);
-  showBillboardSlide(active, i);
-  if(active.length > 1){
+  showSideAds(sideAds, i);
+  if(sideAds.length > 1){
     bbTimer = setInterval(function(){
-      bbIndex = (bbIndex + 1) % active.length;
-      showBillboardSlide(active, bbIndex);
+      bbIndex = (bbIndex + 1) % sideAds.length;
+      showSideAds(sideAds, bbIndex);
     }, (ADS.settings.rotation_seconds || 6) * 1000);
   }
 }

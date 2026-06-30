@@ -1,8 +1,10 @@
 {
-  "updated": "29 Jun 2026",
+  "updated": "30 Jun 2026",
   "_image_size_requirements": {
-    "billboard": "Required image size: 64x44px display (any image works, auto-cropped to fill). For best quality upload a square or landscape image at least 300x200px — it will be cropped to fit.",
-    "sidebar": "Required image size: 300x250px display (any image works, auto-cropped to fill). For best quality upload a square image at least 600x500px — it will be cropped to fit."
+    "billboard_featured_centre": "Required image size: ~380x380px display, square (1:1 ratio). Any image works — auto-cropped to fill. Upload a square image at least 600x600px for best quality.",
+    "billboard_side_rotating": "Required image size: ~220x220px display, square (1:1 ratio). Auto-cropped to fill. Upload a square image at least 400x400px for best quality.",
+    "sidebar": "Required image size: 320x320px display, square (1:1 ratio). Auto-cropped to fill. Upload a square image at least 600x600px for best quality.",
+    "note": "Set \"featured\": true on exactly ONE billboard ad to make it the fixed centre spot. All other active billboard ads rotate through the two side positions automatically. If no ad has featured:true, the first ad in the list becomes the centre by default."
   },
   "settings": {
     "rotation_seconds": 6,
@@ -19,6 +21,7 @@
       "url": "https://www.rexsolarenergy.com",
       "image": "rex_energy_ad.jpg",
       "active": true,
+      "featured": false,
       "expires": "31 Dec 2026"
     },
     {
@@ -30,6 +33,7 @@
       "url": "https://www.simusolar.com",
       "image": "simusolar_ad.jpg",
       "active": true,
+      "featured": false,
       "expires": "31 Dec 2026"
     },
     {
@@ -41,6 +45,7 @@
       "url": "https://kilawaenterprises.page.tl/",
       "image": "kilawa_ad.jpg",
       "active": true,
+      "featured": true,
       "expires": "31 Dec 2026"
     }
   ],
