@@ -583,7 +583,9 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
         <div style="position:relative">
           <div style="font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:8px">Advertisement</div>
           <div id="sidebarSlot" style="width:320px;height:320px;border-radius:10px;overflow:hidden;background:var(--goldP)"></div>
-          <div style="margin-top:10px">
+          <!-- Sidebar dot indicators -->
+          <div id="sidebarDots" style="display:flex;gap:5px;justify-content:center;margin-top:8px"></div>
+          <div style="margin-top:6px">
             <div id="sidebarTitle" style="font-size:13px;font-weight:700;color:var(--navy)"></div>
             <div id="sidebarTagline" style="font-size:12px;color:var(--mu);margin-top:3px;line-height:1.5"></div>
             <a id="sidebarCta" href="#" target="_blank" rel="noopener noreferrer"
@@ -1337,20 +1339,50 @@ function bbGoTo(i){
   }
 }
 
+var sbIndex = 0;
+var sbTimer = null;
+
 function renderSidebar(){
   var active = (ADS.sidebar||[]).filter(function(a){ return a.active; });
   var wrap = document.getElementById('sidebarWrap');
   if(!wrap) return;
   if(!ADS.settings.show_sidebar || !active.length){ wrap.style.display='none'; return; }
   wrap.style.display='block';
-  var ad = active[0];
+
+  /* Build dot indicators */
+  var dots = document.getElementById('sidebarDots');
+  if(dots){
+    if(active.length > 1){
+      dots.innerHTML = active.map(function(_,i){
+        return '<span onclick="sbGoTo('+i+')" id="sbdot'+i+'" style="width:7px;height:7px;border-radius:50%;background:'+(i===0?'var(--navy)':'var(--bdr)')+';cursor:pointer;display:inline-block;transition:background .2s"></span>';
+      }).join('');
+    } else {
+      dots.innerHTML = '';
+    }
+  }
+
+  showSidebarSlide(active, 0);
+
+  /* Auto-rotate */
+  if(sbTimer) clearInterval(sbTimer);
+  if(active.length > 1){
+    sbTimer = setInterval(function(){
+      sbIndex = (sbIndex + 1) % active.length;
+      showSidebarSlide(active, sbIndex);
+    }, (ADS.settings.rotation_seconds || 6) * 1000);
+  }
+}
+
+function showSidebarSlide(active, idx){
+  sbIndex = idx;
+  var ad    = active[idx];
   var slot  = document.getElementById('sidebarSlot');
   var title = document.getElementById('sidebarTitle');
   var tag   = document.getElementById('sidebarTagline');
   var cta   = document.getElementById('sidebarCta');
 
   if(slot){
-    slot.innerHTML = ''; // clear first
+    slot.innerHTML = '';
     if(!ad.image){
       var ph = document.createElement('div');
       ph.style.cssText = 'width:100%;height:100%;background:linear-gradient(135deg,var(--navy) 0%,#0d3020 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;cursor:pointer;box-sizing:border-box';
@@ -1364,11 +1396,10 @@ function renderSidebar(){
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       link.style.cssText = 'display:block;width:100%;height:100%;line-height:0';
-
       var img = document.createElement('img');
       img.src = ad.image;
       img.alt = ad.advertiser;
-      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block';
+      img.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;transition:opacity .4s';
       img.onerror = function(){
         link.innerHTML = '';
         var fb = document.createElement('div');
@@ -1380,9 +1411,28 @@ function renderSidebar(){
       slot.appendChild(link);
     }
   }
-  if(title) { title.textContent = ad.advertiser || ''; }
-  if(tag)   { tag.textContent   = ad.tagline    || ''; }
-  if(cta)   { cta.textContent = ad.cta || 'Enquire Now'; cta.href = ad.url || '#'; }
+
+  if(title) title.textContent = ad.advertiser || '';
+  if(tag)   tag.textContent   = ad.tagline    || '';
+  if(cta){  cta.textContent = ad.cta || 'Enquire Now'; cta.href = ad.url || '#'; }
+
+  /* Update dots */
+  active.forEach(function(_,i){
+    var d = document.getElementById('sbdot'+i);
+    if(d) d.style.background = i===idx ? 'var(--navy)' : 'var(--bdr)';
+  });
+}
+
+function sbGoTo(i){
+  var active = (ADS.sidebar||[]).filter(function(a){ return a.active; });
+  if(sbTimer) clearInterval(sbTimer);
+  showSidebarSlide(active, i);
+  if(active.length > 1){
+    sbTimer = setInterval(function(){
+      sbIndex = (sbIndex + 1) % active.length;
+      showSidebarSlide(active, sbIndex);
+    }, (ADS.settings.rotation_seconds || 6) * 1000);
+  }
 }
 
 /* ── Initialise all on page load ── */

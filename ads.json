@@ -72,6 +72,28 @@
       "image": "kilimofresh_ad.jpg",
       "active": true,
       "expires": "31 Dec 2026"
+    },
+    {
+      "id": "sb002",
+      "advertiser": "Rex Energy",
+      "title": "Think Solar. Think Rex.",
+      "tagline": "+255 712 603 040 · www.rexsolarenergy.com",
+      "cta": "Learn More",
+      "url": "https://www.rexsolarenergy.com",
+      "image": "rex_energy_ad.jpg",
+      "active": true,
+      "expires": "31 Dec 2026"
+    },
+    {
+      "id": "sb003",
+      "advertiser": "Simusolar Tanzania",
+      "title": "Pampu ya Maji — Umeme wa Jua tu",
+      "tagline": "0800 780 036 · 0677 028 680",
+      "cta": "Wasiliana Nasi",
+      "url": "https://www.simusolar.com",
+      "image": "simusolar_ad.jpg",
+      "active": true,
+      "expires": "31 Dec 2026"
     }
   ]
 }
