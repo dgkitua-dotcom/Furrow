@@ -525,34 +525,43 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 <!-- ═══ FULL PRICE BOARD ═══ -->
 <section class="section" id="prices">
   <div class="container">
-    <div class="section-head">
-      <div class="section-label">Market Intelligence</div>
-      <h2 class="section-title">Government Reference Price Board</h2>
-      <p class="section-sub">Official indicative prices published by MAFC, TCB, CDT and CBT. Click any crop to see regional breakdown.</p>
+    <div class="section-head" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>
+        <div class="section-label">Market Intelligence</div>
+        <h2 class="section-title">Government Reference Price Board</h2>
+        <p class="section-sub">Official indicative prices published by MAFC, TCB, CDT and CBT. Click any crop to see regional breakdown.</p>
+      </div>
+      <button id="priceBoardToggleBtn" onclick="togglePriceBoard()"
+        style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:var(--navy);color:var(--gold);border:none;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0">
+        <span id="priceBoardToggleIcon" style="font-size:14px;line-height:1">&#8722;</span>
+        <span id="priceBoardToggleLabel">Collapse</span>
+      </button>
     </div>
 
-    <!-- Filter bar -->
-    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px">
-      <label style="font-size:11px;color:var(--mu);font-weight:500">Filter:</label>
-      <select id="filterSource" onchange="renderBoard()" style="padding:6px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:12px;font-family:inherit;color:var(--tx);background:var(--cream);outline:none;cursor:pointer">
-        <option value="">All Sources</option>
-        <option>MAFC</option><option>TCB</option><option>CDT</option><option>CBT</option>
-      </select>
-      <select id="filterDir" onchange="renderBoard()" style="padding:6px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:12px;font-family:inherit;color:var(--tx);background:var(--cream);outline:none;cursor:pointer">
-        <option value="">All movements</option>
-        <option value="up">Rising &#9650;</option>
-        <option value="dn">Falling &#9660;</option>
-        <option value="flat">Stable</option>
-      </select>
-      <span style="font-size:11px;color:var(--mu);margin-left:auto" id="priceLastUpdate">Last updated: &mdash;</span>
+    <div id="priceBoardContent">
+      <!-- Filter bar -->
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px">
+        <label style="font-size:11px;color:var(--mu);font-weight:500">Filter:</label>
+        <select id="filterSource" onchange="renderBoard()" style="padding:6px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:12px;font-family:inherit;color:var(--tx);background:var(--cream);outline:none;cursor:pointer">
+          <option value="">All Sources</option>
+          <option>MAFC</option><option>TCB</option><option>CDT</option><option>CBT</option>
+        </select>
+        <select id="filterDir" onchange="renderBoard()" style="padding:6px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:12px;font-family:inherit;color:var(--tx);background:var(--cream);outline:none;cursor:pointer">
+          <option value="">All movements</option>
+          <option value="up">Rising &#9650;</option>
+          <option value="dn">Falling &#9660;</option>
+          <option value="flat">Stable</option>
+        </select>
+        <span style="font-size:11px;color:var(--mu);margin-left:auto" id="priceLastUpdate">Last updated: &mdash;</span>
+      </div>
+
+      <!-- Grouped price cards -->
+      <div id="priceBoard" style="display:flex;flex-direction:column;gap:8px"></div>
+
+      <p style="font-size:11px;color:var(--mu);margin-top:12px;text-align:right">
+        Source: MAFC &middot; TCB &middot; CDT &middot; CBT &middot; Data as at <span id="priceDate">&mdash;</span> &middot; Prices are indicative reference rates only
+      </p>
     </div>
-
-    <!-- Grouped price cards -->
-    <div id="priceBoard" style="display:flex;flex-direction:column;gap:8px"></div>
-
-    <p style="font-size:11px;color:var(--mu);margin-top:12px;text-align:right">
-      Source: MAFC &middot; TCB &middot; CDT &middot; CBT &middot; Data as at <span id="priceDate">&mdash;</span> &middot; Prices are indicative reference rates only
-    </p>
   </div>
 </section>
 
@@ -1080,6 +1089,18 @@ function toggleGroup(id){
   el.style.display   = open ? 'none'    : 'block';
   if(icon) icon.innerHTML = open ? '&#43;' : '&#8722;';
   if(icon) icon.style.transform = open ? '' : 'rotate(0deg)';
+}
+
+/* ── Master price board collapse/expand ── */
+function togglePriceBoard(){
+  var content = document.getElementById('priceBoardContent');
+  var icon    = document.getElementById('priceBoardToggleIcon');
+  var label   = document.getElementById('priceBoardToggleLabel');
+  if(!content) return;
+  var open = content.style.display !== 'none';
+  content.style.display = open ? 'none' : 'block';
+  if(icon)  icon.innerHTML  = open ? '&#43;' : '&#8722;';
+  if(label) label.textContent = open ? 'Expand' : 'Collapse';
 }
 
 /* ── News ── */
