@@ -336,6 +336,9 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   .broker-nums { flex-direction: row; }
   .tender-meta { grid-template-columns: 1fr; }
   .billboard-equal-card { max-width: 340px !important; flex: 1 1 100% !important; }
+  .news-sidebar-grid { grid-template-columns: 1fr !important; }
+  .news-sidebar-grid #sidebarWrap { position: static !important; width: 100% !important; margin-top: 24px; }
+  #sidebarSlot { width: 100% !important; }
 }
 @media (max-width: 480px) {
   .roadmap { grid-template-columns: 1fr; }
@@ -562,12 +565,12 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
       <p class="section-sub">Regulations, export levies, import bans, infrastructure updates and market advisories relevant to Tanzania&rsquo;s agricultural and transport sectors.</p>
     </div>
     <!-- News + sidebar ad layout -->
-    <div style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
+    <div class="news-sidebar-grid" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
       <div class="grid-3" id="newsGrid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
         <!-- Populated by JS -->
       </div>
-      <!-- Sidebar ad -->
-      <div id="sidebarWrap" style="display:none;width:320px;flex-shrink:0">
+      <!-- Sidebar ad + quick links — sticky so it stays aligned as news list scrolls -->
+      <div id="sidebarWrap" style="display:none;width:320px;flex-shrink:0;position:sticky;top:90px">
         <div style="position:relative">
           <div style="font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:8px">Advertisement</div>
           <div id="sidebarSlot" style="width:320px;height:320px;border-radius:10px;overflow:hidden;background:var(--goldP)"></div>
@@ -578,6 +581,23 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
               style="display:inline-block;margin-top:10px;padding:7px 16px;background:var(--navy);color:var(--gold);border-radius:6px;font-size:12px;font-weight:700;text-decoration:none">
             </a>
           </div>
+        </div>
+
+        <!-- Quick links card — fills the space below the ad -->
+        <div style="margin-top:24px;background:var(--cream);border:1px solid var(--bdr);border-radius:10px;padding:18px">
+          <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Quick Links</div>
+          <a href="#prices" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
+            <span>Live Price Board</span><span style="color:var(--gold)">&rarr;</span>
+          </a>
+          <a href="#tenders" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
+            <span>Open Tenders</span><span style="color:var(--gold)">&rarr;</span>
+          </a>
+          <a href="#platform" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
+            <span>The FURROW Platform</span><span style="color:var(--gold)">&rarr;</span>
+          </a>
+          <a href="#faq" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;font-size:12px;color:var(--tx);text-decoration:none">
+            <span>Frequently Asked Questions</span><span style="color:var(--gold)">&rarr;</span>
+          </a>
         </div>
       </div>
     </div>
