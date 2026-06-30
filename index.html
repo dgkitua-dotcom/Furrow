@@ -461,48 +461,42 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
     <div style="text-align:center;margin-bottom:14px">
       <span style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">Advertisement</span>
     </div>
-    <div class="billboard-3up" style="display:flex;align-items:stretch;justify-content:center;gap:16px;max-width:1000px;margin:0 auto;flex-wrap:wrap">
+    <div class="billboard-3up" style="display:flex;align-items:stretch;justify-content:center;gap:20px;flex-wrap:wrap">
 
       <!-- LEFT — rotating side ad -->
-      <div id="bbSideLeft" class="billboard-side-card billboard-equal-card" style="flex:1;min-width:260px;max-width:300px;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);cursor:pointer">
+      <div id="bbSideLeft" class="billboard-side-card billboard-equal-card" style="flex:1 1 0;min-width:260px;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);cursor:pointer;display:flex;flex-direction:column">
         <div id="bbSideLeftImg" style="width:100%;aspect-ratio:1/1;overflow:hidden;line-height:0;background:var(--goldP)"></div>
-        <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
-          <div style="flex:1;min-width:0">
-            <div id="bbSideLeftTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
-            <div id="bbSideLeftTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
-          </div>
+        <div style="padding:16px 18px 18px;flex:1;display:flex;flex-direction:column">
+          <div id="bbSideLeftTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px"></div>
+          <div id="bbSideLeftTagline" style="font-size:12px;color:var(--mu);line-height:1.5;margin-bottom:12px;flex:1"></div>
           <a id="bbSideLeftCta" href="#" target="_blank" rel="noopener noreferrer"
-            style="padding:9px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+            style="display:inline-block;text-align:center;padding:10px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">
           </a>
         </div>
       </div>
 
       <!-- CENTRE — fixed premium slot, never rotates, same size as sides -->
-      <div class="billboard-card billboard-equal-card" style="flex:1;min-width:260px;max-width:300px;background:#fff;border:1px solid var(--gold);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);position:relative">
+      <div class="billboard-card billboard-equal-card" style="flex:1 1 0;min-width:260px;background:#fff;border:1px solid var(--gold);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);position:relative;display:flex;flex-direction:column">
         <div style="position:absolute;top:10px;right:10px;z-index:2;background:var(--gold);color:var(--navy);font-size:8px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px">Featured</div>
         <div id="billboardSlot" class="billboard-img-slot" style="width:100%;aspect-ratio:1/1;overflow:hidden;cursor:pointer;line-height:0;background:var(--goldP);display:flex;align-items:center;justify-content:center">
         </div>
-        <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
-          <div style="flex:1;min-width:0">
-            <div id="billboardTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
-            <div id="billboardTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
-          </div>
+        <div style="padding:16px 18px 18px;flex:1;display:flex;flex-direction:column">
+          <div id="billboardTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px"></div>
+          <div id="billboardTagline" style="font-size:12px;color:var(--mu);line-height:1.5;margin-bottom:12px;flex:1"></div>
           <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
-            style="padding:9px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+            style="display:inline-block;text-align:center;padding:10px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">
           </a>
         </div>
       </div>
 
       <!-- RIGHT — rotating side ad -->
-      <div id="bbSideRight" class="billboard-side-card billboard-equal-card" style="flex:1;min-width:260px;max-width:300px;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);cursor:pointer">
+      <div id="bbSideRight" class="billboard-side-card billboard-equal-card" style="flex:1 1 0;min-width:260px;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);cursor:pointer;display:flex;flex-direction:column">
         <div id="bbSideRightImg" style="width:100%;aspect-ratio:1/1;overflow:hidden;line-height:0;background:var(--goldP)"></div>
-        <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
-          <div style="flex:1;min-width:0">
-            <div id="bbSideRightTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
-            <div id="bbSideRightTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
-          </div>
+        <div style="padding:16px 18px 18px;flex:1;display:flex;flex-direction:column">
+          <div id="bbSideRightTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px"></div>
+          <div id="bbSideRightTagline" style="font-size:12px;color:var(--mu);line-height:1.5;margin-bottom:12px;flex:1"></div>
           <a id="bbSideRightCta" href="#" target="_blank" rel="noopener noreferrer"
-            style="padding:9px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+            style="display:inline-block;text-align:center;padding:10px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">
           </a>
         </div>
       </div>
