@@ -108,6 +108,40 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .cs-form input:focus { border-color: var(--gold); }
 .cs-notify { margin-top: 10px; font-size: 11px; color: rgba(255,255,255,.3); }
 
+/* ── News Modal — portrait card with blurred backdrop ── */
+.news-modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 9998;
+  align-items: center; justify-content: center; padding: 24px;
+  background: rgba(11,28,46,.55);
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.news-modal-overlay.open { display: flex; animation: fadeInModal .2s ease; }
+@keyframes fadeInModal { from { opacity: 0; } to { opacity: 1; } }
+.news-modal-card {
+  background: #fff; border-radius: 16px; max-width: 460px; width: 100%;
+  max-height: 85vh; overflow-y: auto; position: relative;
+  box-shadow: 0 24px 70px rgba(0,0,0,.35);
+  animation: slideUpModal .25s ease;
+  padding: 36px 30px 30px;
+}
+@keyframes slideUpModal { from { transform: translateY(24px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+.news-modal-close {
+  position: absolute; top: 16px; right: 16px; width: 32px; height: 32px;
+  border-radius: 50%; border: none; background: var(--cream); color: var(--mu);
+  font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: all .18s;
+}
+.news-modal-close:hover { background: var(--navy); color: var(--gold); }
+.news-modal-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+.news-modal-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--navy); margin-bottom: 18px; line-height: 1.3; }
+.news-modal-body { font-size: 14px; color: var(--tx); line-height: 1.85; margin-bottom: 20px; }
+.news-modal-source { font-size: 12px; color: var(--mu); padding-top: 16px; border-top: 1px solid var(--bdr); display: flex; align-items: center; gap: 6px; }
+.news-modal-source::before { content: '—'; color: var(--gold); font-weight: 700; }
+@media (max-width: 480px) {
+  .news-modal-card { padding: 30px 22px 24px; max-height: 90vh; }
+  .news-modal-title { font-size: 20px; }
+}
+
 /* ── TICKER ── */
 .ticker-wrap { background: var(--deep); border-bottom: 1px solid rgba(201,168,76,.2); overflow: hidden; padding: 7px 0; position: sticky; top: 55px; z-index: 998; }
 .ticker-label { position: absolute; left: 0; top: 0; bottom: 0; background: var(--navy); border-right: 1px solid var(--gold); display: flex; align-items: center; padding: 0 14px; font-size: 8px; font-weight: 700; color: var(--gold); letter-spacing: .12em; text-transform: uppercase; z-index: 2; white-space: nowrap; }
@@ -324,6 +358,17 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
       <button class="btn btn-gold btn-sm" onclick="notifyMe()">Notify Me</button>
     </div>
     <p class="cs-notify" id="csMsg"></p>
+  </div>
+</div>
+
+<!-- ═══ NEWS MODAL — portrait card, blurred backdrop ═══ -->
+<div class="news-modal-overlay" id="newsModalOverlay" onclick="closeNewsModal(event)">
+  <div class="news-modal-card">
+    <button class="news-modal-close" onclick="closeNewsModal()">&#x2715;</button>
+    <div class="news-modal-meta" id="newsModalMeta"></div>
+    <div class="news-modal-title" id="newsModalTitle"></div>
+    <div class="news-modal-body" id="newsModalBody"></div>
+    <div class="news-modal-source" id="newsModalSource"></div>
   </div>
 </div>
 
@@ -998,40 +1043,34 @@ function buildNews(){
   if(!NEWS.length){ el.innerHTML='<div style="padding:24px;color:var(--mu);font-size:13px">Loading news...</div>'; return; }
   var tagColors = { blue:'badge-blue', gray:'badge-gray', red:'badge-red', green:'badge-green' };
   el.innerHTML = NEWS.map(function(n, i){
-    var id = 'news_'+i;
-    return '<div class="news-card" style="gap:0">'
-      // Header — always visible
-      +'<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding-bottom:10px">'
-        +'<div style="flex:1">'
-          +'<div class="news-meta" style="margin-bottom:8px"><span class="news-date">'+n.date+'</span><span class="badge '+(tagColors[n.color]||'badge-gray')+'">'+n.tag+'</span></div>'
-          +'<div class="news-title">'+n.title+'</div>'
-        +'</div>'
-        // Expand toggle
-        +'<button onclick="toggleNews(\''+id+'\')" id="'+id+'_btn" '
-        +'style="width:28px;height:28px;border-radius:50%;border:1.5px solid var(--bdr);background:#fff;cursor:pointer;font-size:16px;color:var(--mu);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:2px;transition:all .18s;font-weight:300;line-height:1" '
-        +'title="Read more">&#43;</button>'
-      +'</div>'
-      // Body — hidden by default
-      +'<div id="'+id+'" style="display:none;padding-top:10px;border-top:1px solid var(--bdr)">'
-        +'<div class="news-body" style="margin-bottom:10px">'+n.body+'</div>'
-        +'<div class="news-source">'+n.source+'</div>'
-      +'</div>'
+    return '<div class="news-card">'
+      +'<div class="news-meta" style="margin-bottom:8px"><span class="news-date">'+n.date+'</span><span class="badge '+(tagColors[n.color]||'badge-gray')+'">'+n.tag+'</span></div>'
+      +'<div class="news-title">'+n.title+'</div>'
+      +'<button onclick="openNewsModal('+i+')" '
+      +'style="align-self:flex-start;margin-top:8px;width:30px;height:30px;border-radius:50%;border:1.5px solid var(--bdr);background:#fff;cursor:pointer;font-size:17px;color:var(--mu);display:flex;align-items:center;justify-content:center;transition:all .18s;font-weight:300;line-height:1" '
+      +'onmouseover="this.style.background=\'var(--navy)\';this.style.color=\'var(--gold)\';this.style.borderColor=\'var(--navy)\'" '
+      +'onmouseout="this.style.background=\'#fff\';this.style.color=\'var(--mu)\';this.style.borderColor=\'var(--bdr)\'" '
+      +'title="Read more">&#43;</button>'
     +'</div>';
   }).join('');
 }
 
-function toggleNews(id){
-  var el  = document.getElementById(id);
-  var btn = document.getElementById(id+'_btn');
-  if(!el) return;
-  var open = el.style.display !== 'none';
-  el.style.display = open ? 'none' : 'block';
-  if(btn){
-    btn.innerHTML = open ? '&#43;' : '&#8722;';
-    btn.style.background      = open ? '#fff'         : 'var(--navy)';
-    btn.style.color           = open ? 'var(--mu)'    : 'var(--gold)';
-    btn.style.borderColor     = open ? 'var(--bdr)'   : 'var(--navy)';
-  }
+function openNewsModal(i){
+  var n = NEWS[i]; if(!n) return;
+  var tagColors = { blue:'badge-blue', gray:'badge-gray', red:'badge-red', green:'badge-green' };
+  document.getElementById('newsModalMeta').innerHTML =
+    '<span class="news-date">'+n.date+'</span><span class="badge '+(tagColors[n.color]||'badge-gray')+'">'+n.tag+'</span>';
+  document.getElementById('newsModalTitle').textContent = n.title;
+  document.getElementById('newsModalBody').textContent  = n.body;
+  document.getElementById('newsModalSource').textContent = n.source;
+  document.getElementById('newsModalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeNewsModal(e){
+  if(e && e.target !== document.getElementById('newsModalOverlay') && e.type === 'click') return;
+  document.getElementById('newsModalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 /* ── Tenders ── */
@@ -1267,7 +1306,12 @@ function notifyMe(){
   if(!em||!em.includes('@')){ if(msg) msg.textContent='Please enter a valid email address.'; return; }
   if(msg){ msg.textContent='Thank you. We will notify you when FURROW launches.'; msg.style.color='#4ADE80'; }
 }
-document.addEventListener('keydown', function(e){ if(e.key==='Escape') document.getElementById('csOverlay').classList.remove('open'); });
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape'){
+    document.getElementById('csOverlay').classList.remove('open');
+    closeNewsModal();
+  }
+});
 </script>
 
 </body>
