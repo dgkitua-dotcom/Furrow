@@ -107,7 +107,8 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .cs-form input::placeholder { color: rgba(255,255,255,.3); }
 .cs-form input:focus { border-color: var(--gold); }
 .cs-notify { margin-top: 10px; font-size: 11px; color: rgba(255,255,255,.3); }
-.billboard-side-card:hover { opacity: 1 !important; transform: scale(.97) !important; }
+.billboard-equal-card { transition: box-shadow .2s; }
+.billboard-equal-card:hover { box-shadow: 0 8px 28px rgba(11,28,46,.14); }
 
 /* ── News Modal — portrait card with blurred backdrop ── */
 .news-modal-overlay {
@@ -334,8 +335,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   .footer-grid { grid-template-columns: 1fr; }
   .broker-nums { flex-direction: row; }
   .tender-meta { grid-template-columns: 1fr; }
-  .billboard-side-card { display: none; }
-  .billboard-card { max-width: 320px !important; flex: 1 !important; }
+  .billboard-equal-card { max-width: 340px !important; flex: 1 1 100% !important; }
 }
 @media (max-width: 480px) {
   .roadmap { grid-template-columns: 1fr; }
@@ -455,43 +455,55 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   </div>
 </section>
 
-<!-- ═══ BILLBOARD AD — 3-card carousel: fixed centre premium + rotating sides ═══ -->
+<!-- ═══ BILLBOARD AD — 3-card carousel: identical size, centre fixed, sides rotate ═══ -->
 <div id="billboardWrap" style="display:none;background:var(--cream);padding:28px 0">
   <div class="container">
     <div style="text-align:center;margin-bottom:14px">
       <span style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">Advertisement</span>
     </div>
-    <div class="billboard-3up" style="display:flex;align-items:center;justify-content:center;gap:16px;max-width:920px;margin:0 auto">
+    <div class="billboard-3up" style="display:flex;align-items:stretch;justify-content:center;gap:16px;max-width:1000px;margin:0 auto;flex-wrap:wrap">
 
       <!-- LEFT — rotating side ad -->
-      <div id="bbSideLeft" class="billboard-side-card" style="flex:1;max-width:220px;background:#fff;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(11,28,46,.06);opacity:.75;transform:scale(.92);transition:opacity .4s,transform .4s;cursor:pointer">
+      <div id="bbSideLeft" class="billboard-side-card billboard-equal-card" style="flex:1;min-width:260px;max-width:300px;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);cursor:pointer">
         <div id="bbSideLeftImg" style="width:100%;aspect-ratio:1/1;overflow:hidden;line-height:0;background:var(--goldP)"></div>
-        <div style="padding:10px 12px">
-          <div id="bbSideLeftTitle" style="font-size:11px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+        <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+          <div style="flex:1;min-width:0">
+            <div id="bbSideLeftTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
+            <div id="bbSideLeftTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
+          </div>
+          <a id="bbSideLeftCta" href="#" target="_blank" rel="noopener noreferrer"
+            style="padding:9px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+          </a>
         </div>
       </div>
 
-      <!-- CENTRE — fixed premium slot, never rotates -->
-      <div class="billboard-card" style="flex:1.4;max-width:380px;background:#fff;border:1px solid var(--gold);border-radius:14px;overflow:hidden;box-shadow:0 8px 28px rgba(11,28,46,.12);position:relative">
+      <!-- CENTRE — fixed premium slot, never rotates, same size as sides -->
+      <div class="billboard-card billboard-equal-card" style="flex:1;min-width:260px;max-width:300px;background:#fff;border:1px solid var(--gold);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);position:relative">
         <div style="position:absolute;top:10px;right:10px;z-index:2;background:var(--gold);color:var(--navy);font-size:8px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px">Featured</div>
         <div id="billboardSlot" class="billboard-img-slot" style="width:100%;aspect-ratio:1/1;overflow:hidden;cursor:pointer;line-height:0;background:var(--goldP);display:flex;align-items:center;justify-content:center">
         </div>
-        <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
           <div style="flex:1;min-width:0">
             <div id="billboardTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
             <div id="billboardTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
           </div>
           <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
-            style="padding:9px 20px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+            style="padding:9px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
           </a>
         </div>
       </div>
 
       <!-- RIGHT — rotating side ad -->
-      <div id="bbSideRight" class="billboard-side-card" style="flex:1;max-width:220px;background:#fff;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(11,28,46,.06);opacity:.75;transform:scale(.92);transition:opacity .4s,transform .4s;cursor:pointer">
+      <div id="bbSideRight" class="billboard-side-card billboard-equal-card" style="flex:1;min-width:260px;max-width:300px;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);cursor:pointer">
         <div id="bbSideRightImg" style="width:100%;aspect-ratio:1/1;overflow:hidden;line-height:0;background:var(--goldP)"></div>
-        <div style="padding:10px 12px">
-          <div id="bbSideRightTitle" style="font-size:11px;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis"></div>
+        <div style="padding:16px 18px 18px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+          <div style="flex:1;min-width:0">
+            <div id="bbSideRightTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px"></div>
+            <div id="bbSideRightTagline" style="font-size:12px;color:var(--mu);line-height:1.5"></div>
+          </div>
+          <a id="bbSideRightCta" href="#" target="_blank" rel="noopener noreferrer"
+            style="padding:9px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;white-space:nowrap;text-decoration:none;flex-shrink:0">
+          </a>
         </div>
       </div>
 
@@ -1251,15 +1263,23 @@ function showSideAds(sideAds, idx){
   var leftAd  = sideAds[idx % sideAds.length];
   var rightAd = sideAds[(idx + 1) % sideAds.length];
 
-  fillAdSlot('bbSideLeftImg', leftAd, false);
-  document.getElementById('bbSideLeftTitle').textContent = leftAd.advertiser || '';
-  var leftCard = document.getElementById('bbSideLeft');
-  leftCard.onclick = function(){ if(leftAd.url) window.open(leftAd.url,'_blank'); };
+  fillAdSlot('bbSideLeftImg', leftAd, true);
+  document.getElementById('bbSideLeftTitle').textContent    = leftAd.advertiser || '';
+  document.getElementById('bbSideLeftTagline').textContent  = leftAd.title || '';
+  var leftCta = document.getElementById('bbSideLeftCta');
+  if(leftCta){ leftCta.textContent = leftAd.cta || 'Enquire Now'; leftCta.href = leftAd.url || '#'; }
+  document.getElementById('bbSideLeft').onclick = function(e){
+    if(e.target.tagName !== 'A' && leftAd.url) window.open(leftAd.url,'_blank');
+  };
 
-  fillAdSlot('bbSideRightImg', rightAd, false);
-  document.getElementById('bbSideRightTitle').textContent = rightAd.advertiser || '';
-  var rightCard = document.getElementById('bbSideRight');
-  rightCard.onclick = function(){ if(rightAd.url) window.open(rightAd.url,'_blank'); };
+  fillAdSlot('bbSideRightImg', rightAd, true);
+  document.getElementById('bbSideRightTitle').textContent   = rightAd.advertiser || '';
+  document.getElementById('bbSideRightTagline').textContent = rightAd.title || '';
+  var rightCta = document.getElementById('bbSideRightCta');
+  if(rightCta){ rightCta.textContent = rightAd.cta || 'Enquire Now'; rightCta.href = rightAd.url || '#'; }
+  document.getElementById('bbSideRight').onclick = function(e){
+    if(e.target.tagName !== 'A' && rightAd.url) window.open(rightAd.url,'_blank');
+  };
 
   // Update dots
   sideAds.forEach(function(_,i){
