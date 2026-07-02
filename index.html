@@ -1155,6 +1155,13 @@ function buildTenders(){
     var statusBadge = t.status==='open'
       ? '<span class="badge badge-green">Open</span>'
       : '<span class="badge" style="background:#FEF3C7;color:#7C5500">Closing Soon</span>';
+    var linkBtn = t.url
+      ? '<a href="'+t.url+'" target="_blank" rel="noopener noreferrer" '
+        +'style="display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:var(--navy);color:var(--gold);border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;transition:background .18s" '
+        +'onmouseover="this.style.background=\'var(--gold)\';this.style.color=\'var(--navy)\'" '
+        +'onmouseout="this.style.background=\'var(--navy)\';this.style.color=\'var(--gold)\'">'
+        +'View Full Tender &#8599;</a>'
+      : '';
     return '<div class="tender-card">'
       +'<div class="tender-ref">'+t.ref+'</div>'
       +'<div class="tender-title">'+t.title+'</div>'
@@ -1166,7 +1173,7 @@ function buildTenders(){
       +'<div class="tender-meta-item"><span class="tender-meta-label">Eligibility:</span><span>'+t.eligibility+'</span></div>'
       +'<div class="tender-meta-item"><span class="tender-meta-label">Notes:</span><span>'+t.notes+'</span></div>'
       +'</div>'
-      +'<div class="tender-status">'+statusBadge+'</div>'
+      +'<div class="tender-status" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px">'+statusBadge+linkBtn+'</div>'
       +'</div>';
   }).join('');
 }
