@@ -1,6 +1,30 @@
 {
-  "updated": "30 Jun 2026",
+  "updated": "2 Jul 2026",
   "news": [
+    {
+      "date": "2 Jul 2026",
+      "tag": "Investment",
+      "color": "green",
+      "title": "FINAS 2026 Summit spotlights Africa's $100 billion agricultural financing gap",
+      "body": "The Financing Agri-Food Systems Sustainably (FINAS) 2026 Summit concluded today in Nairobi, bringing together over 1,000 policymakers, investors and agribusiness leaders to address Africa's estimated $100 billion annual agricultural financing gap. The summit emphasised the urgent need to unlock investment to combat rising production costs, climate change and heavy reliance on food imports. For Tanzania's agricultural sector, the discussions highlight a critical opportunity to attract institutional capital into the supply chain, from farm-level financing to logistics infrastructure.",
+      "source": "People's Daily / FINAS 2026"
+    },
+    {
+      "date": "1 Jul 2026",
+      "tag": "Policy",
+      "color": "green",
+      "title": "NAESA officially launches — Tanzania's new National Agricultural Extension Services Agency begins operations",
+      "body": "As of 1 July 2026, the newly established National Agricultural Extension Services Agency (NAESA) has officially begun operations. The executive agency is designed to overhaul Tanzania's fragmented agricultural extension services by setting national standards, coordinating officer deployment across all regions, and integrating digital tools and data-driven targeting. NAESA represents the most significant institutional reform in Tanzania's agricultural extension architecture in two decades, with direct implications for standardised protocols on seeds, soils, pest management and harvest timing for farmers nationwide.",
+      "source": "TanzaniaInvest / Kilimo Kwanza"
+    },
+    {
+      "date": "1 Jul 2026",
+      "tag": "Budget & Targets",
+      "color": "green",
+      "title": "Tanzania's 2026/27 Agriculture Budget targets 32.4% surge in cash crop production and major avocado export push",
+      "body": "Tanzania's 2026/27 Agriculture Budget sets aggressive growth targets across the sector. The Ministry of Agriculture is aiming for a 32.4% increase in traditional cash crop production, targeting over 2.1 million tonnes. Avocado has been positioned as a major strategic export crop, with a production target of 235,000 tonnes and an export target of 40,000 tonnes, backed by distribution of over 1.7 million subsidised seedlings to farmers nationwide. The targets signal significant upcoming volume growth for transporters and new high-value export opportunities for investors and suppliers monitoring the supply chain.",
+      "source": "TanzaniaInvest"
+    },
     {
       "date": "30 Jun 2026",
       "tag": "Cashew Industry",
@@ -10,12 +34,20 @@
       "source": "The Citizen"
     },
     {
-      "date": "1 Jul 2026",
-      "tag": "Budget & Targets",
+      "date": "Jun 2026",
+      "tag": "Coffee",
+      "color": "blue",
+      "title": "Tanzania coffee crop ramping up — slightly higher Arabica and Robusta volumes forecast for 2026",
+      "body": "The mid-year 2026 East Africa harvest update indicates that Tanzania's coffee crop is beginning to ramp up, with forecasts showing slightly higher Arabica and Robusta volumes compared to last year. This contrasts with a lower harvest in Rwanda and delayed Ugandan Robusta, positioning Tanzania favourably in the regional supply picture. The volume increase has direct implications for transporters planning logistics capacity and off-takers forecasting batch procurement for the coming months.",
+      "source": "Sucafina — East Africa Mid-Year Harvest Update 2026"
+    },
+    {
+      "date": "Jun 2026",
+      "tag": "Dairy",
       "color": "green",
-      "title": "Tanzania's 2026/27 Agriculture Budget targets 32.4% surge in cash crop production and major avocado export push",
-      "body": "Tanzania's 2026/27 Agriculture Budget, taking effect today, sets aggressive growth targets across the sector. The Ministry of Agriculture is aiming for a 32.4% increase in traditional cash crop production, targeting over 2.1 million tonnes. Avocado has been positioned as a major strategic export crop, with a production target of 235,000 tonnes and an export target of 40,000 tonnes, backed by distribution of over 1.7 million subsidised seedlings to farmers nationwide. The targets signal significant upcoming volume growth for transporters and new high-value export opportunities for investors and suppliers monitoring the supply chain.",
-      "source": "TanzaniaInvest"
+      "title": "Tanga dairy farmers report 50% milk production boost from Maziwa Faida project",
+      "body": "The EUR 3 million Maziwa Faida (Successful Dairy) project in the Tanga region has successfully supported 3,600 smallholder dairy farmers. By focusing on sustainable forage solutions that provide feed throughout the dry season, participating farmers have reported milk production increases of over 50%, significantly boosting household incomes and system resilience. The project demonstrates the direct impact of targeted input optimisation on smallholder productivity and represents a model for replication across other regions.",
+      "source": "Teagasc Ireland"
     },
     {
       "date": "29 Jun 2026",
@@ -26,14 +58,6 @@
       "source": "U.S. Department of Agriculture (USDA) Official Press Release"
     },
     {
-      "date": "24 Jun 2026",
-      "tag": "Infrastructure Tender",
-      "color": "gray",
-      "title": "Ministry of Agriculture seeks Environmental and Social Assessment for John Mwakangale Nanenane International Agricultural Trade Centre",
-      "body": "A new high-value agricultural infrastructure tender has been published on the National e-Procurement System of Tanzania (NeST). The Ministry of Agriculture is seeking a qualified consultant to conduct an Environmental and Social Impact Assessment (ESIA) for the development of the John Mwakangale Nanenane International Agricultural Trade Centre. The tender represents a significant upcoming infrastructure investment in Tanzania's agricultural trade capacity, and is open to qualified contractors, engineers and environmental consultancy firms.",
-      "source": "NeST — National e-Procurement System of Tanzania"
-    },
-    {
       "date": "Jun 2026",
       "tag": "Agri-Machinery",
       "color": "blue",
@@ -42,43 +66,35 @@
       "source": "Fortune Business Insights (June 2026 Market Report) & Glavpahar Agricultural Machinery News"
     },
     {
-      "date": "Jun 2026",
-      "tag": "Regulation",
-      "color": "blue",
-      "title": "TASAC reminds stakeholders to comply with Inland Clearance Depot Tariff Order GN. 459 of 2022",
-      "body": "Tanzania Shipping Agencies Corporation (TASAC) has reminded all Port Terminal Operators, ICDs, Shipping Agents, Clearing and Forwarding Agents and Consignees to strictly comply with GN. No. 459 of 2022. Regulation 11 requires the party responsible for container transfer delays to bear associated storage costs. Regulation 19 requires Port Terminals or ICDs to compensate consignees for delays where the consignee was ready to take delivery. All regulated service providers must also maintain internal complaint handling mechanisms in line with GN. No. 338 of 2018.",
-      "source": "TASAC / Ministry of Transport"
-    },
-    {
-      "date": "23 Apr 2026",
-      "tag": "Shipping Notice",
-      "color": "blue",
-      "title": "TASAC prohibits demurrage charges on delayed empty container returns caused by ECD operators",
-      "body": "TASAC has directed that shipping agents and related parties are strictly prohibited from charging demurrage or storage penalties on containers where delay in return is caused by refusal or inability of an Empty Container Depot to receive the container, congestion or capacity limitations at the ECD, or any factor beyond the control of the consignee or clearing agent. ECD operators are required to ensure timely receipt, operate within approved capacity, and coordinate with shipping agents. Shipping agents must provide alternative receiving arrangements where the designated ECD is unable to accept containers. This notice takes effect immediately upon issuance.",
-      "source": "TASAC / Ministry of Transport"
-    },
-    {
       "date": "22 May 2026",
       "tag": "Port Levy",
       "color": "green",
       "title": "TPA reduces Port Infrastructure Development (PID) Levy from 9% to 4.5% effective 1 July 2026",
-      "body": "Tanzania Private Sector Federation (TPSF) has announced that Tanzania Ports Authority (TPA) has officially reviewed and reduced the Port Infrastructure Development Levy from the initially proposed 9% to 4.5% of customs duty, effective 1st July 2026. This represents a 50% reduction following private sector consultations convened by TPSF on 17th March 2026. The levy aims to support port modernisation and expansion programmes estimated at TZS 16.1 trillion. The revised rate lowers the anticipated cost burden on importers by half while enabling TPA to mobilise resources for its infrastructure investment programme.",
+      "body": "Tanzania Private Sector Federation (TPSF) has announced that Tanzania Ports Authority (TPA) has officially reviewed and reduced the Port Infrastructure Development Levy from the initially proposed 9% to 4.5% of customs duty, effective 1st July 2026. This represents a 50% reduction following private sector consultations. The levy aims to support port modernisation and expansion programmes estimated at TZS 16.1 trillion. The revised rate lowers the anticipated cost burden on importers by half while enabling TPA to mobilise resources for its infrastructure investment programme.",
       "source": "TPSF / Tanzania Ports Authority"
     },
     {
       "date": "Jun 2026",
       "tag": "NSSF Amnesty",
       "color": "gray",
-      "title": "NSSF offers general amnesty to employers with outstanding statutory contribution arrears",
-      "body": "The National Social Security Fund (NSSF) has announced a general amnesty to all employers with outstanding arrears of statutory contributions and penalties. Employers who remit all outstanding principal amounts on or before 31st August 2026 and remain current by 31st December 2026 will be relieved of 100% of overdue penalties. Those remitting by 31st October 2026 will receive 75% relief, and those remitting by 31st December 2026 receive 50% relief. Employers who are already compliant as of 31st May 2026 and remain current through 31st December 2026 also qualify for 100% penalty relief. The amnesty period runs from 1st June 2026 to 31st December 2026. For enquiries call toll-free: 0800116773.",
+      "title": "NSSF offers general amnesty on penalty arrears — deadline 31 December 2026",
+      "body": "The National Social Security Fund (NSSF) has announced a general amnesty to all employers with outstanding arrears of statutory contributions and penalties. Employers who remit all outstanding principal amounts on or before 31st August 2026 and remain current by 31st December 2026 will be relieved of 100% of overdue penalties. Those remitting by 31st October 2026 receive 75% relief, and those remitting by 31st December 2026 receive 50% relief. The amnesty period runs from 1st June to 31st December 2026. Toll-free: 0800116773.",
       "source": "NSSF — Public Relations and Member Education Unit"
+    },
+    {
+      "date": "23 Apr 2026",
+      "tag": "Shipping Notice",
+      "color": "blue",
+      "title": "TASAC prohibits demurrage charges on delayed empty container returns caused by ECD operators",
+      "body": "TASAC has directed that shipping agents and related parties are strictly prohibited from charging demurrage or storage penalties on containers where delay in return is caused by refusal or inability of an Empty Container Depot to receive the container, congestion or capacity limitations at the ECD, or any factor beyond the control of the consignee or clearing agent. ECD operators are required to ensure timely receipt, operate within approved capacity, and coordinate with shipping agents. This notice takes effect immediately upon issuance.",
+      "source": "TASAC / Ministry of Transport"
     },
     {
       "date": "4 Jun 2026",
       "tag": "Import Compliance",
       "color": "red",
-      "title": "TBS requires Pre-Shipment Verification of Conformity for all regulated goods from China, Hong Kong, Taiwan, Mongolia and Macau",
-      "body": "Tanzania Bureau of Standards (TBS) has reminded all importers of TBS-regulated goods from China Mainland, Hong Kong, Taiwan, Mongolia and Macau that all such goods must undergo Pre-Shipment Verification of Conformity to Standards (PVoC) in the country of export before shipment to Tanzania. TBS has contracted five authorised inspection agents: CCIC, Intertek International Limited, SGS, TUV Rheinland Middle East, and World Standardization Certification & Testing Group. Importers must liaise with these agents to obtain a Certificate of Conformity (CoC) before shipment. Failure to comply will result in inspection upon arrival and a penalty equal to 15% of the value of the goods. Visit www.tbs.go.tz or call 0800 110 827.",
+      "title": "TBS requires Pre-Shipment Verification of Conformity for goods from China, Hong Kong, Taiwan, Mongolia and Macau",
+      "body": "Tanzania Bureau of Standards (TBS) has reminded all importers of TBS-regulated goods from China Mainland, Hong Kong, Taiwan, Mongolia and Macau that all such goods must undergo Pre-Shipment Verification of Conformity to Standards (PVoC) in the country of export before shipment to Tanzania. TBS has contracted five authorised inspection agents: CCIC, Intertek International, SGS, TUV Rheinland Middle East, and World Standardization Certification and Testing Group. Importers must obtain a Certificate of Conformity (CoC) before shipment. Failure to comply results in a penalty equal to 15% of the value of the goods. Visit www.tbs.go.tz or call 0800 110 827.",
       "source": "Tanzania Bureau of Standards (TBS) / Ministry of Industry and Trade"
     }
   ]

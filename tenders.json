@@ -1,4 +1,71 @@
 {
-  "updated": "30 Jun 2026",
-  "tenders": []
+  "updated": "2 Jul 2026",
+  "tenders": [
+    {
+      "ref": "CROP-TRUST/POD/2026",
+      "body": "The Crop Trust / Power of Diversity Funding Facility",
+      "title": "Power of Diversity Grants Program — Climate-Resilient Opportunity Crops (Kenya, Tanzania, Uganda)",
+      "volume": "EUR 2.2 million total fund",
+      "deadline": "3 Jul 2026",
+      "value": "USD 100,000 – 200,000 per project",
+      "eligibility": "Organisations with annual average revenue (2023–2025) exceeding their proposed project budget. Open to NGOs, agri-businesses, research institutions and farmer organisations across Kenya, Tanzania and Uganda.",
+      "status": "closing",
+      "notes": "Grant program targeting underutilised, climate-resilient crops. Projects must focus on at least one of: productivity improvement via good agricultural practices and seed systems, post-harvest processing, or market access. Applications via Crop Trust portal: croptrust.org/news-events/news/power-of-diversity-grants. Enquiries: powerofdiversitygrants@croptrust.org"
+    },
+    {
+      "ref": "FAOTZ/ITB/2026/016",
+      "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
+      "title": "Supply and Installation of Walk-In Cold Rooms and Cold Chain Equipment",
+      "volume": "As per bid specifications",
+      "deadline": "5 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Registered suppliers and installation contractors with cold chain and refrigeration experience",
+      "status": "open",
+      "notes": "Invitation to Bid (ITB) for supply and physical installation of walk-in cold rooms and related cold chain equipment to support agricultural and fisheries preservation across Tanzania. TZT Ref No.: 143114122. Contact FAO Tanzania procurement portal for full bid documents."
+    },
+    {
+      "ref": "FAOTZ/RFP/2026/004",
+      "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania) / AFR100 Initiative",
+      "title": "Sustainable Landscape Restoration and Livelihood Development — RFP",
+      "volume": "As per RFP specifications",
+      "deadline": "3 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Qualified consultancy firms and organisations with experience in landscape restoration, agroforestry and rural livelihood development",
+      "status": "closing",
+      "notes": "Request for Proposal under the AFR100 Initiative focusing on developing livelihoods through the restoration of sustainable agricultural landscapes in Tanzania. Full RFP available via Tanzania Tenders portal: tanzaniatenders.com"
+    },
+    {
+      "ref": "FAOTZ/RFP/2026/005",
+      "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
+      "title": "Agricultural Gender Policy Assessment — Individual Consultancy",
+      "volume": "As per RFP specifications",
+      "deadline": "12 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Individual consultants or consultancy firms with demonstrated expertise in gender policy, agricultural policy analysis and Tanzania's regulatory environment",
+      "status": "open",
+      "notes": "Request for Proposal (RFP) seeking a qualified consultant to conduct a comprehensive assessment of gender policies within local agricultural frameworks in Tanzania. Full RFP available via Tanzania Tenders portal: tanzaniatenders.com"
+    },
+    {
+      "ref": "TZT/142413118",
+      "body": "Private / NGO (Aggregated listing — TanzaniaTenders)",
+      "title": "Working Jointly in Agriculture — Contractors and Suppliers Sought",
+      "volume": "As per project specifications",
+      "deadline": "15 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "All supplier and contractor categories",
+      "status": "open",
+      "notes": "Collaborative agricultural project seeking contractors and suppliers for joint operations in Tanzania. TZT Ref No.: 142413118. Full details via Tanzania Tenders portal: tanzaniatenders.com"
+    },
+    {
+      "ref": "UG-MAAIF/P173296/2026",
+      "body": "Ministry of Agriculture, Animal Industry and Fisheries — Uganda (East Africa funded)",
+      "title": "Uganda Climate Smart Agricultural Transformation Project — Invitation for Bids",
+      "volume": "As per project scope",
+      "deadline": "23 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Qualified contractors, technology providers and agri-businesses with experience in climate-smart agricultural transformation",
+      "status": "open",
+      "notes": "Major government-funded initiative calling for bids and expressions of interest to transform Uganda's national agricultural landscape with climate-smart technologies and practices. Project reference P173296. Full documents available via Uganda eProcurement system."
+    }
+  ]
 }
