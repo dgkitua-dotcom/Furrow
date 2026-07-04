@@ -1,10 +1,10 @@
 {
-  "updated": "30 Jun 2026",
+  "updated": "4 Jul 2026",
   "_image_size_requirements": {
-    "billboard_featured_centre": "Required image size: ~380x380px display, square (1:1 ratio). Any image works — auto-cropped to fill. Upload a square image at least 600x600px for best quality.",
-    "billboard_side_rotating": "Required image size: ~220x220px display, square (1:1 ratio). Auto-cropped to fill. Upload a square image at least 400x400px for best quality.",
-    "sidebar": "Required image size: 320x320px display, square (1:1 ratio). Auto-cropped to fill. Upload a square image at least 600x600px for best quality.",
-    "note": "Set \"featured\": true on exactly ONE billboard ad to make it the fixed centre spot. All other active billboard ads rotate through the two side positions automatically. If no ad has featured:true, the first ad in the list becomes the centre by default."
+    "billboard_featured_centre": "Square 1:1 ratio, minimum 600x600px recommended.",
+    "billboard_side_rotating": "Square 1:1 ratio, minimum 400x400px recommended.",
+    "sidebar": "Square 1:1 ratio, minimum 600x600px recommended.",
+    "note": "Set 'featured': true on exactly ONE billboard ad for the fixed centre spot. All other active billboard ads rotate through the two side positions. If no ad has featured:true, the first ad becomes the centre by default."
   },
   "settings": {
     "rotation_seconds": 6,
@@ -14,12 +14,12 @@
   "billboard": [
     {
       "id": "bb001",
-      "advertiser": "Rex Energy",
-      "title": "Unapohitaji Nishati ya Jua, Chagua Rex.",
-      "tagline": "Quality Solar Solutions — sales@rexsolarenergy.com · +255 712 603 040",
-      "cta": "Visit Rex Energy",
-      "url": "https://www.rexsolarenergy.com",
-      "image": "rex_energy_ad.jpg",
+      "advertiser": "Davis & Shirtliff Tanzania",
+      "title": "Reliable Water Flow — Water Pumps & Accessories",
+      "tagline": "10% OFF on select items. Pumps, Controllers, Drainage & Engine Pumps.",
+      "cta": "Shop Davis & Shirtliff",
+      "url": "https://www.davis.co.tz",
+      "image": "davis_shirtliff_ad.jpg",
       "active": true,
       "featured": true,
       "expires": "31 Dec 2026"
@@ -59,6 +59,30 @@
       "active": true,
       "featured": false,
       "expires": "31 Dec 2026"
+    },
+    {
+      "id": "bb005",
+      "advertiser": "Alliance Ginneries Tanzania",
+      "title": "Tanzania's leading cotton ginning and agri-processing partner",
+      "tagline": "Modern equipment · Precision processing · Nationwide reach",
+      "cta": "Contact Alliance Ginneries",
+      "url": "https://www.allianceginneriesltd.com/",
+      "image": "alliance_ginneries_ad.jpg",
+      "active": true,
+      "featured": false,
+      "expires": "31 Dec 2026"
+    },
+    {
+      "id": "bb006",
+      "advertiser": "Zambia Cargo Tanzania",
+      "title": "Long-haul freight across East & Southern Africa",
+      "tagline": "Reliable container and bulk cargo transport — Tanzania to Zambia and beyond",
+      "cta": "Get a Freight Quote",
+      "url": "https://www.zamcargo.co.tz/",
+      "image": "zambia_cargo_ad.jpg",
+      "active": true,
+      "featured": false,
+      "expires": "31 Dec 2026"
     }
   ],
   "sidebar": [
@@ -75,12 +99,12 @@
     },
     {
       "id": "sb002",
-      "advertiser": "Rex Energy",
-      "title": "Think Solar. Think Rex.",
-      "tagline": "+255 712 603 040 · www.rexsolarenergy.com",
-      "cta": "Learn More",
-      "url": "https://www.rexsolarenergy.com",
-      "image": "rex_energy_ad.jpg",
+      "advertiser": "Davis & Shirtliff Tanzania",
+      "title": "Water Pumps & Accessories — 10% OFF select items",
+      "tagline": "+255 · www.davis.co.tz",
+      "cta": "Shop Now",
+      "url": "https://www.davis.co.tz",
+      "image": "davis_shirtliff_ad.jpg",
       "active": true,
       "expires": "31 Dec 2026"
     },
@@ -92,6 +116,28 @@
       "cta": "Wasiliana Nasi",
       "url": "https://www.simusolar.com",
       "image": "simusolar_ad.jpg",
+      "active": true,
+      "expires": "31 Dec 2026"
+    },
+    {
+      "id": "sb004",
+      "advertiser": "Alliance Ginneries Tanzania",
+      "title": "Tanzania's leading cotton ginning partner",
+      "tagline": "Modern equipment · Precision processing",
+      "cta": "Contact Us",
+      "url": "https://www.allianceginneriesltd.com/",
+      "image": "alliance_ginneries_ad.jpg",
+      "active": true,
+      "expires": "31 Dec 2026"
+    },
+    {
+      "id": "sb005",
+      "advertiser": "Zambia Cargo Tanzania",
+      "title": "Long-haul freight — East & Southern Africa",
+      "tagline": "Tanzania to Zambia and beyond",
+      "cta": "Get a Quote",
+      "url": "https://www.zamcargo.co.tz/",
+      "image": "zambia_cargo_ad.jpg",
       "active": true,
       "expires": "31 Dec 2026"
     }
