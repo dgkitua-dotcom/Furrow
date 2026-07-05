@@ -13,6 +13,18 @@
   },
   "billboard": [
     {
+      "id": "bb000",
+      "advertiser": "Dayliff by Davis & Shirtliff",
+      "title": "Dayliff Pump Controllers — Take Control of Your Water Supply",
+      "tagline": "Dependable Quality · Available in all D&S branches · 0767/0784 202 069",
+      "cta": "Visit Davis & Shirtliff",
+      "url": "https://www.davis.co.tz",
+      "image": "dayliff_ad.jpg",
+      "active": true,
+      "featured": true,
+      "expires": "31 Dec 2026"
+    },
+    {
       "id": "bb001",
       "advertiser": "Davis & Shirtliff Tanzania",
       "title": "Reliable Water Flow — Water Pumps & Accessories",
@@ -21,7 +33,7 @@
       "url": "https://www.davis.co.tz",
       "image": "davis_shirtliff_ad.jpg",
       "active": true,
-      "featured": true,
+      "featured": false,
       "expires": "31 Dec 2026"
     },
     {
@@ -86,6 +98,17 @@
     }
   ],
   "sidebar": [
+    {
+      "id": "sb000",
+      "advertiser": "Dayliff — Pump Controllers",
+      "title": "Take Control of Your Water Supply",
+      "tagline": "Dependable Quality · www.davisandshirtliff.co.tz",
+      "cta": "Find a Branch",
+      "url": "https://www.davis.co.tz",
+      "image": "dayliff_ad.jpg",
+      "active": true,
+      "expires": "31 Dec 2026"
+    },
     {
       "id": "sb001",
       "advertiser": "Kilimo Fresh",
