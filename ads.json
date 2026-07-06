@@ -1,10 +1,10 @@
 {
-  "updated": "4 Jul 2026",
+  "updated": "6 Jul 2026",
   "_image_size_requirements": {
     "billboard_featured_centre": "Square 1:1 ratio, minimum 600x600px recommended.",
     "billboard_side_rotating": "Square 1:1 ratio, minimum 400x400px recommended.",
     "sidebar": "Square 1:1 ratio, minimum 600x600px recommended.",
-    "note": "Set 'featured': true on exactly ONE billboard ad for the fixed centre spot. All other active billboard ads rotate through the two side positions. If no ad has featured:true, the first ad becomes the centre by default."
+    "note": "Set 'featured': true on exactly ONE billboard ad for the fixed centre spot. All other active billboard ads rotate through the two side positions. If no ad has featured:true, the first ad in the list becomes the centre by default."
   },
   "settings": {
     "rotation_seconds": 6,
@@ -13,40 +13,16 @@
   },
   "billboard": [
     {
-      "id": "bb000",
-      "advertiser": "Dayliff by Davis & Shirtliff",
-      "title": "Dayliff Pump Controllers — Take Control of Your Water Supply",
-      "tagline": "Dependable Quality · Available in all D&S branches · 0767/0784 202 069",
-      "cta": "Visit Davis & Shirtliff",
-      "url": "https://www.davis.co.tz",
-      "image": "dayliff_ad.jpg",
+      "id": "bb_placeholder",
+      "advertiser": "FURROW — Advertise Here",
+      "title": "Reach Tanzania's agricultural community",
+      "tagline": "Farmers · Buyers · Transporters · Investors · info@gabrisoncapital.com",
+      "cta": "Enquire About Advertising",
+      "url": "mailto:info@gabrisoncapital.com",
+      "image": "advertise_here.svg",
       "active": true,
       "featured": true,
-      "expires": "31 Dec 2026"
-    },
-    {
-      "id": "bb001",
-      "advertiser": "Davis & Shirtliff Tanzania",
-      "title": "Reliable Water Flow — Water Pumps & Accessories",
-      "tagline": "10% OFF on select items. Pumps, Controllers, Drainage & Engine Pumps.",
-      "cta": "Shop Davis & Shirtliff",
-      "url": "https://www.davis.co.tz",
-      "image": "davis_shirtliff_ad.jpg",
-      "active": true,
-      "featured": false,
-      "expires": "31 Dec 2026"
-    },
-    {
-      "id": "bb002",
-      "advertiser": "Simusolar Tanzania",
-      "title": "Pampu Kilimo Kwanza — Pampu ya Maji Inayotumia Umeme wa Sola",
-      "tagline": "Pata mpaka lita 1,000 za maji kwa saa moja · 0800 780 036 au 0677 028 680",
-      "cta": "Wasiliana na Simusolar",
-      "url": "https://www.simusolar.com",
-      "image": "simusolar_ad.jpg",
-      "active": true,
-      "featured": false,
-      "expires": "31 Dec 2026"
+      "expires": ""
     },
     {
       "id": "bb003",
@@ -99,15 +75,15 @@
   ],
   "sidebar": [
     {
-      "id": "sb000",
-      "advertiser": "Dayliff — Pump Controllers",
-      "title": "Take Control of Your Water Supply",
-      "tagline": "Dependable Quality · www.davisandshirtliff.co.tz",
-      "cta": "Find a Branch",
-      "url": "https://www.davis.co.tz",
-      "image": "dayliff_ad.jpg",
+      "id": "sb_placeholder",
+      "advertiser": "FURROW — Advertise Here",
+      "title": "Reach Tanzania's agricultural community",
+      "tagline": "Contact us: info@gabrisoncapital.com",
+      "cta": "Enquire About Advertising",
+      "url": "mailto:info@gabrisoncapital.com",
+      "image": "advertise_here.svg",
       "active": true,
-      "expires": "31 Dec 2026"
+      "expires": ""
     },
     {
       "id": "sb001",
@@ -117,28 +93,6 @@
       "cta": "Order Now",
       "url": "https://www.kilimofresh.co.tz",
       "image": "kilimofresh_ad.jpg",
-      "active": true,
-      "expires": "31 Dec 2026"
-    },
-    {
-      "id": "sb002",
-      "advertiser": "Davis & Shirtliff Tanzania",
-      "title": "Water Pumps & Accessories — 10% OFF select items",
-      "tagline": "+255 · www.davis.co.tz",
-      "cta": "Shop Now",
-      "url": "https://www.davis.co.tz",
-      "image": "davis_shirtliff_ad.jpg",
-      "active": true,
-      "expires": "31 Dec 2026"
-    },
-    {
-      "id": "sb003",
-      "advertiser": "Simusolar Tanzania",
-      "title": "Pampu ya Maji — Umeme wa Jua tu",
-      "tagline": "0800 780 036 · 0677 028 680",
-      "cta": "Wasiliana Nasi",
-      "url": "https://www.simusolar.com",
-      "image": "simusolar_ad.jpg",
       "active": true,
       "expires": "31 Dec 2026"
     },
