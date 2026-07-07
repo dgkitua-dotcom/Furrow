@@ -1,29 +1,53 @@
 {
-  "updated": "6 Jul 2026",
+  "updated": "7 Jul 2026",
   "tenders": [
+    {
+      "ref": "ID 534868161",
+      "body": "Tanzania Official Seed Certification Institute (TOSCI)",
+      "title": "Provision of Security Services at TOSCI Head Office and Zonal Offices",
+      "volume": "As per tender specifications",
+      "deadline": "9 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Registered security firms with experience in government institutional security and facilities protection",
+      "status": "closing",
+      "notes": "Operational infrastructure security and facilities protection across TOSCI's active seed research and quality assurance zonal offices. Reference via TendersInfo Tanzania portal.",
+      "url": "https://www.tendersinfo.com/global-tanzania-tenders.php"
+    },
     {
       "ref": "FAOTZ/RFP/2026/005",
       "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
-      "title": "Agricultural Gender Policy Assessment — Individual Consultancy",
+      "title": "Gender Policy Assessment & Digital Inclusion Architecture — Individual Consultancy",
       "volume": "As per RFP specifications",
       "deadline": "12 Jul 2026",
       "value": "To be determined",
-      "eligibility": "Individual consultants or firms with expertise in gender policy and agricultural policy analysis in Tanzania",
+      "eligibility": "Individual consultants or firms with expertise in gender policy, digital equity and agricultural policy analysis in Tanzania",
       "status": "open",
-      "notes": "RFP seeking a qualified consultant to conduct a comprehensive assessment of gender policies within local agricultural frameworks in Tanzania.",
-      "url": "https://www.tanzaniatenders.com/products-services/agriculture-tenders/"
+      "notes": "High-level consulting framework evaluating resource parity and analyzing how digital agritech platforms, field data collection, and financial structures effectively reach women and youth in rural zones. TZT Ref No: 143648289.",
+      "url": "https://www.ungm.org/Public/Notice/304664"
     },
     {
       "ref": "TZT/142413118",
-      "body": "Private / NGO (Aggregated — TanzaniaTenders)",
-      "title": "Working Jointly in Agriculture — Contractors and Suppliers Sought",
+      "body": "Multi-Partner Commercial Enterprise Framework",
+      "title": "Working Jointly in Agriculture — Commercial Joint Venture Operations Call",
       "volume": "As per project specifications",
       "deadline": "15 Jul 2026",
       "value": "To be determined",
-      "eligibility": "All supplier and contractor categories",
+      "eligibility": "Tech-enabled logistics partners, input suppliers, and agritech systems for co-execution of scaled joint production operations",
       "status": "open",
-      "notes": "Collaborative agricultural project seeking contractors and suppliers for joint operations in Tanzania. TZT Ref No.: 142413118.",
+      "notes": "Open commercial procurement call seeking technology-enabled logistics partners, input suppliers and agritech systems to co-execute scaled joint agricultural production operations in Tanzania.",
       "url": "https://www.tanzaniatenders.com/products-services/agriculture-tenders/"
+    },
+    {
+      "ref": "AFDP/TARI/2026/G/02",
+      "body": "Tanzania Agricultural Research Institute (TARI) — Agriculture and Fisheries Development Programme (AFDP)",
+      "title": "Procurement of 1 Tractor and Its Implements Under AFDP Project",
+      "volume": "1 tractor and associated implements",
+      "deadline": "23 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Registered machinery suppliers and agricultural equipment distributors",
+      "status": "open",
+      "notes": "Core machinery supply and field implement asset mobilization for agricultural development research sites managed under the Agriculture and Fisheries Development Programme (AFDP).",
+      "url": "https://www.tendersinfo.com/global-tanzania-tenders/agriculture-and-related-services-tenders.php"
     },
     {
       "ref": "UG-MAAIF/P173296/2026",
@@ -36,6 +60,30 @@
       "status": "open",
       "notes": "Major government-funded initiative to transform Uganda's agricultural landscape with climate-smart technologies and practices. Project reference P173296.",
       "url": "https://www.biddetail.com/uganda-tenders/agricultural-tenders"
+    },
+    {
+      "ref": "TR160/2025/2026/C/08",
+      "body": "Tanzania Official Seed Certification Institute (TOSCI) — via NeST",
+      "title": "Public Awareness and E-Label System Integration Consultancy",
+      "volume": "As per consultancy specifications",
+      "deadline": "23 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Consultancy firms with experience in digital certification systems, e-labelling, supply chain authentication and stakeholder sensitization in the agricultural inputs sector",
+      "status": "open",
+      "notes": "Designing and executing sensitization protocols for seed sector stakeholders on deployment of cryptographic e-labels to verify input supply-chain authenticity. Published via the National e-Procurement System of Tanzania (NeST).",
+      "url": "https://nest.go.tz/tenders/published-tenders?category=C"
+    },
+    {
+      "ref": "NORGES-VEL/TZ/2026",
+      "body": "The Royal Norwegian Society for Development (Norges Vel)",
+      "title": "Value Chain Evaluation & Resilient Agriculture Mid-Term Review — Tanzania",
+      "volume": "Multi-country evaluation scope",
+      "deadline": "14 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Specialised multi-country evaluation teams with expertise in agricultural value chain assessment, climate-resilient farming systems and producer-owned business ecosystem analysis",
+      "status": "open",
+      "notes": "Seeking a specialised evaluation team to assess agricultural value chains and build data-driven approaches to optimise climate-resilient farming and producer-owned business ecosystems in Tanzania. Published via Devex International Procurement Board.",
+      "url": "https://www.devex.com/jobs/tender-for-mid-term-review-2026-1445125"
     }
   ]
 }
