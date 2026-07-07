@@ -1,6 +1,6 @@
 {
-  "updated": "5 Jul 2026",
-  "source_note": "MAFC weekly bulletin (22-26 Jun 2026) + TCB Wastani wa Bei za Sokoni (5 Jul 2026) + CDT Cotton prices + CBT Cashew Nuts. All prices TZS/kg.",
+  "updated": "6 Jul 2026",
+  "source_note": "MAFC weekly bulletin (22-26 Jun 2026) + TCB (5 Jul 2026) + CDT + CBT + COPRA auction prices (24 Jun 2026). All prices TZS/kg.",
   "prices": [
     {
       "crop": "Mahindi (Maize)",
@@ -1054,6 +1054,114 @@
       "dir": "up",
       "chg": "+3.5%",
       "source": "CBT"
+    },
+    {
+      "crop": "Kakao (Cocoa Beans) — Mbeya",
+      "region": "Mbeya (Kyela/Busokelo)",
+      "gov": 10915,
+      "sup": 10915,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Kakao (Cocoa Beans) — Morogoro",
+      "region": "Morogoro (Mlimba/Mvomero)",
+      "gov": 11348,
+      "sup": 11348,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Kakao (Cocoa Beans) — Tanga",
+      "region": "Tanga (Muheza)",
+      "gov": 9894,
+      "sup": 9894,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Choroko (Green Gram) — Mwanza",
+      "region": "Mwanza (Kwimba/Magu/Misungwi)",
+      "gov": 1510,
+      "sup": 1540,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Choroko (Green Gram) — Simiyu",
+      "region": "Simiyu (Bariadi/Maswa/Meatu)",
+      "gov": 1400,
+      "sup": 1490,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Choroko (Green Gram) — Shinyanga",
+      "region": "Shinyanga (Kishapu/Shinyanga DC)",
+      "gov": 1455,
+      "sup": 1515,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Choroko (Green Gram) — Tabora",
+      "region": "Tabora (Igunga)",
+      "gov": 1425,
+      "sup": 1425,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Ufuta (Sesame Seeds) — Lindi",
+      "region": "Lindi (Kilwa/Lindi MC/Ruangwa/Liwale)",
+      "gov": 2450,
+      "sup": 2588,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Ufuta (Sesame Seeds) — Pwani",
+      "region": "Pwani (Kibaha/Kibiti/Mkuranga/Rufuji)",
+      "gov": 2210,
+      "sup": 2380,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Ufuta (Sesame Seeds) — Dodoma",
+      "region": "Dodoma (Bahi/Chamwino/Chemba)",
+      "gov": 2170,
+      "sup": 2290,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Ufuta (Sesame Seeds) — Songwe/Mbeya",
+      "region": "Songwe / Mbeya",
+      "gov": 2320,
+      "sup": 2568,
+      "dir": "up",
+      "chg": "New",
+      "source": "COPRA"
+    },
+    {
+      "crop": "Soya (Soybeans) — Ruvuma",
+      "region": "Ruvuma (Namtumbo/Songea)",
+      "gov": 1208,
+      "sup": 1208,
+      "dir": "flat",
+      "chg": "0.0%",
+      "source": "COPRA"
     }
   ]
 }
