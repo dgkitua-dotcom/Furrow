@@ -1,12 +1,36 @@
 {
-  "updated": "6 Jul 2026",
+  "updated": "7 Jul 2026",
   "news": [
+    {
+      "date": "7 Jul 2026",
+      "tag": "AgriTech",
+      "color": "blue",
+      "title": "Private capital shifts toward post-harvest tech and digital supply chain platforms",
+      "body": "High-level investment updates from regional forums confirm that primary capital flows in Tanzania and East Africa are moving away from raw cultivation support toward innovation-driven digital platforms designed to mitigate post-harvest losses and bridge smallholders to international trade networks. Multi-partner architectures are focusing heavily on secure digital tools to scale smallholder operations, with data-assisted decision intelligence replacing manual labour frameworks as the dominant model for commercial agri-investment.",
+      "source": "Tanzania Impact Investment Forum / Regional Agricultural Conventions"
+    },
+    {
+      "date": "7 Jul 2026",
+      "tag": "Digital Finance",
+      "color": "blue",
+      "title": "FPO digitisation and rural fintech integration accelerate across East Africa",
+      "body": "Multi-million dollar multilateral programmes — including World Bank-backed Food Systems Resilience Projects — are actively driving Farmer Producer Organizations onto centralised ERP frameworks to build clean, auditable data repositories. Simultaneously, institutional financing initiatives are pushing for cloud-hosted transaction ledgers with embedded credit-scoring tools via mobile money (M-Pesa and Airtel Money) to facilitate rural asset financing. A bilateral UN and Ministry of Agriculture initiative has committed over $950,000 toward regional Data Coordination Units building secure public APIs that expose crop yield, soil mapping, and climate predictive metrics directly to private sector agritech systems.",
+      "source": "World Bank FSRP / FAO Tanzania / UN Joint Programme UNJP/URT/167/UNJ"
+    },
+    {
+      "date": "7 Jul 2026",
+      "tag": "Market Access",
+      "color": "green",
+      "title": "One Acre Fund Tanzania overhauling commercial market-access model across key production zones",
+      "body": "One Acre Fund Tanzania is executing a major overhaul of its commercial market-access structure across key production zones including Iringa, Mbeya, Njombe and Moshi. The mandate centres on deploying data-driven systems that connect rural producers directly into secure, higher-value B2B commercial value chains. One Acre Fund serves over 100,000 farmers in Tanzania. Their new model is being closely tracked by institutional investors and digital platforms looking to design compatible B2B integration frameworks.",
+      "source": "One Acre Fund / ReliefWeb"
+    },
     {
       "date": "6 Jul 2026",
       "tag": "Investment",
       "color": "green",
       "title": "Agriculture emerges as Tanzania's top private capital magnet",
-      "body": "Data from the Tanzania Impact Investment Forum (TIIF) reveals that agriculture, agribusiness value chains, and digital innovations are leading the country's new capital inflows. Key institutional investors and development finance institutions are actively pivoting from primary production toward innovation-driven sectors, specifically targeting platforms that bridge the gap to global investment networks and scale post-harvest loss solutions. The trend signals a significant structural shift in how Tanzania's agricultural sector is being financed.",
+      "body": "Data from the Tanzania Impact Investment Forum (TIIF) reveals that agriculture, agribusiness value chains, and digital innovations are leading the country's new capital inflows. Key institutional investors and development finance institutions are actively pivoting from primary production toward innovation-driven sectors, specifically targeting platforms that bridge the gap to global investment networks and scale post-harvest loss solutions.",
       "source": "The Citizen / Tanzania Impact Investment Forum"
     },
     {
@@ -18,19 +42,11 @@
       "source": "Africa Conference on Sustainable Agricultural Mechanization"
     },
     {
-      "date": "Jul 2026",
-      "tag": "AgriTech",
-      "color": "blue",
-      "title": "Digital agriculture and climate-smart tools move from pilot to field-ready across Sub-Saharan Africa",
-      "body": "Across Sub-Saharan Africa, real-time data provision via remote sensing, AI-driven predictive analytics, and IoT sensors are transitioning from experimental concepts into field-ready necessities. A systematic review published in Frontiers in Sustainable Food Systems (2026) confirms that digital technologies influence farmer decision-making through three key pathways: real-time information provision, optimised input timing, and climate shock mitigation for rain-fed agricultural systems. Leading regional agritech operations are prioritising simplified digital platforms that reduce operational uncertainty for smallholder farmers.",
-      "source": "Frontiers in Sustainable Food Systems (2026 Systematic Review)"
-    },
-    {
       "date": "2 Jul 2026",
       "tag": "Investment",
       "color": "green",
       "title": "FINAS 2026 Summit spotlights Africa's $100 billion agricultural financing gap",
-      "body": "The Financing Agri-Food Systems Sustainably (FINAS) 2026 Summit concluded in Nairobi, bringing together over 1,000 policymakers, investors and agribusiness leaders to address Africa's estimated $100 billion annual agricultural financing gap. The summit emphasised the urgent need to unlock investment to combat rising production costs, climate change and heavy reliance on food imports. For Tanzania's agricultural sector, the discussions highlight a critical opportunity to attract institutional capital into the supply chain, from farm-level financing to logistics infrastructure.",
+      "body": "The Financing Agri-Food Systems Sustainably (FINAS) 2026 Summit concluded in Nairobi, bringing together over 1,000 policymakers, investors and agribusiness leaders to address Africa's estimated $100 billion annual agricultural financing gap. The summit emphasised the urgent need to unlock investment to combat rising production costs, climate change and heavy reliance on food imports. For Tanzania's agricultural sector, the discussions highlight a critical opportunity to attract institutional capital into the supply chain.",
       "source": "People's Daily / FINAS 2026"
     },
     {
@@ -38,7 +54,7 @@
       "tag": "Policy",
       "color": "green",
       "title": "NAESA officially launches — Tanzania's new National Agricultural Extension Services Agency begins operations",
-      "body": "As of 1 July 2026, the newly established National Agricultural Extension Services Agency (NAESA) has officially begun operations. The executive agency is designed to overhaul Tanzania's fragmented agricultural extension services by setting national standards, coordinating officer deployment across all regions, and integrating digital tools and data-driven targeting. NAESA represents the most significant institutional reform in Tanzania's agricultural extension architecture in two decades, with direct implications for standardised protocols on seeds, soils, pest management and harvest timing for farmers nationwide.",
+      "body": "As of 1 July 2026, the newly established National Agricultural Extension Services Agency (NAESA) has officially begun operations. The executive agency is designed to overhaul Tanzania's fragmented agricultural extension services by setting national standards, coordinating officer deployment across all regions, and integrating digital tools and data-driven targeting. NAESA represents the most significant institutional reform in Tanzania's agricultural extension architecture in two decades.",
       "source": "TanzaniaInvest / Kilimo Kwanza"
     },
     {
@@ -54,39 +70,15 @@
       "tag": "Cashew Industry",
       "color": "red",
       "title": "Sulphur shortage threatens Sh1.2 trillion cashewnut industry",
-      "body": "A nationwide shortage of sulphur — a critical input used to control fungal disease and protect cashew yields — is threatening Tanzania's Sh1.2 trillion cashewnut industry ahead of the new growing season. Industry stakeholders have raised concerns that without timely sulphur dusting, crop quality and yields across the major cashew-growing regions of Mtwara, Lindi and Ruvuma could be significantly affected, with knock-on effects for farmer incomes and export volumes.",
+      "body": "A nationwide shortage of sulphur — a critical input used to control fungal disease and protect cashew yields — is threatening Tanzania's Sh1.2 trillion cashewnut industry ahead of the new growing season. Industry stakeholders have raised concerns that without timely sulphur dusting, crop quality and yields across the major cashew-growing regions of Mtwara, Lindi and Ruvuma could be significantly affected.",
       "source": "The Citizen"
-    },
-    {
-      "date": "Jun 2026",
-      "tag": "Coffee",
-      "color": "blue",
-      "title": "Tanzania coffee crop ramping up — slightly higher Arabica and Robusta volumes forecast for 2026",
-      "body": "The mid-year 2026 East Africa harvest update indicates that Tanzania's coffee crop is beginning to ramp up, with forecasts showing slightly higher Arabica and Robusta volumes compared to last year. This contrasts with a lower harvest in Rwanda and delayed Ugandan Robusta, positioning Tanzania favourably in the regional supply picture. The volume increase has direct implications for transporters planning logistics capacity and off-takers forecasting batch procurement.",
-      "source": "Sucafina — East Africa Mid-Year Harvest Update 2026"
-    },
-    {
-      "date": "Jun 2026",
-      "tag": "Dairy",
-      "color": "green",
-      "title": "Tanga dairy farmers report 50% milk production boost from Maziwa Faida project",
-      "body": "The EUR 3 million Maziwa Faida (Successful Dairy) project in the Tanga region has successfully supported 3,600 smallholder dairy farmers. By focusing on sustainable forage solutions that provide feed throughout the dry season, participating farmers have reported milk production increases of over 50%, significantly boosting household incomes and system resilience.",
-      "source": "Teagasc Ireland"
-    },
-    {
-      "date": "29 Jun 2026",
-      "tag": "Input Costs",
-      "color": "blue",
-      "title": "USDA suspends countervailing duties on phosphate fertilizer imports, prices expected to fall 22%",
-      "body": "The United States Department of Agriculture has announced a temporary suspension of countervailing duties on certain phosphate fertilizer imports, a policy shift expected to drop global phosphate fertilizer prices by approximately 22% and stabilise the international fertilizer supply chain. Lower input costs are expected to ease pressure on production costs for Tanzanian farmers reliant on imported fertilizer, with knock-on effects for final market prices of produce in the coming season.",
-      "source": "U.S. Department of Agriculture (USDA) Official Press Release"
     },
     {
       "date": "22 May 2026",
       "tag": "Port Levy",
       "color": "green",
       "title": "TPA reduces Port Infrastructure Development Levy from 9% to 4.5% effective 1 July 2026",
-      "body": "Tanzania Ports Authority (TPA) has officially reviewed and reduced the Port Infrastructure Development Levy from the initially proposed 9% to 4.5% of customs duty, effective 1st July 2026. This represents a 50% reduction following private sector consultations convened by TPSF on 17th March 2026. The revised rate lowers the anticipated cost burden on importers by half while enabling TPA to mobilise resources for its infrastructure investment programme estimated at TZS 16.1 trillion.",
+      "body": "Tanzania Ports Authority (TPA) has officially reviewed and reduced the Port Infrastructure Development Levy from the initially proposed 9% to 4.5% of customs duty, effective 1st July 2026. This represents a 50% reduction following private sector consultations. The revised rate lowers the anticipated cost burden on importers by half while enabling TPA to mobilise resources for its infrastructure investment programme estimated at TZS 16.1 trillion.",
       "source": "TPSF / Tanzania Ports Authority"
     },
     {
@@ -102,7 +94,7 @@
       "tag": "Shipping Notice",
       "color": "blue",
       "title": "TASAC prohibits demurrage charges on delayed empty container returns caused by ECD operators",
-      "body": "TASAC has directed that shipping agents and related parties are strictly prohibited from charging demurrage or storage penalties on containers where delay in return is caused by refusal or inability of an Empty Container Depot to receive the container, congestion or capacity limitations at the ECD, or any factor beyond the control of the consignee or clearing agent. ECD operators are required to ensure timely receipt, operate within approved capacity, and coordinate with shipping agents. This notice takes effect immediately upon issuance.",
+      "body": "TASAC has directed that shipping agents and related parties are strictly prohibited from charging demurrage or storage penalties on containers where delay in return is caused by refusal or inability of an Empty Container Depot to receive the container, congestion or capacity limitations at the ECD, or any factor beyond the control of the consignee or clearing agent. ECD operators are required to ensure timely receipt, operate within approved capacity, and coordinate with shipping agents.",
       "source": "TASAC / Ministry of Transport"
     },
     {
@@ -110,7 +102,7 @@
       "tag": "Import Compliance",
       "color": "red",
       "title": "TBS requires Pre-Shipment Verification of Conformity for goods from China, Hong Kong, Taiwan, Mongolia and Macau",
-      "body": "Tanzania Bureau of Standards (TBS) has reminded all importers of TBS-regulated goods from China Mainland, Hong Kong, Taiwan, Mongolia and Macau that all such goods must undergo Pre-Shipment Verification of Conformity to Standards (PVoC) in the country of export before shipment to Tanzania. TBS has contracted five authorised inspection agents: CCIC, Intertek International, SGS, TUV Rheinland Middle East, and World Standardization Certification and Testing Group. Failure to comply results in a penalty equal to 15% of the value of the goods. Visit www.tbs.go.tz or call 0800 110 827.",
+      "body": "Tanzania Bureau of Standards (TBS) has reminded all importers of TBS-regulated goods from China Mainland, Hong Kong, Taiwan, Mongolia and Macau that all such goods must undergo Pre-Shipment Verification of Conformity to Standards (PVoC) in the country of export before shipment to Tanzania. Importers must obtain a Certificate of Conformity (CoC) before shipment. Failure to comply results in a penalty equal to 15% of the value of the goods. Visit www.tbs.go.tz or call 0800 110 827.",
       "source": "Tanzania Bureau of Standards (TBS) / Ministry of Industry and Trade"
     }
   ]
