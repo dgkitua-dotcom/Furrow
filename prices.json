@@ -1,6 +1,6 @@
 {
-  "updated": "6 Jul 2026",
-  "source_note": "MAFC weekly bulletin (22-26 Jun 2026) + TCB (5 Jul 2026) + CDT + CBT + COPRA auction prices (24 Jun 2026). All prices TZS/kg.",
+  "updated": "7 Jul 2026",
+  "source_note": "MAFC weekly bulletin (22-26 Jun 2026) + TCB (7 Jul 2026) + CDT + CBT + COPRA auction prices. All prices TZS/kg.",
   "prices": [
     {
       "crop": "Mahindi (Maize)",
@@ -977,10 +977,10 @@
     {
       "crop": "Kahawa Arabica — CPU",
       "region": "Tanzania (Farm Gate)",
-      "gov": 11331,
-      "sup": 11331,
+      "gov": 13274,
+      "sup": 13274,
       "dir": "up",
-      "chg": "+10.9%",
+      "chg": "+17.1%",
       "source": "TCB"
     },
     {
@@ -995,28 +995,28 @@
     {
       "crop": "Kahawa Robusta — Maganda",
       "region": "Tanzania (Farm Gate)",
-      "gov": 3753,
-      "sup": 3753,
+      "gov": 4125,
+      "sup": 4125,
       "dir": "up",
-      "chg": "+2.8%",
+      "chg": "+9.9%",
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 17286,
-      "sup": 17286,
+      "gov": 20124,
+      "sup": 20124,
       "dir": "up",
-      "chg": "$6.7/kg",
+      "chg": "$7.8/kg",
       "source": "TCB"
     },
     {
       "crop": "Kahawa Robusta — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 9804,
-      "sup": 9804,
+      "gov": 10836,
+      "sup": 10836,
       "dir": "up",
-      "chg": "$3.8/kg",
+      "chg": "$4.2/kg",
       "source": "TCB"
     },
     {
