@@ -1,6 +1,22 @@
 {
-  "updated": "7 Jul 2026",
+  "updated": "8 Jul 2026",
   "news": [
+    {
+      "date": "8 Jul 2026",
+      "tag": "Digital Finance",
+      "color": "green",
+      "title": "TCDC and Mixx renew digital financial partnership for Tanzania's cooperative sector",
+      "body": "The Tanzania Cooperative Development Commission (TCDC) and Mixx by Yas have renewed their partnership in Dodoma. The initiative modernises financial systems across cooperative societies — which collectively process between TZS 5 trillion and TZS 7 trillion annually — by embedding digital transaction systems to build audit transparency and enhance credit access for smallholder farmers. The partnership represents a significant step toward formalising financial flows within Tanzania's cooperative value chain.",
+      "source": "Tanzania Cooperative Development Commission (TCDC) / Mixx by Yas"
+    },
+    {
+      "date": "8 Jul 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "Government mandates digital transformation for AMCOS and SACCOs across Tanzania",
+      "body": "The Ministry of Agriculture has announced accelerated state backing for digital transformation within Tanzania's cooperative sector. The directive requires all AMCOS and SACCOS to migrate to digital systems for financial administration and record management, with the explicit aim of enforcing transparency and curbing fund mismanagement. The move is part of a broader government strategy to modernise cooperative governance and build verifiable financial track records that can unlock formal credit access for smallholder producers.",
+      "source": "Ministry of Agriculture Tanzania"
+    },
     {
       "date": "7 Jul 2026",
       "tag": "AgriTech",

@@ -1,6 +1,6 @@
 {
-  "updated": "7 Jul 2026",
-  "source_note": "MAFC weekly bulletin (22-26 Jun 2026) + TCB (7 Jul 2026) + CDT + CBT + COPRA auction prices. All prices TZS/kg.",
+  "updated": "8 Jul 2026",
+  "source_note": "MAFC weekly bulletin (22-26 Jun 2026) + TCB + CBT + CDT + COPRA (8 Jul 2026). All prices TZS/kg.",
   "prices": [
     {
       "crop": "Mahindi (Maize)",
@@ -1020,42 +1020,6 @@
       "source": "TCB"
     },
     {
-      "crop": "Pamba Daraja A (Cotton Grade A)",
-      "region": "Tanzania (Farm Gate)",
-      "gov": 1240,
-      "sup": 1240,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "CDT"
-    },
-    {
-      "crop": "Pamba Daraja B (Cotton Grade B)",
-      "region": "Tanzania (Farm Gate)",
-      "gov": 620,
-      "sup": 620,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "CDT"
-    },
-    {
-      "crop": "Pamba (Cotton Export Price)",
-      "region": "Tanzania (Export)",
-      "gov": 3051,
-      "sup": 3051,
-      "dir": "dn",
-      "chg": "-8.2%",
-      "source": "CDT"
-    },
-    {
-      "crop": "Korosho (Cashew Nuts)",
-      "region": "Tanzania (Export)",
-      "gov": 11375,
-      "sup": 11375,
-      "dir": "up",
-      "chg": "+3.5%",
-      "source": "CBT"
-    },
-    {
       "crop": "Kakao (Cocoa Beans) — Mbeya",
       "region": "Mbeya (Kyela/Busokelo)",
       "gov": 10915,
@@ -1162,6 +1126,42 @@
       "dir": "flat",
       "chg": "0.0%",
       "source": "COPRA"
+    },
+    {
+      "crop": "Korosho (Raw Cashew Nuts) — Premium RCN",
+      "region": "Tanzania (Farmgate)",
+      "gov": 2610,
+      "sup": 2610,
+      "dir": "up",
+      "chg": "New",
+      "source": "CBT"
+    },
+    {
+      "crop": "Korosho (Raw Cashew Nuts) — Standard Floor",
+      "region": "Tanzania (Farmgate)",
+      "gov": 2460,
+      "sup": 2460,
+      "dir": "up",
+      "chg": "New",
+      "source": "CBT"
+    },
+    {
+      "crop": "Pamba Daraja A (Cotton Grade A)",
+      "region": "Tanzania (Farmgate)",
+      "gov": 1400,
+      "sup": 1400,
+      "dir": "up",
+      "chg": "+12.9%",
+      "source": "CDT"
+    },
+    {
+      "crop": "Pamba Daraja B (Cotton Grade B)",
+      "region": "Tanzania (Farmgate)",
+      "gov": 1250,
+      "sup": 1250,
+      "dir": "up",
+      "chg": "+101.6%",
+      "source": "CDT"
     }
   ]
 }
