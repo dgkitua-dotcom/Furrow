@@ -49,18 +49,6 @@
       "expires": "31 Dec 2026"
     },
     {
-      "id": "bb005",
-      "advertiser": "Alliance Ginneries Tanzania",
-      "title": "Tanzania's leading cotton ginning and agri-processing partner",
-      "tagline": "Modern equipment · Precision processing · Nationwide reach",
-      "cta": "Contact Alliance Ginneries",
-      "url": "https://www.allianceginneriesltd.com/",
-      "image": "alliance_ginneries_ad.jpg",
-      "active": true,
-      "featured": false,
-      "expires": "31 Dec 2026"
-    },
-    {
       "id": "bb006",
       "advertiser": "Zambia Cargo Tanzania",
       "title": "Long-haul freight across East & Southern Africa",
@@ -93,17 +81,6 @@
       "cta": "Order Now",
       "url": "https://www.kilimofresh.co.tz",
       "image": "kilimofresh_ad.jpg",
-      "active": true,
-      "expires": "31 Dec 2026"
-    },
-    {
-      "id": "sb004",
-      "advertiser": "Alliance Ginneries Tanzania",
-      "title": "Tanzania's leading cotton ginning partner",
-      "tagline": "Modern equipment · Precision processing",
-      "cta": "Contact Us",
-      "url": "https://www.allianceginneriesltd.com/",
-      "image": "alliance_ginneries_ad.jpg",
       "active": true,
       "expires": "31 Dec 2026"
     },
