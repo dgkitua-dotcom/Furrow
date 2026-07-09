@@ -1,5 +1,5 @@
 {
-  "updated": "8 Jul 2026",
+  "updated": "9 Jul 2026",
   "news": [
     {
       "date": "8 Jul 2026",
@@ -96,30 +96,6 @@
       "title": "TPA reduces Port Infrastructure Development Levy from 9% to 4.5% effective 1 July 2026",
       "body": "Tanzania Ports Authority (TPA) has officially reviewed and reduced the Port Infrastructure Development Levy from the initially proposed 9% to 4.5% of customs duty, effective 1st July 2026. This represents a 50% reduction following private sector consultations. The revised rate lowers the anticipated cost burden on importers by half while enabling TPA to mobilise resources for its infrastructure investment programme estimated at TZS 16.1 trillion.",
       "source": "TPSF / Tanzania Ports Authority"
-    },
-    {
-      "date": "Jun 2026",
-      "tag": "NSSF Amnesty",
-      "color": "gray",
-      "title": "NSSF offers general amnesty on penalty arrears — deadline 31 December 2026",
-      "body": "The National Social Security Fund (NSSF) has announced a general amnesty to all employers with outstanding arrears of statutory contributions and penalties. Employers remitting all outstanding principal amounts on or before 31st August 2026 and remaining current by 31st December 2026 will be relieved of 100% of overdue penalties. Those remitting by 31st October 2026 receive 75% relief, and those remitting by 31st December 2026 receive 50% relief. The amnesty period runs from 1st June to 31st December 2026. Toll-free: 0800116773.",
-      "source": "NSSF — Public Relations and Member Education Unit"
-    },
-    {
-      "date": "23 Apr 2026",
-      "tag": "Shipping Notice",
-      "color": "blue",
-      "title": "TASAC prohibits demurrage charges on delayed empty container returns caused by ECD operators",
-      "body": "TASAC has directed that shipping agents and related parties are strictly prohibited from charging demurrage or storage penalties on containers where delay in return is caused by refusal or inability of an Empty Container Depot to receive the container, congestion or capacity limitations at the ECD, or any factor beyond the control of the consignee or clearing agent. ECD operators are required to ensure timely receipt, operate within approved capacity, and coordinate with shipping agents.",
-      "source": "TASAC / Ministry of Transport"
-    },
-    {
-      "date": "4 Jun 2026",
-      "tag": "Import Compliance",
-      "color": "red",
-      "title": "TBS requires Pre-Shipment Verification of Conformity for goods from China, Hong Kong, Taiwan, Mongolia and Macau",
-      "body": "Tanzania Bureau of Standards (TBS) has reminded all importers of TBS-regulated goods from China Mainland, Hong Kong, Taiwan, Mongolia and Macau that all such goods must undergo Pre-Shipment Verification of Conformity to Standards (PVoC) in the country of export before shipment to Tanzania. Importers must obtain a Certificate of Conformity (CoC) before shipment. Failure to comply results in a penalty equal to 15% of the value of the goods. Visit www.tbs.go.tz or call 0800 110 827.",
-      "source": "Tanzania Bureau of Standards (TBS) / Ministry of Industry and Trade"
     }
   ]
 }

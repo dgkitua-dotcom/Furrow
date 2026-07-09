@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -547,24 +548,36 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
     </div>
 
     <div id="priceBoardContent">
-      <!-- Filter bar -->
-      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:20px">
-        <label style="font-size:11px;color:var(--mu);font-weight:500">Filter:</label>
-        <select id="filterSource" onchange="renderBoard()" style="padding:6px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:12px;font-family:inherit;color:var(--tx);background:var(--cream);outline:none;cursor:pointer">
-          <option value="">All Sources</option>
-          <option>MAFC</option><option>TCB</option><option>CDT</option><option>CBT</option><option>COPRA</option>
-        </select>
-        <select id="filterDir" onchange="renderBoard()" style="padding:6px 10px;border:1px solid var(--bdr);border-radius:5px;font-size:12px;font-family:inherit;color:var(--tx);background:var(--cream);outline:none;cursor:pointer">
-          <option value="">All movements</option>
-          <option value="up">Rising &#9650;</option>
-          <option value="dn">Falling &#9660;</option>
-          <option value="flat">Stable</option>
-        </select>
+
+      <!-- Market Pulse: two line charts tracking rising vs falling commodities over time -->
+      <div style="margin-bottom:32px">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)">Market Pulse &middot; Overall movement over time</div>
+          <span style="font-size:11px;color:var(--mu)" id="pulseUpdate">&mdash;</span>
+        </div>
+        <div class="grid-2" id="pulseGrid" style="gap:20px">
+          <div style="background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:18px">
+            <div style="font-size:12px;font-weight:700;color:var(--grn);margin-bottom:10px">&#9650; Commodities Rising</div>
+            <canvas id="chartRising" height="140"></canvas>
+          </div>
+          <div style="background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:18px">
+            <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:10px">&#9660; Commodities Falling</div>
+            <canvas id="chartFalling" height="140"></canvas>
+          </div>
+        </div>
+        <p id="pulseNote" style="font-size:11px;color:var(--mu);margin-top:10px"></p>
+      </div>
+
+      <!-- Crop selector -->
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px;padding-top:18px;border-top:1px solid var(--bdr)">
+        <label for="cropSelect" style="font-size:11px;color:var(--mu);font-weight:500">Select crop:</label>
+        <select id="cropSelect" onchange="renderCropDetail()" style="padding:8px 14px;border:1px solid var(--bdr);border-radius:6px;font-size:13px;font-family:inherit;font-weight:600;color:var(--navy);background:var(--cream);outline:none;cursor:pointer;min-width:220px"></select>
         <span style="font-size:11px;color:var(--mu);margin-left:auto" id="priceLastUpdate">Last updated: &mdash;</span>
       </div>
 
-      <!-- Grouped price cards -->
-      <div id="priceBoard" style="display:flex;flex-direction:column;gap:8px"></div>
+      <!-- Selected crop summary + regional table -->
+      <div id="cropSummary" style="display:none;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:16px"></div>
+      <div id="cropTableWrap" style="background:#fff;border:1px solid var(--bdr);border-radius:8px;overflow:hidden"></div>
 
       <p style="font-size:11px;color:var(--mu);margin-top:12px;text-align:right">
         Source: MAFC &middot; TCB &middot; CDT &middot; CBT &middot; COPRA &middot; Data as at <span id="priceDate">&mdash;</span> &middot; Prices are indicative reference rates only
@@ -1000,105 +1013,133 @@ function buildHeroBoard(){
   var hd = document.getElementById('heroDate'); if(hd) hd.textContent = PRICES.updated;
 }
 
-/* ── Full price board — grouped by crop ── */
-function renderBoard(){
-  var el = document.getElementById('priceBoard'); if(!el) return;
-  var fS = (document.getElementById('filterSource')||{}).value||'';
-  var fD = (document.getElementById('filterDir')||{}).value||'';
+/* ── Crop dropdown: populate list of unique crops ── */
+var currentCrop = null;
 
-  var rows = PRICES.prices.filter(function(p){
-    return (!fS||p.source===fS) && (!fD||p.dir===fD);
+function renderCropSelector(){
+  var sel = document.getElementById('cropSelect'); if(!sel) return;
+  var seen = {}, order = [];
+  PRICES.prices.forEach(function(p){
+    if(!seen[p.crop]){ seen[p.crop]=true; order.push(p.crop); }
   });
-
-  if(!rows.length){
-    el.innerHTML='<div style="padding:24px;text-align:center;color:var(--mu);font-size:13px">No prices match this filter.</div>';
-    return;
-  }
-
-  // Group by crop name
-  var groups = {};
-  var order  = [];
-  rows.forEach(function(p){
-    if(!groups[p.crop]){ groups[p.crop]=[]; order.push(p.crop); }
-    groups[p.crop].push(p);
-  });
-
-  el.innerHTML = order.map(function(crop){
-    var entries = groups[crop];
-    var rep     = entries[0]; // representative row for summary
-    var multi   = entries.length > 1;
-    var clr     = col(rep.dir);
-    var arw     = arrow(rep.dir);
-    var id      = 'grp_'+crop.replace(/[^a-z0-9]/gi,'_');
-
-    // Summary header card
-    var html = '<div style="background:#fff;border:1px solid var(--bdr);border-radius:8px;overflow:hidden">'
-      // Clickable header row
-      +'<div onclick="toggleGroup(\''+id+'\')" style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;align-items:center;padding:13px 18px;cursor:'+(multi?'pointer':'default')+';transition:background .12s;gap:8px" '
-      +'onmouseover="if('+multi+')this.style.background=\'var(--goldP)\'" onmouseout="this.style.background=\'#fff\'">'
-        // Crop name + source
-        +'<div>'
-          +'<div style="font-size:13px;font-weight:700;color:var(--navy)">'+crop+'</div>'
-          +'<div style="font-size:10px;color:var(--mu);margin-top:1px">'+rep.source+(multi?' &middot; '+entries.length+' regions':' &middot; '+rep.region)+'</div>'
-        +'</div>'
-        // Gov price
-        +'<div>'
-          +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+'</div>'
-          +'<div style="font-size:10px;color:var(--mu)">TZS/kg Gov\'t ref.</div>'
-        +'</div>'
-        // Supplier price
-        +'<div>'
-          +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:17px;font-weight:700;color:var(--navy)">'+rep.sup.toLocaleString()+'</div>'
-          +'<div style="font-size:10px;color:var(--mu)">Supplier listed</div>'
-        +'</div>'
-        // Movement
-        +'<div style="font-size:12px;font-weight:700;color:'+clr+'">'+arw+' '+rep.chg+'</div>'
-        // Expand toggle
-        +(multi?'<div id="'+id+'_icon" style="font-size:16px;color:var(--mu);font-weight:300;transition:transform .2s">&#43;</div>':'<div></div>')
-      +'</div>';
-
-    // Regional breakdown rows (hidden by default)
-    if(multi){
-      html += '<div id="'+id+'" style="display:none;border-top:1px solid var(--bdr)">'
-        +'<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;padding:7px 18px;background:var(--navy)">'
-          +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
-          +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Gov\'t Ref.</span>'
-          +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Supplier</span>'
-          +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Move</span>'
-          +'<span></span>'
-        +'</div>'
-        +entries.map(function(p,i){
-          var dc=col(p.dir), da=arrow(p.dir);
-          var diff=p.sup-p.gov;
-          var pct=p.gov?((diff/p.gov)*100).toFixed(1):'0.0';
-          var ds=diff!==0?(diff>0?'+':'')+diff.toLocaleString()+' ('+pct+'%)':'—';
-          return '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;align-items:center;padding:9px 18px;border-top:1px solid #F5EDD5;background:'+(i%2===0?'#fff':'var(--cream)')+'">'
-            +'<div style="font-size:12px;color:var(--tx)">'+p.region+'</div>'
-            +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
-            +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.sup.toLocaleString()+'</div>'
-            +'<div><div style="font-size:11px;font-weight:700;color:'+dc+'">'+da+' '+p.chg+'</div><div style="font-size:10px;color:var(--mu)">'+ds+'</div></div>'
-            +'<div></div>'
-          +'</div>';
-        }).join('')
-      +'</div>';
-    }
-
-    html += '</div>';
-    return html;
-  }).join('');
+  var keep = currentCrop && seen[currentCrop];
+  sel.innerHTML = order.map(function(c){ return '<option value="'+c+'">'+c+'</option>'; }).join('');
+  currentCrop = keep ? currentCrop : order[0];
+  sel.value = currentCrop;
 
   var lu = document.getElementById('priceLastUpdate'); if(lu) lu.textContent='Last updated: '+PRICES.updated;
   var pd = document.getElementById('priceDate');       if(pd) pd.textContent=PRICES.updated;
 }
 
-function toggleGroup(id){
-  var el   = document.getElementById(id);
-  var icon = document.getElementById(id+'_icon');
-  if(!el) return;
-  var open = el.style.display !== 'none';
-  el.style.display   = open ? 'none'    : 'block';
-  if(icon) icon.innerHTML = open ? '&#43;' : '&#8722;';
-  if(icon) icon.style.transform = open ? '' : 'rotate(0deg)';
+/* ── Render regional detail table for the selected crop ── */
+function renderCropDetail(){
+  var sel = document.getElementById('cropSelect'); if(!sel) return;
+  currentCrop = sel.value;
+  var wrap = document.getElementById('cropTableWrap');
+  var summary = document.getElementById('cropSummary');
+  if(!wrap) return;
+
+  var entries = PRICES.prices.filter(function(p){ return p.crop===currentCrop; });
+  if(!entries.length){
+    wrap.innerHTML = '<div style="padding:24px;text-align:center;color:var(--mu);font-size:13px">No data for this crop.</div>';
+    summary.style.display='none';
+    return;
+  }
+
+  // Prefer the national-average row (if present) for the summary cards; else the first region
+  var nat = entries.filter(function(p){ return /National Average/i.test(p.region); })[0];
+  var rep = nat || entries[0];
+  var upCount = entries.filter(function(p){return p.dir==='up';}).length;
+  var dnCount = entries.filter(function(p){return p.dir==='dn';}).length;
+
+  summary.style.display = 'grid';
+  summary.innerHTML =
+    '<div class="card" style="padding:16px">'
+      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">'+(nat?'National Avg. (Gov\'t ref.)':rep.region+' (Gov\'t ref.)')+'</div>'
+      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+' <span style="font-size:13px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
+    +'</div>'
+    +'<div class="card" style="padding:16px">'
+      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regions Rising / Falling</div>'
+      +'<div style="font-size:18px;font-weight:700"><span style="color:var(--grn)">&#9650; '+upCount+'</span> &nbsp;/&nbsp; <span style="color:var(--red)">&#9660; '+dnCount+'</span></div>'
+    +'</div>'
+    +'<div class="card" style="padding:16px">'
+      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regions Tracked</div>'
+      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-weight:700;color:var(--navy)">'+entries.length+'</div>'
+    +'</div>';
+
+  var rows = entries.slice().sort(function(a,b){
+    if(/National Average/i.test(a.region)) return -1;
+    if(/National Average/i.test(b.region)) return 1;
+    return a.region.localeCompare(b.region);
+  });
+
+  wrap.innerHTML =
+    '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:10px 18px;background:var(--navy)">'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Gov\'t Ref.</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Supplier</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Move</span>'
+    +'</div>'
+    +rows.map(function(p,i){
+      var dc=col(p.dir), da=arrow(p.dir);
+      var isNat = /National Average/i.test(p.region);
+      return '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;padding:10px 18px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
+        +'<div style="font-size:12px;font-weight:'+(isNat?'700':'400')+';color:var(--tx)">'+p.region+'</div>'
+        +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
+        +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.sup.toLocaleString()+'</div>'
+        +'<div style="font-size:11px;font-weight:700;color:'+dc+'">'+da+' '+p.chg+'</div>'
+      +'</div>';
+    }).join('');
+}
+
+/* ── Market Pulse: two line charts (rising vs falling commodity counts over time) ── */
+var PRICE_HISTORY = [];
+var chartRisingInstance = null, chartFallingInstance = null;
+
+function renderMarketPulse(){
+  var canvasR = document.getElementById('chartRising');
+  var canvasF = document.getElementById('chartFalling');
+  if(!canvasR || !canvasF || typeof Chart === 'undefined') return;
+
+  if(!PRICE_HISTORY.length){
+    var note = document.getElementById('pulseNote');
+    if(note) note.textContent = 'Trend data will build up as future price updates are published.';
+    return;
+  }
+
+  var labels = PRICE_HISTORY.map(function(h){ return h.date; });
+  var risingData  = PRICE_HISTORY.map(function(h){ return (h.movement||{}).up  || 0; });
+  var fallingData = PRICE_HISTORY.map(function(h){ return (h.movement||{}).dn  || 0; });
+
+  var commonOpts = {
+    responsive:true,
+    plugins:{ legend:{ display:false } },
+    scales:{
+      x:{ grid:{ display:false }, ticks:{ font:{ size:10 }, color:'#5A6A7A' } },
+      y:{ beginAtZero:true, grid:{ color:'#F0EBD8' }, ticks:{ font:{ size:10 }, color:'#5A6A7A', precision:0 } }
+    }
+  };
+
+  if(chartRisingInstance) chartRisingInstance.destroy();
+  chartRisingInstance = new Chart(canvasR.getContext('2d'), {
+    type:'line',
+    data:{ labels:labels, datasets:[{ label:'Rising', data:risingData, borderColor:'#1E6B4A', backgroundColor:'rgba(30,107,74,.12)', fill:true, tension:.3, pointRadius:3 }] },
+    options: commonOpts
+  });
+
+  if(chartFallingInstance) chartFallingInstance.destroy();
+  chartFallingInstance = new Chart(canvasF.getContext('2d'), {
+    type:'line',
+    data:{ labels:labels, datasets:[{ label:'Falling', data:fallingData, borderColor:'#8B1A1A', backgroundColor:'rgba(139,26,26,.10)', fill:true, tension:.3, pointRadius:3 }] },
+    options: commonOpts
+  });
+
+  var pu = document.getElementById('pulseUpdate');
+  if(pu) pu.textContent = 'As at '+labels[labels.length-1];
+  var note = document.getElementById('pulseNote');
+  if(note) note.textContent = PRICE_HISTORY.length < 3
+    ? 'Showing '+PRICE_HISTORY.length+' recorded update'+(PRICE_HISTORY.length>1?'s':'')+' so far — the trend line will fill in as more weekly updates are published.'
+    : '';
 }
 
 /* ── Master price board collapse/expand ── */
@@ -1192,7 +1233,16 @@ async function loadPrices(){
     var res = await fetch('prices.json?v='+Date.now());
     if(res.ok){ var data = await res.json(); if(data && data.prices && data.prices.length) PRICES = data; }
   } catch(e){}
-  buildTicker(); buildHeroBoard(); renderBoard();
+  buildTicker(); buildHeroBoard(); renderCropSelector(); renderCropDetail();
+}
+
+/* ── Load price_history.json — powers the Market Pulse trend charts ── */
+async function loadPriceHistory(){
+  try {
+    var res = await fetch('price_history.json?v='+Date.now());
+    if(res.ok){ var data = await res.json(); if(data && data.history && data.history.length) PRICE_HISTORY = data.history; }
+  } catch(e){}
+  renderMarketPulse();
 }
 
 /* ── Load news.json ── */
@@ -1452,6 +1502,7 @@ function sbGoTo(i){
 
 /* ── Initialise all on page load ── */
 loadPrices();
+loadPriceHistory();
 loadNews();
 loadTenders();
 loadAds();
