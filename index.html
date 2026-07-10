@@ -361,6 +361,20 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   .hero-stats { gap: 16px; }
   .grid-4 { grid-template-columns: 1fr; }
 }
+
+/* ── Scroll-reveal animations ── */
+html { scroll-behavior: smooth; }
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1); will-change: opacity, transform; }
+.reveal.in { opacity: 1; transform: none; }
+.role-card, .stat-card, .card { transition: transform .25s ease, box-shadow .25s ease, border-color .18s; }
+.role-card:hover, .stat-card:hover { transform: translateY(-5px); box-shadow: 0 14px 34px rgba(11,28,46,.16); }
+.hb-dot { animation: pulseDot 2s ease-in-out infinite; }
+@keyframes pulseDot { 0%,100% { opacity:1; transform:scale(1);} 50% { opacity:.45; transform:scale(.8);} }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .hb-dot { animation: none; }
+}
 </style>
 </head>
 <body>
@@ -1470,6 +1484,66 @@ function sbGoTo(i){
 }
 
 /* ── Initialise all on page load ── */
+
+/* ── Section flair: scroll reveals + hero stat count-up ── */
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  var selectors = [
+    '.section-head',
+    '.stat-card',
+    '.role-card',
+    '.step',
+    '.broker-strip > div',
+    '.news-sidebar-grid .grid-2 > div',
+    '#sidebarWrap',
+    '#pulseGrid > div',
+    '.faq-item',
+    '.footer-grid > div',
+    '.hero-grid > div'
+  ];
+  var seen = new Set();
+  selectors.forEach(function(sel){
+    var nodes = document.querySelectorAll(sel);
+    nodes.forEach(function(el, i){
+      if (seen.has(el)) return;
+      seen.add(el);
+      el.classList.add('reveal');
+      el.style.transitionDelay = Math.min(i * 90, 360) + 'ms';
+    });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  seen.forEach(function(el){ io.observe(el); });
+
+  /* Hero stat count-up: animate purely numeric values once hero is visible */
+  function countUp(el){
+    var target = parseInt(el.textContent.replace(/[^0-9]/g,''), 10);
+    if (isNaN(target) || String(target) !== el.textContent.trim()) return;
+    var t0 = null, dur = 1200;
+    function tick(ts){
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / dur, 1);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  var statsIo = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('.hs-val').forEach(countUp);
+      statsIo.unobserve(e.target);
+    });
+  }, { threshold: 0.4 });
+  var hs = document.querySelector('.hero-stats');
+  if (hs) statsIo.observe(hs);
+})();
+
 loadPrices();
 loadPriceHistory();
 loadNews();
