@@ -623,15 +623,15 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 </section>
 
 <!-- ═══ NEWS ═══ -->
-<section class="section section-alt" id="news">
+<section class="section" id="news" style="background:linear-gradient(rgba(11,28,46,.88),rgba(11,28,46,.92)),url('images/news_bg.jpg') center/cover no-repeat">
   <div class="container">
     <div class="section-head">
       <div class="section-label">Latest Developments</div>
-      <h2 class="section-title">News &amp; Tenders Intelligence</h2>
-      <p class="section-sub">How FURROW gathers, verifies and filters the market intelligence published on this platform &mdash; and where to read it all.</p>
+      <h2 class="section-title" style="color:#fff">News &amp; Tenders Intelligence</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.65)">How FURROW gathers, verifies and filters the market intelligence published on this platform &mdash; and where to read it all.</p>
     </div>
     <!-- News + sidebar ad layout -->
-    <div class="news-sidebar-grid" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
+    <div class="news-sidebar-grid" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:stretch">
       <div class="grid-2" style="gap:20px;align-items:stretch">
 
         <!-- News methodology tile -->
@@ -660,37 +660,20 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 
       </div>
 
-      <!-- Sidebar ad + quick links — sticky so it stays aligned as news list scrolls -->
-      <div id="sidebarWrap" style="display:none;width:320px;flex-shrink:0;position:sticky;top:90px">
-        <div style="position:relative">
+      <!-- Sidebar ad — stretches to match tile height -->
+      <div id="sidebarWrap" style="display:none;width:320px;flex-shrink:0;align-self:stretch">
+        <div style="position:relative;background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:18px;height:100%;display:flex;flex-direction:column;box-sizing:border-box">
           <div style="font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:8px">Advertisement</div>
-          <div id="sidebarSlot" style="width:320px;height:320px;border-radius:10px;overflow:hidden;background:var(--goldP)"></div>
+          <div id="sidebarSlot" style="width:100%;aspect-ratio:1/1;border-radius:10px;overflow:hidden;background:var(--goldP)"></div>
           <!-- Sidebar dot indicators -->
           <div id="sidebarDots" style="display:flex;gap:5px;justify-content:center;margin-top:8px"></div>
-          <div style="margin-top:6px">
+          <div style="margin-top:6px;flex:1;display:flex;flex-direction:column;justify-content:flex-start">
             <div id="sidebarTitle" style="font-size:13px;font-weight:700;color:var(--navy)"></div>
             <div id="sidebarTagline" style="font-size:12px;color:var(--mu);margin-top:3px;line-height:1.5"></div>
             <a id="sidebarCta" href="#" target="_blank" rel="noopener noreferrer"
               style="display:inline-block;margin-top:10px;padding:7px 16px;background:var(--navy);color:var(--gold);border-radius:6px;font-size:12px;font-weight:700;text-decoration:none">
             </a>
           </div>
-        </div>
-
-        <!-- Quick links card — fills the space below the ad -->
-        <div style="margin-top:24px;background:var(--cream);border:1px solid var(--bdr);border-radius:10px;padding:18px">
-          <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Quick Links</div>
-          <a href="#prices" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
-            <span>Live Price Board</span><span style="color:var(--gold)">&rarr;</span>
-          </a>
-          <a href="intelligence.html#tenders" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
-            <span>Open Tenders</span><span style="color:var(--gold)">&rarr;</span>
-          </a>
-          <a href="#platform" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
-            <span>The FURROW Platform</span><span style="color:var(--gold)">&rarr;</span>
-          </a>
-          <a href="#faq" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;font-size:12px;color:var(--tx);text-decoration:none">
-            <span>Frequently Asked Questions</span><span style="color:var(--gold)">&rarr;</span>
-          </a>
         </div>
       </div>
     </div>
