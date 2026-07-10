@@ -1,5 +1,5 @@
 {
-  "updated": "9 Jul 2026",
+  "updated": "10 Jul 2026",
   "news": [
     {
       "date": "8 Jul 2026",
@@ -69,9 +69,25 @@
       "date": "1 Jul 2026",
       "tag": "Policy",
       "color": "green",
-      "title": "NAESA officially launches — Tanzania's new National Agricultural Extension Services Agency begins operations",
-      "body": "As of 1 July 2026, the newly established National Agricultural Extension Services Agency (NAESA) has officially begun operations. The executive agency is designed to overhaul Tanzania's fragmented agricultural extension services by setting national standards, coordinating officer deployment across all regions, and integrating digital tools and data-driven targeting. NAESA represents the most significant institutional reform in Tanzania's agricultural extension architecture in two decades.",
-      "source": "TanzaniaInvest / Kilimo Kwanza"
+      "title": "NAESA fully operational — unified advisory framework rolls out from new Dodoma headquarters",
+      "body": "The National Agricultural Extension Services Agency (NAESA) is now legally constituted and operating out of its permanent home at the Dr John Samuel Malecela Nane Nane Grounds in Dodoma. Under Acting CEO Dr. Wilhelm Leonard Mafuru, the agency has taken over unified supervision of extension advisory frameworks nationwide, harmonising digital protocols, mobile platforms and data-driven targeting to standardise training and support for Tanzania's roughly 35 million smallholder farmers.",
+      "source": "Kilimo Kwanza"
+    },
+    {
+      "date": "1 Jul 2026",
+      "tag": "Trade Levy",
+      "color": "red",
+      "title": "Finance Act 2026 imposes new export levies on key agricultural co-products",
+      "body": "Effective 1 July, the newly enacted Finance Act 2026 introduces a flat levy of TZS 50 per kg on several strategic agricultural co-products including cotton cake, sunflower cake, wheat bran, rice bran and maize bran. The Act also raises minimum partnership-deed duties to as much as TZS 5,000 and sets conveyance values for agricultural land at 0.5%, adding new cost considerations for processors and traders across the value chain.",
+      "source": "Clyde & Co"
+    },
+    {
+      "date": "1 Jul 2026",
+      "tag": "Monetary Policy",
+      "color": "blue",
+      "title": "Bank of Tanzania raises Central Bank Rate to 6.25% on energy and fertiliser cost risks",
+      "body": "The Monetary Policy Committee has raised the Central Bank Rate to 6.25% for the third quarter of 2026. The move comes even as macroeconomic performance stays resilient, with H1 2026 real GDP growth tracking at 6%, and is intended to curb downstream inflation driven by globally elevated freight, fuel and fertiliser costs — all direct input costs for Tanzania's agricultural producers and traders.",
+      "source": "TanzaniaInvest"
     },
     {
       "date": "1 Jul 2026",
