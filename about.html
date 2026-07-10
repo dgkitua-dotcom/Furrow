@@ -45,23 +45,48 @@ p { margin-bottom:14px; }
 footer { background:var(--navy); padding:28px 0; }
 footer .container { max-width:1440px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:11px; color:rgba(255,255,255,.4); }
 footer a { color:var(--goldL); text-decoration:none; }
-@media (max-width:768px){ .nav-links { display:none; } }
+@media (max-width:768px){
+  nav .container { flex-direction:column; gap:10px; align-items:flex-start; }
+  .nav-links { flex-wrap:wrap; gap:12px 16px; }
+  .nav-links a { font-size:11px; }
+  .nav-app-btn { padding:7px 14px; }
+  h1 { font-size:28px; }
+}
+
+/* ── Full FURROW header + live ticker (ported from homepage) ── */
+:root { --deep:#08141F; }
+.nav-tagline { font-size:8px; color:var(--goldL,#E2C47E); letter-spacing:.14em; text-transform:uppercase; margin-top:2px; }
+.nav-app-btn { background:var(--gold); color:var(--navy) !important; padding:9px 18px; border-radius:7px; font-weight:700 !important; }
+.ticker-wrap { background:var(--deep); border-bottom:1px solid rgba(201,168,76,.2); overflow:hidden; padding:7px 0; position:relative; }
+.ticker-label { position:absolute; left:0; top:0; bottom:0; background:var(--navy); border-right:1px solid var(--gold); display:flex; align-items:center; padding:0 14px; font-size:8px; font-weight:700; color:var(--gold); letter-spacing:.12em; text-transform:uppercase; z-index:2; white-space:nowrap; }
+.ticker-track { display:flex; gap:0; white-space:nowrap; animation:tickerScroll 44s linear infinite; padding-left:100px; will-change:transform; }
+.ticker-track:hover { animation-play-state:paused; }
+@keyframes tickerScroll { 0% { transform:translateX(0);} 100% { transform:translateX(-50%);} }
+.tick { display:inline-flex; align-items:center; gap:10px; font-size:11px; color:rgba(255,255,255,.7); padding:0 28px; border-right:1px solid rgba(255,255,255,.06); }
+.tick-crop { color:var(--gold); font-weight:700; font-size:11px; letter-spacing:.03em; }
+@media (prefers-reduced-motion: reduce){ .ticker-track { animation:none; } }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="container">
-    <a class="wm" href="index.html">FU<u>RR</u>OW</a>
+    <div><a class="wm" href="index.html">FU<u>RR</u>OW</a><div class="nav-tagline">powered by Gabrison Capital</div></div>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="intelligence.html">News &amp; Tenders</a>
       <a href="data.html">Market Intelligence</a>
       <a href="about.html" class="active">Who We Are</a>
       <a href="index.html#faq">FAQ</a>
+      <a href="index.html#launch" class="nav-app-btn">Launch App</a>
     </div>
   </div>
 </nav>
+<div class="ticker-wrap" id="tickerWrap">
+  <div class="ticker-label">LIVE &middot; TZS</div>
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
 
 <div class="block">
   <div class="container">
@@ -136,5 +161,28 @@ footer a { color:var(--goldL); text-decoration:none; }
   </div>
 </footer>
 
+
+<script>
+/* Live ticker (shared with homepage, reads prices.json) */
+(function(){
+  function bright(d){ return d==='up'?'#4ADE80':d==='dn'?'#F87171':'#E2C47E'; }
+  function arrow(d){ return d==='up'?'&#9650;':d==='dn'?'&#9660;':'&mdash;'; }
+  function build(prices){
+    var t = document.getElementById('tickerTrack'); if(!t) return;
+    var doubled = prices.concat(prices);
+    t.innerHTML = doubled.map(function(p){
+      return '<span class="tick">'
+        +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
+        +'<span>TZS '+p.sup.toLocaleString()+'/kg</span>'
+        +'<span style="color:'+bright(p.dir)+';font-weight:700">'+arrow(p.dir)+p.chg+'</span>'
+        +'<span style="color:rgba(255,255,255,.3);font-size:10px">Gov&#39;t: '+p.gov.toLocaleString()+'</span>'
+        +'</span>';
+    }).join('');
+  }
+  fetch('prices.json?v='+Date.now()).then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(d){ if(d && d.prices && d.prices.length) build(d.prices); })
+    .catch(function(){});
+})();
+</script>
 </body>
 </html>
