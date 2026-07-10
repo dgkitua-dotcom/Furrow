@@ -11,8 +11,7 @@
   gtag('js', new Date());
   gtag('config', 'G-3ZBLYSVVN7');
 </script>
-<title>FURROW — Tanzania Agricultural Market Intelligence | Powered by Gabrison Capital</title>
-<meta property="og:image" content="https://www.joinfurrow.com/images/og_image.jpg" />
+<title>Market Intelligence — FURROW — Tanzania Agricultural Market Intelligence | Powered by Gabrison Capital</title>
 <meta name="description" content="FURROW publishes daily government reference prices for Tanzania's agricultural crops. Live price ticker, tenders, and agri-transport news — powered by Gabrison Capital." />
 <meta name="keywords" content="Tanzania agriculture prices, MAFC crop prices, Tanzania agri tenders, Gabrison Capital, FURROW, maize price Tanzania, cashew nuts Tanzania" />
 <meta property="og:title" content="FURROW — Tanzania Agricultural Market Intelligence" />
@@ -166,7 +165,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .tick-crop { color: var(--gold); font-weight: 700; font-size: 11px; letter-spacing: .03em; }
 
 /* ── Hero ── */
-.hero { background: linear-gradient(155deg, rgba(11,28,46,.92) 0%, rgba(13,35,64,.88) 55%, rgba(15,46,26,.9) 100%), url("images/hero.jpg") center/cover no-repeat; padding: 80px 0 70px; position: relative; overflow: hidden; }
+.hero { background: linear-gradient(155deg, var(--navy) 0%, #0d2340 55%, #0f2e1a 100%); padding: 80px 0 70px; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 65% 50%, rgba(201,168,76,.07) 0%, transparent 60%); pointer-events: none; }
 .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .hero-eyebrow { font-size: 9px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
@@ -254,8 +253,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .step-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 5px; }
 .step-body { font-size: 13px; color: var(--mu); line-height: 1.7; }
 
-.role-card { background: var(--navy); border: 1px solid rgba(201,168,76,.2); border-radius: var(--radius); padding: 26px; transition: border-color .18s; overflow: hidden; }
-.role-img { width: calc(100% + 52px); margin: -26px -26px 18px; height: 170px; object-fit: cover; display: block; }
+.role-card { background: var(--navy); border: 1px solid rgba(201,168,76,.2); border-radius: var(--radius); padding: 26px; transition: border-color .18s; }
 .role-card:hover { border-color: var(--gold); }
 .role-letter { width: 44px; height: 44px; border-radius: 8px; background: rgba(201,168,76,.12); border: 1px solid rgba(201,168,76,.25); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--gold); margin-bottom: 14px; }
 .role-title { font-size: 19px; color: var(--gold); font-family: 'Cormorant Garamond', serif; font-weight: 600; margin-bottom: 4px; }
@@ -399,25 +397,23 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
       <div class="tg">powered by Gabrison Capital</div>
     </div>
     <div class="nav-links">
-      <a href="#prices">Live Prices</a>
+      <a href="index.html#prices">Live Prices</a>
       <a href="#news">News</a>
-      <a href="intelligence.html#tenders">Tenders</a>
+      <a href="#tenders">Tenders</a>
       <a href="data.html">Data</a>
       <a href="about.html">Who We Are</a>
-      <a href="#platform">The Platform</a>
-      <a href="#faq">FAQ</a>
+      <a href="index.html#platform">The Platform</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="#" onclick="openCS(); return false;" class="nav-app-btn">Launch App</a>
     </div>
     <button class="nav-ham" onclick="toggleMenu()" aria-label="Menu">&#9776;</button>
   </div>
   <div class="nav-mob" id="navMob">
-    <a href="#prices"   onclick="toggleMenu()">Live Prices</a>
-    <a href="#news"     onclick="toggleMenu()">News</a>
-    <a href="intelligence.html#tenders">Tenders</a>
-    <a href="data.html">Data</a>
-    <a href="about.html">Who We Are</a>
-    <a href="#platform" onclick="toggleMenu()">The Platform</a>
-    <a href="#faq"      onclick="toggleMenu()">FAQ</a>
+    <a href="index.html#prices">Live Prices</a>
+    <a href="#news" onclick="toggleMenu()">News</a>
+    <a href="#tenders">Tenders</a>
+    <a href="index.html#platform">The Platform</a>
+    <a href="index.html#faq">FAQ</a>
     <a href="#" onclick="openCS(); toggleMenu(); return false;" style="color:var(--gold);font-weight:700">Launch App</a>
   </div>
 </nav>
@@ -428,201 +424,15 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero">
+<!-- ═══ PAGE HEADER ═══ -->
+<section class="section" style="padding:56px 0 8px">
   <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-eyebrow">Tanzania Agricultural Market Intelligence</div>
-        <h1>Government crop prices,<br><span>updated daily</span></h1>
-        <p class="hero-sub">FURROW publishes official MAFC, TCB, CDT and CBT reference prices every day so farmers, buyers and industry players can see the true market rate before any transaction.</p>
-        <div class="hero-stats">
-          <div>
-            <div class="hs-val" id="statCrops">42</div>
-            <div class="hs-lbl">Crops tracked</div>
-          </div>
-          <div>
-            <div class="hs-val">30</div>
-            <div class="hs-lbl">Tanzania regions</div>
-          </div>
-          <div>
-            <div class="hs-val">Daily</div>
-            <div class="hs-lbl">Price updates</div>
-          </div>
-          <div>
-            <div class="hs-val">4</div>
-            <div class="hs-lbl">Regulatory bodies</div>
-          </div>
-        </div>
-        <p class="hero-note">Prices sourced from the Ministry of Agriculture Food and Cooperatives (MAFC), Tanzania Coffee Board (TCB), Cotton Development Trust (CDT) and Cashewnut Board of Tanzania (CBT). All prices are indicative government reference rates in Tanzanian Shillings per kilogram.</p>
-      </div>
-
-      <!-- Hero price board -->
-      <div class="hero-board">
-        <div class="hb-hdr">
-          <span class="hb-hdr-title">Reference Prices &mdash; Today</span>
-          <div class="hb-live">
-            <div class="hb-dot"></div>
-            <span class="hb-dot-lbl">Updated <span id="heroDate">10 Jul 2026</span></span>
-          </div>
-        </div>
-        <div id="heroBoard"></div>
-        <div class="hb-footer">
-          <a href="#prices">View full price board &darr;</a>
-        </div>
-      </div>
-    </div>
+    <div class="section-label">FURROW Market Intelligence</div>
+    <h1 class="section-title" style="margin-bottom:8px">News, Regulations &amp; Tenders</h1>
+    <p class="section-sub" style="max-width:640px">The full FURROW intelligence board — every agri and transport news item, regulation change and open procurement opportunity we track for Tanzania's agricultural sector.</p>
   </div>
 </section>
 
-
-<!-- ═══ TRUST PROMISE TRIO ═══ -->
-<div style="background:var(--navy);padding:34px 0;border-top:1px solid rgba(201,168,76,.25)">
-  <div class="container">
-    <div class="grid-3" style="gap:20px">
-      <div style="border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:20px 22px">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-          <div style="font-size:13px;font-weight:700;color:#fff">Official reference data</div>
-          <span style="font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#1E6B4A;color:#fff;padding:3px 8px;border-radius:20px">Live now</span>
-        </div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.65">Prices, news and tenders published from official government and regulatory sources — MAFC, TCB, CDT, CBT and COPRA — so you see the true market rate before any transaction.</div>
-      </div>
-      <div style="border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:20px 22px">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-          <div style="font-size:13px;font-weight:700;color:#fff">Verified stock &amp; suppliers</div>
-          <span style="font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(201,168,76,.2);color:var(--gold);padding:3px 8px;border-radius:20px">At launch</span>
-        </div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.65">TIN-verified supplier profiles and physical stock inspection by FURROW field agents in 6 locations — on-site, photographed, confirmed within 48 hours.</div>
-      </div>
-      <div style="border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:20px 22px">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-          <div style="font-size:13px;font-weight:700;color:#fff">Escrow-protected payment</div>
-          <span style="font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(201,168,76,.2);color:var(--gold);padding:3px 8px;border-radius:20px">At launch</span>
-        </div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.65">Your funds are held by FURROW and released to the supplier only when you confirm delivery. 100% refund including our fee if stock does not match specification.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ BILLBOARD AD — 3-card carousel: identical size, centre fixed, sides rotate ═══ -->
-<div id="billboardWrap" style="display:none;background:var(--cream);padding:28px 0">
-  <div class="container">
-    <div style="text-align:center;margin-bottom:14px">
-      <span style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)">Advertisement</span>
-    </div>
-    <div class="billboard-3up" style="display:flex;align-items:stretch;justify-content:center;gap:20px;flex-wrap:wrap">
-
-      <!-- LEFT — rotating side ad -->
-      <div id="bbSideLeft" class="billboard-side-card billboard-equal-card" style="flex:1 1 0;min-width:260px;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);cursor:pointer;display:flex;flex-direction:column">
-        <div id="bbSideLeftImg" style="width:100%;aspect-ratio:1/1;overflow:hidden;line-height:0;background:var(--goldP)"></div>
-        <div style="padding:16px 18px 18px;flex:1;display:flex;flex-direction:column">
-          <div id="bbSideLeftTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px"></div>
-          <div id="bbSideLeftTagline" style="font-size:12px;color:var(--mu);line-height:1.5;margin-bottom:12px;flex:1"></div>
-          <a id="bbSideLeftCta" href="#" target="_blank" rel="noopener noreferrer"
-            style="display:inline-block;text-align:center;padding:10px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">
-          </a>
-        </div>
-      </div>
-
-      <!-- CENTRE — fixed premium slot, never rotates, same size as sides -->
-      <div class="billboard-card billboard-equal-card" style="flex:1 1 0;min-width:260px;background:#fff;border:1px solid var(--gold);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);position:relative;display:flex;flex-direction:column">
-        <div style="position:absolute;top:10px;right:10px;z-index:2;background:var(--gold);color:var(--navy);font-size:8px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:3px 9px;border-radius:20px">Featured</div>
-        <div id="billboardSlot" class="billboard-img-slot" style="width:100%;aspect-ratio:1/1;overflow:hidden;cursor:pointer;line-height:0;background:var(--goldP);display:flex;align-items:center;justify-content:center">
-        </div>
-        <div style="padding:16px 18px 18px;flex:1;display:flex;flex-direction:column">
-          <div id="billboardTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px"></div>
-          <div id="billboardTagline" style="font-size:12px;color:var(--mu);line-height:1.5;margin-bottom:12px;flex:1"></div>
-          <a id="billboardCta" href="#" target="_blank" rel="noopener noreferrer"
-            style="display:inline-block;text-align:center;padding:10px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">
-          </a>
-        </div>
-      </div>
-
-      <!-- RIGHT — rotating side ad -->
-      <div id="bbSideRight" class="billboard-side-card billboard-equal-card" style="flex:1 1 0;min-width:260px;background:#fff;border:1px solid var(--bdr);border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(11,28,46,.08);cursor:pointer;display:flex;flex-direction:column">
-        <div id="bbSideRightImg" style="width:100%;aspect-ratio:1/1;overflow:hidden;line-height:0;background:var(--goldP)"></div>
-        <div style="padding:16px 18px 18px;flex:1;display:flex;flex-direction:column">
-          <div id="bbSideRightTitle" style="font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px"></div>
-          <div id="bbSideRightTagline" style="font-size:12px;color:var(--mu);line-height:1.5;margin-bottom:12px;flex:1"></div>
-          <a id="bbSideRightCta" href="#" target="_blank" rel="noopener noreferrer"
-            style="display:inline-block;text-align:center;padding:10px 18px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">
-          </a>
-        </div>
-      </div>
-
-    </div>
-    <!-- Dot indicators for side rotation -->
-    <div id="billboardDots" style="display:flex;gap:6px;justify-content:center;margin-top:14px"></div>
-  </div>
-</div>
-
-<!-- ═══ STAT STRIP ═══ -->
-<div class="stat-strip">
-  <div class="container">
-    <div class="grid-4">
-      <div class="stat-card"><div class="sc-val">MAFC</div><div class="sc-lbl">Ministry of Agriculture</div><div class="sc-sub">Food crops & staples</div></div>
-      <div class="stat-card"><div class="sc-val">TCB</div><div class="sc-lbl">Tanzania Coffee Board</div><div class="sc-sub">Arabica &amp; Robusta</div></div>
-      <div class="stat-card"><div class="sc-val">CDT</div><div class="sc-lbl">Cotton Development Trust</div><div class="sc-sub">Seed cotton</div></div>
-      <div class="stat-card"><div class="sc-val">CBT</div><div class="sc-lbl">Cashewnut Board</div><div class="sc-sub">Raw cashew nuts</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ FULL PRICE BOARD ═══ -->
-<section class="section" id="prices">
-  <div class="container">
-    <div class="section-head" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <div>
-        <div class="section-label">Market Intelligence</div>
-        <h2 class="section-title">Government Reference Price Board</h2>
-        <p class="section-sub">Official indicative prices published by MAFC, TCB, CDT and CBT. Click any crop to see regional breakdown.</p>
-      </div>
-      <button id="priceBoardToggleBtn" onclick="togglePriceBoard()"
-        style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:var(--navy);color:var(--gold);border:none;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0">
-        <span id="priceBoardToggleIcon" style="font-size:14px;line-height:1">&#8722;</span>
-        <span id="priceBoardToggleLabel">Collapse</span>
-      </button>
-    </div>
-
-    <div id="priceBoardContent">
-
-      <!-- Market Pulse: two line charts tracking rising vs falling commodities over time -->
-      <div style="margin-bottom:32px">
-        <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px">
-          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)">Market Pulse &middot; Overall movement over time</div>
-          <span style="font-size:11px;color:var(--mu)" id="pulseUpdate">&mdash;</span>
-        </div>
-        <div class="grid-2" id="pulseGrid" style="gap:20px">
-          <div style="background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:18px">
-            <div style="font-size:12px;font-weight:700;color:var(--grn);margin-bottom:10px">&#9650; Commodities Rising</div>
-            <canvas id="chartRising" height="140"></canvas>
-          </div>
-          <div style="background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:18px">
-            <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:10px">&#9660; Commodities Falling</div>
-            <canvas id="chartFalling" height="140"></canvas>
-          </div>
-        </div>
-        <p id="pulseNote" style="font-size:11px;color:var(--mu);margin-top:10px"></p>
-      </div>
-
-      <!-- Full data lives on data.html -->
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:20px;border-top:1px solid var(--bdr)">
-        <div>
-          <div style="font-size:13px;font-weight:700;color:var(--navy)">Looking for the full price board?</div>
-          <div style="font-size:12px;color:var(--mu)">Every crop, every region — price tables, trend lines and regional comparisons.</div>
-        </div>
-        <a href="data.html" style="display:inline-block;padding:12px 24px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap">Explore full price data &rarr;</a>
-      </div>
-
-      <p style="font-size:11px;color:var(--mu);margin-top:12px;text-align:right">
-        Source: MAFC &middot; TCB &middot; CDT &middot; CBT &middot; COPRA &middot; Data as at <span id="priceDate">&mdash;</span> &middot; Prices are indicative reference rates only
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ NEWS ═══ -->
 <section class="section section-alt" id="news">
   <div class="container">
     <div class="section-head">
@@ -633,12 +443,10 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
     <!-- News + sidebar ad layout -->
     <div class="news-sidebar-grid" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
       <div>
-        <div class="grid-3" id="newsGrid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+        <div class="grid-3" id="newsGrid" data-max="999" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
           <!-- Populated by JS: latest 3 stories -->
         </div>
-        <div style="margin-top:22px">
-          <a href="intelligence.html#news" style="display:inline-block;padding:11px 22px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">View all news &amp; tenders &rarr;</a>
-        </div>
+        
       </div>
       <!-- Sidebar ad + quick links — sticky so it stays aligned as news list scrolls -->
       <div id="sidebarWrap" style="display:none;width:320px;flex-shrink:0;position:sticky;top:90px">
@@ -659,16 +467,16 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
         <!-- Quick links card — fills the space below the ad -->
         <div style="margin-top:24px;background:var(--cream);border:1px solid var(--bdr);border-radius:10px;padding:18px">
           <div style="font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:12px">Quick Links</div>
-          <a href="#prices" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
+          <a href="index.html#prices" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
             <span>Live Price Board</span><span style="color:var(--gold)">&rarr;</span>
           </a>
-          <a href="intelligence.html#tenders" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
+          <a href="#tenders" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
             <span>Open Tenders</span><span style="color:var(--gold)">&rarr;</span>
           </a>
-          <a href="#platform" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
+          <a href="index.html#platform" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;border-bottom:1px solid #F0EBD8;font-size:12px;color:var(--tx);text-decoration:none">
             <span>The FURROW Platform</span><span style="color:var(--gold)">&rarr;</span>
           </a>
-          <a href="#faq" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;font-size:12px;color:var(--tx);text-decoration:none">
+          <a href="index.html#faq" style="display:flex;align-items:center;justify-content:space-between;padding:8px 0;font-size:12px;color:var(--tx);text-decoration:none">
             <span>Frequently Asked Questions</span><span style="color:var(--gold)">&rarr;</span>
           </a>
         </div>
@@ -677,185 +485,16 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   </div>
 </section>
 
-<!-- ═══ PLATFORM PREVIEW ═══ -->
-<section class="section section-dark" id="platform">
+<!-- ═══ TENDERS ═══ -->
+<section class="section" id="tenders">
   <div class="container">
-    <div class="section-head text-center">
-      <div class="section-label">The FURROW Platform</div>
-      <h2 class="section-title section-title-wht">What FURROW will do for the market</h2>
-      <p class="section-sub" style="color:rgba(255,255,255,.55);margin:0 auto;max-width:560px">FURROW is more than a price board. It is a full agricultural trade operating system being built for Tanzania — with four dedicated portals and end-to-end deal management.</p>
+    <div class="section-head">
+      <div class="section-label">Open Procurement</div>
+      <h2 class="section-title">Tenders &amp; Procurement Opportunities</h2>
+      <p class="section-sub">Active tenders from FAO, UN agencies, government bodies and development partners seeking agricultural commodities, consulting and transport services.</p>
     </div>
-    <div class="grid-2" style="margin-bottom:48px">
-      <!-- How it works -->
-      <div>
-        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">How it works</div>
-        <div class="step">
-          <div class="step-num">1</div>
-          <div><div class="step-title" style="color:#fff">Register your role</div><div class="step-body" style="color:rgba(255,255,255,.55)">Sign up as a Supplier, Transporter, or Customer. Your FURROW User ID is assigned instantly. Tanzanian and international participants welcome.</div></div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div><div class="step-title" style="color:#fff">Browse verified listings</div><div class="step-body" style="color:rgba(255,255,255,.55)">See live government reference prices alongside every supplier&rsquo;s actual asking price. Filter by crop, region, and grade.</div></div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div><div class="step-title" style="color:#fff">Chat and negotiate</div><div class="step-body" style="color:rgba(255,255,255,.55)">Talk directly to suppliers in any of 12 languages. Share sample photos, invoices and certificates in-conversation.</div></div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div><div class="step-title" style="color:#fff">Trade with confidence</div><div class="step-body" style="color:rgba(255,255,255,.55)">Place orders and track them through five stages &mdash; or ask FURROW to act as your agent, verify the stock and take full liability.</div></div>
-        </div>
-      </div>
-      <!-- Feature list -->
-      <div style="background:rgba(255,255,255,.03);border:1px solid rgba(201,168,76,.15);border-radius:var(--radius);padding:28px">
-        <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:18px">Platform features</div>
-        <div style="display:flex;flex-direction:column;gap:16px">
-          <div style="display:flex;align-items:flex-start;gap:12px">
-            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">P</div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff">Live FX-style price board</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">42 crop types across 30 Tanzania regions. Updated daily from official ministry data.</div></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px">
-            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">T</div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff">AI chat translator &middot; 12 languages</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">English, Swahili, French, Arabic, Chinese, Portuguese, Hindi, Spanish, German, Japanese, Korean, Russian.</div></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px">
-            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">M</div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff">FURROW Mediation Service</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">FURROW verifies stock, handles all documentation, holds payment in escrow and takes full liability. 5% local, 10% international.</div></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px">
-            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">O</div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff">5-stage order pipeline</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">Requested &rarr; Awaiting &rarr; Confirmed &rarr; In Transit &rarr; Delivered. Full visibility from first click to last mile.</div></div>
-          </div>
-          <div style="display:flex;align-items:flex-start;gap:12px">
-            <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">C</div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff">Seasonal crop calendar</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">12-month supply window predictions for every major crop. Know when to buy before the peak arrives.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Roles -->
-    <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px">Four dedicated portals</div>
-    <div class="grid-2">
-      <div class="role-card">
-        <img class="role-img" src="images/role_supplier.jpg" alt="Tanzanian farmers working their field" loading="lazy" />
-        <div class="role-title">Suppliers</div>
-        <div class="role-sub">Farmer &middot; Aggregator &middot; Agri-Business</div>
-        <div class="role-body">List your produce with your own prices, see exactly how they compare against the government reference rate, and receive orders directly from verified buyers.</div>
-        <ul class="role-feats">
-          <li>TIN-verified profile with regional listing</li>
-          <li>Up to 5 produce listings per account</li>
-          <li>Incoming order management with analytics</li>
-          <li>Direct buyer chat in 12 languages</li>
-        </ul>
-        <span class="role-fee">From TZS 5,000 / month</span>
-        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--bdr)"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:4px">What you&rsquo;ll need</div><div style="font-size:11px;color:var(--mu);line-height:1.6">TIN number &middot; Regional location &middot; Produce details</div><a href="#" onclick="openCS();return false;" style="display:inline-block;margin-top:10px;padding:8px 16px;background:var(--navy);color:var(--gold);border-radius:6px;font-size:11px;font-weight:700;text-decoration:none">Register interest &rarr;</a></div>
-      </div>
-      <div class="role-card">
-        <img class="role-img" src="images/role_customer.jpg" alt="Buyer checking produce and prices on a phone at the farm" loading="lazy" />
-        <div class="role-title">Customers</div>
-        <div class="role-sub">Individual &middot; Corporate &middot; International</div>
-        <div class="role-body">See every supplier&rsquo;s price next to the government reference rate. Order directly or let FURROW verify and mediate the entire deal on your behalf.</div>
-        <ul class="role-feats">
-          <li>Live price board &mdash; all 42 crops, all regions</li>
-          <li>Tanzania supply density map by corridor</li>
-          <li>FURROW Mediation with full liability cover</li>
-          <li>News, regulations and tender alerts</li>
-        </ul>
-        <span class="role-fee">Free to browse</span>
-        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--bdr)"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:4px">What you&rsquo;ll need</div><div style="font-size:11px;color:var(--mu);line-height:1.6">Email only &mdash; browse free at launch</div><a href="#" onclick="openCS();return false;" style="display:inline-block;margin-top:10px;padding:8px 16px;background:var(--navy);color:var(--gold);border-radius:6px;font-size:11px;font-weight:700;text-decoration:none">Register interest &rarr;</a></div>
-      </div>
-      <div class="role-card">
-        <img class="role-img" src="images/role_transporter.jpg" alt="Logistics worker at a freight loading point" loading="lazy" />
-        <div class="role-title">Transporters</div>
-        <div class="role-sub">All vehicle categories &middot; All corridors</div>
-        <div class="role-body">List your fleet and service corridors. Receive transport job requests from buyers. Accept or decline. Get paid faster because the deal is already confirmed.</div>
-        <ul class="role-feats">
-          <li>Fleet management with live vehicle status</li>
-          <li>17 vehicle categories supported</li>
-          <li>Route and corridor-based job matching</li>
-          <li>Direct customer chat with document sharing</li>
-        </ul>
-        <span class="role-fee">TZS 8,000 / month</span>
-        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--bdr)"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:4px">What you&rsquo;ll need</div><div style="font-size:11px;color:var(--mu);line-height:1.6">TIN number &middot; Fleet details &middot; Service corridors</div><a href="#" onclick="openCS();return false;" style="display:inline-block;margin-top:10px;padding:8px 16px;background:var(--navy);color:var(--gold);border-radius:6px;font-size:11px;font-weight:700;text-decoration:none">Register interest &rarr;</a></div>
-      </div>
-      <div class="role-card">
-        <img class="role-img" src="images/role_equipment.jpg" alt="Grower using digital tools in a commercial greenhouse" loading="lazy" />
-        <div class="role-title">Equipment &amp; Services</div>
-        <div class="role-sub">Machinery &middot; Solar &middot; Training &middot; Agri-inputs</div>
-        <div class="role-body">List your products and services to Tanzania's entire agricultural value chain — farmers, agri-businesses, transporters and cooperatives — on one verified platform.</div>
-        <ul class="role-feats">
-          <li>Trucks, trailers and heavy agricultural equipment</li>
-          <li>Solar EPC and irrigation systems</li>
-          <li>Agri-inputs &mdash; fertilisers, seeds, pesticides</li>
-          <li>Training, certification and consultancy services</li>
-        </ul>
-        <span class="role-fee">Contact us for pricing</span>
-        <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--bdr)"><div style="font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu);margin-bottom:4px">What you&rsquo;ll need</div><div style="font-size:11px;color:var(--mu);line-height:1.6">Business licence &middot; Product/service catalogue</div><a href="#" onclick="openCS();return false;" style="display:inline-block;margin-top:10px;padding:8px 16px;background:var(--navy);color:var(--gold);border-radius:6px;font-size:11px;font-weight:700;text-decoration:none">Register interest &rarr;</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ MEDIATION ═══ -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="broker-strip">
-      <div>
-        <div class="section-label">FURROW Mediation Service</div>
-        <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:600;color:#fff;margin-bottom:10px">Can&rsquo;t travel to verify the stock?<br><span style="color:var(--gold)">We go for you.</span></h2>
-        <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.75;margin-bottom:18px;max-width:520px">FURROW acts as your authorised agent. We physically verify the supplier, inspect goods on-site, obtain all documentation, arrange transport, hold your funds in escrow, and release payment only when you confirm delivery.</p>
-        <div class="broker-tariff-row">
-          <div class="broker-tariff"><div class="bt-pct">5%</div><div class="bt-lbl">Local Tanzania deals</div></div>
-          <div class="broker-tariff"><div class="bt-pct">10%</div><div class="bt-lbl">International cross-border</div></div>
-        </div>
-        <ul class="guar-list">
-          <li><span class="guar-icon">&#9679;</span><span>Physical stock verification by a FURROW field agent &mdash; on-site, photographed, confirmed within 48 hours</span></li>
-          <li><span class="guar-icon">&#9679;</span><span>All documentation handled &mdash; phytosanitary, TRA clearance, export permits, bill of lading</span></li>
-          <li><span class="guar-icon">&#9679;</span><span>Escrow payment &mdash; your funds are released to the supplier only when you sign off on delivery</span></li>
-          <li><span class="guar-icon">&#9679;</span><span>Full liability cover &mdash; if stock does not match specification, you receive a 100% refund including the FURROW fee</span></li>
-          <li><span class="guar-icon">&#9679;</span><span>Dispute resolution within 48 hours &mdash; FURROW&rsquo;s ruling is final and binding on both parties</span></li>
-        </ul>
-      </div>
-      <div class="broker-nums">
-        <img src="images/mediation.jpg" alt="FURROW field verification at a loading site" loading="lazy" style="width:100%;border-radius:10px;margin-bottom:16px;border:1px solid rgba(201,168,76,.3)" />
-        <div class="bnum"><div class="bnum-val">48h</div><div class="bnum-lbl">Stock verified</div></div>
-        <div class="bnum"><div class="bnum-val">100%</div><div class="bnum-lbl">Refund if mismatch</div></div>
-        <div class="bnum"><div class="bnum-val">26</div><div class="bnum-lbl">Regions covered</div></div>
-        <div class="bnum"><div class="bnum-val">6</div><div class="bnum-lbl">Field agent locations</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FAQ ═══ -->
-<section class="section section-alt" id="faq">
-  <div class="container" style="max-width:760px">
-    <div class="section-head text-center">
-      <div class="section-label">Questions</div>
-      <h2 class="section-title">Frequently asked</h2>
-    </div>
-    <div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What is the difference between the government reference price and the supplier price? <i class="faq-icon">+</i></button>
-        <div class="faq-a">The government reference price is the official indicative rate published by the Ministry of Agriculture (MAFC), Tanzania Coffee Board, Cotton Development Trust and Cashewnut Board. It reflects the regulated fair market value. The supplier price is what the individual seller is actually offering. FURROW shows both side by side so any buyer can instantly see who is above or below the official rate &mdash; and by exactly how much.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">How often are prices updated? <i class="faq-icon">+</i></button>
-        <div class="faq-a">Prices are updated daily by the FURROW administration team from official ministry publications. The timestamp at the top of the price board shows when data was last confirmed. The website automatically checks for new data every five minutes &mdash; no page reload needed.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">I am not Tanzanian. Can I use FURROW? <i class="faq-icon">+</i></button>
-        <div class="faq-a">Yes. FURROW is open to international participants. During registration, select &ldquo;Non-Tanzanian&rdquo; and choose your country from the full world dropdown. You can browse all listings and use FURROW&rsquo;s Mediation service to verify stock and handle cross-border documentation &mdash; phytosanitary certificates, TRA clearance, export permits, and bill of lading &mdash; without travelling to Tanzania.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What does FURROW Mediation cost and what does it cover? <i class="faq-icon">+</i></button>
-        <div class="faq-a">5% of the deal value for Tanzania local transactions. 10% for cross-border or international deals. This covers physical stock verification by a FURROW field agent on-site, all documentation, escrow payment holding, logistics coordination, and full liability cover. If the stock does not match the agreed specification on any measure, you receive a 100% refund including the FURROW fee &mdash; no negotiation required.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">When will the FURROW platform launch? <i class="faq-icon">+</i></button>
-        <div class="faq-a">The FURROW platform is in final preparation. Phases 1 and 2 are fully built and tested. We are completing final compliance checks and preparing for a public launch. Leave your email via the &ldquo;Launch App&rdquo; button and we will notify you the moment registrations open.</div>
-      </div>
+    <div style="display:flex;flex-direction:column;gap:16px" id="tenderGrid">
+      <!-- Populated by JS -->
     </div>
   </div>
 </section>
@@ -868,25 +507,25 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
         <div style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:20px;color:#fff;letter-spacing:.06em">FU<u>RR</u>OW</div>
         <div style="font-size:8px;color:var(--goldL);letter-spacing:.14em;text-transform:uppercase;margin-top:2px">powered by Gabrison Capital</div>
         <div class="footer-brand-desc">Tanzania&rsquo;s agricultural market intelligence platform. Publishing daily government reference prices, tenders and industry news for the agri and transport sectors.</div>
-        <div style="margin-top:14px;font-size:11px;color:rgba(255,255,255,.35);line-height:1.8"><span style="color:var(--goldL);font-size:9px;letter-spacing:.1em;text-transform:uppercase">Field presence</span><br>Dar es Salaam &middot; Morogoro &middot; Dodoma<br>Njombe &middot; Mbeya &middot; Iringa</div>
+        <div style="margin-top:14px;font-size:11px;color:rgba(255,255,255,.2)">Dar es Salaam, Tanzania</div>
       </div>
       <div>
         <div class="footer-col-title">This site</div>
         <ul class="footer-links">
-          <li><a href="#prices">Live Prices</a></li>
+          <li><a href="index.html#prices">Live Prices</a></li>
           <li><a href="#news">News &amp; Regulations</a></li>
-          <li><a href="intelligence.html#tenders">Tenders</a></li>
-          <li><a href="#platform">The Platform</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#tenders">Tenders</a></li>
+          <li><a href="index.html#platform">The Platform</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
         </ul>
       </div>
       <div>
         <div class="footer-col-title">Platform</div>
         <ul class="footer-links">
-          <li><a href="#platform">For Suppliers</a></li>
-          <li><a href="#platform">For Customers</a></li>
-          <li><a href="#platform">For Transporters</a></li>
-          <li><a href="#platform">FURROW Mediation</a></li>
+          <li><a href="index.html#platform">For Suppliers</a></li>
+          <li><a href="index.html#platform">For Customers</a></li>
+          <li><a href="index.html#platform">For Transporters</a></li>
+          <li><a href="index.html#platform">FURROW Mediation</a></li>
           <li><a href="intelligence.html">Market Intelligence</a></li>
           <li><a href="about.html">Who We Are</a></li>
         </ul>
