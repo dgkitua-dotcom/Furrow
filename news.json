@@ -2,6 +2,30 @@
   "updated": "10 Jul 2026",
   "news": [
     {
+      "date": "10 Jul 2026",
+      "tag": "Input Regulation",
+      "color": "red",
+      "title": "TFRA cracks down on digital fertiliser subsidy sabotage in Simiyu",
+      "body": "The Tanzania Fertilizer Regulatory Authority (TFRA) Lake Zone unit, working with state security agencies in Simiyu region, has arrested unregistered fertiliser traders and agents for bypassing the national digital input subsidy platform. Field arrests included distributors in Bariadi Urban found smuggling stock and inflating Urea prices to TZS 150,000 per bag — far above the government's strict indicative cap of TZS 86,250. TFRA has warned all input distributors that selling outside the digital database or hiking prices will result in immediate asset seizure and criminal prosecution.",
+      "source": "Tanzania Fertilizer Regulatory Authority (TFRA)"
+    },
+    {
+      "date": "10 Jul 2026",
+      "tag": "Youth & Research",
+      "color": "green",
+      "title": "National Youth Leaders Lab launched for rice and horticulture value chains",
+      "body": "The Agriculture Extension and Youth Activity (AEYA) framework has officially launched a new \"New Leaders Lab\" call for action research. Backed by the Ministry of Agriculture, the strategic investment injects targeted technical resources into postgraduate researchers to optimise data infrastructure and post-harvest management across the high-growth rice and horticulture clusters in Morogoro, Kilombero and Mpimbwe districts.",
+      "source": "Agriculture Extension and Youth Activity (AEYA) / Ministry of Agriculture"
+    },
+    {
+      "date": "10 Jul 2026",
+      "tag": "Livestock",
+      "color": "blue",
+      "title": "Tanga livestock framework integrates mastitis diagnostic technology",
+      "body": "Field extension teams from Sokoine University of Agriculture (SUA) have launched a multi-district dairy training rollout across Tanga. Funded under regional innovation grants, the programme introduces new diagnostic tools and targeted field treatments directly to livestock cooperatives to curb production losses from mastitis and protect regional commercial milk supply lanes.",
+      "source": "Sokoine University of Agriculture (SUA)"
+    },
+    {
       "date": "8 Jul 2026",
       "tag": "Digital Finance",
       "color": "green",

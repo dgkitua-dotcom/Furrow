@@ -1,6 +1,18 @@
 {
-  "updated": "9 Jul 2026",
+  "updated": "10 Jul 2026",
   "tenders": [
+    {
+      "ref": "TZT/144446185",
+      "body": "Eastern Africa Statistical Frameworks / Zanzibar Statistical Division",
+      "title": "National Food Balance Sheet (FBS) Digital Compilation Support — Consultancy",
+      "volume": "As per ECST call specifications",
+      "deadline": "9 Jul 2026 (rolling review extension)",
+      "value": "To be determined",
+      "eligibility": "National consultants with expertise in statistical data infrastructure, digital compilation systems and food security data modelling",
+      "status": "closing",
+      "notes": "Provision of national consultancy services to design, clean and execute digital compilation and data infrastructure models for the regional Food Balance Sheet (FBS) mapping layers. Core technical assets remain under rolling review extension. TZT Ref No: 144446185 (ECST Call).",
+      "url": "https://www.tanzaniatenders.com/it-softwares-tenders.php"
+    },
     {
       "ref": "FAOTZ/RFP/2026/005",
       "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
@@ -9,7 +21,7 @@
       "deadline": "12 Jul 2026",
       "value": "To be determined",
       "eligibility": "Individual consultants or firms with expertise in gender policy, digital equity and agricultural policy analysis in Tanzania",
-      "status": "open",
+      "status": "closing",
       "notes": "High-level consulting framework evaluating resource parity and analyzing how digital agritech platforms, field data collection, and financial structures effectively reach women and youth in rural zones. TZT Ref No: 143648289.",
       "url": "https://www.ungm.org/Public/Notice/304664"
     },
@@ -26,6 +38,18 @@
       "url": "https://www.tanzaniatenders.com/products-services/agriculture-tenders/"
     },
     {
+      "ref": "FAOTZ/ITB/2026/016",
+      "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
+      "title": "Supervision of Livestock Infrastructure Construction — Charcoal Earth Dams & Boreholes",
+      "volume": "Multiple sites across primary livestock corridors",
+      "deadline": "19 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Engineering supervision firms with experience in civil works monitoring, water infrastructure and rural construction supervision",
+      "status": "open",
+      "notes": "Field procurement for engineering supervision firms to monitor infrastructure rehabilitation and civil construction works of charcoal earth dams, solar-powered boreholes and production-level water points across primary livestock corridors.",
+      "url": "https://www.developmentaid.org/tenders/in-tanzania"
+    },
+    {
       "ref": "TR160/2025/2026/C/08",
       "body": "Tanzania Official Seed Certification Institute (TOSCI) — via NeST",
       "title": "Public Awareness and E-Label System Integration Consultancy",
@@ -36,6 +60,18 @@
       "status": "open",
       "notes": "Designing and executing sensitization protocols for seed sector stakeholders on deployment of cryptographic e-labels to verify input supply-chain authenticity. Published via the National e-Procurement System of Tanzania (NeST).",
       "url": "https://nest.go.tz/tenders/published-tenders?category=C"
+    },
+    {
+      "ref": "UNGM/300103",
+      "body": "United Nations International Procurement / Government of Tanzania (DMDP2 Portfolio)",
+      "title": "Feasibility Studies for Circular Organic Waste Management & Composting — Dar es Salaam",
+      "volume": "Large-scale consulting framework",
+      "deadline": "27 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Consulting firms with expertise in circular economy, organic waste recovery, urban waste stream mapping and composting logistics",
+      "status": "open",
+      "notes": "Mapping urban and market organic streams in Dar es Salaam to identify scalable, technology-backed options for corporate organic waste recovery and regional composting logistics. Flagship DMDP2 portfolio, published via UN Global Marketplace.",
+      "url": "https://www.ungm.org/Public/Notice/300103"
     },
     {
       "ref": "NORGES-VEL/TZ/2026",
