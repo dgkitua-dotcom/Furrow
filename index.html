@@ -627,19 +627,39 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   <div class="container">
     <div class="section-head">
       <div class="section-label">Latest Developments</div>
-      <h2 class="section-title">Agri &amp; Transport News</h2>
-      <p class="section-sub">Regulations, export levies, import bans, infrastructure updates and market advisories relevant to Tanzania&rsquo;s agricultural and transport sectors.</p>
+      <h2 class="section-title">News &amp; Tenders Intelligence</h2>
+      <p class="section-sub">How FURROW gathers, verifies and filters the market intelligence published on this platform &mdash; and where to read it all.</p>
     </div>
     <!-- News + sidebar ad layout -->
     <div class="news-sidebar-grid" style="display:grid;grid-template-columns:1fr auto;gap:28px;align-items:start">
-      <div>
-        <div class="grid-3" id="newsGrid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
-          <!-- Populated by JS: latest 3 stories -->
+      <div class="grid-2" style="gap:20px;align-items:stretch">
+
+        <!-- News methodology tile -->
+        <div style="background:#fff;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
+          <img src="images/tile_news.jpg" alt="Mechanised farming in Tanzania" loading="lazy" style="width:100%;height:190px;object-fit:cover;display:block" />
+          <div style="padding:22px;flex:1;display:flex;flex-direction:column">
+            <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Agri &amp; Transport News</div>
+            <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px">How we source the news</div>
+            <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:10px">FURROW monitors official channels daily &mdash; the Ministry of Agriculture, crop boards, regulators, the Bank of Tanzania, port and transport authorities, and development agencies. Each story is summarised in plain language and carries its named source.</p>
+            <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:16px;flex:1">We filter for relevance: only developments that affect Tanzania&rsquo;s agricultural and transport value chain make the board &mdash; regulations, levies, market access, inputs and finance. No filler.</p>
+            <a href="intelligence.html#news" style="display:inline-block;align-self:flex-start;padding:10px 20px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">Read the latest news &rarr;</a>
+          </div>
         </div>
-        <div style="margin-top:22px">
-          <a href="intelligence.html#news" style="display:inline-block;padding:11px 22px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">View all news &amp; tenders &rarr;</a>
+
+        <!-- Tenders methodology tile -->
+        <div style="background:#fff;border:1px solid var(--bdr);border-radius:12px;overflow:hidden;display:flex;flex-direction:column">
+          <img src="images/tile_tenders.jpg" alt="Produce being loaded for transport in Tanzania" loading="lazy" style="width:100%;height:190px;object-fit:cover;display:block" />
+          <div style="padding:22px;flex:1;display:flex;flex-direction:column">
+            <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Procurement Opportunities</div>
+            <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px">How we vet tenders</div>
+            <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:10px">Tenders are collected from official procurement portals &mdash; Tanzania&rsquo;s NeST system, UN Global Marketplace, Devex and verified tender boards &mdash; with the reference number, issuing body, deadline and direct source link for every entry.</p>
+            <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:16px;flex:1">Only active opportunities relevant to the agricultural value chain are listed, and expired deadlines are removed with every update &mdash; so what you see is always live and worth your time.</p>
+            <a href="intelligence.html#tenders" style="display:inline-block;align-self:flex-start;padding:10px 20px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">Browse open tenders &rarr;</a>
+          </div>
         </div>
+
       </div>
+
       <!-- Sidebar ad + quick links — sticky so it stays aligned as news list scrolls -->
       <div id="sidebarWrap" style="display:none;width:320px;flex-shrink:0;position:sticky;top:90px">
         <div style="position:relative">
