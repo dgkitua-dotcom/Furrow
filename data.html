@@ -44,8 +44,9 @@ footer a { color:var(--goldL); text-decoration:none; }
 :root { --deep:#08141F; --goldL:#E2C47E; }
 .nav { background: var(--navy); border-bottom: 2px solid var(--gold); position: sticky; top: 0; z-index: 999; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 11px 24px; max-width: 1440px; margin: 0 auto; }
-.nav-logo .wm  { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 21px; color: #fff; letter-spacing: .06em; line-height: 1; }
-.nav-logo .nav-logo .tg  { font-size: 8px; color: var(--goldL); letter-spacing: .14em; text-transform: uppercase; font-weight: 300; margin-top: 1px; }
+.nav-logo .wm { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 21px; color: #fff; letter-spacing: .06em; line-height: 1; }
+.nav-logo .wm u { text-underline-offset: 3px; }
+.nav-logo .tg { font-size: 8px; color: var(--goldL); letter-spacing: .14em; text-transform: uppercase; font-weight: 300; margin-top: 1px; }
 .nav-links { display: flex; align-items: center; gap: 4px; }
 .nav-links a { padding: 6px 13px; color: rgba(255,255,255,.6); font-size: 12px; border-radius: 5px; transition: color .15s; font-weight: 500; text-decoration: none; }
 .nav-links a:hover { color: var(--gold); }
@@ -65,6 +66,7 @@ footer a { color:var(--goldL); text-decoration:none; }
 .tick-crop { color: var(--gold); font-weight: 700; font-size: 11px; letter-spacing: .03em; }
 @media (max-width: 768px) { .nav-links { display: none; } .nav-ham { display: block; } }
 @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+/* ── End canonical header ── */
 </style>
 </head>
 <body>
