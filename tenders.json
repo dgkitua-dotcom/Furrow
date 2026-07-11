@@ -1,10 +1,10 @@
 {
-  "updated": "10 Jul 2026",
+  "updated": "11 Jul 2026",
   "tenders": [
     {
       "ref": "FAOTZ/RFP/2026/005",
       "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
-      "title": "Gender Policy Assessment & Digital Inclusion Architecture — Individual Consultancy",
+      "title": "Gender Policy Assessment & Digital Inclusion Architecture, Individual Consultancy",
       "volume": "As per RFP specifications",
       "deadline": "12 Jul 2026",
       "value": "To be determined",
@@ -16,7 +16,7 @@
     {
       "ref": "TZT/142413118",
       "body": "Multi-Partner Commercial Enterprise Framework",
-      "title": "Working Jointly in Agriculture — Commercial Joint Venture Operations Call",
+      "title": "Working Jointly in Agriculture, Commercial Joint Venture Operations Call",
       "volume": "As per project specifications",
       "deadline": "15 Jul 2026",
       "value": "To be determined",
@@ -26,9 +26,21 @@
       "url": "https://www.tanzaniatenders.com/products-services/agriculture-tenders/"
     },
     {
+      "ref": "TZT/144446185",
+      "body": "Eastern Africa Statistical Frameworks / Zanzibar Statistical Division",
+      "title": "National Food Balance Sheet (FBS) Digital Compilation Support, Consultancy",
+      "volume": "As per ECST call specifications",
+      "deadline": "15 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Consultants with expertise in statistical data architectures, digital compilation systems and food security data modelling",
+      "status": "open",
+      "notes": "Provision of consulting services to design data collection architectures for the regional Food Balance Sheet (FBS) compilation tracking models. Deadline extended to 15 July 2026. TZT Ref No: 144446185 (ECST Call).",
+      "url": "https://www.tanzaniatenders.com/it-softwares-tenders.php"
+    },
+    {
       "ref": "FAOTZ/ITB/2026/016",
       "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
-      "title": "Supervision of Livestock Infrastructure Construction — Charcoal Earth Dams & Boreholes",
+      "title": "Supervision of Livestock Infrastructure Construction, Charcoal Earth Dams & Boreholes",
       "volume": "Multiple sites across primary livestock corridors",
       "deadline": "19 Jul 2026",
       "value": "To be determined",
@@ -39,7 +51,7 @@
     },
     {
       "ref": "TR160/2025/2026/C/08",
-      "body": "Tanzania Official Seed Certification Institute (TOSCI) — via NeST",
+      "body": "Tanzania Official Seed Certification Institute (TOSCI), via NeST",
       "title": "Public Awareness and E-Label System Integration Consultancy",
       "volume": "As per consultancy specifications",
       "deadline": "23 Jul 2026",
@@ -52,7 +64,7 @@
     {
       "ref": "UNGM/300103",
       "body": "United Nations International Procurement / Government of Tanzania (DMDP2 Portfolio)",
-      "title": "Feasibility Studies for Circular Organic Waste Management & Composting — Dar es Salaam",
+      "title": "Feasibility Studies for Circular Organic Waste Management & Composting, Dar es Salaam",
       "volume": "Large-scale consulting framework",
       "deadline": "27 Jul 2026",
       "value": "To be determined",
@@ -64,7 +76,7 @@
     {
       "ref": "NORGES-VEL/TZ/2026",
       "body": "The Royal Norwegian Society for Development (Norges Vel)",
-      "title": "Value Chain Evaluation & Resilient Agriculture Mid-Term Review — Tanzania",
+      "title": "Value Chain Evaluation & Resilient Agriculture Mid-Term Review, Tanzania",
       "volume": "Multi-country evaluation scope",
       "deadline": "14 Aug 2026",
       "value": "To be determined",

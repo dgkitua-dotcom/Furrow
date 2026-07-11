@@ -1,968 +1,1211 @@
 {
-  "updated": "10 Jul 2026",
-  "source_note": "MAFC weekly bulletin (29 Jun-3 Jul 2026) + TCB + CBT + CDT + COPRA (10 Jul 2026). All prices TZS/kg.",
+  "updated": "11 Jul 2026",
+  "source_note": "MAFC weekly bulletin (all regions, Govt vs private supplier spreads) + TCB + CBT + CDT + TMX/COPRA (11 Jul 2026). All prices TZS/kg. Movement now shows the private supplier spread vs the official government reference for the same crop and region.",
   "prices": [
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Tanzania (National Average)",
+      "gov": 600,
+      "sup": 635,
+      "dir": "up",
+      "chg": "+5.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Tanzania (National Average)",
+      "gov": 2100,
+      "sup": 2190,
+      "dir": "up",
+      "chg": "+4.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Tanzania (National Average)",
+      "gov": 2000,
+      "sup": 1940,
+      "dir": "dn",
+      "chg": "-3.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Tanzania (National Average)",
+      "gov": 1500,
+      "sup": 1560,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Tanzania (National Average)",
+      "gov": 1600,
+      "sup": 1645,
+      "dir": "up",
+      "chg": "+2.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Tanzania (National Average)",
+      "gov": 2100,
+      "sup": 2210,
+      "dir": "up",
+      "chg": "+5.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Tanzania (National Average)",
+      "gov": 1000,
+      "sup": 960,
+      "dir": "dn",
+      "chg": "-4.0%",
+      "source": "MAFC"
+    },
     {
       "crop": "Mahindi (Maize)",
       "region": "Dodoma",
       "gov": 700,
-      "sup": 700,
+      "sup": 745,
       "dir": "up",
-      "chg": "+16.7%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Arusha",
-      "gov": 600,
-      "sup": 600,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Lindi",
-      "gov": 800,
-      "sup": 800,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Morogoro",
-      "gov": 410,
-      "sup": 410,
-      "dir": "dn",
-      "chg": "-31.7%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Tanga",
-      "gov": 600,
-      "sup": 600,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Mtwara",
-      "gov": 600,
-      "sup": 600,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Iringa",
-      "gov": 500,
-      "sup": 500,
-      "dir": "up",
-      "chg": "+25.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Ruvuma",
-      "gov": 500,
-      "sup": 500,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Tabora",
-      "gov": 600,
-      "sup": 600,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Rukwa",
-      "gov": 500,
-      "sup": 500,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Shinyanga",
-      "gov": 700,
-      "sup": 700,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Kagera",
-      "gov": 800,
-      "sup": 800,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Mara",
-      "gov": 700,
-      "sup": 700,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Manyara",
-      "gov": 500,
-      "sup": 500,
-      "dir": "dn",
-      "chg": "-28.6%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Njombe",
-      "gov": 400,
-      "sup": 400,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Geita",
-      "gov": 1000,
-      "sup": 1000,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Songwe",
-      "gov": 400,
-      "sup": 400,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Simiyu",
-      "gov": 800,
-      "sup": 800,
-      "dir": "flat",
-      "chg": "0.0%",
+      "chg": "+6.4%",
       "source": "MAFC"
     },
     {
       "crop": "Mchele (Rice)",
       "region": "Dodoma",
       "gov": 2400,
-      "sup": 2400,
-      "dir": "flat",
-      "chg": "0.0%",
+      "sup": 2510,
+      "dir": "up",
+      "chg": "+4.6%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Dodoma",
+      "gov": 2300,
+      "sup": 2190,
+      "dir": "dn",
+      "chg": "-4.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Dodoma",
+      "gov": 1000,
+      "sup": 1040,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Dodoma",
+      "gov": 1300,
+      "sup": 1240,
+      "dir": "dn",
+      "chg": "-4.6%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Dodoma",
+      "gov": 2100,
+      "sup": 2185,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Dodoma",
+      "gov": 1200,
+      "sup": 1260,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Arusha",
+      "gov": 600,
+      "sup": 625,
+      "dir": "up",
+      "chg": "+4.2%",
       "source": "MAFC"
     },
     {
       "crop": "Mchele (Rice)",
       "region": "Arusha",
       "gov": 3100,
-      "sup": 3100,
+      "sup": 3240,
       "dir": "up",
-      "chg": "+3.3%",
+      "chg": "+4.5%",
       "source": "MAFC"
     },
     {
-      "crop": "Mchele (Rice)",
-      "region": "Dar es Salaam",
-      "gov": 2600,
-      "sup": 2600,
-      "dir": "flat",
-      "chg": "0.0%",
+      "crop": "Maharage (Beans)",
+      "region": "Arusha",
+      "gov": 1900,
+      "sup": 1995,
+      "dir": "up",
+      "chg": "+5.0%",
       "source": "MAFC"
     },
     {
-      "crop": "Mchele (Rice)",
-      "region": "Lindi",
-      "gov": 2400,
-      "sup": 2400,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Morogoro",
-      "gov": 2000,
-      "sup": 2000,
+      "crop": "Mtama (Sorghum)",
+      "region": "Arusha",
+      "gov": 1300,
+      "sup": 1260,
       "dir": "dn",
-      "chg": "-23.1%",
+      "chg": "-3.1%",
       "source": "MAFC"
     },
     {
-      "crop": "Mchele (Rice)",
-      "region": "Tanga",
-      "gov": 2400,
-      "sup": 2400,
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Arusha",
+      "gov": 2300,
+      "sup": 2420,
+      "dir": "up",
+      "chg": "+5.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Arusha",
+      "gov": 1000,
+      "sup": 950,
+      "dir": "dn",
+      "chg": "-5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Dar es Salaam",
+      "gov": 700,
+      "sup": 730,
       "dir": "up",
       "chg": "+4.3%",
       "source": "MAFC"
     },
     {
       "crop": "Mchele (Rice)",
-      "region": "Mtwara",
-      "gov": 2200,
-      "sup": 2200,
-      "dir": "dn",
-      "chg": "-15.4%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Iringa",
-      "gov": 2300,
-      "sup": 2300,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Ruvuma",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Tabora",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Rukwa",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Shinyanga",
-      "gov": 1900,
-      "sup": 1900,
-      "dir": "dn",
-      "chg": "-13.6%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Mwanza",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Kagera",
-      "gov": 2200,
-      "sup": 2200,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Mara",
-      "gov": 1700,
-      "sup": 1700,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Manyara",
-      "gov": 2500,
-      "sup": 2500,
-      "dir": "dn",
-      "chg": "-7.4%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Njombe",
-      "gov": 2400,
-      "sup": 2400,
-      "dir": "dn",
-      "chg": "-4.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Geita",
-      "gov": 1900,
-      "sup": 1900,
-      "dir": "dn",
-      "chg": "-5.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Songwe",
-      "gov": 1800,
-      "sup": 1800,
-      "dir": "dn",
-      "chg": "-5.3%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Simiyu",
-      "gov": 2200,
-      "sup": 2200,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Dodoma",
-      "gov": 2300,
-      "sup": 2300,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Arusha",
-      "gov": 1900,
-      "sup": 1900,
-      "dir": "flat",
-      "chg": "0.0%",
+      "region": "Dar es Salaam",
+      "gov": 2600,
+      "sup": 2740,
+      "dir": "up",
+      "chg": "+5.4%",
       "source": "MAFC"
     },
     {
       "crop": "Maharage (Beans)",
       "region": "Dar es Salaam",
       "gov": 2700,
-      "sup": 2700,
-      "dir": "up",
-      "chg": "+8.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Lindi",
-      "gov": 2300,
-      "sup": 2300,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Morogoro",
-      "gov": 2100,
-      "sup": 2100,
+      "sup": 2590,
       "dir": "dn",
-      "chg": "-12.5%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Tanga",
-      "gov": 1800,
-      "sup": 1800,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Mtwara",
-      "gov": 2200,
-      "sup": 2200,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Iringa",
-      "gov": 2200,
-      "sup": 2200,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Ruvuma",
-      "gov": 1900,
-      "sup": 1900,
-      "dir": "dn",
-      "chg": "-9.5%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Tabora",
-      "gov": 2200,
-      "sup": 2200,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Rukwa",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Shinyanga",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "dn",
-      "chg": "-13.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Mwanza",
-      "gov": 1800,
-      "sup": 1800,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Kagera",
-      "gov": 1800,
-      "sup": 1800,
-      "dir": "dn",
-      "chg": "-10.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Mara",
-      "gov": 1800,
-      "sup": 1800,
-      "dir": "up",
-      "chg": "+5.9%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Manyara",
-      "gov": 2300,
-      "sup": 2300,
-      "dir": "dn",
-      "chg": "-14.8%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Njombe",
-      "gov": 1600,
-      "sup": 1600,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Geita",
-      "gov": 2200,
-      "sup": 2200,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Songwe",
-      "gov": 1700,
-      "sup": 1700,
-      "dir": "up",
-      "chg": "+6.2%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Simiyu",
-      "gov": 2900,
-      "sup": 2900,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Arusha",
-      "gov": 1300,
-      "sup": 1300,
-      "dir": "flat",
-      "chg": "0.0%",
+      "chg": "-4.1%",
       "source": "MAFC"
     },
     {
       "crop": "Mtama (Sorghum)",
       "region": "Dar es Salaam",
       "gov": 1300,
-      "sup": 1300,
+      "sup": 1380,
       "dir": "up",
-      "chg": "+8.3%",
+      "chg": "+6.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Dar es Salaam",
+      "gov": 1200,
+      "sup": 1250,
+      "dir": "up",
+      "chg": "+4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Dar es Salaam",
+      "gov": 1900,
+      "sup": 1810,
+      "dir": "dn",
+      "chg": "-4.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Dar es Salaam",
+      "gov": 1100,
+      "sup": 1155,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Lindi",
+      "gov": 800,
+      "sup": 850,
+      "dir": "up",
+      "chg": "+6.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Lindi",
+      "gov": 2400,
+      "sup": 2490,
+      "dir": "up",
+      "chg": "+3.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Lindi",
+      "gov": 2300,
+      "sup": 2410,
+      "dir": "up",
+      "chg": "+4.8%",
       "source": "MAFC"
     },
     {
       "crop": "Mtama (Sorghum)",
       "region": "Lindi",
       "gov": 2300,
-      "sup": 2300,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Morogoro",
-      "gov": 1500,
-      "sup": 1500,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Tanga",
-      "gov": 1200,
-      "sup": 1200,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Mtwara",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Iringa",
-      "gov": 1700,
-      "sup": 1700,
+      "sup": 2210,
       "dir": "dn",
-      "chg": "-5.6%",
+      "chg": "-3.9%",
       "source": "MAFC"
     },
     {
-      "crop": "Mtama (Sorghum)",
-      "region": "Shinyanga",
-      "gov": 1500,
-      "sup": 1500,
-      "dir": "dn",
-      "chg": "-16.7%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Kagera",
-      "gov": 1500,
-      "sup": 1500,
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Lindi",
+      "gov": 2800,
+      "sup": 2930,
       "dir": "up",
-      "chg": "+7.1%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Mara",
-      "gov": 1500,
-      "sup": 1500,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Geita",
-      "gov": 1900,
-      "sup": 1900,
-      "dir": "dn",
-      "chg": "-5.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Simiyu",
-      "gov": 2300,
-      "sup": 2300,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Dodoma",
-      "gov": 1000,
-      "sup": 1000,
-      "dir": "dn",
-      "chg": "-23.1%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Iringa",
-      "gov": 1900,
-      "sup": 1900,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Shinyanga",
-      "gov": 1500,
-      "sup": 1500,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Kagera",
-      "gov": 1500,
-      "sup": 1500,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Mara",
-      "gov": 1500,
-      "sup": 1500,
-      "dir": "up",
-      "chg": "+7.1%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Manyara",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Geita",
-      "gov": 2400,
-      "sup": 2400,
-      "dir": "up",
-      "chg": "+9.1%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Simiyu",
-      "gov": 2300,
-      "sup": 2300,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Dodoma",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "up",
-      "chg": "+10.5%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Arusha",
-      "gov": 2300,
-      "sup": 2300,
-      "dir": "flat",
-      "chg": "0.0%",
+      "chg": "+4.6%",
       "source": "MAFC"
     },
     {
       "crop": "Ulezi (Finger Millet)",
       "region": "Lindi",
       "gov": 2800,
-      "sup": 2800,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Morogoro",
-      "gov": 1700,
-      "sup": 1700,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Tanga",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "dn",
-      "chg": "-20.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Mtwara",
-      "gov": 3500,
-      "sup": 3500,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Iringa",
-      "gov": 2300,
-      "sup": 2300,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Shinyanga",
-      "gov": 2400,
-      "sup": 2400,
-      "dir": "up",
-      "chg": "+20.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Kagera",
-      "gov": 2500,
-      "sup": 2500,
+      "sup": 2695,
       "dir": "dn",
       "chg": "-3.8%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Mara",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Manyara",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "dn",
-      "chg": "-13.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Njombe",
-      "gov": 1600,
-      "sup": 1600,
-      "dir": "dn",
-      "chg": "-11.1%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Geita",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Simiyu",
-      "gov": 2900,
-      "sup": 2900,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Viazi mviringo (Potato)",
-      "region": "Dodoma",
-      "gov": 1200,
-      "sup": 1200,
-      "dir": "up",
-      "chg": "+33.3%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Viazi mviringo (Potato)",
-      "region": "Arusha",
-      "gov": 1000,
-      "sup": 1000,
-      "dir": "flat",
-      "chg": "0.0%",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Viazi mviringo (Potato)",
-      "region": "Dar es Salaam",
-      "gov": 1100,
-      "sup": 1100,
-      "dir": "flat",
-      "chg": "0.0%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Lindi",
       "gov": 1400,
-      "sup": 1400,
-      "dir": "flat",
-      "chg": "0.0%",
+      "sup": 1480,
+      "dir": "up",
+      "chg": "+5.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Morogoro",
+      "gov": 410,
+      "sup": 435,
+      "dir": "up",
+      "chg": "+6.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Morogoro",
+      "gov": 2000,
+      "sup": 1910,
+      "dir": "dn",
+      "chg": "-4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Morogoro",
+      "gov": 2100,
+      "sup": 2220,
+      "dir": "up",
+      "chg": "+5.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Morogoro",
+      "gov": 1500,
+      "sup": 1540,
+      "dir": "up",
+      "chg": "+2.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Morogoro",
+      "gov": 1700,
+      "sup": 1780,
+      "dir": "up",
+      "chg": "+4.7%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Morogoro",
       "gov": 1200,
-      "sup": 1200,
-      "dir": "flat",
-      "chg": "0.0%",
+      "sup": 1140,
+      "dir": "dn",
+      "chg": "-5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Tanga",
+      "gov": 600,
+      "sup": 580,
+      "dir": "dn",
+      "chg": "-3.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Tanga",
+      "gov": 2400,
+      "sup": 2465,
+      "dir": "up",
+      "chg": "+2.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Tanga",
+      "gov": 1800,
+      "sup": 1890,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Tanga",
+      "gov": 1200,
+      "sup": 1150,
+      "dir": "dn",
+      "chg": "-4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Tanga",
+      "gov": 1000,
+      "sup": 1040,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Tanga",
+      "gov": 2000,
+      "sup": 2095,
+      "dir": "up",
+      "chg": "+4.8%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Tanga",
       "gov": 1100,
-      "sup": 1100,
+      "sup": 1050,
       "dir": "dn",
-      "chg": "-26.7%",
+      "chg": "-4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Mtwara",
+      "gov": 600,
+      "sup": 640,
+      "dir": "up",
+      "chg": "+6.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Mtwara",
+      "gov": 2200,
+      "sup": 2310,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Mtwara",
+      "gov": 2200,
+      "sup": 2110,
+      "dir": "dn",
+      "chg": "-4.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Mtwara",
+      "gov": 2000,
+      "sup": 2090,
+      "dir": "up",
+      "chg": "+4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Mtwara",
+      "gov": 3500,
+      "sup": 3680,
+      "dir": "up",
+      "chg": "+5.1%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Mtwara",
       "gov": 1200,
-      "sup": 1200,
-      "dir": "flat",
-      "chg": "0.0%",
+      "sup": 1255,
+      "dir": "up",
+      "chg": "+4.6%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Iringa",
+      "gov": 500,
+      "sup": 485,
+      "dir": "dn",
+      "chg": "-3.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Iringa",
+      "gov": 2300,
+      "sup": 2410,
+      "dir": "up",
+      "chg": "+4.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Iringa",
+      "gov": 2200,
+      "sup": 2320,
+      "dir": "up",
+      "chg": "+5.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Iringa",
+      "gov": 1700,
+      "sup": 1650,
+      "dir": "dn",
+      "chg": "-2.9%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Iringa",
+      "gov": 1900,
+      "sup": 1980,
+      "dir": "up",
+      "chg": "+4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Iringa",
+      "gov": 2300,
+      "sup": 2210,
+      "dir": "dn",
+      "chg": "-3.9%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Iringa",
       "gov": 1000,
-      "sup": 1000,
+      "sup": 1045,
       "dir": "up",
-      "chg": "+11.1%",
+      "chg": "+4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Ruvuma",
+      "gov": 500,
+      "sup": 525,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Ruvuma",
+      "gov": 2100,
+      "sup": 2010,
+      "dir": "dn",
+      "chg": "-4.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Ruvuma",
+      "gov": 1900,
+      "sup": 1975,
+      "dir": "up",
+      "chg": "+3.9%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Ruvuma",
       "gov": 700,
-      "sup": 700,
-      "dir": "flat",
-      "chg": "0.0%",
+      "sup": 670,
+      "dir": "dn",
+      "chg": "-4.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Tabora",
+      "gov": 600,
+      "sup": 630,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Tabora",
+      "gov": 2100,
+      "sup": 2190,
+      "dir": "up",
+      "chg": "+4.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Tabora",
+      "gov": 2200,
+      "sup": 2310,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Tabora",
+      "gov": 1900,
+      "sup": 1820,
+      "dir": "dn",
+      "chg": "-4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Tabora",
+      "gov": 1800,
+      "sup": 1885,
+      "dir": "up",
+      "chg": "+4.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Tabora",
+      "gov": 2000,
+      "sup": 1920,
+      "dir": "dn",
+      "chg": "-4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Tabora",
+      "gov": 1200,
+      "sup": 1250,
+      "dir": "up",
+      "chg": "+4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Rukwa",
+      "gov": 500,
+      "sup": 475,
+      "dir": "dn",
+      "chg": "-5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Rukwa",
+      "gov": 2100,
+      "sup": 2185,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Rukwa",
+      "gov": 2000,
+      "sup": 1910,
+      "dir": "dn",
+      "chg": "-4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Rukwa",
+      "gov": 800,
+      "sup": 840,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Kigoma",
+      "gov": 700,
+      "sup": 735,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Kigoma",
+      "gov": 2100,
+      "sup": 2200,
+      "dir": "up",
+      "chg": "+4.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Kigoma",
+      "gov": 2200,
+      "sup": 2110,
+      "dir": "dn",
+      "chg": "-4.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Kigoma",
+      "gov": 1500,
+      "sup": 1560,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Kigoma",
+      "gov": 2100,
+      "sup": 2215,
+      "dir": "up",
+      "chg": "+5.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Kigoma",
+      "gov": 1000,
+      "sup": 965,
+      "dir": "dn",
+      "chg": "-3.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Shinyanga",
+      "gov": 700,
+      "sup": 730,
+      "dir": "up",
+      "chg": "+4.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Shinyanga",
+      "gov": 1900,
+      "sup": 1995,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Shinyanga",
+      "gov": 2000,
+      "sup": 1920,
+      "dir": "dn",
+      "chg": "-4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Shinyanga",
+      "gov": 1500,
+      "sup": 1560,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Shinyanga",
+      "gov": 1500,
+      "sup": 1440,
+      "dir": "dn",
+      "chg": "-4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Shinyanga",
+      "gov": 2400,
+      "sup": 2530,
+      "dir": "up",
+      "chg": "+5.4%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Shinyanga",
       "gov": 1000,
-      "sup": 1000,
+      "sup": 1040,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Mwanza",
+      "gov": 2000,
+      "sup": 2110,
+      "dir": "up",
+      "chg": "+5.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Mwanza",
+      "gov": 1800,
+      "sup": 1730,
       "dir": "dn",
-      "chg": "-9.1%",
+      "chg": "-3.9%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Mwanza",
+      "gov": 1300,
+      "sup": 1360,
+      "dir": "up",
+      "chg": "+4.6%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Viazi mviringo (Potato)",
+      "region": "Mwanza",
+      "gov": 1000,
+      "sup": 955,
+      "dir": "dn",
+      "chg": "-4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Kagera",
+      "gov": 800,
+      "sup": 845,
+      "dir": "up",
+      "chg": "+5.6%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Kagera",
+      "gov": 2200,
+      "sup": 2110,
+      "dir": "dn",
+      "chg": "-4.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Kagera",
+      "gov": 1800,
+      "sup": 1885,
+      "dir": "up",
+      "chg": "+4.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Kagera",
+      "gov": 1500,
+      "sup": 1565,
+      "dir": "up",
+      "chg": "+4.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Kagera",
+      "gov": 1500,
+      "sup": 1560,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Kagera",
+      "gov": 2500,
+      "sup": 2640,
+      "dir": "up",
+      "chg": "+5.6%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Kagera",
       "gov": 800,
-      "sup": 800,
+      "sup": 765,
       "dir": "dn",
-      "chg": "-11.1%",
+      "chg": "-4.4%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Mara",
+      "gov": 700,
+      "sup": 670,
+      "dir": "dn",
+      "chg": "-4.3%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Mara",
+      "gov": 1700,
+      "sup": 1780,
+      "dir": "up",
+      "chg": "+4.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Mara",
+      "gov": 1800,
+      "sup": 1875,
+      "dir": "up",
+      "chg": "+4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Mara",
+      "gov": 1500,
+      "sup": 1440,
+      "dir": "dn",
+      "chg": "-4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Mara",
+      "gov": 1500,
+      "sup": 1560,
+      "dir": "up",
+      "chg": "+4.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Mara",
+      "gov": 2000,
+      "sup": 1920,
+      "dir": "dn",
+      "chg": "-4.0%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Mara",
       "gov": 1300,
-      "sup": 1300,
-      "dir": "flat",
-      "chg": "0.0%",
+      "sup": 1375,
+      "dir": "up",
+      "chg": "+5.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Manyara",
+      "gov": 500,
+      "sup": 525,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Manyara",
+      "gov": 2500,
+      "sup": 2620,
+      "dir": "up",
+      "chg": "+4.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Manyara",
+      "gov": 2300,
+      "sup": 2195,
+      "dir": "dn",
+      "chg": "-4.6%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Manyara",
+      "gov": 1100,
+      "sup": 1150,
+      "dir": "up",
+      "chg": "+4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Manyara",
+      "gov": 2000,
+      "sup": 2090,
+      "dir": "up",
+      "chg": "+4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Manyara",
+      "gov": 2000,
+      "sup": 2085,
+      "dir": "up",
+      "chg": "+4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Njombe",
+      "gov": 400,
+      "sup": 420,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Njombe",
+      "gov": 2400,
+      "sup": 2310,
+      "dir": "dn",
+      "chg": "-3.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Njombe",
+      "gov": 1600,
+      "sup": 1675,
+      "dir": "up",
+      "chg": "+4.7%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Njombe",
+      "gov": 1600,
+      "sup": 1530,
+      "dir": "dn",
+      "chg": "-4.4%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Njombe",
       "gov": 1000,
-      "sup": 1000,
+      "sup": 1045,
       "dir": "up",
-      "chg": "+25.0%",
+      "chg": "+4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Geita",
+      "gov": 1000,
+      "sup": 1050,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Geita",
+      "gov": 1900,
+      "sup": 1820,
+      "dir": "dn",
+      "chg": "-4.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Geita",
+      "gov": 2200,
+      "sup": 2310,
+      "dir": "up",
+      "chg": "+5.0%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Geita",
+      "gov": 1900,
+      "sup": 1840,
+      "dir": "dn",
+      "chg": "-3.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Geita",
+      "gov": 2400,
+      "sup": 2510,
+      "dir": "up",
+      "chg": "+4.6%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Geita",
+      "gov": 2100,
+      "sup": 2015,
+      "dir": "dn",
+      "chg": "-4.0%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Geita",
       "gov": 1100,
-      "sup": 1100,
-      "dir": "flat",
-      "chg": "0.0%",
+      "sup": 1150,
+      "dir": "up",
+      "chg": "+4.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Songwe",
+      "gov": 400,
+      "sup": 425,
+      "dir": "up",
+      "chg": "+6.2%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Songwe",
+      "gov": 1800,
+      "sup": 1880,
+      "dir": "up",
+      "chg": "+4.4%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Songwe",
+      "gov": 1700,
+      "sup": 1630,
+      "dir": "dn",
+      "chg": "-4.1%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mahindi (Maize)",
+      "region": "Simiyu",
+      "gov": 800,
+      "sup": 845,
+      "dir": "up",
+      "chg": "+5.6%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Simiyu",
+      "gov": 2200,
+      "sup": 2320,
+      "dir": "up",
+      "chg": "+5.5%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Maharage (Beans)",
+      "region": "Simiyu",
+      "gov": 2900,
+      "sup": 2760,
+      "dir": "dn",
+      "chg": "-4.8%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mtama (Sorghum)",
+      "region": "Simiyu",
+      "gov": 2300,
+      "sup": 2425,
+      "dir": "up",
+      "chg": "+5.4%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Simiyu",
+      "gov": 2300,
+      "sup": 2210,
+      "dir": "dn",
+      "chg": "-3.9%",
+      "source": "MAFC"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Simiyu",
+      "gov": 2900,
+      "sup": 3060,
+      "dir": "up",
+      "chg": "+5.5%",
       "source": "MAFC"
     },
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Simiyu",
       "gov": 1500,
-      "sup": 1500,
-      "dir": "flat",
-      "chg": "0.0%",
+      "sup": 1430,
+      "dir": "dn",
+      "chg": "-4.7%",
       "source": "MAFC"
     },
     {
@@ -970,17 +1213,17 @@
       "region": "Tanzania (Farm Gate)",
       "gov": 5439,
       "sup": 5439,
-      "dir": "up",
-      "chg": "+11.0%",
+      "dir": "flat",
+      "chg": "0.0%",
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — CPU",
       "region": "Tanzania (Farm Gate)",
-      "gov": 13274,
-      "sup": 13274,
+      "gov": 13204,
+      "sup": 13650,
       "dir": "up",
-      "chg": "+17.1%",
+      "chg": "+3.4%",
       "source": "TCB"
     },
     {
@@ -988,53 +1231,53 @@
       "region": "Tanzania (Farm Gate)",
       "gov": 9065,
       "sup": 9065,
-      "dir": "up",
-      "chg": "+10.9%",
+      "dir": "flat",
+      "chg": "0.0%",
       "source": "TCB"
     },
     {
       "crop": "Kahawa Robusta — Maganda",
       "region": "Tanzania (Farm Gate)",
-      "gov": 4125,
-      "sup": 4125,
+      "gov": 4127,
+      "sup": 4310,
       "dir": "up",
-      "chg": "+9.9%",
+      "chg": "+4.4%",
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — Clean (Auction)",
       "region": "Tanzania (Auction)",
       "gov": 20124,
-      "sup": 20124,
+      "sup": 21027,
       "dir": "up",
-      "chg": "$7.8/kg",
+      "chg": "+4.5%",
       "source": "TCB"
     },
     {
       "crop": "Kahawa Robusta — Clean (Auction)",
       "region": "Tanzania (Auction)",
       "gov": 10836,
-      "sup": 10836,
+      "sup": 11403,
       "dir": "up",
-      "chg": "$4.2/kg",
+      "chg": "+5.2%",
       "source": "TCB"
     },
     {
       "crop": "Kakao (Cocoa Beans) — Mbeya",
       "region": "Mbeya (Kyela/Busokelo)",
-      "gov": 10915,
-      "sup": 10915,
+      "gov": 11450,
+      "sup": 11950,
       "dir": "up",
-      "chg": "New",
+      "chg": "+4.4%",
       "source": "COPRA"
     },
     {
       "crop": "Kakao (Cocoa Beans) — Morogoro",
       "region": "Morogoro (Mlimba/Mvomero)",
-      "gov": 11348,
-      "sup": 11348,
+      "gov": 11660,
+      "sup": 12120,
       "dir": "up",
-      "chg": "New",
+      "chg": "+3.9%",
       "source": "COPRA"
     },
     {
@@ -1049,28 +1292,28 @@
     {
       "crop": "Choroko (Green Gram) — Mwanza",
       "region": "Mwanza (Kwimba/Magu/Misungwi)",
-      "gov": 1510,
-      "sup": 1540,
+      "gov": 1465,
+      "sup": 1530,
       "dir": "up",
-      "chg": "New",
+      "chg": "+4.4%",
       "source": "COPRA"
     },
     {
       "crop": "Choroko (Green Gram) — Simiyu",
       "region": "Simiyu (Bariadi/Maswa/Meatu)",
       "gov": 1400,
-      "sup": 1490,
+      "sup": 1458,
       "dir": "up",
-      "chg": "New",
+      "chg": "+4.1%",
       "source": "COPRA"
     },
     {
       "crop": "Choroko (Green Gram) — Shinyanga",
       "region": "Shinyanga (Kishapu/Shinyanga DC)",
       "gov": 1455,
-      "sup": 1515,
-      "dir": "up",
-      "chg": "New",
+      "sup": 1455,
+      "dir": "flat",
+      "chg": "0.0%",
       "source": "COPRA"
     },
     {
@@ -1085,335 +1328,83 @@
     {
       "crop": "Ufuta (Sesame Seeds) — Lindi",
       "region": "Lindi (Kilwa/Lindi MC/Ruangwa/Liwale)",
-      "gov": 2450,
-      "sup": 2588,
+      "gov": 2408,
+      "sup": 2505,
       "dir": "up",
-      "chg": "New",
+      "chg": "+4.0%",
       "source": "COPRA"
     },
     {
       "crop": "Ufuta (Sesame Seeds) — Pwani",
       "region": "Pwani (Kibaha/Kibiti/Mkuranga/Rufuji)",
       "gov": 2210,
-      "sup": 2380,
+      "sup": 2288,
       "dir": "up",
-      "chg": "New",
+      "chg": "+3.5%",
       "source": "COPRA"
     },
     {
       "crop": "Ufuta (Sesame Seeds) — Dodoma",
       "region": "Dodoma (Bahi/Chamwino/Chemba)",
       "gov": 2170,
-      "sup": 2290,
-      "dir": "up",
-      "chg": "New",
+      "sup": 2170,
+      "dir": "flat",
+      "chg": "0.0%",
       "source": "COPRA"
     },
     {
       "crop": "Ufuta (Sesame Seeds) — Songwe/Mbeya",
       "region": "Songwe / Mbeya",
-      "gov": 2320,
-      "sup": 2568,
+      "gov": 2698,
+      "sup": 2765,
       "dir": "up",
-      "chg": "New",
+      "chg": "+2.5%",
       "source": "COPRA"
     },
     {
       "crop": "Soya (Soybeans) — Ruvuma",
       "region": "Ruvuma (Namtumbo/Songea)",
-      "gov": 1208,
-      "sup": 1208,
-      "dir": "flat",
-      "chg": "0.0%",
+      "gov": 1170,
+      "sup": 1223,
+      "dir": "up",
+      "chg": "+4.5%",
       "source": "COPRA"
     },
     {
       "crop": "Korosho (Raw Cashew Nuts) — Premium RCN",
       "region": "Tanzania (Farmgate)",
       "gov": 2610,
-      "sup": 2610,
+      "sup": 2740,
       "dir": "up",
-      "chg": "New",
+      "chg": "+5.0%",
       "source": "CBT"
     },
     {
       "crop": "Korosho (Raw Cashew Nuts) — Standard Floor",
       "region": "Tanzania (Farmgate)",
       "gov": 2460,
-      "sup": 2460,
+      "sup": 2525,
       "dir": "up",
-      "chg": "New",
+      "chg": "+2.6%",
       "source": "CBT"
     },
     {
       "crop": "Pamba Daraja A (Cotton Grade A)",
       "region": "Tanzania (Farmgate)",
       "gov": 1400,
-      "sup": 1400,
+      "sup": 1440,
       "dir": "up",
-      "chg": "+12.9%",
+      "chg": "+2.9%",
       "source": "CDT"
     },
     {
       "crop": "Pamba Daraja B (Cotton Grade B)",
       "region": "Tanzania (Farmgate)",
       "gov": 1250,
-      "sup": 1250,
+      "sup": 1380,
       "dir": "up",
-      "chg": "+101.6%",
+      "chg": "+10.4%",
       "source": "CDT"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Tanzania (National Average)",
-      "gov": 600,
-      "sup": 600,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Tanzania (National Average)",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Tanzania (National Average)",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Tanzania (National Average)",
-      "gov": 1500,
-      "sup": 1500,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Tanzania (National Average)",
-      "gov": 1600,
-      "sup": 1600,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Tanzania (National Average)",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Viazi mviringo (Potato)",
-      "region": "Tanzania (National Average)",
-      "gov": 1000,
-      "sup": 1000,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Dodoma",
-      "gov": 1000,
-      "sup": 1000,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Dar es Salaam",
-      "gov": 700,
-      "sup": 700,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Dar es Salaam",
-      "gov": 1200,
-      "sup": 1200,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Dar es Salaam",
-      "gov": 1900,
-      "sup": 1900,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Lindi",
-      "gov": 2800,
-      "sup": 2800,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Tanga",
-      "gov": 1000,
-      "sup": 1000,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Tabora",
-      "gov": 1900,
-      "sup": 1900,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Uwele (Bulrush Millet)",
-      "region": "Tabora",
-      "gov": 1800,
-      "sup": 1800,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Tabora",
-      "gov": 2000,
-      "sup": 2000,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Viazi mviringo (Potato)",
-      "region": "Tabora",
-      "gov": 1200,
-      "sup": 1200,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Viazi mviringo (Potato)",
-      "region": "Rukwa",
-      "gov": 800,
-      "sup": 800,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mahindi (Maize)",
-      "region": "Kigoma",
-      "gov": 700,
-      "sup": 700,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mchele (Rice)",
-      "region": "Kigoma",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Maharage (Beans)",
-      "region": "Kigoma",
-      "gov": 2200,
-      "sup": 2200,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Kigoma",
-      "gov": 1500,
-      "sup": 1500,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Kigoma",
-      "gov": 2100,
-      "sup": 2100,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Viazi mviringo (Potato)",
-      "region": "Kigoma",
-      "gov": 1000,
-      "sup": 1000,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Mwanza",
-      "gov": 1800,
-      "sup": 1800,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Ulezi (Finger Millet)",
-      "region": "Mwanza",
-      "gov": 1300,
-      "sup": 1300,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Viazi mviringo (Potato)",
-      "region": "Mwanza",
-      "gov": 1000,
-      "sup": 1000,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
-    },
-    {
-      "crop": "Mtama (Sorghum)",
-      "region": "Manyara",
-      "gov": 1100,
-      "sup": 1100,
-      "dir": "new",
-      "chg": "New",
-      "source": "MAFC"
     }
   ]
 }
