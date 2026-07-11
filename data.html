@@ -127,7 +127,7 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <div class="card">
       <h2>National Average Prices Over Time</h2>
-      <p class="sub" style="margin-bottom:16px">Official national wholesale average (TZS/kg) for each staple crop, tracked across every FURROW price bulletin.</p>
+      <p class="sub" style="margin-bottom:16px">National wholesale average (TZS/kg) per staple crop, tracked across every FURROW price bulletin. Solid lines are the official government reference; dotted lines in the same colour are the private supplier average, so any gap between a pair is the live market spread.</p>
       <canvas id="chartTrends" height="120"></canvas>
       <p id="trendNote" class="sub" style="font-size:11px;margin-top:10px"></p>
     </div>
@@ -267,14 +267,24 @@ function renderTrends(){
   if(!HISTORY.length){ document.getElementById('trendNote').textContent='Trend data builds up with each new price bulletin.'; return; }
   var labels = HISTORY.map(function(h){return h.date;});
   var cropNames = Object.keys(HISTORY[HISTORY.length-1].national_avg || {});
-  var datasets = cropNames.map(function(cn){
-    return {
+  var datasets = [];
+  cropNames.forEach(function(cn){
+    var col = CROP_COLORS[cn]||'#5A6A7A';
+    /* Solid line: official government reference */
+    datasets.push({
       label: cn,
       data: HISTORY.map(function(h){ return (h.national_avg||{})[cn] != null ? h.national_avg[cn] : null; }),
-      borderColor: CROP_COLORS[cn]||'#5A6A7A',
-      backgroundColor: 'transparent',
+      borderColor: col, backgroundColor: 'transparent',
       tension:.3, pointRadius:3, spanGaps:true
-    };
+    });
+    /* Dotted line: private supplier average, same colour so the gap reads as the spread */
+    datasets.push({
+      label: cn + ' (private)',
+      data: HISTORY.map(function(h){ return (h.national_avg_sup||{})[cn] != null ? h.national_avg_sup[cn] : null; }),
+      borderColor: col, backgroundColor: 'transparent',
+      borderDash: [5,4], borderWidth: 1.5,
+      tension:.3, pointRadius: 2, pointStyle: 'rect', spanGaps:true
+    });
   });
   if(chartTrendsI) chartTrendsI.destroy();
   chartTrendsI = new Chart(cv.getContext('2d'), {
@@ -282,7 +292,7 @@ function renderTrends(){
     data:{ labels:labels, datasets:datasets },
     options:{
       responsive:true,
-      plugins:{ legend:{ position:'bottom', labels:{ font:{size:10}, boxWidth:12, color:'#22303E' } } },
+      plugins:{ legend:{ position:'bottom', labels:{ font:{size:10}, boxWidth:12, color:'#22303E', filter:function(item){ return item.text.indexOf('(private)') === -1; } } } },
       scales:{
         x:{ grid:{display:false}, ticks:{font:{size:10}, color:'#5A6A7A'} },
         y:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return v.toLocaleString();}}, title:{display:true, text:'TZS / kg', font:{size:10}, color:'#5A6A7A'} }
