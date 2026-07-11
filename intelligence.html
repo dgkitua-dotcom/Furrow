@@ -424,7 +424,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 </div>
 
 <!-- ═══ PAGE HEADER ═══ -->
-<section class="section" style="padding:56px 0 8px">
+<section class="section" style="padding:64px 0 12px;background:linear-gradient(rgba(250,247,239,.9),rgba(250,247,239,.96)),url('images/nt_header.jpg') center 25%/cover no-repeat">
   <div class="container">
     <div class="section-label">FURROW News &amp; Tenders</div>
     <h1 class="section-title" style="margin-bottom:8px">News, Regulations &amp; Tenders</h1>
@@ -485,7 +485,14 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 </section>
 
 <!-- ═══ TENDERS ═══ -->
-<section class="section" id="tenders">
+<!-- Transport banner -->
+<section style="padding:0 0 12px">
+  <div class="container">
+    <img src="images/nt_transport.jpg" alt="Transporter beside a loaded cargo truck" loading="lazy" style="width:100%;max-height:340px;object-fit:cover;object-position:center 30%;border-radius:12px;border:1px solid var(--bdr);display:block" />
+  </div>
+</section>
+
+<section class="section" id="tenders" style="background:linear-gradient(rgba(250,247,239,.92),rgba(250,247,239,.95)),url('images/nt_tenders.jpg') center/cover no-repeat">
   <div class="container">
     <div class="section-head">
       <div class="section-label">Open Procurement</div>
@@ -495,6 +502,13 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
     <div style="display:flex;flex-direction:column;gap:16px" id="tenderGrid">
       <!-- Populated by JS -->
     </div>
+  </div>
+</section>
+
+<!-- Machinery banner -->
+<section style="padding:0 0 56px">
+  <div class="container">
+    <img src="images/nt_machinery.jpg" alt="New tractors ready for delivery" loading="lazy" style="width:100%;max-height:320px;object-fit:cover;object-position:center 45%;border-radius:12px;border:1px solid var(--bdr);display:block" />
   </div>
 </section>
 
