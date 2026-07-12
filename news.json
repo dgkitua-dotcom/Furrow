@@ -1,6 +1,30 @@
 {
-  "updated": "11 Jul 2026",
+  "updated": "12 Jul 2026",
   "news": [
+    {
+      "date": "12 Jul 2026",
+      "tag": "Input Regulation",
+      "color": "red",
+      "title": "Agriculture Minister orders crackdown on input sabotage and fertiliser smuggling in Songwe",
+      "body": "Agriculture Minister Daniel Chongolo has launched a strict enforcement campaign targeting sub-standard input distribution and cross-border fertiliser smuggling networks in the Songwe region. Labelling the illicit diversion of subsidised fertiliser as economic sabotage, the state has directed regional security units to execute immediate operating licence revocations and asset interventions against non-compliant input dealers attempting to push black-market markups above government caps.",
+      "source": "Ministry of Agriculture Tanzania"
+    },
+    {
+      "date": "12 Jul 2026",
+      "tag": "Investment",
+      "color": "green",
+      "title": "IMF approves USD 443.9 million disbursement supporting Tanzania's agro-economic programme",
+      "body": "The International Monetary Fund (IMF) Executive Board has finalised an immediate funding release of USD 443.9 million for Tanzania under the Extended Credit Facility (ECF) and Resilience and Sustainability Facility (RSF) programmes, bringing aggregate programme deployment to USD 1.7 billion. The reserves are explicitly directed toward stabilising domestic agro-processing investment corridors, protecting input supplies against global freight shocks, and sustaining a macro growth baseline of 6.2%.",
+      "source": "International Monetary Fund (IMF)"
+    },
+    {
+      "date": "12 Jul 2026",
+      "tag": "Market Access",
+      "color": "blue",
+      "title": "Coffee and tea cooperatives coordinate direct export corridors to Russian buyers",
+      "body": "Tanzanian coffee and tea export clusters and cooperative networks are coordinating direct logistical corridors with buyers in Russia to capture expanded market share. The initiative aims to bypass international intermediary brokers and boost direct trade lines, maximising the hard-currency clearings that return to domestic cooperative networks.",
+      "source": "Export cooperative networks / trade reports"
+    },
     {
       "date": "11 Jul 2026",
       "tag": "Policy",

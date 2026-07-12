@@ -1,6 +1,6 @@
 {
-  "updated": "11 Jul 2026",
-  "source_note": "MAFC weekly bulletin (all regions, Govt vs private supplier spreads) + TCB + CBT + CDT + TMX/COPRA (11 Jul 2026). All prices TZS/kg. Movement now shows the private supplier spread vs the official government reference for the same crop and region.",
+  "updated": "12 Jul 2026",
+  "source_note": "MAFC weekly bulletin (all regions, Govt vs private supplier spreads) + TCB + CBT + CDT + TMX/COPRA. Weekend carry-forward, 12 Jul 2026: official clearing prices and matrix values held unchanged through Sunday; no electronic spot or warehouse auction clearings settle over the weekend. All prices TZS/kg. Movement shows the private supplier spread vs the official government reference for the same crop and region.",
   "prices": [
     {
       "crop": "Mahindi (Maize)",
