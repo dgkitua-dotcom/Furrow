@@ -1,6 +1,30 @@
 {
-  "updated": "12 Jul 2026",
+  "updated": "13 Jul 2026",
   "news": [
+    {
+      "date": "13 Jul 2026",
+      "tag": "Digital Finance",
+      "color": "blue",
+      "title": "TCDC rolls out comprehensive SACCOS compliance directives for digital input funds",
+      "body": "Following up on the Ministry's transparency mandate, the Tanzania Cooperative Development Commission (TCDC) has issued strict operational audit directives targeting agricultural cooperative financing facilities. The guidelines mandate that any AMCOS or SACCOS processing digital input funds must present real-time accounting data sheets to regional cooperative officers to retain active disbursement standing.",
+      "source": "Tanzania Cooperative Development Commission (TCDC)"
+    },
+    {
+      "date": "13 Jul 2026",
+      "tag": "Infrastructure",
+      "color": "green",
+      "title": "National Irrigation Commission fast-tracks 2026 outlays covering 230,000 hectares",
+      "body": "Highlighting the new fiscal cycle priorities, the National Irrigation Commission has localised funding routes for over 230,000 hectares of under-construction irrigation projects. The expansion aims to shield core commercial farming belts from rainfall volatility, ensuring reliable production baselines for grains and high-value horticultural lines.",
+      "source": "National Irrigation Commission"
+    },
+    {
+      "date": "13 Jul 2026",
+      "tag": "Agritech",
+      "color": "green",
+      "title": "Regional hubs scale up certified avocado seedling distribution to outgrower clusters",
+      "body": "To meet the targeted 32.4% cash crop baseline expansion, state research stations have scaled up local distribution protocols for high-yield, certified avocado seedlings. Strategic processing zones are deploying the planting material directly to outgrower clusters, reinforcing access to processing infrastructure across the value chain.",
+      "source": "State agricultural research stations"
+    },
     {
       "date": "12 Jul 2026",
       "tag": "Input Regulation",
