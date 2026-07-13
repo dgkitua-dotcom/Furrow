@@ -39,25 +39,64 @@ def fetch(url):
         return r.read().decode("utf-8", errors="replace")
 
 
-def csv_from_embed_json(text):
-    """embed.json carries the chart's data somewhere inside; find the CSV-ish string."""
-    obj = json.loads(text)
-    best = None
+CODE_MARKERS = ("use strict", "function", "=>", "return {", "var ", "const ", "delimiters:")
 
-    def walk(o):
-        nonlocal best
+
+def looks_like_code(s):
+    head = s[:400]
+    return any(m in head for m in CODE_MARKERS)
+
+
+def csv_from_embed_json(text):
+    """embed.json carries the chart data; prefer Datawrapper's canonical keys, never JS blobs."""
+    obj = json.loads(text)
+
+    # 1) Canonical: a key literally named chartData (string CSV/TSV)
+    found = []
+
+    def walk(o, key=None):
         if isinstance(o, dict):
-            for v in o.values():
-                walk(v)
+            for k, v in o.items():
+                walk(v, k)
         elif isinstance(o, list):
             for v in o:
-                walk(v)
+                walk(v, key)
         elif isinstance(o, str):
-            if o.count("\n") >= MIN_ROWS and re.search(r"[,;\t]", o):
-                if best is None or len(o) > len(best):
-                    best = o
+            found.append((key, o))
 
     walk(obj)
+    for k, s in found:
+        if k in ("chartData", "csv", "dataset") and s.count("\n") >= MIN_ROWS:
+            return s
+
+    # 2) Versioned dataset.csv on the CDN (embed.json usually names the published version)
+    version = None
+    for cand in ("publicVersion", "version"):
+        v = obj.get(cand)
+        if isinstance(v, int):
+            version = v
+            break
+    if version is None:
+        m = re.search(r'"(?:publicVersion|version)"\s*:\s*(\d+)', text)
+        if m:
+            version = int(m.group(1))
+    if version is not None:
+        try:
+            body = fetch(f"https://datawrapper.dwcdn.net/{CHART_ID}/{version}/dataset.csv")
+            if body.count("\n") >= MIN_ROWS and not looks_like_code(body):
+                return body
+        except Exception:  # noqa: BLE001 - fall through to heuristic
+            pass
+
+    # 3) Last resort: largest tabular string that is clearly NOT JavaScript
+    best = None
+    for _, s in found:
+        if s.count("\n") >= MIN_ROWS and re.search(r"[,;\t]", s) and not looks_like_code(s):
+            lines = [l for l in s.splitlines() if l.strip()][:6]
+            delim_counts = {d: [l.count(d) for l in lines] for d in ",;\t"}
+            consistent = any(len(set(cs)) == 1 and cs[0] >= 1 for cs in delim_counts.values())
+            if consistent and (best is None or len(s) > len(best)):
+                best = s
     return best
 
 
@@ -91,7 +130,10 @@ def parse_table(text):
         "session":   col("date", "session", "tarehe"),
     }
     if ci["commodity"] is None or (ci["clearing"] is None and ci["high"] is None):
-        raise ValueError(f"could not map columns from header: {header}")
+        raise ValueError(
+            "could not map columns from header: "
+            f"{header} | first data row: {rows[1][:6] if len(rows) > 1 else 'n/a'}"
+        )
 
     def num(s):
         if s is None:
