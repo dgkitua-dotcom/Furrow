@@ -72,6 +72,11 @@ footer a { color:var(--goldL); text-decoration:none; }
 @media (max-width: 768px) { .nav-links { display: none; } .nav-ham { display: block; } }
 @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
 /* ── End canonical header ── */
+
+.live-pill { display:inline-flex; align-items:center; gap:5px; background:rgba(74,222,128,.12); border:1px solid rgba(74,222,128,.4); color:#4ADE80; font-size:8px; font-weight:700; letter-spacing:.08em; padding:2px 7px; border-radius:20px; }
+.live-dot { width:5px; height:5px; border-radius:50%; background:#4ADE80; animation:livePulse 1.6s ease-in-out infinite; }
+@keyframes livePulse { 50% { opacity:.35; transform:scale(.75); } }
+@media (prefers-reduced-motion: reduce){ .live-dot { animation:none; } }
 </style>
 </head>
 <body>
@@ -208,5 +213,37 @@ footer a { color:var(--goldL); text-decoration:none; }
 })();
 </script>
 <script>function toggleMenu(){var m=document.getElementById("navMob");if(m)m.classList.toggle("open");}</script>
+
+<script>
+/* TMX LIVE ticker items (appended after the regular price ticker loads) */
+(function(){
+  function fmtNum(v){ return (v===null||v===undefined)?'':Math.round(v).toLocaleString(); }
+  function chg(r){ if(r.change_pct===null||r.change_pct===undefined) return r.change_raw||''; return (r.change_pct>0?'+':'')+r.change_pct.toFixed(1)+'%'; }
+  function arrow(d){ return d==='up'?'&#9650;':d==='dn'?'&#9660;':'&mdash;'; }
+  function col(d){ return d==='up'?'#4ADE80':d==='dn'?'#F87171':'#E2C47E'; }
+  function inject(rows){
+    var track = document.getElementById('tickerTrack'); if(!track) return;
+    var items = rows.slice(0,6).map(function(r){
+      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
+        +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse?' &middot; '+r.warehouse.toUpperCase():'')+'</span>'
+        +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
+        +'<span style="color:'+col(r.dir)+';font-weight:700">'+arrow(r.dir)+chg(r)+'</span></span>';
+    }).join('');
+    var html = track.innerHTML, half = html.length/2;
+    var a = html.slice(0,half), b = html.slice(half);
+    track.innerHTML = (a===b) ? (a+items+b+items) : (html+items+items);
+  }
+  function attempt(tries){
+    fetch('tmx_live.json?v='+Date.now()).then(function(r){ return r.ok?r.json():null; })
+      .then(function(d){
+        if(!d||!d.rows||!d.rows.length) return;
+        var track = document.getElementById('tickerTrack');
+        if(track && track.innerHTML.trim()){ inject(d.rows); }
+        else if(tries>0){ setTimeout(function(){ attempt(tries-1); }, 800); }
+      }).catch(function(){});
+  }
+  attempt(6); /* wait for the base ticker to populate first */
+})();
+</script>
 </body>
 </html>

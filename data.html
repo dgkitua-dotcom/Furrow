@@ -73,6 +73,39 @@ footer a { color:var(--goldL); text-decoration:none; }
 @media (max-width: 768px) {
   .chart-box { height: 360px; }
 }
+
+/* ── TMX Live Session Board ── */
+.live-pill { display:inline-flex; align-items:center; gap:5px; background:rgba(74,222,128,.12); border:1px solid rgba(74,222,128,.4); color:#4ADE80; font-size:8px; font-weight:700; letter-spacing:.08em; padding:2px 7px; border-radius:20px; }
+.live-dot { width:5px; height:5px; border-radius:50%; background:#4ADE80; animation:livePulse 1.6s ease-in-out infinite; }
+@keyframes livePulse { 50% { opacity:.35; transform:scale(.75); } }
+.tmx-board { background:var(--navy); border:1px solid rgba(201,168,76,.3); border-radius:14px; overflow:hidden; }
+.tmx-head { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; padding:18px 22px; border-bottom:1px solid rgba(201,168,76,.25); }
+.tmx-title { font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; color:#fff; }
+.tmx-sub { font-size:10px; color:rgba(255,255,255,.45); letter-spacing:.06em; text-transform:uppercase; margin-top:2px; }
+.session-pill { display:inline-flex; align-items:center; gap:7px; background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.4); color:#4ADE80; font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:6px 14px; border-radius:20px; }
+.session-pill.closed { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.2); color:rgba(255,255,255,.55); }
+.sync-note { font-size:10px; color:rgba(255,255,255,.4); text-align:right; }
+.sync-note b { color:var(--goldL); font-weight:600; }
+.tmx-table { width:100%; border-collapse:collapse; }
+.tmx-table th { text-align:right; padding:10px 14px; font-size:9px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--gold); background:rgba(201,168,76,.06); border-bottom:1px solid rgba(201,168,76,.2); }
+.tmx-table th:first-child, .tmx-table td:first-child { text-align:left; padding-left:22px; }
+.tmx-table th:nth-child(2), .tmx-table td:nth-child(2) { text-align:left; }
+.tmx-table td { padding:11px 14px; font-size:12.5px; color:rgba(255,255,255,.85); border-bottom:1px solid rgba(255,255,255,.05); text-align:right; font-variant-numeric:tabular-nums; }
+.tmx-table tr:last-child td { border-bottom:none; }
+.tmx-table .tc { font-weight:700; color:#fff; }
+.tmx-table .tw { color:rgba(255,255,255,.5); font-size:11.5px; }
+.tmx-table .clr { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:700; color:var(--goldL); }
+.tmx-up { color:#4ADE80; font-weight:700; }
+.tmx-dn { color:#F87171; font-weight:700; }
+.stale-bar { display:flex; align-items:center; gap:10px; background:rgba(180,83,9,.12); border-bottom:1px solid rgba(217,119,6,.4); color:#F5C97B; font-size:11px; padding:9px 22px; }
+.stale-dot { width:7px; height:7px; border-radius:50%; background:#F59E0B; }
+.tmx-foot { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:12px 22px; font-size:10px; color:rgba(255,255,255,.35); border-top:1px solid rgba(201,168,76,.2); }
+.tmx-foot a { color:var(--goldL); text-decoration:none; }
+@media (max-width:768px){
+  .tmx-table th:nth-child(3), .tmx-table td:nth-child(3),
+  .tmx-table th:nth-child(4), .tmx-table td:nth-child(4) { display:none; }
+}
+@media (prefers-reduced-motion: reduce){ .live-dot { animation:none; } }
 </style>
 </head>
 <body>
@@ -118,6 +151,30 @@ footer a { color:var(--goldL); text-decoration:none; }
     <h1>Market Data &amp; Analytics</h1>
     <p class="sub">Consolidated Tanzania agricultural market data from official sources, national price trends, regional comparisons and seasonal supply windows, all in one place. Updated with every price bulletin.</p>
     <p class="sub" style="margin-top:6px;font-size:11px">Last updated: <span id="lastUpdated">&mdash;</span></p>
+  </div>
+</section>
+
+<!-- TMX Live Session Board (renders only when tmx_live.json exists) -->
+<section style="padding:0 0 36px;display:none" id="tmxSection">
+  <div class="container">
+    <div class="tmx-board">
+      <div id="tmxStale"></div>
+      <div class="tmx-head">
+        <div>
+          <div class="tmx-title">TMX Live Session Board</div>
+          <div class="tmx-sub">Tanzania Mercantile Exchange &middot; electronic warehouse auctions</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px">
+          <span class="session-pill" id="tmxPill"><span class="live-dot"></span>Session open</span>
+          <div class="sync-note" id="tmxSync"></div>
+        </div>
+      </div>
+      <table class="tmx-table" id="tmxTable"></table>
+      <div class="tmx-foot">
+        <span>Source: <a href="https://www.tmx.co.tz" rel="noopener">Tanzania Mercantile Exchange (TMX)</a> &middot; session data, TZS/kg &middot; change vs previous trade session per TMX definition</span>
+        <span>FURROW aggregates published prices; figures may trail the exchange by minutes</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -428,6 +485,81 @@ function renderCropSummaryAndTable(crop, rows, natRow){
 }
 
 init();
+
+/* ── TMX Live Session Board ── */
+var TMX = null;
+async function loadTmx(){
+  try {
+    var r = await fetch('tmx_live.json?v='+Date.now());
+    if(!r.ok) return;
+    var d = await r.json();
+    if(!d || !d.rows || !d.rows.length) return;
+    TMX = d;
+    renderTmxBoard();
+    renderTmxTicker();
+  } catch(e){}
+}
+
+function fmtNum(v){ return (v===null||v===undefined) ? '&mdash;' : Math.round(v).toLocaleString(); }
+function tmxChg(row){
+  if(row.change_pct===null||row.change_pct===undefined){
+    return row.change_raw ? row.change_raw : '&mdash;';
+  }
+  return (row.change_pct>0?'+':'')+row.change_pct.toFixed(1)+'%';
+}
+function tmxArrow(d){ return d==='up'?'&#9650;':d==='dn'?'&#9660;':'&mdash;'; }
+function tmxCls(d){ return d==='up'?'tmx-up':d==='dn'?'tmx-dn':''; }
+
+function eatNow(){ return new Date(Date.now() + (3*60 + new Date().getTimezoneOffset())*60000); }
+function sessionOpen(){
+  var n = eatNow(); var day = n.getDay(); var h = n.getHours();
+  return day>=1 && day<=5 && h>=8 && h<17;
+}
+function looksStale(fetchedStr){
+  var m = /(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})/.exec(fetchedStr||'');
+  if(!m) return false;
+  var fetched = new Date(m[1], m[2]-1, m[3], m[4], m[5]);
+  var ageH = (eatNow() - fetched) / 36e5;
+  return sessionOpen() ? ageH > 3 : ageH > 80; /* weekend tolerance */
+}
+
+function renderTmxBoard(){
+  var sec = document.getElementById('tmxSection'); if(!sec || !TMX) return;
+  var open = sessionOpen();
+  var pill = document.getElementById('tmxPill');
+  pill.className = 'session-pill' + (open ? '' : ' closed');
+  pill.innerHTML = open ? '<span class="live-dot"></span>Session open' : 'Session closed';
+  document.getElementById('tmxSync').innerHTML =
+    'Last synced <b>'+(TMX.fetched_at_eat||'&mdash;')+'</b><br>auto-refreshes every 45 min in trade hours';
+  document.getElementById('tmxStale').innerHTML = looksStale(TMX.fetched_at_eat)
+    ? '<div class="stale-bar"><span class="stale-dot"></span>Live sync delayed &middot; showing last confirmed session data &middot; retrying automatically</div>' : '';
+  var t = document.getElementById('tmxTable');
+  t.innerHTML = '<tr><th>Commodity</th><th>Warehouse</th><th>Session low</th><th>Session high</th><th>Clearing</th><th>Chg vs prev</th></tr>'
+    + TMX.rows.map(function(r){
+      return '<tr><td class="tc">'+r.commodity+'</td><td class="tw">'+(r.warehouse||'&mdash;')+'</td>'
+        +'<td>'+fmtNum(r.low)+'</td><td>'+fmtNum(r.high)+'</td>'
+        +'<td class="clr">'+fmtNum(r.clearing)+'</td>'
+        +'<td class="'+tmxCls(r.dir)+'">'+tmxArrow(r.dir)+' '+tmxChg(r)+'</td></tr>';
+    }).join('');
+  sec.style.display = 'block';
+}
+
+function renderTmxTicker(){
+  var track = document.getElementById('tickerTrack'); if(!track || !TMX) return;
+  var items = TMX.rows.slice(0, 6).map(function(r){
+    return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
+      +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse ? ' &middot; '+r.warehouse.toUpperCase() : '')+'</span>'
+      +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
+      +'<span class="'+tmxCls(r.dir)+'" style="font-weight:700">'+tmxArrow(r.dir)+tmxChg(r)+'</span></span>';
+  }).join('');
+  /* the track holds its item set twice for the seamless loop: inject into both halves */
+  var half = track.innerHTML.length / 2;
+  var firstHalf = track.innerHTML.slice(0, half), secondHalf = track.innerHTML.slice(half);
+  if(firstHalf === secondHalf){ track.innerHTML = firstHalf + items + secondHalf + items; }
+  else { track.innerHTML = track.innerHTML + items + items; }
+}
+
+loadTmx();
 </script>
 
 <script>
