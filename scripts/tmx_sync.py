@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
 FURROW <- TMX live sync.
-Reads the public Datawrapper chart TMX uses to publish its trade table
-(chart ID ZJSS6 on tmx.co.tz > Market Data > Commodities Trade Information),
-parses it defensively, and writes tmx_live.json for the site.
+Reads TMX's own market-data CSV feed directly, aggregates individual trades
+into one row per commodity per warehouse for the latest trading date, and
+writes tmx_live.json for the site.
 
 Fail-safe contract:
 - On ANY failure, exits non-zero and writes NOTHING -> the last good
@@ -14,21 +14,15 @@ Fail-safe contract:
 import csv
 import io
 import json
-import re
 import sys
 import urllib.request
 from datetime import datetime, timezone, timedelta
+from collections import defaultdict
 
-CHART_ID = "ZJSS6"
+SOURCE_URL = "https://www.tmx.co.tz/pages/api/v1/market-data/read_csv.php"
 MIN_ROWS = 2
 OUT = "tmx_live.json"
 EAT = timezone(timedelta(hours=3))
-
-CANDIDATE_URLS = [
-    f"https://datawrapper.dwcdn.net/{CHART_ID}/dataset.csv",
-    f"https://datawrapper.dwcdn.net/{CHART_ID}/data.csv",
-    f"https://datawrapper.dwcdn.net/{CHART_ID}/embed.json",
-]
 
 UA = {"User-Agent": "FURROW-price-board/1.0 (+https://www.joinfurrow.com; data attributed to TMX)"}
 
@@ -39,189 +33,95 @@ def fetch(url):
         return r.read().decode("utf-8", errors="replace")
 
 
-CODE_MARKERS = ("use strict", "function", "=>", "return {", "var ", "const ", "delimiters:")
-
-
-def looks_like_code(s):
-    head = s[:400]
-    return any(m in head for m in CODE_MARKERS)
-
-
-def csv_from_embed_json(text):
-    """embed.json carries the chart data; prefer Datawrapper's canonical keys, never JS blobs."""
-    obj = json.loads(text)
-
-    # 1) Canonical: a key literally named chartData (string CSV/TSV)
-    found = []
-
-    def walk(o, key=None):
-        if isinstance(o, dict):
-            for k, v in o.items():
-                walk(v, k)
-        elif isinstance(o, list):
-            for v in o:
-                walk(v, key)
-        elif isinstance(o, str):
-            found.append((key, o))
-
-    walk(obj)
-    for k, s in found:
-        if k in ("chartData", "csv", "dataset") and s.count("\n") >= MIN_ROWS:
-            return s
-
-    # 2) Versioned dataset.csv on the CDN (embed.json usually names the published version)
-    version = None
-    for cand in ("publicVersion", "version"):
-        v = obj.get(cand)
-        if isinstance(v, int):
-            version = v
-            break
-    if version is None:
-        m = re.search(r'"(?:publicVersion|version)"\s*:\s*(\d+)', text)
-        if m:
-            version = int(m.group(1))
-    if version is not None:
-        try:
-            body = fetch(f"https://datawrapper.dwcdn.net/{CHART_ID}/{version}/dataset.csv")
-            if body.count("\n") >= MIN_ROWS and not looks_like_code(body):
-                return body
-        except Exception:  # noqa: BLE001 - fall through to heuristic
-            pass
-
-    # 3) Last resort: largest tabular string that is clearly NOT JavaScript
-    best = None
-    for _, s in found:
-        if s.count("\n") >= MIN_ROWS and re.search(r"[,;\t]", s) and not looks_like_code(s):
-            lines = [l for l in s.splitlines() if l.strip()][:6]
-            delim_counts = {d: [l.count(d) for l in lines] for d in ",;\t"}
-            consistent = any(len(set(cs)) == 1 and cs[0] >= 1 for cs in delim_counts.values())
-            if consistent and (best is None or len(s) > len(best)):
-                best = s
-    return best
-
-
-def parse_table(text):
-    """Parse CSV/TSV with unknown delimiter and header names; map by keyword."""
-    sample = text[:4000]
+def num(s):
+    if s is None:
+        return None
+    s = str(s).replace(",", "").strip()
     try:
-        dialect = csv.Sniffer().sniff(sample, delimiters=",;\t")
-    except csv.Error:
-        dialect = csv.excel
-    rows = list(csv.reader(io.StringIO(text), dialect))
-    rows = [r for r in rows if any(c.strip() for c in r)]
-    if len(rows) < MIN_ROWS + 1:
-        raise ValueError(f"table too small: {len(rows)} rows")
-
-    header = [h.strip().lower() for h in rows[0]]
-
-    def col(*keys):
-        for i, h in enumerate(header):
-            if any(k in h for k in keys):
-                return i
+        return float(s) if s not in ("", "-", ".") else None
+    except ValueError:
         return None
 
-    ci = {
-        "commodity": col("commodity", "bidhaa", "crop", "product"),
-        "warehouse": col("warehouse", "ghala", "region", "location", "centre", "center"),
-        "low":       col("low", "min", "chini"),
-        "high":      col("high", "max", "juu"),
-        "clearing":  col("clear", "settle", "closing", "price"),
-        "change":    col("change", "chg", "badiliko", "%"),
-        "session":   col("date", "session", "tarehe"),
-    }
-    if ci["commodity"] is None or (ci["clearing"] is None and ci["high"] is None):
-        raise ValueError(
-            "could not map columns from header: "
-            f"{header} | first data row: {rows[1][:6] if len(rows) > 1 else 'n/a'}"
-        )
 
-    def num(s):
-        if s is None:
-            return None
-        s = re.sub(r"[^\d.\-]", "", str(s))
-        try:
-            return float(s) if s not in ("", "-", ".") else None
-        except ValueError:
-            return None
+def parse_and_aggregate(text):
+    reader = csv.DictReader(io.StringIO(text))
+    rows = list(reader)
+    if len(rows) < MIN_ROWS:
+        raise ValueError(f"too few rows in source CSV: {len(rows)}")
 
-    out, session_date = [], None
-    for r in rows[1:]:
-        def cell(k):
-            i = ci[k]
-            return r[i].strip() if i is not None and i < len(r) else None
+    dates = sorted({r.get("Date", "").strip() for r in rows if r.get("Date")})
+    if not dates:
+        raise ValueError("no usable Date values in source CSV")
+    latest_date = dates[-1]
+    todays = [r for r in rows if r.get("Date", "").strip() == latest_date]
+    if len(todays) < MIN_ROWS:
+        raise ValueError(f"only {len(todays)} trades on latest date {latest_date}")
 
-        commodity = cell("commodity")
+    groups = defaultdict(list)
+    for r in todays:
+        commodity = (r.get("Commodity") or "").strip()
+        warehouse = (r.get("Location") or "").strip()
         if not commodity:
             continue
-        clearing = num(cell("clearing"))
-        high = num(cell("high"))
-        low = num(cell("low"))
-        if clearing is None and high is None:
+        groups[(commodity, warehouse)].append(r)
+
+    out = []
+    for (commodity, warehouse), trades in groups.items():
+        trades.sort(key=lambda t: num(t.get("ID")) or 0)
+        last = trades[-1]
+
+        highs = [num(t.get("High Price")) for t in trades if num(t.get("High Price")) is not None]
+        lows  = [num(t.get("Low Price"))  for t in trades if num(t.get("Low Price"))  is not None]
+        if not highs and not lows:
             continue
-        chg_raw = cell("change")
-        chg = num(chg_raw)
+
+        clearing = num(last.get("High Price")) or num(last.get("Low Price"))
+        change_tzs = num(last.get("Price Change"))
         direction = "flat"
-        if chg is not None:
-            direction = "up" if chg > 0 else ("dn" if chg < 0 else "flat")
-        elif chg_raw:
-            if "-" in chg_raw:
-                direction = "dn"
-            elif re.search(r"\d", chg_raw):
-                direction = "up"
-        if session_date is None:
-            session_date = cell("session")
+        if change_tzs is not None:
+            direction = "up" if change_tzs > 0 else ("dn" if change_tzs < 0 else "flat")
+
         out.append({
             "commodity": commodity,
-            "warehouse": cell("warehouse") or "",
-            "low": low,
-            "high": high,
-            "clearing": clearing if clearing is not None else high,
-            "change_pct": chg,
-            "change_raw": chg_raw or "",
+            "warehouse": warehouse,
+            "low": min(lows) if lows else clearing,
+            "high": max(highs) if highs else clearing,
+            "clearing": clearing,
+            "change_tzs": change_tzs,
+            "change_raw": last.get("Price Change") or "",
             "dir": direction,
+            "trades": len(trades),
         })
+
     if len(out) < MIN_ROWS:
-        raise ValueError(f"parsed only {len(out)} usable rows")
-    return out, session_date
+        raise ValueError(f"aggregated only {len(out)} usable commodity/warehouse rows")
+    return out, latest_date
 
 
 def main():
-    errors = []
-    table_text = None
-    for url in CANDIDATE_URLS:
-        try:
-            body = fetch(url)
-            table_text = csv_from_embed_json(body) if url.endswith(".json") else body
-            if table_text and table_text.count("\n") >= MIN_ROWS:
-                print(f"fetched table via {url}")
-                break
-            table_text = None
-            errors.append(f"{url}: no tabular payload")
-        except Exception as e:  # noqa: BLE001 - collect and report every failure mode
-            errors.append(f"{url}: {e}")
-    if not table_text:
-        print("FETCH FAILED:\n  " + "\n  ".join(errors), file=sys.stderr)
+    try:
+        body = fetch(SOURCE_URL)
+    except Exception as e:  # noqa: BLE001
+        print(f"FETCH FAILED: {e}", file=sys.stderr)
         sys.exit(1)
 
     try:
-        rows, session_date = parse_table(table_text)
+        rows, session_date = parse_and_aggregate(body)
     except Exception as e:  # noqa: BLE001
-        print(f"PARSE FAILED: {e}\nFirst 500 chars of payload:\n{table_text[:500]}", file=sys.stderr)
+        print(f"PARSE FAILED: {e}\nFirst 500 chars of payload:\n{body[:500]}", file=sys.stderr)
         sys.exit(1)
 
-    # Preserve previous rows' fetched_at if data is identical (avoids commit noise)
     try:
         prev = json.load(open(OUT))
         if prev.get("rows") == rows:
             print("rows unchanged; leaving file as-is")
             return
-    except Exception:  # noqa: BLE001 - no previous file or unreadable: proceed to write
+    except Exception:  # noqa: BLE001
         pass
 
     payload = {
         "status": "ok",
-        "source": "Tanzania Mercantile Exchange (TMX), published trade table",
-        "chart_id": CHART_ID,
+        "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
         "fetched_at_eat": datetime.now(EAT).strftime("%Y-%m-%d %H:%M EAT"),
         "session_date": session_date,
         "rows": rows,
