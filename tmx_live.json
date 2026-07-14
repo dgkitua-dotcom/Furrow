@@ -1,0 +1,59 @@
+{
+  "status": "ok",
+  "source": "Tanzania Mercantile Exchange (TMX), published trade table",
+  "chart_id": "ZJSS6",
+  "fetched_at_eat": "2026-07-13 14:15 EAT",
+  "session_date": "13 Jul 2026",
+  "rows": [
+    {
+      "commodity": "Ufuta (Sesame)",
+      "warehouse": "Momba, Songwe",
+      "low": 2710,
+      "high": 2820,
+      "clearing": 2790,
+      "change_pct": 1.8,
+      "change_raw": "+1.8%",
+      "dir": "up"
+    },
+    {
+      "commodity": "Ufuta (Sesame)",
+      "warehouse": "Lindi",
+      "low": 2120,
+      "high": 2890,
+      "clearing": 2655,
+      "change_pct": 2.4,
+      "change_raw": "+2.4%",
+      "dir": "up"
+    },
+    {
+      "commodity": "Choroko (Green Gram)",
+      "warehouse": "Mwanza",
+      "low": 1340,
+      "high": 1720,
+      "clearing": 1540,
+      "change_pct": -0.9,
+      "change_raw": "-0.9%",
+      "dir": "dn"
+    },
+    {
+      "commodity": "Soya (Soybeans)",
+      "warehouse": "Songea, Ruvuma",
+      "low": 1095,
+      "high": 1350,
+      "clearing": 1240,
+      "change_pct": 1.4,
+      "change_raw": "+1.4%",
+      "dir": "up"
+    },
+    {
+      "commodity": "Kakao (Cocoa)",
+      "warehouse": "Kyela, Mbeya",
+      "low": 5800,
+      "high": 18100,
+      "clearing": 12050,
+      "change_pct": 0.8,
+      "change_raw": "+0.8%",
+      "dir": "up"
+    }
+  ]
+}
