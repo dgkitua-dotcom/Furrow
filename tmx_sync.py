@@ -133,12 +133,6 @@ def main():
 
     synced_at = datetime.now(EAT).strftime("%Y-%m-%d %H:%M EAT")
 
-    try:
-        prev = json.load(open(OUT))
-        rows_unchanged = prev.get("rows") == rows
-    except Exception:  # noqa: BLE001
-        rows_unchanged = False
-
     # Always try to extend history, even if tmx_live.json itself is unchanged --
     # append_history() has its own duplicate check, so this is safe either way.
     try:
@@ -146,10 +140,9 @@ def main():
     except Exception as e:  # noqa: BLE001 - history is a bonus, never fail the whole run over it
         print(f"WARNING: could not update {HISTORY_OUT}: {e}", file=sys.stderr)
 
-    if rows_unchanged:
-        print("rows unchanged; leaving tmx_live.json as-is")
-        return
-
+    # tmx_live.json is rewritten every successful run -- even when the trade
+    # rows themselves are unchanged -- so "Last synced" always reflects that
+    # the bot actually checked in, not just the last time a price moved.
     payload = {
         "status": "ok",
         "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
