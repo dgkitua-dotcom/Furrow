@@ -1,9 +1,20 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-07-14 16:13 EAT",
-  "session_date": "2026-07-13",
+  "fetched_at_eat": "2026-07-14 19:42 EAT",
+  "session_date": "2026-07-14",
   "rows": [
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Dodoma",
+      "low": 2470.0,
+      "high": 2470.0,
+      "clearing": 2470.0,
+      "change_tzs": 260.0,
+      "change_raw": "260",
+      "dir": "up",
+      "trade_date": "2026-07-14"
+    },
     {
       "commodity": "Pigeon peas",
       "warehouse": "Simiyu",
@@ -25,17 +36,6 @@
       "change_raw": "0",
       "dir": "flat",
       "trade_date": "2026-07-12"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Dodoma",
-      "low": 2210.0,
-      "high": 2210.0,
-      "clearing": 2210.0,
-      "change_tzs": -260.0,
-      "change_raw": "-260",
-      "dir": "dn",
-      "trade_date": "2026-07-10"
     },
     {
       "commodity": "Coffee-Robusta Certified",
