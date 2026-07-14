@@ -12,10 +12,10 @@
   gtag('config', 'G-3ZBLYSVVN7');
 </script>
 <title>News &amp; Tenders, FURROW, Tanzania Agricultural Market Intelligence | Powered by Gabrison Capital</title>
-<meta name="description" content="FURROW publishes daily government reference prices for Tanzania's agricultural crops. Live price ticker, tenders, and agri-transport news, powered by Gabrison Capital." />
-<meta name="keywords" content="Tanzania agriculture prices, MAFC crop prices, Tanzania agri tenders, Gabrison Capital, FURROW, maize price Tanzania, cashew nuts Tanzania" />
+<meta name="description" content="FURROW publishes daily national average prices for Tanzania's agricultural crops. Live price ticker, tenders, and agri-transport news, powered by Gabrison Capital." />
+<meta name="keywords" content="Tanzania agriculture prices, Tanzania agri tenders, Gabrison Capital, FURROW, maize price Tanzania, cashew nuts Tanzania" />
 <meta property="og:title" content="FURROW, Tanzania Agricultural Market Intelligence" />
-<meta property="og:description" content="Live government reference crop prices for Tanzania. Daily updates from MAFC, TCB, CDT and CBT. Tenders and agri-transport news." />
+<meta property="og:description" content="Live national average crop prices for Tanzania, updated daily. Tenders and agri-transport news." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -51,7 +51,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .section-label { font-size: 10px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
 .section-title { font-size: clamp(26px, 3.5vw, 40px); color: var(--navy); margin-bottom: 14px; }
 .section-title-wht { color: #fff; }
-.section-sub   { font-size: 14px; color: var(--mu); line-height: 1.75; max-width: 640px; }
+.section-sub   { font-size: 14px; color: var(--mu); line-height: 1.75; max-width: 900px; }
 .text-center .section-sub { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head  { margin-bottom: 48px; }
 .section-head .section-sub { margin-top: 0; }
@@ -434,7 +434,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   <div class="container">
     <div class="section-label">FURROW News &amp; Tenders</div>
     <h1 class="section-title" style="margin-bottom:8px">News, Regulations &amp; Tenders</h1>
-    <p class="section-sub" style="max-width:640px">The full FURROW intelligence board, every agri and transport news item, regulation change and open procurement opportunity we track for Tanzania's agricultural sector.</p>
+    <p class="section-sub" style="max-width:900px">The full FURROW intelligence board, every agri and transport news item, regulation change and open procurement opportunity we track for Tanzania's agricultural sector.</p>
   </div>
 </section>
 
@@ -503,7 +503,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
     <div class="section-head">
       <div class="section-label">Open Procurement</div>
       <h2 class="section-title">Tenders &amp; Procurement Opportunities</h2>
-      <p class="section-sub">Active tenders from FAO, UN agencies, government bodies and development partners seeking agricultural commodities, consulting and transport services.</p>
+      <p class="section-sub">Active tenders from international agencies, development partners and public procurement portals seeking agricultural commodities, consulting and transport services.</p>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px" id="tenderGrid">
       <!-- Populated by JS -->
@@ -525,7 +525,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
       <div>
         <div style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:20px;color:#fff;letter-spacing:.06em">FU<u>RR</u>OW</div>
         <div style="font-size:8px;color:var(--goldL);letter-spacing:.14em;text-transform:uppercase;margin-top:2px">powered by Gabrison Capital</div>
-        <div class="footer-brand-desc">Tanzania&rsquo;s agricultural market intelligence platform. Publishing daily government reference prices, tenders and industry news for the agri and transport sectors.</div>
+        <div class="footer-brand-desc">Tanzania&rsquo;s agricultural market intelligence platform. Publishing daily national average prices, tenders and industry news for the agri and transport sectors.</div>
         <div style="margin-top:14px;font-size:11px;color:rgba(255,255,255,.2)">Dar es Salaam, Tanzania</div>
       </div>
       <div>
@@ -610,9 +610,7 @@ function buildTicker(){
   t.innerHTML = doubled.map(function(p){
     return '<span class="tick">'
       +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
-      +'<span>TZS '+p.sup.toLocaleString()+'/kg</span>'
-      +'<span style="color:'+bright(p.dir)+';font-weight:700">'+arrow(p.dir)+p.chg+'</span>'
-      +'<span style="color:rgba(255,255,255,.3);font-size:10px">Gov\'t: '+p.gov.toLocaleString()+'</span>'
+      +'<span>TZS '+p.gov.toLocaleString()+'/kg</span>'
       +'</span>';
   }).join('');
 }
@@ -624,9 +622,7 @@ function buildHeroBoard(){
     return '<div class="hb-row">'
       +'<div><div class="hb-crop">'+p.crop+'</div><div class="hb-region">'+p.region+'</div></div>'
       +'<div class="hb-right">'
-      +'<div class="hb-price">'+p.sup.toLocaleString()+' <span class="hb-unit">TZS/kg</span></div>'
-      +'<div class="hb-gov">Gov\'t ref: '+p.gov.toLocaleString()+'</div>'
-      +'<div class="hb-chg" style="color:'+bright(p.dir)+'">'+arrow(p.dir)+' '+p.chg+'</div>'
+      +'<div class="hb-price">'+p.gov.toLocaleString()+' <span class="hb-unit">TZS/kg</span></div>'
       +'</div></div>';
   }).join('');
   var hd = document.getElementById('heroDate'); if(hd) hd.textContent = PRICES.updated;
@@ -668,18 +664,20 @@ function renderCropDetail(){
   // Prefer the national-average row (if present) for the summary cards; else the first region
   var nat = entries.filter(function(p){ return /National Average/i.test(p.region); })[0];
   var rep = nat || entries[0];
-  var upCount = entries.filter(function(p){return p.dir==='up';}).length;
-  var dnCount = entries.filter(function(p){return p.dir==='dn';}).length;
+  var regionOnly = entries.filter(function(p){ return !/National Average/i.test(p.region); });
+  var govVals = regionOnly.map(function(p){ return p.gov; }).filter(function(v){ return typeof v==='number'; });
+  var minVal = govVals.length ? Math.min.apply(null, govVals) : rep.gov;
+  var maxVal = govVals.length ? Math.max.apply(null, govVals) : rep.gov;
 
   summary.style.display = 'grid';
   summary.innerHTML =
     '<div class="card" style="padding:16px">'
-      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">'+(nat?'National Avg. (Gov\'t ref.)':rep.region+' (Gov\'t ref.)')+'</div>'
+      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">'+(nat?'National Average':rep.region+' Average')+'</div>'
       +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+' <span style="font-size:13px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
     +'</div>'
     +'<div class="card" style="padding:16px">'
-      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regions Rising / Falling</div>'
-      +'<div style="font-size:18px;font-weight:700"><span style="color:var(--grn)">&#9650; '+upCount+'</span> &nbsp;/&nbsp; <span style="color:var(--red)">&#9660; '+dnCount+'</span></div>'
+      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regional Range</div>'
+      +'<div style="font-size:18px;font-weight:700;color:var(--navy)">'+minVal.toLocaleString()+' &ndash; '+maxVal.toLocaleString()+'</div>'
     +'</div>'
     +'<div class="card" style="padding:16px">'
       +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regions Tracked</div>'
@@ -693,20 +691,15 @@ function renderCropDetail(){
   });
 
   wrap.innerHTML =
-    '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:10px 18px;background:var(--navy)">'
+    '<div style="display:grid;grid-template-columns:2fr 1fr;padding:10px 18px;background:var(--navy)">'
       +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Gov\'t Ref.</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Supplier</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Move</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average (TZS/kg)</span>'
     +'</div>'
     +rows.map(function(p,i){
-      var dc=col(p.dir), da=arrow(p.dir);
       var isNat = /National Average/i.test(p.region);
-      return '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;padding:10px 18px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
+      return '<div style="display:grid;grid-template-columns:2fr 1fr;align-items:center;padding:10px 18px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
         +'<div style="font-size:12px;font-weight:'+(isNat?'700':'400')+';color:var(--tx)">'+p.region+'</div>'
         +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
-        +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.sup.toLocaleString()+'</div>'
-        +'<div style="font-size:11px;font-weight:700;color:'+dc+'">'+da+' '+p.chg+'</div>'
       +'</div>';
     }).join('');
 }
@@ -727,8 +720,20 @@ function renderMarketPulse(){
   }
 
   var labels = PRICE_HISTORY.map(function(h){ return h.date; });
-  var risingData  = PRICE_HISTORY.map(function(h){ return (h.movement||{}).up  || 0; });
-  var fallingData = PRICE_HISTORY.map(function(h){ return (h.movement||{}).dn  || 0; });
+  // Real up/down counts: compare each bulletin's national averages to the previous bulletin's.
+  var risingData = [], fallingData = [];
+  PRICE_HISTORY.forEach(function(h, i){
+    if(i === 0){ risingData.push(0); fallingData.push(0); return; }
+    var prev = PRICE_HISTORY[i-1].national_avg || {};
+    var cur  = h.national_avg || {};
+    var up = 0, dn = 0;
+    Object.keys(cur).forEach(function(crop){
+      if(!(crop in prev)) return;
+      if(cur[crop] > prev[crop]) up++;
+      else if(cur[crop] < prev[crop]) dn++;
+    });
+    risingData.push(up); fallingData.push(dn);
+  });
 
   var commonOpts = {
     responsive:true,
@@ -1160,16 +1165,16 @@ document.addEventListener('keydown', function(e){
 
 
 <script>
-/* TMX LIVE ticker items (appended after the regular price ticker loads) */
+/* AUCTION ticker items (appended after the regular price ticker loads) */
 (function(){
   function fmtNum(v){ return (v===null||v===undefined)?'':Math.round(v).toLocaleString(); }
-  function chg(r){ if(r.change_pct===null||r.change_pct===undefined) return r.change_raw||''; return (r.change_pct>0?'+':'')+r.change_pct.toFixed(1)+'%'; }
+  function chg(r){ if(r.change_tzs===null||r.change_tzs===undefined) return r.change_raw||''; return (r.change_tzs>0?'+':'')+Math.round(r.change_tzs).toLocaleString()+' TZS/kg'; }
   function arrow(d){ return d==='up'?'&#9650;':d==='dn'?'&#9660;':'&mdash;'; }
   function col(d){ return d==='up'?'#4ADE80':d==='dn'?'#F87171':'#E2C47E'; }
   function inject(rows){
     var track = document.getElementById('tickerTrack'); if(!track) return;
     var items = rows.slice(0,6).map(function(r){
-      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
+      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>AUCTION</span>'
         +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse?' &middot; '+r.warehouse.toUpperCase():'')+'</span>'
         +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
         +'<span style="color:'+col(r.dir)+';font-weight:700">'+arrow(r.dir)+chg(r)+'</span></span>';

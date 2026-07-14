@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Market Intelligence, FURROW</title>
-<meta name="description" content="Consolidated Tanzania agricultural market data: crop price trends, regional comparisons and seasonal supply windows from official MAFC, TCB, CDT and CBT sources." />
+<meta name="description" content="Consolidated Tanzania agricultural market data: crop price trends, regional comparisons and seasonal supply windows from national average bulletins." />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <style>
@@ -18,7 +18,7 @@ body { font-family:'Inter',sans-serif; color:var(--tx); background:var(--cream);
 .section-label { font-size:10px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
 h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(28px,4vw,42px); color:var(--navy); margin-bottom:8px; }
 h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(20px,3vw,28px); color:var(--navy); margin-bottom:6px; }
-.sub { font-size:13px; color:var(--mu); max-width:640px; }
+.sub { font-size:13px; color:var(--mu); max-width:900px; }
 .card { background:#fff; border:1px solid var(--bdr); border-radius:var(--radius); padding:22px; }
 .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
 .grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; }
@@ -150,20 +150,20 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <div class="section-label">FURROW Analytics</div>
     <h1>Market Data &amp; Analytics</h1>
-    <p class="sub">Consolidated Tanzania agricultural market data from official sources, national price trends, regional comparisons and seasonal supply windows, all in one place. Updated with every price bulletin.</p>
+    <p class="sub">Consolidated Tanzania agricultural market data, national price trends, regional comparisons and seasonal supply windows, all in one place. Updated with every price bulletin.</p>
     <p class="sub" style="margin-top:6px;font-size:11px">Last updated: <span id="lastUpdated">&mdash;</span></p>
   </div>
 </section>
 
-<!-- TMX Live Session Board (renders only when tmx_live.json exists) -->
+<!-- Auction Prices board (renders only when tmx_live.json exists) -->
 <section style="padding:0 0 36px;display:none" id="tmxSection">
   <div class="container">
     <div class="tmx-board">
       <div id="tmxStale"></div>
       <div class="tmx-head">
         <div>
-          <div class="tmx-title">TMX Live Session Board</div>
-          <div class="tmx-sub">Tanzania Mercantile Exchange &middot; electronic warehouse auctions</div>
+          <div class="tmx-title">Auction Prices (Average)</div>
+          <div class="tmx-sub">Electronic warehouse auctions</div>
         </div>
         <div style="display:flex;align-items:center;gap:16px">
           <span class="session-pill" id="tmxPill"><span class="live-dot"></span>Session open</span>
@@ -177,7 +177,7 @@ footer a { color:var(--goldL); text-decoration:none; }
       <div id="tmxBoardContent" style="display:none">
         <table class="tmx-table" id="tmxTable"></table>
       <div class="tmx-foot">
-        <span>Source: <a href="https://www.tmx.co.tz" rel="noopener">Tanzania Mercantile Exchange (TMX)</a> &middot; session data, TZS/kg &middot; change vs previous trade session per TMX definition</span>
+        <span>Source: electronic warehouse auction records &middot; session data, TZS/kg</span>
         <span>FURROW aggregates published prices; figures may trail the exchange by minutes</span>
       </div>
         </div>
@@ -197,7 +197,7 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <div class="card">
       <h2>National Average Prices Over Time</h2>
-      <p class="sub" style="margin-bottom:16px">National wholesale average (TZS/kg) per staple crop, tracked across every FURROW price bulletin. Solid lines are the official government reference; dotted lines in the same colour are the private supplier average, so any gap between a pair is the live market spread.</p>
+      <p class="sub" style="margin-bottom:16px">National wholesale average (TZS/kg) per staple crop, tracked across every FURROW price bulletin.</p>
       <div class="chart-box"><canvas id="chartTrends"></canvas></div>
       <p id="trendNote" class="sub" style="font-size:11px;margin-top:10px"></p>
     </div>
@@ -211,7 +211,7 @@ footer a { color:var(--goldL); text-decoration:none; }
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
         <div>
           <h2>Regional Price Comparison</h2>
-          <p class="sub">Government reference price by region for the selected crop.</p>
+          <p class="sub">National average price by region for the selected crop.</p>
         </div>
         <select id="cropSelect" onchange="renderRegional()"></select>
       </div>
@@ -259,26 +259,26 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <div class="card" style="background:linear-gradient(rgba(11,28,46,.92),rgba(11,28,46,.95)),url('images/mi_sources.jpg') center/cover no-repeat;border-color:rgba(201,168,76,.3)">
       <h2 style="color:#fff">Data Sources &amp; Methodology</h2>
-      <p class="sub" style="color:rgba(255,255,255,.55);margin-bottom:18px">Every price on FURROW traces to an official source. Here is exactly where the numbers come from and how they are handled.</p>
+      <p class="sub" style="color:rgba(255,255,255,.55);margin-bottom:18px">Every price on FURROW traces to a published source. Here is exactly where the numbers come from and how they are handled.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px">
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:16px">
           <div style="font-size:12px;font-weight:700;color:var(--goldL);margin-bottom:6px">Staple food crops</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Ministry of Agriculture (MAFC) regional wholesale tracking matrices, maize, rice, beans, sorghum, millet and potatoes across Tanzania's regions.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Regional wholesale tracking bulletins covering maize, rice, beans, sorghum, millet and potatoes across Tanzania's regions.</div>
         </div>
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:16px">
           <div style="font-size:12px;font-weight:700;color:var(--goldL);margin-bottom:6px">Regulated cash crops</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Tanzania Coffee Board (TCB), Cashewnut Board of Tanzania (CBT) and Cotton Development Trust (CDT), official auction clearing and farm-gate reference rates.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Published auction clearing and farm-gate reference rates for coffee, cashew and cotton.</div>
         </div>
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:16px">
           <div style="font-size:12px;font-weight:700;color:var(--goldL);margin-bottom:6px">Exchange-traded lots</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Tanzania Mercantile Exchange (TMX) and COPRA electronic auctions, sesame, green gram, soybeans and cocoa warehouse-receipt trading ranges.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Electronic auction and warehouse-receipt trading ranges for sesame, green gram, soybeans and cocoa.</div>
         </div>
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:16px">
           <div style="font-size:12px;font-weight:700;color:var(--goldL);margin-bottom:6px">How we update</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Prices are refreshed with every official bulletin, cross-checked by the FURROW team, and timestamped. Historical snapshots are preserved so trends are never rewritten. Missing regional readings are shown as absent, never estimated.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Prices are refreshed with every published bulletin, cross-checked by the FURROW team, and timestamped. Historical snapshots are preserved so trends are never rewritten. Missing regional readings are shown as absent, never estimated.</div>
         </div>
       </div>
-      <p class="sub" style="color:rgba(255,255,255,.4);font-size:11px;margin-top:16px;margin-bottom:0">All prices are indicative reference rates in TZS/kg unless stated otherwise. FURROW publishes official data openly and does not adjust, model or interpolate reported prices.</p>
+      <p class="sub" style="color:rgba(255,255,255,.4);font-size:11px;margin-top:16px;margin-bottom:0">All prices are indicative reference rates in TZS/kg unless stated otherwise. FURROW publishes this data openly and does not adjust, model or interpolate reported prices.</p>
     </div>
   </div>
 </section>
@@ -315,20 +315,23 @@ async function init(){
 
 function renderStats(){
   var el = document.getElementById('statCards');
-  var crops = {}, regions = {}, up=0, dn=0;
+  var crops = {}, regions = {};
+  var govVals = [];
   PRICES.prices.forEach(function(p){
     crops[p.crop]=1; regions[p.region]=1;
-    if(p.dir==='up') up++; if(p.dir==='dn') dn++;
+    if(typeof p.gov === 'number') govVals.push(p.gov);
   });
   function card(val,lbl,color){
     return '<div class="card" style="padding:16px;text-align:left">'
       +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:28px;font-weight:700;color:'+(color||'var(--navy)')+'">'+val+'</div>'
       +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em">'+lbl+'</div></div>';
   }
+  var minV = govVals.length ? Math.min.apply(null, govVals) : 0;
+  var maxV = govVals.length ? Math.max.apply(null, govVals) : 0;
   el.innerHTML = card(Object.keys(crops).length,'Commodities tracked')
     + card(Object.keys(regions).length,'Regions & hubs')
-    + card('&#9650; '+up,'Entries rising','var(--grn)')
-    + card('&#9660; '+dn,'Entries falling','var(--red)');
+    + card(minV.toLocaleString()+' &ndash; '+maxV.toLocaleString(),'Price range (TZS/kg)')
+    + card(PRICES.updated||'&mdash;','Latest bulletin');
 }
 
 function renderTrends(){
@@ -340,20 +343,11 @@ function renderTrends(){
   var datasets = [];
   cropNames.forEach(function(cn){
     var col = CROP_COLORS[cn]||'#5A6A7A';
-    /* Solid line: official government reference */
     datasets.push({
       label: cn,
       data: HISTORY.map(function(h){ return (h.national_avg||{})[cn] != null ? h.national_avg[cn] : null; }),
       borderColor: col, backgroundColor: 'transparent',
       tension:.3, pointRadius:3, spanGaps:true
-    });
-    /* Dotted line: private supplier average, same colour so the gap reads as the spread */
-    datasets.push({
-      label: cn + ' (private)',
-      data: HISTORY.map(function(h){ return (h.national_avg_sup||{})[cn] != null ? h.national_avg_sup[cn] : null; }),
-      borderColor: col, backgroundColor: 'transparent',
-      borderDash: [5,4], borderWidth: 1.5,
-      tension:.3, pointRadius: 2, pointStyle: 'rect', spanGaps:true
     });
   });
   if(chartTrendsI) chartTrendsI.destroy();
@@ -362,7 +356,7 @@ function renderTrends(){
     data:{ labels:labels, datasets:datasets },
     options:{
       responsive:true, maintainAspectRatio:false,
-      plugins:{ legend:{ position:'bottom', labels:{ font:{size:10}, boxWidth:12, color:'#22303E', filter:function(item){ return item.text.indexOf('(private)') === -1; } } } },
+      plugins:{ legend:{ position:'bottom', labels:{ font:{size:10}, boxWidth:12, color:'#22303E' } } },
       scales:{
         x:{ grid:{display:false}, ticks:{font:{size:10}, color:'#5A6A7A'} },
         y:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return v.toLocaleString();}}, title:{display:true, text:'TZS / kg', font:{size:10}, color:'#5A6A7A'} }
@@ -393,9 +387,9 @@ function renderRegional(){
     data:{
       labels: rows.map(function(p){return p.region;}),
       datasets:[{
-        label:'Gov\u2019t reference (TZS/kg)',
+        label:'National average (TZS/kg)',
         data: rows.map(function(p){return p.gov;}),
-        backgroundColor: rows.map(function(p){ return p.dir==='up' ? 'rgba(30,107,74,.75)' : p.dir==='dn' ? 'rgba(139,26,26,.75)' : 'rgba(201,168,76,.75)'; }),
+        backgroundColor: 'rgba(201,168,76,.75)',
         borderRadius:4
       }]
     },
@@ -423,12 +417,25 @@ function renderMovement(){
   var cv = document.getElementById('chartMovement');
   if(!cv || typeof Chart==='undefined' || !HISTORY.length) return;
   var labels = HISTORY.map(function(h){return h.date;});
+  var risingData = [], fallingData = [];
+  HISTORY.forEach(function(h, i){
+    if(i === 0){ risingData.push(0); fallingData.push(0); return; }
+    var prev = HISTORY[i-1].national_avg || {};
+    var cur  = h.national_avg || {};
+    var up = 0, dn = 0;
+    Object.keys(cur).forEach(function(crop){
+      if(!(crop in prev)) return;
+      if(cur[crop] > prev[crop]) up++;
+      else if(cur[crop] < prev[crop]) dn++;
+    });
+    risingData.push(up); fallingData.push(dn);
+  });
   if(chartMovementI) chartMovementI.destroy();
   chartMovementI = new Chart(cv.getContext('2d'), {
     type:'line',
     data:{ labels:labels, datasets:[
-      { label:'Rising', data:HISTORY.map(function(h){return (h.movement||{}).up||0;}), borderColor:'#1E6B4A', backgroundColor:'rgba(30,107,74,.1)', fill:true, tension:.3, pointRadius:3 },
-      { label:'Falling', data:HISTORY.map(function(h){return (h.movement||{}).dn||0;}), borderColor:'#8B1A1A', backgroundColor:'rgba(139,26,26,.08)', fill:true, tension:.3, pointRadius:3 }
+      { label:'Rising', data:risingData, borderColor:'#1E6B4A', backgroundColor:'rgba(30,107,74,.1)', fill:true, tension:.3, pointRadius:3 },
+      { label:'Falling', data:fallingData, borderColor:'#8B1A1A', backgroundColor:'rgba(139,26,26,.08)', fill:true, tension:.3, pointRadius:3 }
     ]},
     options:{
       responsive:true,
@@ -449,19 +456,20 @@ function renderCropSummaryAndTable(crop, rows, natRow){
   var wrap = document.getElementById('cropTableWrap');
   if(!summary || !wrap) return;
   var all = natRow ? [natRow].concat(rows) : rows.slice();
-  var upCount = rows.filter(function(p){return p.dir==='up';}).length;
-  var dnCount = rows.filter(function(p){return p.dir==='dn';}).length;
+  var govVals = rows.map(function(p){return p.gov;}).filter(function(v){return typeof v==='number';});
+  var minV = govVals.length ? Math.min.apply(null, govVals) : 0;
+  var maxV = govVals.length ? Math.max.apply(null, govVals) : 0;
   var rep = natRow || rows[0];
   if(!rep){ summary.innerHTML=''; wrap.innerHTML=''; return; }
 
   summary.innerHTML =
     '<div class="card" style="padding:14px 16px">'
-      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">'+(natRow?'National Avg (Gov\u2019t ref.)':rep.region+' (Gov\u2019t ref.)')+'</div>'
+      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">'+(natRow?'National Average':rep.region+' Average')+'</div>'
       +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+' <span style="font-size:12px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
     +'</div>'
     +'<div class="card" style="padding:14px 16px">'
-      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regions Rising / Falling</div>'
-      +'<div style="font-size:16px;font-weight:700"><span style="color:var(--grn)">&#9650; '+upCount+'</span> &nbsp;/&nbsp; <span style="color:var(--red)">&#9660; '+dnCount+'</span></div>'
+      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regional Range</div>'
+      +'<div style="font-size:16px;font-weight:700;color:var(--navy)">'+minV.toLocaleString()+' &ndash; '+maxV.toLocaleString()+'</div>'
     +'</div>'
     +'<div class="card" style="padding:14px 16px">'
       +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regions Tracked</div>'
@@ -474,19 +482,15 @@ function renderCropSummaryAndTable(crop, rows, natRow){
     return a.region.localeCompare(b.region);
   });
   wrap.innerHTML =
-    '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:10px 16px;background:var(--navy)">'
+    '<div style="display:grid;grid-template-columns:2fr 1fr;padding:10px 16px;background:var(--navy)">'
       +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Gov\u2019t Ref.</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Supplier</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Move</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average (TZS/kg)</span>'
     +'</div>'
     +sorted.map(function(p,i){
       var isNat = /National Average/i.test(p.region);
-      return '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;padding:9px 16px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
+      return '<div style="display:grid;grid-template-columns:2fr 1fr;align-items:center;padding:9px 16px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
         +'<div style="font-size:12px;font-weight:'+(isNat?'700':'400')+'">'+p.region+'</div>'
         +'<div style="font-size:12px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
-        +'<div style="font-size:12px;font-weight:600;color:var(--navy)">'+p.sup.toLocaleString()+'</div>'
-        +'<div style="font-size:11px;font-weight:700;color:'+col(p.dir)+'">'+arrow(p.dir)+' '+p.chg+'</div>'
       +'</div>';
     }).join('');
 }
@@ -555,7 +559,7 @@ var TICKER_TMX_HTML = '', TICKER_PRICE_HTML = '';
 function renderTmxTicker(){
 if(!TMX) return;
 TICKER_TMX_HTML = TMX.rows.slice(0, 6).map(function(r){
-return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
+return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>AUCTION</span>'
 +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse ? ' &middot; '+r.warehouse.toUpperCase() : '')+'</span>'
 +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
 +'<span class="'+tmxCls(r.dir)+'" style="font-weight:700">'+tmxArrow(r.dir)+tmxChg(r)+'</span></span>';
@@ -591,9 +595,7 @@ if(label) label.textContent = open ? 'Expand' : 'Collapse';
 TICKER_PRICE_HTML = prices.map(function(p){
 return '<span class="tick">'
 +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
-+'<span>TZS '+p.sup.toLocaleString()+'/kg</span>'
-+'<span style="color:'+bright(p.dir)+';font-weight:700">'+arrow(p.dir)+p.chg+'</span>'
-+'<span style="color:rgba(255,255,255,.3);font-size:10px">Gov&#39;t: '+p.gov.toLocaleString()+'</span>'
++'<span>TZS '+p.gov.toLocaleString()+'/kg</span>'
 +'</span>';
 }).join('');
 renderCombinedTicker();
