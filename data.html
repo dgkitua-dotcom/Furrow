@@ -98,6 +98,7 @@ footer a { color:var(--goldL); text-decoration:none; }
 .tmx-table .clr { font-family:'Cormorant Garamond',serif; font-size:17px; font-weight:700; color:var(--goldL); }
 .tmx-table td.tmx-up { color:#4ADE80; font-weight:700; }
 .tmx-table td.tmx-dn { color:#F87171; font-weight:700; }
+.tmx-table td.tmx-stale-date { color:rgba(255,255,255,.28); font-style:italic; }
 .stale-bar { display:flex; align-items:center; gap:10px; background:rgba(180,83,9,.12); border-bottom:1px solid rgba(217,119,6,.4); color:#F5C97B; font-size:11px; padding:9px 22px; }
 .stale-dot { width:7px; height:7px; border-radius:50%; background:#F59E0B; }
 .tmx-foot { display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:12px 22px; font-size:10px; color:rgba(255,255,255,.35); border-top:1px solid rgba(201,168,76,.2); }
@@ -638,14 +639,24 @@ function renderTmxBoard(){
   document.getElementById('tmxStale').innerHTML = looksStale(TMX.fetched_at_eat)
     ? '<div class="stale-bar"><span class="stale-dot"></span>Live sync delayed &middot; showing last confirmed session data &middot; retrying automatically</div>' : '';
   var t = document.getElementById('tmxTable');
-  t.innerHTML = '<tr><th>Commodity</th><th>Warehouse</th><th>Session low</th><th>Session high</th><th>Clearing</th><th>Chg vs prev</th></tr>'
+  t.innerHTML = '<tr><th>Commodity</th><th>Warehouse</th><th>Session low</th><th>Session high</th><th>Clearing</th><th>Chg vs prev</th><th>Trade date</th></tr>'
     + TMX.rows.map(function(r){
       return '<tr><td class="tc">'+r.commodity+'</td><td class="tw">'+(r.warehouse||'&mdash;')+'</td>'
         +'<td>'+fmtNum(r.low)+'</td><td>'+fmtNum(r.high)+'</td>'
         +'<td class="clr">'+fmtNum(r.clearing)+'</td>'
-        +'<td class="'+tmxCls(r.dir)+'">'+tmxArrow(r.dir)+' '+tmxChg(r)+'</td></tr>';
+        +'<td class="'+tmxCls(r.dir)+'">'+tmxArrow(r.dir)+' '+tmxChg(r)+'</td>'
+        +'<td class="'+tradeDateCls(r.trade_date)+'">'+(r.trade_date||'&mdash;')+'</td></tr>';
     }).join('');
   sec.style.display = 'block';
+}
+
+/* Rows older than 30 days get a muted style so a months-old trade never
+   looks as current as yesterday's -- coffee especially can go long
+   stretches between trades. */
+function tradeDateCls(dateStr){
+  if(!dateStr) return 'tw';
+  var days = (new Date() - new Date(dateStr)) / 86400000;
+  return days > 30 ? 'tw tmx-stale-date' : 'tw';
 }
 
 var TICKER_TMX_HTML = '', TICKER_PRICE_HTML = '';
