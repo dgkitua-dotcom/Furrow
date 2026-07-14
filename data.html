@@ -545,19 +545,22 @@ function renderTmxBoard(){
   sec.style.display = 'block';
 }
 
+var TICKER_TMX_HTML = '', TICKER_PRICE_HTML = '';
 function renderTmxTicker(){
-  var track = document.getElementById('tickerTrack'); if(!track || !TMX) return;
-  var items = TMX.rows.slice(0, 6).map(function(r){
-    return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
-      +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse ? ' &middot; '+r.warehouse.toUpperCase() : '')+'</span>'
-      +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
-      +'<span class="'+tmxCls(r.dir)+'" style="font-weight:700">'+tmxArrow(r.dir)+tmxChg(r)+'</span></span>';
-  }).join('');
-  /* the track holds its item set twice for the seamless loop: inject into both halves */
-  var half = track.innerHTML.length / 2;
-  var firstHalf = track.innerHTML.slice(0, half), secondHalf = track.innerHTML.slice(half);
-  if(firstHalf === secondHalf){ track.innerHTML = firstHalf + items + secondHalf + items; }
-  else { track.innerHTML = track.innerHTML + items + items; }
+if(!TMX) return;
+TICKER_TMX_HTML = TMX.rows.slice(0, 6).map(function(r){
+return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
++'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse ? ' &middot; '+r.warehouse.toUpperCase() : '')+'</span>'
++'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
++'<span class="'+tmxCls(r.dir)+'" style="font-weight:700">'+tmxArrow(r.dir)+tmxChg(r)+'</span></span>';
+}).join('');
+renderCombinedTicker();
+}
+function renderCombinedTicker(){
+var track = document.getElementById('tickerTrack'); if(!track) return;
+var combined = TICKER_PRICE_HTML + TICKER_TMX_HTML;
+if(!combined) return;
+track.innerHTML = combined + combined;
 }
 
 loadTmx();
@@ -569,17 +572,16 @@ loadTmx();
   function bright(d){ return d==='up'?'#4ADE80':d==='dn'?'#F87171':'#E2C47E'; }
   function arrow(d){ return d==='up'?'&#9650;':d==='dn'?'&#9660;':'&mdash;'; }
   function build(prices){
-    var t = document.getElementById('tickerTrack'); if(!t) return;
-    var doubled = prices.concat(prices);
-    t.innerHTML = doubled.map(function(p){
-      return '<span class="tick">'
-        +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
-        +'<span>TZS '+p.sup.toLocaleString()+'/kg</span>'
-        +'<span style="color:'+bright(p.dir)+';font-weight:700">'+arrow(p.dir)+p.chg+'</span>'
-        +'<span style="color:rgba(255,255,255,.3);font-size:10px">Gov&#39;t: '+p.gov.toLocaleString()+'</span>'
-        +'</span>';
-    }).join('');
-  }
+TICKER_PRICE_HTML = prices.map(function(p){
+return '<span class="tick">'
++'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
++'<span>TZS '+p.sup.toLocaleString()+'/kg</span>'
++'<span style="color:'+bright(p.dir)+';font-weight:700">'+arrow(p.dir)+p.chg+'</span>'
++'<span style="color:rgba(255,255,255,.3);font-size:10px">Gov&#39;t: '+p.gov.toLocaleString()+'</span>'
++'</span>';
+}).join('');
+renderCombinedTicker();
+}
   fetch('prices.json?v='+Date.now()).then(function(r){ return r.ok ? r.json() : null; })
     .then(function(d){ if(d && d.prices && d.prices.length) build(d.prices); })
     .catch(function(){});
