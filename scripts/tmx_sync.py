@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
 FURROW <- TMX live sync.
-Reads TMX's own market-data CSV feed directly, aggregates individual trades
-into one row per commodity per warehouse for the latest trading date, and
-writes tmx_live.json for the site.
+Reads TMX's own market-data CSV feed directly. Trades trickle in one at a
+time whenever they happen (not all on the same day), so this takes the most
+recent trade for each commodity/warehouse pair rather than filtering by a
+single calendar date, and writes tmx_live.json for the site.
 
 Fail-safe contract:
 - On ANY failure, exits non-zero and writes NOTHING -> the last good
@@ -17,7 +18,6 @@ import json
 import sys
 import urllib.request
 from datetime import datetime, timezone, timedelta
-from collections import defaultdict
 
 SOURCE_URL = "https://www.tmx.co.tz/pages/api/v1/market-data/read_csv.php"
 MIN_ROWS = 2
@@ -49,53 +49,47 @@ def parse_and_aggregate(text):
     if len(rows) < MIN_ROWS:
         raise ValueError(f"too few rows in source CSV: {len(rows)}")
 
-    dates = sorted({r.get("Date", "").strip() for r in rows if r.get("Date")})
-    if not dates:
-        raise ValueError("no usable Date values in source CSV")
-    latest_date = dates[-1]
-    todays = [r for r in rows if r.get("Date", "").strip() == latest_date]
-    if len(todays) < MIN_ROWS:
-        raise ValueError(f"only {len(todays)} trades on latest date {latest_date}")
-
-    groups = defaultdict(list)
-    for r in todays:
+    # Keep only the most recent trade (highest ID) for each commodity/warehouse
+    # pair -- trades trickle in individually, they don't all land on one day.
+    latest = {}
+    for r in rows:
         commodity = (r.get("Commodity") or "").strip()
         warehouse = (r.get("Location") or "").strip()
         if not commodity:
             continue
-        groups[(commodity, warehouse)].append(r)
+        key = (commodity, warehouse)
+        rid = num(r.get("ID")) or 0
+        if key not in latest or rid > (num(latest[key].get("ID")) or 0):
+            latest[key] = r
 
     out = []
-    for (commodity, warehouse), trades in groups.items():
-        trades.sort(key=lambda t: num(t.get("ID")) or 0)
-        last = trades[-1]
-
-        highs = [num(t.get("High Price")) for t in trades if num(t.get("High Price")) is not None]
-        lows  = [num(t.get("Low Price"))  for t in trades if num(t.get("Low Price"))  is not None]
-        if not highs and not lows:
+    for (commodity, warehouse), r in latest.items():
+        high = num(r.get("High Price (TZS/kg)"))
+        low = num(r.get("Low Price (TZS/kg)"))
+        if high is None and low is None:
             continue
-
-        clearing = num(last.get("High Price")) or num(last.get("Low Price"))
-        change_tzs = num(last.get("Price Change"))
+        clearing = high if high is not None else low
+        change_tzs = num(r.get("Price Change (TZS/kg)"))
         direction = "flat"
         if change_tzs is not None:
             direction = "up" if change_tzs > 0 else ("dn" if change_tzs < 0 else "flat")
-
         out.append({
             "commodity": commodity,
             "warehouse": warehouse,
-            "low": min(lows) if lows else clearing,
-            "high": max(highs) if highs else clearing,
+            "low": low if low is not None else clearing,
+            "high": high if high is not None else clearing,
             "clearing": clearing,
             "change_tzs": change_tzs,
-            "change_raw": last.get("Price Change") or "",
+            "change_raw": r.get("Price Change (TZS/kg)") or "",
             "dir": direction,
-            "trades": len(trades),
+            "trade_date": (r.get("Date") or "").strip(),
         })
 
     if len(out) < MIN_ROWS:
-        raise ValueError(f"aggregated only {len(out)} usable commodity/warehouse rows")
-    return out, latest_date
+        raise ValueError(f"only {len(out)} usable commodity/warehouse rows")
+
+    session_date = max((o["trade_date"] for o in out if o["trade_date"]), default="")
+    return out, session_date
 
 
 def main():
