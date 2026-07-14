@@ -155,15 +155,15 @@ footer a { color:var(--goldL); text-decoration:none; }
   </div>
 </section>
 
-<!-- Auction Prices board (renders only when tmx_live.json exists) -->
+<!-- TMX Auction Board (renders only when tmx_live.json exists) -->
 <section style="padding:0 0 36px;display:none" id="tmxSection">
   <div class="container">
     <div class="tmx-board">
       <div id="tmxStale"></div>
       <div class="tmx-head">
         <div>
-          <div class="tmx-title">Auction Prices (Average)</div>
-          <div class="tmx-sub">Electronic warehouse auctions</div>
+          <div class="tmx-title">TMX Auction Prices (Average)</div>
+          <div class="tmx-sub">Tanzania Mercantile Exchange &middot; electronic warehouse auctions</div>
         </div>
         <div style="display:flex;align-items:center;gap:16px">
           <span class="session-pill" id="tmxPill"><span class="live-dot"></span>Session open</span>
@@ -177,7 +177,7 @@ footer a { color:var(--goldL); text-decoration:none; }
       <div id="tmxBoardContent" style="display:none">
         <table class="tmx-table" id="tmxTable"></table>
       <div class="tmx-foot">
-        <span>Source: electronic warehouse auction records &middot; session data, TZS/kg</span>
+        <span>Source: <a href="https://www.tmx.co.tz" rel="noopener">Tanzania Mercantile Exchange (TMX)</a> &middot; session data, TZS/kg</span>
         <span>FURROW aggregates published prices; figures may trail the exchange by minutes</span>
       </div>
         </div>
@@ -271,7 +271,7 @@ footer a { color:var(--goldL); text-decoration:none; }
         </div>
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:16px">
           <div style="font-size:12px;font-weight:700;color:var(--goldL);margin-bottom:6px">Exchange-traded lots</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Electronic auction and warehouse-receipt trading ranges for sesame, green gram, soybeans and cocoa.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.7">Tanzania Mercantile Exchange (TMX) electronic auctions, sesame, green gram, soybeans and cocoa warehouse-receipt trading ranges.</div>
         </div>
         <div style="background:rgba(255,255,255,.04);border:1px solid rgba(201,168,76,.2);border-radius:8px;padding:16px">
           <div style="font-size:12px;font-weight:700;color:var(--goldL);margin-bottom:6px">How we update</div>
@@ -541,7 +541,7 @@ function renderTmxBoard(){
   pill.className = 'session-pill' + (open ? '' : ' closed');
   pill.innerHTML = open ? '<span class="live-dot"></span>Session open' : 'Session closed';
   document.getElementById('tmxSync').innerHTML =
-    'Last synced <b>'+(TMX.fetched_at_eat||'&mdash;')+'</b><br>auto-refreshes every 45 min in trade hours';
+    'Last synced <b>'+(TMX.fetched_at_eat||'&mdash;')+'</b><br>auto-refreshes every 60 min in trade hours';
   document.getElementById('tmxStale').innerHTML = looksStale(TMX.fetched_at_eat)
     ? '<div class="stale-bar"><span class="stale-dot"></span>Live sync delayed &middot; showing last confirmed session data &middot; retrying automatically</div>' : '';
   var t = document.getElementById('tmxTable');
@@ -559,7 +559,7 @@ var TICKER_TMX_HTML = '', TICKER_PRICE_HTML = '';
 function renderTmxTicker(){
 if(!TMX) return;
 TICKER_TMX_HTML = TMX.rows.slice(0, 6).map(function(r){
-return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>AUCTION</span>'
+return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
 +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse ? ' &middot; '+r.warehouse.toUpperCase() : '')+'</span>'
 +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
 +'<span class="'+tmxCls(r.dir)+'" style="font-weight:700">'+tmxArrow(r.dir)+tmxChg(r)+'</span></span>';

@@ -213,7 +213,7 @@ footer a { color:var(--goldL); text-decoration:none; }
 <script>function toggleMenu(){var m=document.getElementById("navMob");if(m)m.classList.toggle("open");}</script>
 
 <script>
-/* AUCTION ticker items (appended after the regular price ticker loads) */
+/* TMX LIVE ticker items (appended after the regular price ticker loads) */
 (function(){
   function fmtNum(v){ return (v===null||v===undefined)?'':Math.round(v).toLocaleString(); }
   function chg(r){ if(r.change_tzs===null||r.change_tzs===undefined) return r.change_raw||''; return (r.change_tzs>0?'+':'')+Math.round(r.change_tzs).toLocaleString()+' TZS/kg'; }
@@ -222,7 +222,7 @@ footer a { color:var(--goldL); text-decoration:none; }
   function inject(rows){
     var track = document.getElementById('tickerTrack'); if(!track) return;
     var items = rows.slice(0,6).map(function(r){
-      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>AUCTION</span>'
+      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
         +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse?' &middot; '+r.warehouse.toUpperCase():'')+'</span>'
         +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
         +'<span style="color:'+col(r.dir)+';font-weight:700">'+arrow(r.dir)+chg(r)+'</span></span>';
