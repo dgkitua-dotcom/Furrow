@@ -168,13 +168,19 @@ footer a { color:var(--goldL); text-decoration:none; }
         <div style="display:flex;align-items:center;gap:16px">
           <span class="session-pill" id="tmxPill"><span class="live-dot"></span>Session open</span>
           <div class="sync-note" id="tmxSync"></div>
+          <button id="tmxToggleBtn" onclick="toggleTmxBoard()" style="display:flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.4);color:var(--goldL);border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;white-space:nowrap">
+<span id="tmxToggleIcon" style="font-size:12px;line-height:1">&#8722;</span>
+<span id="tmxToggleLabel">Collapse</span>
+</button>
         </div>
       </div>
-      <table class="tmx-table" id="tmxTable"></table>
+      <div id="tmxBoardContent">
+        <table class="tmx-table" id="tmxTable"></table>
       <div class="tmx-foot">
         <span>Source: <a href="https://www.tmx.co.tz" rel="noopener">Tanzania Mercantile Exchange (TMX)</a> &middot; session data, TZS/kg &middot; change vs previous trade session per TMX definition</span>
         <span>FURROW aggregates published prices; figures may trail the exchange by minutes</span>
       </div>
+        </div>
     </div>
   </div>
 </section>
@@ -563,7 +569,17 @@ if(!combined) return;
 track.innerHTML = combined + combined;
 }
 
-loadTmx();
+function toggleTmxBoard(){
+var content = document.getElementById('tmxBoardContent');
+var icon = document.getElementById('tmxToggleIcon');
+var label = document.getElementById('tmxToggleLabel');
+if(!content) return;
+var open = content.style.display !== 'none';
+content.style.display = open ? 'none' : 'block';
+if(icon) icon.innerHTML = open ? '&#43;' : '&#8722;';
+if(label) label.textContent = open ? 'Expand' : 'Collapse';
+}
+  loadTmx();
 </script>
 
 <script>
