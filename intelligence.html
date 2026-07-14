@@ -438,37 +438,6 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
   </div>
 </section>
 
-<section class="section" id="national-averages">
-  <div class="container">
-    <div class="section-head" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <div>
-        <div class="section-label">Market Intelligence</div>
-        <h2 class="section-title">National Averages</h2>
-        <p class="section-sub">Indicative national average prices, published weekly. Select a crop to see its regional breakdown.</p>
-        <p class="sub" id="priceLastUpdate" style="margin-top:4px"></p>
-      </div>
-      <button id="priceBoardToggleBtn" onclick="togglePriceBoard()"
-        style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:var(--navy);color:var(--gold);border:none;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0">
-        <span id="priceBoardToggleIcon" style="font-size:14px;line-height:1">&#8722;</span>
-        <span id="priceBoardToggleLabel">Collapse</span>
-      </button>
-    </div>
-
-    <div id="priceBoardContent">
-      <div class="card">
-        <div style="display:flex;align-items:center;justify-content:flex-end;margin-bottom:16px">
-          <select id="cropSelect" onchange="renderCropDetail()"></select>
-        </div>
-        <div id="cropSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px"></div>
-        <div id="cropTableWrap" style="border:1px solid var(--bdr);border-radius:8px;overflow:hidden"></div>
-      </div>
-      <p style="font-size:11px;color:var(--mu);margin-top:12px;text-align:right">
-        Data as at <span id="priceDate">&mdash;</span> &middot; Prices are indicative reference rates only
-      </p>
-    </div>
-  </div>
-</section>
-
 <section class="section section-alt" id="news">
   <div class="container">
     <div class="section-head">
