@@ -13,10 +13,10 @@
 </script>
 <title>FURROW — Tanzania Agricultural Market Intelligence | Powered by Gabrison Capital</title>
 <meta property="og:image" content="https://www.joinfurrow.com/images/og_image.jpg" />
-<meta name="description" content="FURROW publishes daily government reference prices for Tanzania's agricultural crops. Live price ticker, tenders, and agri-transport news — powered by Gabrison Capital." />
+<meta name="description" content="FURROW publishes daily national average prices for Tanzania's agricultural crops. Live price ticker, tenders, and agri-transport news — powered by Gabrison Capital." />
 <meta name="keywords" content="Tanzania agriculture prices, MAFC crop prices, Tanzania agri tenders, Gabrison Capital, FURROW, maize price Tanzania, cashew nuts Tanzania" />
 <meta property="og:title" content="FURROW — Tanzania Agricultural Market Intelligence" />
-<meta property="og:description" content="Live government reference crop prices for Tanzania. Daily updates from MAFC, TCB, CDT and CBT. Tenders and agri-transport news." />
+<meta property="og:description" content="Live national average crop prices for Tanzania, updated daily. Tenders and agri-transport news." />
 <meta property="og:type" content="website" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -456,8 +456,8 @@ html { scroll-behavior: smooth; }
     <div class="hero-grid">
       <div>
         <div class="hero-eyebrow">Tanzania Agricultural Market Intelligence</div>
-        <h1>Government crop prices,<br><span>updated daily</span></h1>
-        <p class="hero-sub">FURROW publishes official MAFC, TCB, CDT and CBT reference prices every day so farmers, buyers and industry players can see the true market rate before any transaction.</p>
+        <h1>National average crop prices,<br><span>updated daily</span></h1>
+        <p class="hero-sub">FURROW publishes national average reference prices every day so farmers, buyers and industry players can see the going market rate before any transaction.</p>
         <div class="hero-stats">
           <div>
             <div class="hs-val" id="statCrops">42</div>
@@ -472,17 +472,17 @@ html { scroll-behavior: smooth; }
             <div class="hs-lbl">Price updates</div>
           </div>
           <div>
-            <div class="hs-val">4</div>
-            <div class="hs-lbl">Regulatory bodies</div>
+            <div class="hs-val">Weekly</div>
+            <div class="hs-lbl">Bulletin cadence</div>
           </div>
         </div>
-        <p class="hero-note">Prices sourced from the Ministry of Agriculture Food and Cooperatives (MAFC), Tanzania Coffee Board (TCB), Cotton Development Trust (CDT) and Cashewnut Board of Tanzania (CBT). All prices are indicative government reference rates in Tanzanian Shillings per kilogram.</p>
+        <p class="hero-note">All prices are indicative national average rates in Tanzanian Shillings per kilogram, compiled from weekly agricultural bulletins.</p>
       </div>
 
       <!-- Hero price board -->
       <div class="hero-board">
         <div class="hb-hdr">
-          <span class="hb-hdr-title">Reference Prices Today</span>
+          <span class="hb-hdr-title">National Averages Today</span>
           <div class="hb-live">
             <div class="hb-dot"></div>
             <span class="hb-dot-lbl">Updated <span id="heroDate">10 Jul 2026</span></span>
@@ -504,10 +504,10 @@ html { scroll-behavior: smooth; }
     <div class="grid-3" style="gap:20px">
       <div style="border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:20px 22px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
-          <div style="font-size:13px;font-weight:700;color:#fff">Official reference data</div>
+          <div style="font-size:13px;font-weight:700;color:#fff">National average data</div>
           <span style="font-size:8px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:#1E6B4A;color:#fff;padding:3px 8px;border-radius:20px">Live now</span>
         </div>
-        <div style="font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.65">Prices, news and tenders published from official government and regulatory sources — MAFC, TCB, CDT, CBT and COPRA — so you see the true market rate before any transaction.</div>
+        <div style="font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.65">Prices, news and tenders compiled from published agricultural bulletins, so you see the going market rate before any transaction.</div>
       </div>
       <div style="border:1px solid rgba(201,168,76,.3);border-radius:10px;padding:20px 22px">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
@@ -597,8 +597,8 @@ html { scroll-behavior: smooth; }
     <div class="section-head" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <div>
         <div class="section-label">Market Intelligence</div>
-        <h2 class="section-title">Government Reference Price Board</h2>
-        <p class="section-sub">Official indicative prices published by MAFC, TCB, CDT and CBT. Click any crop to see regional breakdown.</p>
+        <h2 class="section-title">National Averages</h2>
+        <p class="section-sub">Indicative national average prices, published weekly. Click any crop to see regional breakdown.</p>
       </div>
       <button id="priceBoardToggleBtn" onclick="togglePriceBoard()"
         style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:var(--navy);color:var(--gold);border:none;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0">
@@ -662,7 +662,7 @@ html { scroll-behavior: smooth; }
           <div style="padding:22px;flex:1;display:flex;flex-direction:column">
             <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Agri &amp; Transport News</div>
             <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px">How we source the news</div>
-            <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:10px">FURROW monitors official channels daily: the Ministry of Agriculture, crop boards, regulators, the Bank of Tanzania, port and transport authorities, and development agencies. Each story is summarised in plain language and carries its named source.</p>
+            <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:10px">FURROW monitors agricultural and transport news daily across a range of public sources. Each story is summarised in plain language and carries its named source.</p>
             <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:16px;flex:1">We filter for relevance: only developments that affect Tanzania&rsquo;s agricultural and transport value chain make the board: regulations, levies, market access, inputs and finance. No filler.</p>
             <a href="intelligence.html#news" style="display:inline-block;align-self:flex-start;padding:10px 20px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">Read the latest news &rarr;</a>
           </div>
@@ -674,7 +674,7 @@ html { scroll-behavior: smooth; }
           <div style="padding:22px;flex:1;display:flex;flex-direction:column">
             <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px">Procurement Opportunities</div>
             <div style="font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px">How we vet tenders</div>
-            <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:10px">Tenders are collected from official procurement portals such as Tanzania&rsquo;s NeST system, UN Global Marketplace, Devex and verified tender boards, with the reference number, issuing body, deadline and direct source link for every entry.</p>
+            <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:10px">Tenders are collected from verified public procurement portals across Tanzania and the region, with the reference number, issuing body, deadline and direct source link for every entry.</p>
             <p style="font-size:12px;color:var(--mu);line-height:1.7;margin-bottom:16px;flex:1">Only active opportunities relevant to the agricultural value chain are listed, and expired deadlines are removed with every update, so what you see is always live and worth your time.</p>
             <a href="intelligence.html#tenders" style="display:inline-block;align-self:flex-start;padding:10px 20px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none">Browse open tenders &rarr;</a>
           </div>
@@ -720,7 +720,7 @@ html { scroll-behavior: smooth; }
         </div>
         <div class="step">
           <div class="step-num">2</div>
-          <div><div class="step-title" style="color:#fff">Browse verified listings</div><div class="step-body" style="color:rgba(255,255,255,.55)">See live government reference prices alongside every supplier&rsquo;s actual asking price. Filter by crop, region, and grade.</div></div>
+          <div><div class="step-title" style="color:#fff">Browse verified listings</div><div class="step-body" style="color:rgba(255,255,255,.55)">See live national average prices alongside every supplier&rsquo;s actual asking price. Filter by crop, region, and grade.</div></div>
         </div>
         <div class="step">
           <div class="step-num">3</div>
@@ -737,7 +737,7 @@ html { scroll-behavior: smooth; }
         <div style="display:flex;flex-direction:column;gap:16px">
           <div style="display:flex;align-items:flex-start;gap:12px">
             <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">P</div>
-            <div><div style="font-size:13px;font-weight:600;color:#fff">Live FX-style price board</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">42 crop types across 30 Tanzania regions. Updated daily from official ministry data.</div></div>
+            <div><div style="font-size:13px;font-weight:600;color:#fff">Live FX-style price board</div><div style="font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;margin-top:2px">42 crop types across 30 Tanzania regions. Updated daily from national average bulletins.</div></div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:12px">
             <div style="width:32px;height:32px;border-radius:6px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:16px;color:var(--gold)">T</div>
@@ -766,7 +766,7 @@ html { scroll-behavior: smooth; }
         <img class="role-img" src="images/role_supplier.jpg" alt="Tanzanian farmers working their field" loading="lazy" />
         <div class="role-title">Suppliers</div>
         <div class="role-sub">Farmer &middot; Aggregator &middot; Agri-Business</div>
-        <div class="role-body">List your produce with your own prices, see exactly how they compare against the government reference rate, and receive orders directly from verified buyers.</div>
+        <div class="role-body">List your produce with your own prices, see exactly how they compare against the national average rate, and receive orders directly from verified buyers.</div>
         <ul class="role-feats">
           <li>TIN-verified profile with regional listing</li>
           <li>Up to 5 produce listings per account</li>
@@ -780,7 +780,7 @@ html { scroll-behavior: smooth; }
         <img class="role-img" src="images/role_customer2.jpg" alt="Market vendor serving customers at a fruit stall" loading="lazy" style="object-position:center 30%" />
         <div class="role-title">Customers</div>
         <div class="role-sub">Individual &middot; Corporate &middot; International</div>
-        <div class="role-body">See every supplier&rsquo;s price next to the government reference rate. Order directly or let FURROW verify and mediate the entire deal on your behalf.</div>
+        <div class="role-body">See every supplier&rsquo;s price next to the national average rate. Order directly or let FURROW verify and mediate the entire deal on your behalf.</div>
         <ul class="role-feats">
           <li>Live price board with all 42 crops, all regions</li>
           <li>Tanzania supply density map by corridor</li>
@@ -862,12 +862,12 @@ html { scroll-behavior: smooth; }
     </div>
     <div>
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">What is the difference between the government reference price and the supplier price? <i class="faq-icon">+</i></button>
-        <div class="faq-a">The government reference price is the official indicative rate published by the Ministry of Agriculture (MAFC), Tanzania Coffee Board, Cotton Development Trust and Cashewnut Board. It reflects the regulated fair market value. The supplier price is what the individual seller is actually offering. FURROW shows both side by side so any buyer can instantly see who is above or below the official rate, and by exactly how much.</div>
+        <button class="faq-q" onclick="toggleFaq(this)">What does the National Average price mean? <i class="faq-icon">+</i></button>
+        <div class="faq-a">The National Average is an indicative reference rate for each crop and region, compiled from published agricultural bulletins. Once suppliers begin listing on FURROW, you&rsquo;ll also be able to see each individual seller&rsquo;s actual asking price alongside the National Average, so you can instantly see who is above or below it, and by how much.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">How often are prices updated? <i class="faq-icon">+</i></button>
-        <div class="faq-a">Prices are updated daily by the FURROW administration team from official ministry publications. The timestamp at the top of the price board shows when data was last confirmed. The website automatically checks for new data every five minutes with no page reload needed.</div>
+        <div class="faq-a">Prices are updated by the FURROW administration team as new bulletins are published, typically weekly. The timestamp at the top of the price board shows when data was last confirmed. The website automatically checks for new data every five minutes with no page reload needed.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">I am not Tanzanian. Can I use FURROW? <i class="faq-icon">+</i></button>
@@ -892,7 +892,7 @@ html { scroll-behavior: smooth; }
       <div>
         <div style="font-family:'Cormorant Garamond',serif;font-weight:700;font-size:20px;color:#fff;letter-spacing:.06em">FU<u>RR</u>OW</div>
         <div style="font-size:8px;color:var(--goldL);letter-spacing:.14em;text-transform:uppercase;margin-top:2px">powered by Gabrison Capital</div>
-        <div class="footer-brand-desc">Tanzania&rsquo;s agricultural market intelligence platform. Publishing daily government reference prices, tenders and industry news for the agri and transport sectors.</div>
+        <div class="footer-brand-desc">Tanzania&rsquo;s agricultural market intelligence platform. Publishing daily national average prices, tenders and industry news for the agri and transport sectors.</div>
         <div style="margin-top:14px;font-size:11px;color:rgba(255,255,255,.35);line-height:1.8"><span style="color:var(--goldL);font-size:9px;letter-spacing:.1em;text-transform:uppercase">Field presence</span><br>Dar es Salaam &middot; Morogoro &middot; Dodoma<br>Njombe &middot; Mbeya &middot; Iringa</div>
       </div>
       <div>
@@ -946,18 +946,18 @@ html { scroll-behavior: smooth; }
 var PRICES = {
   updated: "10 Jul 2026",
   prices: [
-    { crop:"Maize",                region:"Dodoma",        gov:450,  sup:480,  dir:"up",   chg:"+2.3%", source:"MAFC" },
-    { crop:"Rice (paddy)",         region:"Mwanza",        gov:1800, sup:1750, dir:"dn",   chg:"-1.1%", source:"MAFC" },
-    { crop:"Coffee (Arabica)",     region:"Mbeya",         gov:4200, sup:4350, dir:"up",   chg:"+5.8%", source:"TCB"  },
-    { crop:"Sesame",               region:"Singida",       gov:2100, sup:2000, dir:"up",   chg:"+0.9%", source:"MAFC" },
-    { crop:"Cassava",              region:"Dar es Salaam", gov:320,  sup:320,  dir:"flat", chg:"0.0%",  source:"MAFC" },
-    { crop:"Sunflower Seed",       region:"Iringa",        gov:1650, sup:1700, dir:"dn",   chg:"-2.4%", source:"MAFC" },
-    { crop:"Cotton (seed cotton)", region:"Mwanza",        gov:980,  sup:1020, dir:"up",   chg:"+1.7%", source:"CDT"  },
-    { crop:"Cashew Nuts",          region:"Mtwara",        gov:3500, sup:3800, dir:"up",   chg:"+4.2%", source:"CBT"  },
-    { crop:"Sorghum",              region:"Dodoma",        gov:520,  sup:500,  dir:"up",   chg:"+3.1%", source:"MAFC" },
-    { crop:"Common Beans",         region:"Arusha",        gov:1480, sup:1490, dir:"up",   chg:"+0.7%", source:"MAFC" },
-    { crop:"Groundnuts",           region:"Mwanza",        gov:2100, sup:2200, dir:"up",   chg:"+4.8%", source:"MAFC" },
-    { crop:"Tea",                  region:"Mbeya",         gov:3200, sup:3250, dir:"flat", chg:"0.0%",  source:"MAFC" }
+    { crop:"Maize",                region:"Dodoma",        gov:450,  source:"MAFC" },
+    { crop:"Rice (paddy)",         region:"Mwanza",        gov:1800, source:"MAFC" },
+    { crop:"Coffee (Arabica)",     region:"Mbeya",         gov:4200, source:"TCB"  },
+    { crop:"Sesame",               region:"Singida",       gov:2100, source:"MAFC" },
+    { crop:"Cassava",              region:"Dar es Salaam", gov:320,  source:"MAFC" },
+    { crop:"Sunflower Seed",       region:"Iringa",        gov:1650, source:"MAFC" },
+    { crop:"Cotton (seed cotton)", region:"Mwanza",        gov:980,  source:"CDT"  },
+    { crop:"Cashew Nuts",          region:"Mtwara",        gov:3500, source:"CBT"  },
+    { crop:"Sorghum",              region:"Dodoma",        gov:520,  source:"MAFC" },
+    { crop:"Common Beans",         region:"Arusha",        gov:1480, source:"MAFC" },
+    { crop:"Groundnuts",           region:"Mwanza",        gov:2100, source:"MAFC" },
+    { crop:"Tea",                  region:"Mbeya",         gov:3200, source:"MAFC" }
   ]
 };
 
@@ -976,9 +976,7 @@ function buildTicker(){
   t.innerHTML = doubled.map(function(p){
     return '<span class="tick">'
       +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
-      +'<span>TZS '+p.sup.toLocaleString()+'/kg</span>'
-      +'<span style="color:'+bright(p.dir)+';font-weight:700">'+arrow(p.dir)+p.chg+'</span>'
-      +'<span style="color:rgba(255,255,255,.3);font-size:10px">Gov\'t: '+p.gov.toLocaleString()+'</span>'
+      +'<span>TZS '+p.gov.toLocaleString()+'/kg</span>'
       +'</span>';
   }).join('');
 }
@@ -990,9 +988,7 @@ function buildHeroBoard(){
     return '<div class="hb-row">'
       +'<div><div class="hb-crop">'+p.crop+'</div><div class="hb-region">'+p.region+'</div></div>'
       +'<div class="hb-right">'
-      +'<div class="hb-price">'+p.sup.toLocaleString()+' <span class="hb-unit">TZS/kg</span></div>'
-      +'<div class="hb-gov">Gov\'t ref: '+p.gov.toLocaleString()+'</div>'
-      +'<div class="hb-chg" style="color:'+bright(p.dir)+'">'+arrow(p.dir)+' '+p.chg+'</div>'
+      +'<div class="hb-price">'+p.gov.toLocaleString()+' <span class="hb-unit">TZS/kg</span></div>'
       +'</div></div>';
   }).join('');
   var hd = document.getElementById('heroDate'); if(hd) hd.textContent = PRICES.updated;
@@ -1034,18 +1030,20 @@ function renderCropDetail(){
   // Prefer the national-average row (if present) for the summary cards; else the first region
   var nat = entries.filter(function(p){ return /National Average/i.test(p.region); })[0];
   var rep = nat || entries[0];
-  var upCount = entries.filter(function(p){return p.dir==='up';}).length;
-  var dnCount = entries.filter(function(p){return p.dir==='dn';}).length;
+  var regionOnly = entries.filter(function(p){ return !/National Average/i.test(p.region); });
+  var govVals = regionOnly.map(function(p){ return p.gov; }).filter(function(v){ return typeof v==='number'; });
+  var minVal = govVals.length ? Math.min.apply(null, govVals) : rep.gov;
+  var maxVal = govVals.length ? Math.max.apply(null, govVals) : rep.gov;
 
   summary.style.display = 'grid';
   summary.innerHTML =
     '<div class="card" style="padding:16px">'
-      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">'+(nat?'National Avg. (Gov\'t ref.)':rep.region+' (Gov\'t ref.)')+'</div>'
+      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">'+(nat?'National Average':rep.region+' Average')+'</div>'
       +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+' <span style="font-size:13px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
     +'</div>'
     +'<div class="card" style="padding:16px">'
-      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regions Rising / Falling</div>'
-      +'<div style="font-size:18px;font-weight:700"><span style="color:var(--grn)">&#9650; '+upCount+'</span> &nbsp;/&nbsp; <span style="color:var(--red)">&#9660; '+dnCount+'</span></div>'
+      +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regional Range</div>'
+      +'<div style="font-size:18px;font-weight:700;color:var(--navy)">'+minVal.toLocaleString()+' &ndash; '+maxVal.toLocaleString()+'</div>'
     +'</div>'
     +'<div class="card" style="padding:16px">'
       +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regions Tracked</div>'
@@ -1059,20 +1057,15 @@ function renderCropDetail(){
   });
 
   wrap.innerHTML =
-    '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;padding:10px 18px;background:var(--navy)">'
+    '<div style="display:grid;grid-template-columns:2fr 1fr;padding:10px 18px;background:var(--navy)">'
       +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Gov\'t Ref.</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Supplier</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Move</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average (TZS/kg)</span>'
     +'</div>'
     +rows.map(function(p,i){
-      var dc=col(p.dir), da=arrow(p.dir);
       var isNat = /National Average/i.test(p.region);
-      return '<div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;align-items:center;padding:10px 18px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
+      return '<div style="display:grid;grid-template-columns:2fr 1fr;align-items:center;padding:10px 18px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
         +'<div style="font-size:12px;font-weight:'+(isNat?'700':'400')+';color:var(--tx)">'+p.region+'</div>'
         +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
-        +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.sup.toLocaleString()+'</div>'
-        +'<div style="font-size:11px;font-weight:700;color:'+dc+'">'+da+' '+p.chg+'</div>'
       +'</div>';
     }).join('');
 }
@@ -1093,8 +1086,21 @@ function renderMarketPulse(){
   }
 
   var labels = PRICE_HISTORY.map(function(h){ return h.date; });
-  var risingData  = PRICE_HISTORY.map(function(h){ return (h.movement||{}).up  || 0; });
-  var fallingData = PRICE_HISTORY.map(function(h){ return (h.movement||{}).dn  || 0; });
+  // Real up/down counts: compare each bulletin's national averages to the previous bulletin's.
+  // The first entry has nothing to compare against, so it reports 0 for both.
+  var risingData = [], fallingData = [];
+  PRICE_HISTORY.forEach(function(h, i){
+    if(i === 0){ risingData.push(0); fallingData.push(0); return; }
+    var prev = PRICE_HISTORY[i-1].national_avg || {};
+    var cur  = h.national_avg || {};
+    var up = 0, dn = 0;
+    Object.keys(cur).forEach(function(crop){
+      if(!(crop in prev)) return;
+      if(cur[crop] > prev[crop]) up++;
+      else if(cur[crop] < prev[crop]) dn++;
+    });
+    risingData.push(up); fallingData.push(dn);
+  });
 
   var commonOpts = {
     responsive:true,
@@ -1596,7 +1602,7 @@ document.addEventListener('keydown', function(e){
   function inject(rows){
     var track = document.getElementById('tickerTrack'); if(!track) return;
     var items = rows.slice(0,6).map(function(r){
-      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
+      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>AUCTION</span>'
         +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse?' &middot; '+r.warehouse.toUpperCase():'')+'</span>'
         +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
         +'<span style="color:'+col(r.dir)+';font-weight:700">'+arrow(r.dir)+chg(r)+'</span></span>';
