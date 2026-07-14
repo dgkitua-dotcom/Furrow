@@ -31,7 +31,7 @@ jobs:
 
       - name: Commit if data changed
         run: |
-          if git diff --quiet -- tmx_live.json; then
+          if [ -z "$(git status --porcelain -- tmx_live.json)" ]; then
             echo "No change in TMX data; nothing to commit."
           else
             git config user.name  "furrow-tmx-bot"
