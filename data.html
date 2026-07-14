@@ -169,12 +169,12 @@ footer a { color:var(--goldL); text-decoration:none; }
           <span class="session-pill" id="tmxPill"><span class="live-dot"></span>Session open</span>
           <div class="sync-note" id="tmxSync"></div>
           <button id="tmxToggleBtn" onclick="toggleTmxBoard()" style="display:flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.4);color:var(--goldL);border-radius:20px;font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;white-space:nowrap">
-<span id="tmxToggleIcon" style="font-size:12px;line-height:1">&#8722;</span>
-<span id="tmxToggleLabel">Collapse</span>
+<span id="tmxToggleIcon" style="font-size:12px;line-height:1">&#43;</span>
+<span id="tmxToggleLabel">Expand</span>
 </button>
         </div>
       </div>
-      <div id="tmxBoardContent">
+      <div id="tmxBoardContent" style="display:none">
         <table class="tmx-table" id="tmxTable"></table>
       <div class="tmx-foot">
         <span>Source: <a href="https://www.tmx.co.tz" rel="noopener">Tanzania Mercantile Exchange (TMX)</a> &middot; session data, TZS/kg &middot; change vs previous trade session per TMX definition</span>
