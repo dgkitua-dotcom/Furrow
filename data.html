@@ -192,26 +192,26 @@ footer a { color:var(--goldL); text-decoration:none; }
   </div>
 </section>
 
-<!-- National average trends: all crops, one chart -->
+<!-- TMX auction trends: builds up as sync history accumulates -->
 <section style="padding:0 0 36px">
   <div class="container">
     <div class="card">
-      <h2>National Average Prices Over Time</h2>
-      <p class="sub" style="margin-bottom:16px">National wholesale average (TZS/kg) per staple crop, tracked across every FURROW price bulletin.</p>
+      <h2>TMX Auction Prices Over Time</h2>
+      <p class="sub" style="margin-bottom:16px">Clearing price (TZS/kg) per commodity, averaged across warehouses, tracked at every TMX sync. Builds up as more syncs accumulate.</p>
       <div class="chart-box"><canvas id="chartTrends"></canvas></div>
       <p id="trendNote" class="sub" style="font-size:11px;margin-top:10px"></p>
     </div>
   </div>
 </section>
 
-<!-- Regional comparison for a selected crop -->
+<!-- Warehouse comparison for a selected TMX commodity -->
 <section style="padding:0 0 36px">
   <div class="container">
     <div class="card">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
         <div>
-          <h2>Regional Price Comparison</h2>
-          <p class="sub">National average price by region for the selected crop.</p>
+          <h2>TMX Warehouse Comparison</h2>
+          <p class="sub">Latest clearing price by warehouse for the selected TMX commodity.</p>
         </div>
         <select id="cropSelect" onchange="renderRegional()"></select>
       </div>
@@ -234,8 +234,8 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <div class="grid-2">
       <div class="card">
-        <h2>Market Movement</h2>
-        <p class="sub" style="margin-bottom:16px">Number of tracked commodity entries rising vs falling at each bulletin.</p>
+        <h2>TMX Market Movement</h2>
+        <p class="sub" style="margin-bottom:16px">Number of TMX auction entries rising vs falling at each sync.</p>
         <canvas id="chartMovement" height="150"></canvas>
       </div>
       <div class="card">
@@ -291,12 +291,7 @@ footer a { color:var(--goldL); text-decoration:none; }
 </footer>
 
 <script>
-var PRICES = null, HISTORY = [];
-var CROP_COLORS = {
-  "Mahindi (Maize)":"#C9A84C", "Mchele (Rice)":"#1E6B4A", "Maharage (Beans)":"#8B1A1A",
-  "Mtama (Sorghum)":"#3B6EA5", "Uwele (Bulrush Millet)":"#8B5E1A", "Ulezi (Finger Millet)":"#5A3E85",
-  "Viazi mviringo (Potato)":"#2F7F7A"
-};
+var PRICES = null;
 var chartTrendsI=null, chartRegionalI=null, chartMovementI=null;
 
 async function init(){
@@ -304,13 +299,9 @@ async function init(){
     var r1 = await fetch('prices.json?v='+Date.now());
     if(r1.ok) PRICES = await r1.json();
   } catch(e){}
-  try {
-    var r2 = await fetch('price_history.json?v='+Date.now());
-    if(r2.ok){ var d = await r2.json(); if(d && d.history) HISTORY = d.history; }
-  } catch(e){}
   if(!PRICES){ document.getElementById('lastUpdated').textContent = 'data unavailable'; return; }
   document.getElementById('lastUpdated').textContent = PRICES.updated;
-  renderStats(); renderTrends(); buildCropSelect(); renderRegional(); renderMovement();
+  renderStats();
 }
 
 function renderStats(){
@@ -334,21 +325,34 @@ function renderStats(){
     + card(PRICES.updated||'&mdash;','Latest bulletin');
 }
 
+var TMX_PALETTE = ["#C9A84C","#1E6B4A","#8B1A1A","#3B6EA5","#8B5E1A","#5A3E85","#2F7F7A","#B5652F","#4A4A8B","#7A8B2F"];
+function tmxColorFor(name, order){
+  if(!order[name]) order[name] = Object.keys(order).length;
+  return TMX_PALETTE[order[name] % TMX_PALETTE.length];
+}
+
 function renderTrends(){
   var cv = document.getElementById('chartTrends');
   if(!cv || typeof Chart==='undefined') return;
-  if(!HISTORY.length){ document.getElementById('trendNote').textContent='Trend data builds up with each new price bulletin.'; return; }
-  var labels = HISTORY.map(function(h){return h.date;});
-  var cropNames = Object.keys(HISTORY[HISTORY.length-1].national_avg || {});
-  var datasets = [];
-  cropNames.forEach(function(cn){
-    var col = CROP_COLORS[cn]||'#5A6A7A';
-    datasets.push({
+  if(!TMX_HISTORY.length){ document.getElementById('trendNote').textContent='Trend data builds up with each TMX sync.'; return; }
+  var labels = TMX_HISTORY.map(function(h){return h.synced_at;});
+  var order = {};
+  var commodityNames = [];
+  TMX_HISTORY.forEach(function(h){
+    (h.rows||[]).forEach(function(r){ if(commodityNames.indexOf(r.commodity)===-1) commodityNames.push(r.commodity); });
+  });
+  var datasets = commodityNames.map(function(cn){
+    return {
       label: cn,
-      data: HISTORY.map(function(h){ return (h.national_avg||{})[cn] != null ? h.national_avg[cn] : null; }),
-      borderColor: col, backgroundColor: 'transparent',
+      data: TMX_HISTORY.map(function(h){
+        var matches = (h.rows||[]).filter(function(r){ return r.commodity===cn; });
+        if(!matches.length) return null;
+        var avg = matches.reduce(function(s,r){return s+(r.clearing||0);},0) / matches.length;
+        return Math.round(avg);
+      }),
+      borderColor: tmxColorFor(cn, order), backgroundColor:'transparent',
       tension:.3, pointRadius:3, spanGaps:true
-    });
+    };
   });
   if(chartTrendsI) chartTrendsI.destroy();
   chartTrendsI = new Chart(cv.getContext('2d'), {
@@ -363,33 +367,33 @@ function renderTrends(){
       }
     }
   });
-  var n = HISTORY.length;
-  document.getElementById('trendNote').textContent = n<3 ? ('Showing '+n+' recorded bulletin'+(n>1?'s':'')+' so far — lines fill in as weekly updates are published.') : '';
+  var n = TMX_HISTORY.length;
+  document.getElementById('trendNote').textContent = n<5 ? ('Showing '+n+' recorded TMX sync'+(n>1?'s':'')+' so far — lines fill in as more syncs accumulate.') : '';
 }
 
 function buildCropSelect(){
   var sel = document.getElementById('cropSelect');
   var seen={}, order=[];
-  PRICES.prices.forEach(function(p){ if(!seen[p.crop]){seen[p.crop]=1; order.push(p.crop);} });
+  (TMX && TMX.rows ? TMX.rows : []).forEach(function(r){ if(!seen[r.commodity]){seen[r.commodity]=1; order.push(r.commodity);} });
   sel.innerHTML = order.map(function(cn){return '<option value="'+cn+'">'+cn+'</option>';}).join('');
 }
 
 function renderRegional(){
   var cv = document.getElementById('chartRegional');
   if(!cv || typeof Chart==='undefined') return;
-  var crop = document.getElementById('cropSelect').value;
-  var rows = PRICES.prices.filter(function(p){ return p.crop===crop && !/National Average/i.test(p.region); })
-    .sort(function(a,b){ return b.gov - a.gov; });
-  var natRow = PRICES.prices.filter(function(p){ return p.crop===crop && /National Average/i.test(p.region); })[0];
+  var sel = document.getElementById('cropSelect');
+  var commodity = sel.value;
+  var rows = (TMX && TMX.rows ? TMX.rows : []).filter(function(r){ return r.commodity===commodity; })
+    .sort(function(a,b){ return (b.clearing||0) - (a.clearing||0); });
   if(chartRegionalI) chartRegionalI.destroy();
   chartRegionalI = new Chart(cv.getContext('2d'), {
     type:'bar',
     data:{
-      labels: rows.map(function(p){return p.region;}),
+      labels: rows.map(function(r){return r.warehouse||'&mdash;';}),
       datasets:[{
-        label:'National average (TZS/kg)',
-        data: rows.map(function(p){return p.gov;}),
-        backgroundColor: 'rgba(201,168,76,.75)',
+        label:'TMX clearing price (TZS/kg)',
+        data: rows.map(function(r){return r.clearing;}),
+        backgroundColor: rows.map(function(r){ return r.dir==='up' ? 'rgba(30,107,74,.75)' : r.dir==='dn' ? 'rgba(139,26,26,.75)' : 'rgba(201,168,76,.75)'; }),
         borderRadius:4
       }]
     },
@@ -397,7 +401,6 @@ function renderRegional(){
       responsive:true, indexAxis: rows.length>10 ? 'y' : 'x',
       plugins:{
         legend:{display:false},
-        annotation:undefined,
         tooltip:{ callbacks:{ label:function(ctx){ return ctx.parsed.y!=null? (ctx.parsed.y||ctx.parsed.x).toLocaleString()+' TZS/kg' : ''; } } }
       },
       scales:{
@@ -406,30 +409,18 @@ function renderRegional(){
       }
     }
   });
-  renderCropSummaryAndTable(crop, rows, natRow);
-  var note = natRow ? 'National average: '+natRow.gov.toLocaleString()+' TZS/kg. Green bars rising, red falling, gold stable.' : 'Green bars rising, red falling, gold stable.';
+  renderCropSummaryAndTable(commodity, rows);
   cv.parentElement.querySelectorAll('.dyn-note').forEach(function(n){n.remove();});
-  var p = document.createElement('p'); p.className='sub dyn-note'; p.style.cssText='font-size:11px;margin-top:10px'; p.textContent=note;
+  var p = document.createElement('p'); p.className='sub dyn-note'; p.style.cssText='font-size:11px;margin-top:10px'; p.textContent='Green bars rising, red falling, gold stable, vs each warehouse\'s previous recorded trade.';
   cv.parentElement.appendChild(p);
 }
 
 function renderMovement(){
   var cv = document.getElementById('chartMovement');
-  if(!cv || typeof Chart==='undefined' || !HISTORY.length) return;
-  var labels = HISTORY.map(function(h){return h.date;});
-  var risingData = [], fallingData = [];
-  HISTORY.forEach(function(h, i){
-    if(i === 0){ risingData.push(0); fallingData.push(0); return; }
-    var prev = HISTORY[i-1].national_avg || {};
-    var cur  = h.national_avg || {};
-    var up = 0, dn = 0;
-    Object.keys(cur).forEach(function(crop){
-      if(!(crop in prev)) return;
-      if(cur[crop] > prev[crop]) up++;
-      else if(cur[crop] < prev[crop]) dn++;
-    });
-    risingData.push(up); fallingData.push(dn);
-  });
+  if(!cv || typeof Chart==='undefined' || !TMX_HISTORY.length) return;
+  var labels = TMX_HISTORY.map(function(h){return h.synced_at;});
+  var risingData = TMX_HISTORY.map(function(h){ return (h.rows||[]).filter(function(r){return r.dir==='up';}).length; });
+  var fallingData = TMX_HISTORY.map(function(h){ return (h.rows||[]).filter(function(r){return r.dir==='dn';}).length; });
   if(chartMovementI) chartMovementI.destroy();
   chartMovementI = new Chart(cv.getContext('2d'), {
     type:'line',
@@ -451,46 +442,42 @@ function renderMovement(){
 function col(dir){ return dir==='up'?'#1E6B4A':dir==='dn'?'#8B1A1A':'#5A6A7A'; }
 function arrow(dir){ return dir==='up'?'&#9650;':dir==='dn'?'&#9660;':'&mdash;'; }
 
-function renderCropSummaryAndTable(crop, rows, natRow){
+function renderCropSummaryAndTable(commodity, rows){
   var summary = document.getElementById('cropSummary');
   var wrap = document.getElementById('cropTableWrap');
   if(!summary || !wrap) return;
-  var all = natRow ? [natRow].concat(rows) : rows.slice();
-  var govVals = rows.map(function(p){return p.gov;}).filter(function(v){return typeof v==='number';});
-  var minV = govVals.length ? Math.min.apply(null, govVals) : 0;
-  var maxV = govVals.length ? Math.max.apply(null, govVals) : 0;
-  var rep = natRow || rows[0];
-  if(!rep){ summary.innerHTML=''; wrap.innerHTML=''; return; }
+  var clearVals = rows.map(function(r){return r.clearing;}).filter(function(v){return typeof v==='number';});
+  var minV = clearVals.length ? Math.min.apply(null, clearVals) : 0;
+  var maxV = clearVals.length ? Math.max.apply(null, clearVals) : 0;
+  var avgV = clearVals.length ? Math.round(clearVals.reduce(function(s,v){return s+v;},0)/clearVals.length) : 0;
+  if(!rows.length){ summary.innerHTML=''; wrap.innerHTML=''; return; }
 
   summary.innerHTML =
     '<div class="card" style="padding:14px 16px">'
-      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">'+(natRow?'National Average':rep.region+' Average')+'</div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+' <span style="font-size:12px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
+      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Average Across Warehouses</div>'
+      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--navy)">'+avgV.toLocaleString()+' <span style="font-size:12px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
     +'</div>'
     +'<div class="card" style="padding:14px 16px">'
-      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regional Range</div>'
+      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Price Range</div>'
       +'<div style="font-size:16px;font-weight:700;color:var(--navy)">'+minV.toLocaleString()+' &ndash; '+maxV.toLocaleString()+'</div>'
     +'</div>'
     +'<div class="card" style="padding:14px 16px">'
-      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regions Tracked</div>'
+      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Warehouses Tracked</div>'
       +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--navy)">'+rows.length+'</div>'
     +'</div>';
 
-  var sorted = all.slice().sort(function(a,b){
-    if(/National Average/i.test(a.region)) return -1;
-    if(/National Average/i.test(b.region)) return 1;
-    return a.region.localeCompare(b.region);
-  });
+  var sorted = rows.slice().sort(function(a,b){ return (a.warehouse||'').localeCompare(b.warehouse||''); });
   wrap.innerHTML =
-    '<div style="display:grid;grid-template-columns:2fr 1fr;padding:10px 16px;background:var(--navy)">'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average (TZS/kg)</span>'
+    '<div style="display:grid;grid-template-columns:2fr 1fr 1fr;padding:10px 16px;background:var(--navy)">'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Warehouse</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Clearing (TZS/kg)</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Move</span>'
     +'</div>'
-    +sorted.map(function(p,i){
-      var isNat = /National Average/i.test(p.region);
-      return '<div style="display:grid;grid-template-columns:2fr 1fr;align-items:center;padding:9px 16px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
-        +'<div style="font-size:12px;font-weight:'+(isNat?'700':'400')+'">'+p.region+'</div>'
-        +'<div style="font-size:12px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
+    +sorted.map(function(r,i){
+      return '<div style="display:grid;grid-template-columns:2fr 1fr 1fr;align-items:center;padding:9px 16px;border-top:1px solid #F0EBD8;background:'+(i%2===0?'#fff':'var(--cream)')+'">'
+        +'<div style="font-size:12px">'+(r.warehouse||'&mdash;')+'</div>'
+        +'<div style="font-size:12px;font-weight:600;color:var(--navy)">'+r.clearing.toLocaleString()+'</div>'
+        +'<div style="font-size:11px;font-weight:700;color:'+(r.dir==='up'?'#1E6B4A':r.dir==='dn'?'#8B1A1A':'#8B7A3E')+'">'+(r.dir==='up'?'&#9650;':r.dir==='dn'?'&#9660;':'&mdash;')+'</div>'
       +'</div>';
     }).join('');
 }
@@ -498,25 +485,32 @@ function renderCropSummaryAndTable(crop, rows, natRow){
 init();
 
 /* ── TMX Live Session Board ── */
-var TMX = null;
+var TMX = null, TMX_HISTORY = [];
 async function loadTmx(){
   try {
     var r = await fetch('tmx_live.json?v='+Date.now());
-    if(!r.ok) return;
-    var d = await r.json();
-    if(!d || !d.rows || !d.rows.length) return;
-    TMX = d;
-    renderTmxBoard();
-    renderTmxTicker();
+    if(r.ok){
+      var d = await r.json();
+      if(d && d.rows && d.rows.length){
+        TMX = d;
+        renderTmxBoard();
+        renderTmxTicker();
+      }
+    }
   } catch(e){}
+  try {
+    var r2 = await fetch('tmx_history.json?v='+Date.now());
+    if(r2.ok){ var d2 = await r2.json(); if(d2 && d2.history) TMX_HISTORY = d2.history; }
+  } catch(e){}
+  buildCropSelect(); renderRegional(); renderTrends(); renderMovement();
 }
 
 function fmtNum(v){ return (v===null||v===undefined) ? '&mdash;' : Math.round(v).toLocaleString(); }
 function tmxChg(row){
-  if(row.change_pct===null||row.change_pct===undefined){
+  if(row.change_tzs===null||row.change_tzs===undefined){
     return row.change_raw ? row.change_raw : '&mdash;';
   }
-  return (row.change_pct>0?'+':'')+row.change_pct.toFixed(1)+'%';
+  return (row.change_tzs>0?'+':'')+Math.round(row.change_tzs).toLocaleString()+' TZS/kg';
 }
 function tmxArrow(d){ return d==='up'?'&#9650;':d==='dn'?'&#9660;':'&mdash;'; }
 function tmxCls(d){ return d==='up'?'tmx-up':d==='dn'?'tmx-dn':''; }
