@@ -1,6 +1,30 @@
 {
-  "updated": "13 Jul 2026",
+  "updated": "14 Jul 2026",
   "news": [
+    {
+      "date": "14 Jul 2026",
+      "tag": "Policy",
+      "color": "green",
+      "title": "Tanzania commits Vision 2050 to UN High-Level Political Forum",
+      "body": "Speaking in New York, Professor Kitila Mkumbo, Minister of State for Planning and Investment, announced that the upcoming Vision 2050 development framework will place modernizing agricultural inputs and scaling blue-economy value addition at the center of the nation's GDP growth strategy.",
+      "source": "UN High-Level Political Forum"
+    },
+    {
+      "date": "14 Jul 2026",
+      "tag": "Policy",
+      "color": "red",
+      "title": "Stakeholders call for agriculture budget reforms to support women farmers",
+      "body": "Sector advocates highlight that while agriculture contributes 24.6% of Tanzania's GDP, it currently receives less than 3% of the national budget, well below the 10% Malabo Declaration target. The report points to a severe seed output deficit, with only 9,000 tonnes of seed produced in 2025 against a national requirement of 80,000 tonnes.",
+      "source": "Sector advocacy groups"
+    },
+    {
+      "date": "14 Jul 2026",
+      "tag": "Input Regulation",
+      "color": "red",
+      "title": "Dairy processors highlight multi-agency compliance bottlenecks",
+      "body": "Representatives from the Tanzania Milk Processors Association (TAMPA) noted that commercial milk processing hubs face significant regulatory friction, requiring 28 separate operating permits across agencies including OSHA, NEMC and TARURA to maintain active supply chain transport lanes.",
+      "source": "Tanzania Milk Processors Association (TAMPA)"
+    },
     {
       "date": "13 Jul 2026",
       "tag": "Digital Finance",

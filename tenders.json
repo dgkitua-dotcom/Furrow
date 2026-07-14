@@ -1,5 +1,5 @@
 {
-  "updated": "13 Jul 2026",
+  "updated": "14 Jul 2026",
   "tenders": [
     {
       "ref": "TZT/142413118",
@@ -72,6 +72,42 @@
       "status": "open",
       "notes": "Seeking a specialised evaluation team to assess agricultural value chains and build data-driven approaches to optimise climate-resilient farming and producer-owned business ecosystems in Tanzania. Published via Devex International Procurement Board.",
       "url": "https://www.devex.com/jobs/tender-for-mid-term-review-2026-1445125"
+    },
+    {
+      "ref": "TendersOnTime/144950641",
+      "body": "Local Government Authorities",
+      "title": "Procurement of Non-Consultancy Services for Crop Revenue Collection",
+      "volume": "As per project specifications",
+      "deadline": "17 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Firms able to design and operate automated regional crop cess and revenue collection frameworks",
+      "status": "open",
+      "notes": "Technical execution contract to design and operate automated regional crop cess and revenue collection frameworks.",
+      "url": "https://www.tendersontime.com"
+    },
+    {
+      "ref": "TendersOnTime/145034724",
+      "body": "Regional Development Board",
+      "title": "Expressions of Interest for Construction Supervision of One Stop Border Post (OSBP)",
+      "volume": "As per project specifications",
+      "deadline": "24 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Firms with construction supervision experience for cross-border infrastructure projects",
+      "status": "open",
+      "notes": "Provision of supervision services for Phase 1 construction of the Manyovu/Mugina One Stop Border Post on the Tanzania side, to streamline cross-border trade logistics.",
+      "url": "https://www.tendersontime.com"
+    },
+    {
+      "ref": "Tendersinfo/535124615",
+      "body": "Oikos East Africa",
+      "title": "Supply and Commissioning of Solar Pumping Systems",
+      "volume": "As per project specifications",
+      "deadline": "31 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Suppliers of solar pumping systems with commissioning capability",
+      "status": "open",
+      "notes": "Supply and commissioning of solar-powered pumping systems for agricultural water access.",
+      "url": "https://www.tendersinfo.com"
     }
   ]
 }
