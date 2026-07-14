@@ -127,7 +127,7 @@ footer a { color:var(--goldL); text-decoration:none; }
 <div class="block block-alt">
   <div class="container">
     <h2>The problem we set out to solve</h2>
-    <p>Tanzania's agricultural markets run on information most participants cannot see. Official reference prices are published by the Ministry of Agriculture, the Tanzania Coffee Board, the Cotton Development Trust and the Cashewnut Board, but they sit in bulletins and matrices that rarely reach the farm gate. A farmer selling maize in Njombe, a buyer sourcing cashews in Mtwara, a transporter quoting a corridor rate, each negotiates partly blind.</p>
+    <p>Tanzania's agricultural markets run on information most participants cannot see. National average reference prices are published across a range of bulletins, but they sit in matrices that rarely reach the farm gate. A farmer selling maize in Njombe, a buyer sourcing cashews in Mtwara, a transporter quoting a corridor rate, each negotiates partly blind.</p>
     <p>That blindness has a price. Produce sells below fair value. Buyers overpay or walk away from deals they can't verify. Trust, the scarcest commodity in any market, stays scarce, and everyone transacts smaller and slower than they could.</p>
   </div>
 </div>
@@ -136,12 +136,12 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <img src="images/about_1.jpg" alt="Tanzanian farmer with harvested tomatoes at the farm gate" loading="lazy" style="width:100%;border-radius:12px;margin-bottom:52px;border:1px solid var(--bdr)" />
     <h2>What we are building</h2>
-    <p><strong>Today</strong>, FURROW publishes official reference prices for over 40 commodities across Tanzania's regions, alongside the news, regulations and tender opportunities that move the sector, updated with every official bulletin, free for anyone to read.</p>
-    <p><strong>At launch</strong>, FURROW becomes a full trading platform: suppliers list produce with their own prices shown beside the government reference rate; buyers browse, negotiate and order; transporters pick up confirmed jobs; and the FURROW Mediation Service physically verifies stock, handles documentation and holds payment in escrow until delivery is confirmed.</p>
+    <p><strong>Today</strong>, FURROW publishes national average reference prices for over 40 commodities across Tanzania's regions, alongside the news, regulations and tender opportunities that move the sector, updated with every price bulletin, free for anyone to read.</p>
+    <p><strong>At launch</strong>, FURROW becomes a full trading platform: suppliers list produce with their own prices shown beside the national average rate; buyers browse, negotiate and order; transporters pick up confirmed jobs; and the FURROW Mediation Service physically verifies stock, handles documentation and holds payment in escrow until delivery is confirmed.</p>
     <div class="pillars">
       <div class="pillar">
-        <div class="pillar-t">Official reference data <span class="tag tag-live">Live now</span></div>
-        <div class="pillar-b">Prices, news and tenders from official government and regulatory sources, published openly so the true market rate is never a secret.</div>
+        <div class="pillar-t">National average data <span class="tag tag-live">Live now</span></div>
+        <div class="pillar-b">Prices, news and tenders compiled from published bulletins, so the going market rate is never a secret.</div>
       </div>
       <div class="pillar">
         <div class="pillar-t">Verified stock &amp; suppliers <span class="tag tag-launch">At launch</span></div>
@@ -169,7 +169,7 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <img src="images/about_2.jpg" alt="Farmers preparing land in rural Tanzania" loading="lazy" style="width:100%;border-radius:12px;margin-bottom:28px;border:1px solid rgba(201,168,76,.3)" />
     <h2>Our ambition</h2>
-    <p>We measure success in one currency: fairer deals. Every transaction where a farmer sees the official rate before accepting an offer, every buyer who orders from another region without travelling to verify stock, every dispute resolved in 48 hours instead of never, that is the platform working.</p>
+    <p>We measure success in one currency: fairer deals. Every transaction where a farmer sees the national average rate before accepting an offer, every buyer who orders from another region without travelling to verify stock, every dispute resolved in 48 hours instead of never, that is the platform working.</p>
     <p>Tanzania is the beginning. The same information gap exists across East Africa's agricultural corridors, and FURROW is built to cross them, expanding along the trade routes that already connect the region's farmers to its markets, with cross-border mediation and multi-language trade built in from day one.</p>
     <p style="margin-top:20px"><a class="cta" href="index.html#platform">See the platform &rarr;</a></p>
   </div>
@@ -201,9 +201,7 @@ footer a { color:var(--goldL); text-decoration:none; }
     t.innerHTML = doubled.map(function(p){
       return '<span class="tick">'
         +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
-        +'<span>TZS '+p.sup.toLocaleString()+'/kg</span>'
-        +'<span style="color:'+bright(p.dir)+';font-weight:700">'+arrow(p.dir)+p.chg+'</span>'
-        +'<span style="color:rgba(255,255,255,.3);font-size:10px">Gov&#39;t: '+p.gov.toLocaleString()+'</span>'
+        +'<span>TZS '+p.gov.toLocaleString()+'/kg</span>'
         +'</span>';
     }).join('');
   }
@@ -215,16 +213,16 @@ footer a { color:var(--goldL); text-decoration:none; }
 <script>function toggleMenu(){var m=document.getElementById("navMob");if(m)m.classList.toggle("open");}</script>
 
 <script>
-/* TMX LIVE ticker items (appended after the regular price ticker loads) */
+/* AUCTION ticker items (appended after the regular price ticker loads) */
 (function(){
   function fmtNum(v){ return (v===null||v===undefined)?'':Math.round(v).toLocaleString(); }
-  function chg(r){ if(r.change_pct===null||r.change_pct===undefined) return r.change_raw||''; return (r.change_pct>0?'+':'')+r.change_pct.toFixed(1)+'%'; }
+  function chg(r){ if(r.change_tzs===null||r.change_tzs===undefined) return r.change_raw||''; return (r.change_tzs>0?'+':'')+Math.round(r.change_tzs).toLocaleString()+' TZS/kg'; }
   function arrow(d){ return d==='up'?'&#9650;':d==='dn'?'&#9660;':'&mdash;'; }
   function col(d){ return d==='up'?'#4ADE80':d==='dn'?'#F87171':'#E2C47E'; }
   function inject(rows){
     var track = document.getElementById('tickerTrack'); if(!track) return;
     var items = rows.slice(0,6).map(function(r){
-      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>TMX LIVE</span>'
+      return '<span class="tick"><span class="live-pill"><span class="live-dot"></span>AUCTION</span>'
         +'<span class="tick-crop">'+r.commodity.toUpperCase()+(r.warehouse?' &middot; '+r.warehouse.toUpperCase():'')+'</span>'
         +'<span>TZS '+fmtNum(r.clearing)+'/kg clearing</span>'
         +'<span style="color:'+col(r.dir)+';font-weight:700">'+arrow(r.dir)+chg(r)+'</span></span>';
