@@ -490,7 +490,7 @@ html { scroll-behavior: smooth; }
         </div>
         <div id="heroBoard"></div>
         <div class="hb-footer">
-          <a href="#prices">View full price board &darr;</a>
+          <a href="intelligence.html#national-averages">View full price board &darr;</a>
         </div>
       </div>
     </div>
@@ -592,58 +592,6 @@ html { scroll-behavior: smooth; }
 </div>
 
 <!-- ═══ FULL PRICE BOARD ═══ -->
-<section class="section" id="prices" style="background:linear-gradient(rgba(250,247,239,.93),rgba(250,247,239,.96)),url('images/prices_bg.jpg') center/cover no-repeat">
-  <div class="container">
-    <div class="section-head" style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap">
-      <div>
-        <div class="section-label">Market Intelligence</div>
-        <h2 class="section-title">National Averages</h2>
-        <p class="section-sub">Indicative national average prices, published weekly. Click any crop to see regional breakdown.</p>
-      </div>
-      <button id="priceBoardToggleBtn" onclick="togglePriceBoard()"
-        style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:var(--navy);color:var(--gold);border:none;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0">
-        <span id="priceBoardToggleIcon" style="font-size:14px;line-height:1">&#8722;</span>
-        <span id="priceBoardToggleLabel">Collapse</span>
-      </button>
-    </div>
-
-    <div id="priceBoardContent">
-
-      <!-- Market Pulse: two line charts tracking rising vs falling commodities over time -->
-      <div style="margin-bottom:32px">
-        <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px">
-          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)">Market Pulse &middot; Overall movement over time</div>
-          <span style="font-size:11px;color:var(--mu)" id="pulseUpdate">&mdash;</span>
-        </div>
-        <div class="grid-2" id="pulseGrid" style="gap:20px">
-          <div style="background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:18px">
-            <div style="font-size:12px;font-weight:700;color:var(--grn);margin-bottom:10px">&#9650; Commodities Rising</div>
-            <canvas id="chartRising" height="140"></canvas>
-          </div>
-          <div style="background:#fff;border:1px solid var(--bdr);border-radius:10px;padding:18px">
-            <div style="font-size:12px;font-weight:700;color:var(--red);margin-bottom:10px">&#9660; Commodities Falling</div>
-            <canvas id="chartFalling" height="140"></canvas>
-          </div>
-        </div>
-        <p id="pulseNote" style="font-size:11px;color:var(--mu);margin-top:10px"></p>
-      </div>
-
-      <!-- Full data lives on data.html -->
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;padding:20px 22px;background:#fff;border:1px solid var(--bdr);border-radius:12px">
-        <div>
-          <div style="font-size:13px;font-weight:700;color:var(--navy)">Looking for the full price board?</div>
-          <div style="font-size:12px;color:var(--mu)">Every crop, every region — price tables, trend lines and regional comparisons.</div>
-        </div>
-        <a href="data.html" style="display:inline-block;padding:12px 24px;background:var(--navy);color:var(--gold);border-radius:7px;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap">Explore full price data &rarr;</a>
-      </div>
-
-      <p style="font-size:11px;color:var(--mu);margin-top:12px;text-align:right">
-        Source: MAFC &middot; TCB &middot; CDT &middot; CBT &middot; COPRA &middot; Data as at <span id="priceDate">&mdash;</span> &middot; Prices are indicative reference rates only
-      </p>
-    </div>
-  </div>
-</section>
-
 <!-- ═══ NEWS ═══ -->
 <section class="section" id="news" style="background:linear-gradient(rgba(11,28,46,.88),rgba(11,28,46,.92)),url('images/news_bg.jpg') center/cover no-repeat">
   <div class="container">
