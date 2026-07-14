@@ -97,8 +97,10 @@ def parse_and_aggregate(text):
 
 def append_history(rows, synced_at):
     """Append this sync's snapshot to tmx_history.json so real trend charts
-    can build up over time. Skips the append if nothing actually changed
-    since the last snapshot, to avoid flooding the file with duplicates."""
+    can build up over time. Always appends, even when nothing changed since
+    the last snapshot -- a time series needs a point at every checked
+    interval, including flat ones, or the chart can't show that a sync
+    actually happened."""
     try:
         with open(HISTORY_OUT, encoding="utf-8") as f:
             hist = json.load(f)
@@ -106,9 +108,6 @@ def append_history(rows, synced_at):
         hist = {"history": []}
 
     snapshots = hist.get("history", [])
-    if snapshots and snapshots[-1].get("rows") == rows:
-        return  # nothing changed since the last snapshot; don't duplicate
-
     snapshots.append({"synced_at": synced_at, "rows": rows})
     if len(snapshots) > MAX_HISTORY_SNAPSHOTS:
         snapshots = snapshots[-MAX_HISTORY_SNAPSHOTS:]
