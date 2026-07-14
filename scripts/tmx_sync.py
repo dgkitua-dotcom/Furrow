@@ -1,15 +1,16 @@
 #!/usr/bin/env python3
 """
 FURROW <- TMX live sync.
-Reads TMX's own market-data CSV feed directly. Trades trickle in one at a
-time whenever they happen (not all on the same day), so this takes the most
-recent trade for each commodity/warehouse pair rather than filtering by a
-single calendar date, and writes tmx_live.json for the site.
+Reads TMX's own market-data CSV feed directly, aggregates individual trades
+into one row per commodity per warehouse for the latest known trade (trades
+trickle in individually, not on a fixed daily schedule), and writes
+tmx_live.json for the site. Each sync also appends a timestamped snapshot to
+tmx_history.json so real price trends can build up over time.
 
 Fail-safe contract:
 - On ANY failure, exits non-zero and writes NOTHING -> the last good
-  tmx_live.json stays in place, GitHub emails the failed run, and the
-  workflow opens/updates a 'tmx-pipe' issue.
+  tmx_live.json / tmx_history.json stay in place, GitHub emails the failed
+  run, and the workflow opens/updates a 'tmx-pipe' issue.
 - Only writes when it has confidently parsed at least MIN_ROWS rows.
 """
 import csv
@@ -22,6 +23,8 @@ from datetime import datetime, timezone, timedelta
 SOURCE_URL = "https://www.tmx.co.tz/pages/api/v1/market-data/read_csv.php"
 MIN_ROWS = 2
 OUT = "tmx_live.json"
+HISTORY_OUT = "tmx_history.json"
+MAX_HISTORY_SNAPSHOTS = 2000  # roughly ~11 weeks at an hourly cadence; keeps the file bounded
 EAT = timezone(timedelta(hours=3))
 
 UA = {"User-Agent": "FURROW-price-board/1.0 (+https://www.joinfurrow.com; data attributed to TMX)"}
@@ -92,6 +95,29 @@ def parse_and_aggregate(text):
     return out, session_date
 
 
+def append_history(rows, synced_at):
+    """Append this sync's snapshot to tmx_history.json so real trend charts
+    can build up over time. Skips the append if nothing actually changed
+    since the last snapshot, to avoid flooding the file with duplicates."""
+    try:
+        with open(HISTORY_OUT, encoding="utf-8") as f:
+            hist = json.load(f)
+    except Exception:  # noqa: BLE001 - no previous history file, start fresh
+        hist = {"history": []}
+
+    snapshots = hist.get("history", [])
+    if snapshots and snapshots[-1].get("rows") == rows:
+        return  # nothing changed since the last snapshot; don't duplicate
+
+    snapshots.append({"synced_at": synced_at, "rows": rows})
+    if len(snapshots) > MAX_HISTORY_SNAPSHOTS:
+        snapshots = snapshots[-MAX_HISTORY_SNAPSHOTS:]
+
+    hist["history"] = snapshots
+    with open(HISTORY_OUT, "w", encoding="utf-8") as f:
+        json.dump(hist, f, indent=2, ensure_ascii=False)
+
+
 def main():
     try:
         body = fetch(SOURCE_URL)
@@ -105,18 +131,22 @@ def main():
         print(f"PARSE FAILED: {e}\nFirst 500 chars of payload:\n{body[:500]}", file=sys.stderr)
         sys.exit(1)
 
-    try:
-        prev = json.load(open(OUT))
-        if prev.get("rows") == rows:
-            print("rows unchanged; leaving file as-is")
-            return
-    except Exception:  # noqa: BLE001
-        pass
+    synced_at = datetime.now(EAT).strftime("%Y-%m-%d %H:%M EAT")
 
+    # Always try to extend history, even if tmx_live.json itself is unchanged --
+    # append_history() has its own duplicate check, so this is safe either way.
+    try:
+        append_history(rows, synced_at)
+    except Exception as e:  # noqa: BLE001 - history is a bonus, never fail the whole run over it
+        print(f"WARNING: could not update {HISTORY_OUT}: {e}", file=sys.stderr)
+
+    # tmx_live.json is rewritten every successful run -- even when the trade
+    # rows themselves are unchanged -- so "Last synced" always reflects that
+    # the bot actually checked in, not just the last time a price moved.
     payload = {
         "status": "ok",
         "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-        "fetched_at_eat": datetime.now(EAT).strftime("%Y-%m-%d %H:%M EAT"),
+        "fetched_at_eat": synced_at,
         "session_date": session_date,
         "rows": rows,
     }
