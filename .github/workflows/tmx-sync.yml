@@ -2,9 +2,8 @@ name: TMX Live Sync
 
 on:
   schedule:
-    # Every 45 min during TMX trade hours, 08:00-17:00 EAT (05:00-14:00 UTC), Mon-Fri
-    - cron: '0,45 5-13 * * 1-5'
-    - cron: '0 14 * * 1-5'
+    # Every 60 min during TMX trade hours, 08:00-17:00 EAT (05:00-14:00 UTC), Mon-Fri
+    - cron: '0 5-14 * * 1-5'
   workflow_dispatch: {}   # manual "Run workflow" button for testing
 
 permissions:
@@ -31,12 +30,12 @@ jobs:
 
       - name: Commit if data changed
         run: |
-          if [ -z "$(git status --porcelain -- tmx_live.json)" ]; then
+          if [ -z "$(git status --porcelain -- tmx_live.json tmx_history.json)" ]; then
             echo "No change in TMX data; nothing to commit."
           else
             git config user.name  "furrow-tmx-bot"
             git config user.email "actions@github.com"
-            git add tmx_live.json
+            git add tmx_live.json tmx_history.json
             git commit -m "TMX live sync: $(date -u '+%Y-%m-%d %H:%M UTC')"
             git push
           fi
@@ -50,8 +49,8 @@ jobs:
             const body = `The TMX sync workflow failed on ${new Date().toUTCString()}.\n\n` +
               `Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}\n\n` +
               'The site keeps showing the last confirmed session data (fail-safe). ' +
-              'Likely causes: TMX changed or unpublished their Datawrapper chart (ID ZJSS6), ' +
-              'or the table structure changed. Check the run log above.';
+              'Likely causes: TMX changed or unpublished their market-data feed, ' +
+              'or the CSV column structure changed. Check the run log above.';
             const issues = await github.rest.issues.listForRepo({
               owner: context.repo.owner, repo: context.repo.repo,
               state: 'open', labels: 'tmx-pipe'
