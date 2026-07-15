@@ -193,33 +193,24 @@ footer a { color:var(--goldL); text-decoration:none; }
   </div>
 </section>
 
-<!-- National Averages price table -->
-<section style="padding:0 0 36px" id="national-averages">
+<section style="padding:0 0 36px" id="price-charts">
   <div class="container">
-    <div class="card">
-      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px">
-        <div>
-          <h2>National Averages</h2>
-          <p class="sub">Indicative national average prices, published weekly. Select a crop to see its regional breakdown.</p>
-        </div>
-        <button id="natToggleBtn" onclick="toggleNatBoard()"
-          style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:var(--navy);color:var(--gold);border:none;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0">
-          <span id="natToggleIcon" style="font-size:14px;line-height:1">&#43;</span>
-          <span id="natToggleLabel">Expand</span>
-        </button>
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+      <div>
+        <h2 style="margin:0">Detailed Price Charts</h2>
+        <p class="sub" style="margin:4px 0 0">Price trends, warehouse comparisons and regional breakdowns.</p>
       </div>
-      <div id="natBoardContent" style="display:none">
-        <div style="display:flex;align-items:center;justify-content:flex-end;margin-bottom:16px">
-          <select id="natCropSelect" onchange="natRenderCropDetail()"></select>
-        </div>
-        <div id="natCropSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px"></div>
-        <div id="natCropTableWrap" style="border:1px solid var(--bdr);border-radius:8px;overflow:hidden"></div>
-      </div>
+      <button id="chartsToggleBtn" onclick="toggleChartsSection()"
+        style="display:flex;align-items:center;gap:8px;padding:9px 18px;background:var(--navy);color:var(--gold);border:none;border-radius:7px;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0">
+        <span id="chartsToggleIcon" style="font-size:14px;line-height:1">&#43;</span>
+        <span id="chartsToggleLabel">Expand</span>
+      </button>
     </div>
   </div>
 </section>
 
-<!-- TMX auction trends: builds up as sync history accumulates -->
+<div id="chartsSectionContent" style="display:none">
+
 <section style="padding:0 0 36px">
   <div class="container">
     <div class="grid-2">
@@ -252,8 +243,8 @@ footer a { color:var(--goldL); text-decoration:none; }
           <select id="natRegionCropSelect" onchange="natRenderRegional()"></select>
         </div>
         <div id="natRegionSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px"></div>
-        <canvas id="natChartRegional" height="160"></canvas>
-        <div id="natRegionTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow:hidden"></div>
+        <div style="height:340px"><canvas id="natChartRegional"></canvas></div>
+        <div id="natRegionTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow-y:auto;max-height:340px"></div>
       </div>
       <div class="card">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
@@ -264,8 +255,8 @@ footer a { color:var(--goldL); text-decoration:none; }
           <select id="cropSelect" onchange="renderRegional()"></select>
         </div>
         <div id="cropSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px"></div>
-        <canvas id="chartRegional" height="130"></canvas>
-        <div id="cropTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow:hidden"></div>
+        <div style="height:340px"><canvas id="chartRegional"></canvas></div>
+        <div id="cropTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow-y:auto;max-height:340px"></div>
       </div>
     </div>
   </div>
@@ -277,6 +268,8 @@ footer a { color:var(--goldL); text-decoration:none; }
     <img src="images/mi_market.jpg" alt="Market vendor at her tomato stall" loading="lazy" style="width:100%;max-height:340px;object-fit:cover;object-position:center 30%;border-radius:12px;border:1px solid var(--bdr);display:block" />
   </div>
 </section>
+
+</div><!-- /chartsSectionContent -->
 
 <!-- Market movement -->
 <section style="padding:0 0 36px">
@@ -371,7 +364,6 @@ async function init(){
   if(!PRICES){ document.getElementById('lastUpdated').textContent = 'data unavailable'; return; }
   document.getElementById('lastUpdated').textContent = PRICES.updated;
   try { renderStats(); } catch(e){ console.error('renderStats failed:', e); }
-  try { natBuildCropSelect(); natRenderCropDetail(); } catch(e){ console.error('natBuildCropSelect/natRenderCropDetail failed:', e); }
   try { natRenderTrends(); } catch(e){ console.error('natRenderTrends failed:', e); }
   try { natRenderMovement(); } catch(e){ console.error('natRenderMovement failed:', e); }
   try { natBuildRegionCropSelect(); natRenderRegional(); } catch(e){ console.error('natBuildRegionCropSelect/natRenderRegional failed:', e); }
@@ -499,14 +491,17 @@ function natRenderRegional(){
       }]
     },
     options:{
-      responsive:true, indexAxis: rows.length>10 ? 'y' : 'x',
+      responsive:true, maintainAspectRatio:false, indexAxis: rows.length>10 ? 'y' : 'x',
       plugins:{
         legend:{display:false},
         tooltip:{ callbacks:{ label:function(ctx){ return (ctx.parsed.y!=null?ctx.parsed.y:ctx.parsed.x).toLocaleString()+' TZS/kg'; } } }
       },
-      scales:{
-        x:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return typeof v==='number'? v.toLocaleString(): this.getLabelForValue(v);}} },
+      scales: rows.length>10 ? {
+        x:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return v.toLocaleString();}} },
         y:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A'} }
+      } : {
+        x:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A'} },
+        y:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return v.toLocaleString();}} }
       }
     }
   });
@@ -526,76 +521,6 @@ function natRenderRegional(){
         +'</div>';
       }).join('');
   }
-}
-function natBuildCropSelect(){
-  var sel = document.getElementById('natCropSelect'); if(!sel) return;
-  var seen={}, order=[];
-  PRICES.prices.forEach(function(p){ if(!seen[p.crop]){seen[p.crop]=1; order.push(p.crop);} });
-  var keep = natCurrentCrop && seen[natCurrentCrop];
-  sel.innerHTML = order.map(function(c){return '<option value="'+c+'">'+c+'</option>';}).join('');
-  natCurrentCrop = keep ? natCurrentCrop : order[0];
-  sel.value = natCurrentCrop;
-}
-
-function natRenderCropDetail(){
-  var sel = document.getElementById('natCropSelect'); if(!sel) return;
-  natCurrentCrop = sel.value;
-  var summary = document.getElementById('natCropSummary');
-  var wrap = document.getElementById('natCropTableWrap');
-  if(!summary || !wrap) return;
-
-  var entries = PRICES.prices.filter(function(p){ return p.crop===natCurrentCrop; });
-  if(!entries.length){ summary.innerHTML=''; wrap.innerHTML='<div style="padding:24px;text-align:center;color:var(--mu);font-size:13px">No data for this crop.</div>'; return; }
-
-  var nat = entries.filter(function(p){ return /National Average/i.test(p.region); })[0];
-  var rep = nat || entries[0];
-  var regionOnly = entries.filter(function(p){ return !/National Average/i.test(p.region); });
-  var govVals = regionOnly.map(function(p){ return p.gov; }).filter(function(v){ return typeof v==='number'; });
-  var minVal = govVals.length ? Math.min.apply(null, govVals) : rep.gov;
-  var maxVal = govVals.length ? Math.max.apply(null, govVals) : rep.gov;
-
-  summary.innerHTML =
-    '<div class="card" style="padding:14px 16px">'
-      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">'+(nat?'National Average':rep.region+' Average')+'</div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+' <span style="font-size:12px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
-    +'</div>'
-    +'<div class="card" style="padding:14px 16px">'
-      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regional Range</div>'
-      +'<div style="font-size:16px;font-weight:700;color:var(--navy)">'+minVal.toLocaleString()+' &ndash; '+maxVal.toLocaleString()+'</div>'
-    +'</div>'
-    +'<div class="card" style="padding:14px 16px">'
-      +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regions Tracked</div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:24px;font-weight:700;color:var(--navy)">'+entries.length+'</div>'
-    +'</div>';
-
-  var rows = entries.slice().sort(function(a,b){
-    if(/National Average/i.test(a.region)) return -1;
-    if(/National Average/i.test(b.region)) return 1;
-    return a.region.localeCompare(b.region);
-  });
-  wrap.innerHTML =
-    '<div style="display:grid;grid-template-columns:2fr 1fr;padding:10px 16px;background:var(--navy)">'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average (TZS/kg)</span>'
-    +'</div>'
-    +rows.map(function(p,i){
-      var isNat = /National Average/i.test(p.region);
-      return '<div style="display:grid;grid-template-columns:2fr 1fr;align-items:center;padding:9px 16px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
-        +'<div style="font-size:12px;font-weight:'+(isNat?'700':'400')+'">'+p.region+'</div>'
-        +'<div style="font-size:12px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
-      +'</div>';
-    }).join('');
-}
-
-function toggleNatBoard(){
-  var content = document.getElementById('natBoardContent');
-  var icon = document.getElementById('natToggleIcon');
-  var label = document.getElementById('natToggleLabel');
-  if(!content) return;
-  var open = content.style.display !== 'none';
-  content.style.display = open ? 'none' : 'block';
-  if(icon) icon.innerHTML = open ? '&#43;' : '&#8722;';
-  if(label) label.textContent = open ? 'Expand' : 'Collapse';
 }
 
 function renderStats(){
@@ -692,14 +617,17 @@ function renderRegional(){
       }]
     },
     options:{
-      responsive:true, indexAxis: rows.length>10 ? 'y' : 'x',
+      responsive:true, maintainAspectRatio:false, indexAxis: rows.length>10 ? 'y' : 'x',
       plugins:{
         legend:{display:false},
         tooltip:{ callbacks:{ label:function(ctx){ return ctx.parsed.y!=null? (ctx.parsed.y||ctx.parsed.x).toLocaleString()+' TZS/kg' : ''; } } }
       },
-      scales:{
-        x:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return typeof v==='number'? v.toLocaleString(): this.getLabelForValue(v);}} },
+      scales: rows.length>10 ? {
+        x:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return v.toLocaleString();}} },
         y:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A'} }
+      } : {
+        x:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A'} },
+        y:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return v.toLocaleString();}} }
       }
     }
   });
@@ -880,6 +808,17 @@ var open = content.style.display !== 'none';
 content.style.display = open ? 'none' : 'block';
 if(icon) icon.innerHTML = open ? '&#43;' : '&#8722;';
 if(label) label.textContent = open ? 'Expand' : 'Collapse';
+}
+
+function toggleChartsSection(){
+  var content = document.getElementById('chartsSectionContent');
+  var icon = document.getElementById('chartsToggleIcon');
+  var label = document.getElementById('chartsToggleLabel');
+  if(!content) return;
+  var open = content.style.display !== 'none';
+  content.style.display = open ? 'none' : 'block';
+  if(icon) icon.innerHTML = open ? '&#43;' : '&#8722;';
+  if(label) label.textContent = open ? 'Expand' : 'Collapse';
 }
   loadTmx();
 </script>
