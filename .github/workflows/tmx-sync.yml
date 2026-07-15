@@ -3,7 +3,10 @@ name: TMX Live Sync
 on:
   schedule:
     # Every 60 min during TMX trade hours, 08:00-17:00 EAT (05:00-14:00 UTC), Mon-Fri
-    - cron: '0 5-14 * * 1-5'
+    # Fires at :07 rather than :00 -- GitHub's own docs note that scheduled
+    # workflows are most likely to be delayed or dropped exactly on the hour,
+    # since that's the busiest moment across every repo on the platform.
+    - cron: '7 5-14 * * 1-5'
   workflow_dispatch: {}   # manual "Run workflow" button for testing
 
 permissions:
