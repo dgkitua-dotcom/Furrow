@@ -1,5 +1,5 @@
 {
-  "updated": "14 Jul 2026",
+  "updated": "15 Jul 2026",
   "tenders": [
     {
       "ref": "TZT/142413118",
@@ -108,6 +108,42 @@
       "status": "open",
       "notes": "Supply and commissioning of solar-powered pumping systems for agricultural water access.",
       "url": "https://www.tendersinfo.com"
+    },
+    {
+      "ref": "Tendersinfo/534513276",
+      "body": "Tanzania Agricultural Research Institute (TARI)",
+      "title": "Procurement of 1 Tractor and Its Implements Under AFDP Project",
+      "volume": "1 tractor and implements",
+      "deadline": "23 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Suppliers of agricultural tractors and implements",
+      "status": "open",
+      "notes": "Procurement of one tractor and its implements under the Agriculture Financing and Development Programme (AFDP).",
+      "url": "https://www.tendersinfo.com"
+    },
+    {
+      "ref": "TR36/009/2026/2027/W/15",
+      "body": "TANROADS - Kilimanjaro Regional Office",
+      "title": "Routine/Recurrent Maintenance along Kichwa cha Ng'ombe - Mwanga - Himo Jct Road",
+      "volume": "As per project specifications",
+      "deadline": "21 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "notes": "Routine and recurrent maintenance works along the Kichwa cha Ng'ombe - Mwanga - Himo Junction road.",
+      "url": "https://nest.go.tz"
+    },
+    {
+      "ref": "TR76/002/2025/2026/NC/21",
+      "body": "Mzumbe University - Mbeya Campus College",
+      "title": "Provision of Security Services for Mzumbe University (Mbeya Campus)",
+      "volume": "As per project specifications",
+      "deadline": "21 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Licensed security service providers",
+      "status": "open",
+      "notes": "Provision of security services for Mzumbe University's Mbeya Campus College.",
+      "url": "https://nest.go.tz"
     }
   ]
 }

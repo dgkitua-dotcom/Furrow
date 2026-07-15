@@ -1,6 +1,30 @@
 {
-  "updated": "14 Jul 2026",
+  "updated": "15 Jul 2026",
   "news": [
+    {
+      "date": "15 Jul 2026",
+      "tag": "Livestock",
+      "color": "blue",
+      "title": "AGRA regional leadership visits Bashe Dairy Farm in Tabora",
+      "body": "Continuing a regional tour evaluating beneficiaries of the Youth Entrepreneurship for the Future of Food and Agriculture (YEFFA) Programme, AGRA's Regional Head for East Africa, Dr Jean Jacques Mbonigaba Muhinda, visited Bashe Dairy Farm in Uyui District, Tabora Region. The farm's modernization was commended as an example of integrating high-tech milking, processing, and localized cold-chain logistics to scale dairy value-add pathways.",
+      "source": "AGRA / Daily News Tanzania"
+    },
+    {
+      "date": "15 Jul 2026",
+      "tag": "Policy",
+      "color": "green",
+      "title": "Tanzania officially submits Third VNR on SDGs at the UN",
+      "body": "Following up on Minister Kitila Mkumbo's address in New York, Tanzania officially presented its Third Voluntary National Review (VNR) on the implementation of Sustainable Development Goals. Priority lines highlighted during the session focused heavily on climate-smart agriculture and the rollout of NAESA's integrated, digitized extension services.",
+      "source": "UN High-Level Political Forum"
+    },
+    {
+      "date": "15 Jul 2026",
+      "tag": "Market Access",
+      "color": "red",
+      "title": "FAO GIEWS report flags dry spells and fertilizer deficits",
+      "body": "The Food and Agriculture Organization's Global Information and Early Warning System (GIEWS) report indicates that while 2026 paddy rice projections are up 10% on favorable planting conditions, regional maize output is put at 7.3 million tonnes, roughly 3% below average. Prolonged regional dry spells earlier in the season and slow import-fertilizer distribution due to port backlogs are noted as key drivers.",
+      "source": "FAO GIEWS"
+    },
     {
       "date": "14 Jul 2026",
       "tag": "Policy",
@@ -216,14 +240,6 @@
       "title": "Sulphur shortage threatens Sh1.2 trillion cashewnut industry",
       "body": "A nationwide shortage of sulphur, a critical input used to control fungal disease and protect cashew yields, is threatening Tanzania's Sh1.2 trillion cashewnut industry ahead of the new growing season. Industry stakeholders have raised concerns that without timely sulphur dusting, crop quality and yields across the major cashew-growing regions of Mtwara, Lindi and Ruvuma could be significantly affected.",
       "source": "The Citizen"
-    },
-    {
-      "date": "22 May 2026",
-      "tag": "Port Levy",
-      "color": "green",
-      "title": "TPA reduces Port Infrastructure Development Levy from 9% to 4.5% effective 1 July 2026",
-      "body": "Tanzania Ports Authority (TPA) has officially reviewed and reduced the Port Infrastructure Development Levy from the initially proposed 9% to 4.5% of customs duty, effective 1st July 2026. This represents a 50% reduction following private sector consultations. The revised rate lowers the anticipated cost burden on importers by half while enabling TPA to mobilise resources for its infrastructure investment programme estimated at TZS 16.1 trillion.",
-      "source": "TPSF / Tanzania Ports Authority"
     }
   ]
 }
