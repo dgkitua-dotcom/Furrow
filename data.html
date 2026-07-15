@@ -369,10 +369,11 @@ async function init(){
   } catch(e){}
   if(!PRICES){ document.getElementById('lastUpdated').textContent = 'data unavailable'; return; }
   document.getElementById('lastUpdated').textContent = PRICES.updated;
-  renderStats();
-  natBuildCropSelect(); natRenderCropDetail();
-  natRenderTrends(); natRenderMovement();
-  natBuildRegionCropSelect(); natRenderRegional();
+  try { renderStats(); } catch(e){ console.error('renderStats failed:', e); }
+  try { natBuildCropSelect(); natRenderCropDetail(); } catch(e){ console.error('natBuildCropSelect/natRenderCropDetail failed:', e); }
+  try { natRenderTrends(); } catch(e){ console.error('natRenderTrends failed:', e); }
+  try { natRenderMovement(); } catch(e){ console.error('natRenderMovement failed:', e); }
+  try { natBuildRegionCropSelect(); natRenderRegional(); } catch(e){ console.error('natBuildRegionCropSelect/natRenderRegional failed:', e); }
 }
 
 function natRenderTrends(){
