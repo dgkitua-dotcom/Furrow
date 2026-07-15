@@ -1,9 +1,20 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-07-15 15:37 EAT",
-  "session_date": "2026-07-14",
+  "fetched_at_eat": "2026-07-15 18:09 EAT",
+  "session_date": "2026-07-15",
   "rows": [
+    {
+      "commodity": "Cocoa",
+      "warehouse": "Mbeya",
+      "low": 13020.0,
+      "high": 13020.0,
+      "clearing": 13020.0,
+      "change_tzs": 1900.0,
+      "change_raw": "1900",
+      "dir": "up",
+      "trade_date": "2026-07-15"
+    },
     {
       "commodity": "Sesame Seeds",
       "warehouse": "Dodoma",
@@ -91,17 +102,6 @@
       "change_raw": "400",
       "dir": "up",
       "trade_date": "2026-07-02"
-    },
-    {
-      "commodity": "Cocoa",
-      "warehouse": "Mbeya",
-      "low": 11120.0,
-      "high": 11120.0,
-      "clearing": 11120.0,
-      "change_tzs": 580.0,
-      "change_raw": "580",
-      "dir": "up",
-      "trade_date": "2026-07-01"
     },
     {
       "commodity": "Sesame Seeds",
@@ -732,23 +732,23 @@
     },
     {
       "commodity": "Sesame Seeds",
-      "warehouse": "Lindi",
-      "low": 2025.0,
-      "high": 2260.0,
-      "clearing": 2260.0,
-      "change_tzs": -110.0,
-      "change_raw": "-110",
-      "dir": "dn",
-      "trade_date": "2025-08-13"
-    },
-    {
-      "commodity": "Sesame Seeds",
       "warehouse": "Mbeya",
       "low": 1860.0,
       "high": 1900.0,
       "clearing": 1900.0,
       "change_tzs": -330.0,
       "change_raw": "-330",
+      "dir": "dn",
+      "trade_date": "2025-08-13"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Lindi",
+      "low": 2025.0,
+      "high": 2260.0,
+      "clearing": 2260.0,
+      "change_tzs": -110.0,
+      "change_raw": "-110",
       "dir": "dn",
       "trade_date": "2025-08-13"
     },
