@@ -1,5 +1,5 @@
 {
-  "updated": "15 Jul 2026",
+  "updated": "14 Jul 2026",
   "source_note": "National average prices compiled from weekly agricultural bulletins, Monday morning session, 13 Jul 2026. All prices TZS/kg.",
   "prices": [
     {
@@ -71,7 +71,7 @@
     {
       "crop": "Uwele (Bulrush Millet)",
       "region": "Dodoma",
-      "gov": 1300,
+      "gov": 1000,
       "source": "MAFC"
     },
     {
@@ -449,7 +449,7 @@
     {
       "crop": "Viazi mviringo (Potato)",
       "region": "Rukwa",
-      "gov": 800,
+      "gov": 900,
       "source": "MAFC"
     },
     {
@@ -533,7 +533,7 @@
     {
       "crop": "Maharage (Beans)",
       "region": "Mwanza",
-      "gov": 2000,
+      "gov": 1800,
       "source": "MAFC"
     },
     {
@@ -545,7 +545,7 @@
     {
       "crop": "Ulezi (Finger Millet)",
       "region": "Mwanza",
-      "gov": 1300,
+      "gov": 1800,
       "source": "MAFC"
     },
     {
@@ -937,6 +937,24 @@
       "region": "Tanzania (Farmgate)",
       "gov": 1250,
       "source": "CDT"
+    },
+    {
+      "crop": "Ulezi (Finger Millet)",
+      "region": "Rukwa",
+      "gov": 800,
+      "source": "MAFC"
+    },
+    {
+      "crop": "Mchele (Rice)",
+      "region": "Mwanza",
+      "gov": 2000,
+      "source": "MAFC"
+    },
+    {
+      "crop": "Uwele (Bulrush Millet)",
+      "region": "Mwanza",
+      "gov": 1300,
+      "source": "MAFC"
     }
   ]
 }

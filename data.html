@@ -216,13 +216,13 @@ footer a { color:var(--goldL); text-decoration:none; }
     <div class="grid-2">
       <div class="card">
         <h2>National Averages Over Time</h2>
-        <p class="sub" style="margin-bottom:16px">National average price (TZS/kg) per staple crop, tracked across every FURROW price bulletin.</p>
+        <p class="sub" style="margin-bottom:16px;min-height:36px">National average price (TZS/kg) per staple crop, tracked across every FURROW price bulletin.</p>
         <div class="chart-box"><canvas id="natChartTrends"></canvas></div>
         <p id="natTrendNote" class="sub" style="font-size:11px;margin-top:10px"></p>
       </div>
       <div class="card">
         <h2>TMX Auction Prices Over Time</h2>
-        <p class="sub" style="margin-bottom:16px">Clearing price (TZS/kg) per commodity, averaged across warehouses, tracked at every TMX sync. Builds up as more syncs accumulate.</p>
+        <p class="sub" style="margin-bottom:16px;min-height:36px">Clearing price (TZS/kg) per commodity, averaged across warehouses, tracked at every TMX sync. Builds up as more syncs accumulate.</p>
         <div class="chart-box"><canvas id="chartTrends"></canvas></div>
         <p id="trendNote" class="sub" style="font-size:11px;margin-top:10px"></p>
       </div>
@@ -236,25 +236,25 @@ footer a { color:var(--goldL); text-decoration:none; }
     <div class="grid-2">
       <div class="card">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
-          <div>
+          <div style="min-height:44px">
             <h2>National Regional Comparison</h2>
             <p class="sub">National average price by region for the selected crop.</p>
           </div>
           <select id="natRegionCropSelect" onchange="natRenderRegional()"></select>
         </div>
-        <div id="natRegionSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px"></div>
+        <div id="natRegionSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-bottom:16px"></div>
         <div style="height:340px;position:relative"><canvas id="natChartRegional"></canvas></div>
         <div id="natRegionTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow-y:auto;max-height:340px"></div>
       </div>
       <div class="card">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
-          <div>
+          <div style="min-height:44px">
             <h2>TMX Warehouse Comparison</h2>
             <p class="sub">Latest clearing price by warehouse for the selected TMX commodity.</p>
           </div>
           <select id="cropSelect" onchange="renderRegional()"></select>
         </div>
-        <div id="cropSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px"></div>
+        <div id="cropSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-bottom:18px"></div>
         <div style="height:340px;position:relative"><canvas id="chartRegional"></canvas></div>
         <div id="cropTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow-y:auto;max-height:340px"></div>
       </div>
