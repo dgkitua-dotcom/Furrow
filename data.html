@@ -242,17 +242,30 @@ footer a { color:var(--goldL); text-decoration:none; }
 <!-- Warehouse comparison for a selected TMX commodity -->
 <section style="padding:0 0 36px">
   <div class="container">
-    <div class="card">
-      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
-        <div>
-          <h2>TMX Warehouse Comparison</h2>
-          <p class="sub">Latest clearing price by warehouse for the selected TMX commodity.</p>
+    <div class="grid-2">
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+          <div>
+            <h2>National Regional Comparison</h2>
+            <p class="sub">National average price by region for the selected crop.</p>
+          </div>
+          <select id="natRegionCropSelect" onchange="natRenderRegional()"></select>
         </div>
-        <select id="cropSelect" onchange="renderRegional()"></select>
+        <div id="natRegionSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px"></div>
+        <canvas id="natChartRegional" height="160"></canvas>
       </div>
-      <div id="cropSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px"></div>
-      <canvas id="chartRegional" height="130"></canvas>
-      <div id="cropTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow:hidden"></div>
+      <div class="card">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+          <div>
+            <h2>TMX Warehouse Comparison</h2>
+            <p class="sub">Latest clearing price by warehouse for the selected TMX commodity.</p>
+          </div>
+          <select id="cropSelect" onchange="renderRegional()"></select>
+        </div>
+        <div id="cropSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px"></div>
+        <canvas id="chartRegional" height="130"></canvas>
+        <div id="cropTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow:hidden"></div>
+      </div>
     </div>
   </div>
 </section>
@@ -359,6 +372,7 @@ async function init(){
   renderStats();
   natBuildCropSelect(); natRenderCropDetail();
   natRenderTrends(); natRenderMovement();
+  natBuildRegionCropSelect(); natRenderRegional();
 }
 
 function natRenderTrends(){
@@ -428,7 +442,73 @@ function natRenderMovement(){
   });
 }
 
-var natCurrentCrop = null;
+var natRegionCurrentCrop = null;
+function natBuildRegionCropSelect(){
+  var sel = document.getElementById('natRegionCropSelect'); if(!sel || !PRICES) return;
+  var seen={}, order=[];
+  PRICES.prices.forEach(function(p){ if(!seen[p.crop]){seen[p.crop]=1; order.push(p.crop);} });
+  var keep = natRegionCurrentCrop && seen[natRegionCurrentCrop];
+  sel.innerHTML = order.map(function(c){return '<option value="'+c+'">'+c+'</option>';}).join('');
+  natRegionCurrentCrop = keep ? natRegionCurrentCrop : order[0];
+  sel.value = natRegionCurrentCrop;
+}
+
+var natChartRegionalI = null;
+function natRenderRegional(){
+  var cv = document.getElementById('natChartRegional');
+  if(!cv || typeof Chart==='undefined' || !PRICES) return;
+  var sel = document.getElementById('natRegionCropSelect'); if(!sel) return;
+  natRegionCurrentCrop = sel.value;
+
+  var rows = PRICES.prices.filter(function(p){ return p.crop===natRegionCurrentCrop && !/National Average/i.test(p.region); })
+    .sort(function(a,b){ return b.gov - a.gov; });
+  var natRow = PRICES.prices.filter(function(p){ return p.crop===natRegionCurrentCrop && /National Average/i.test(p.region); })[0];
+
+  var summary = document.getElementById('natRegionSummary');
+  if(summary){
+    var govVals = rows.map(function(p){return p.gov;}).filter(function(v){return typeof v==='number';});
+    var minV = govVals.length ? Math.min.apply(null, govVals) : 0;
+    var maxV = govVals.length ? Math.max.apply(null, govVals) : 0;
+    summary.innerHTML =
+      '<div class="card" style="padding:12px 14px">'
+        +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">National Average</div>'
+        +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:700;color:var(--navy)">'+(natRow?natRow.gov.toLocaleString():'&mdash;')+' <span style="font-size:11px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
+      +'</div>'
+      +'<div class="card" style="padding:12px 14px">'
+        +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Price Range</div>'
+        +'<div style="font-size:15px;font-weight:700;color:var(--navy)">'+minV.toLocaleString()+' &ndash; '+maxV.toLocaleString()+'</div>'
+      +'</div>'
+      +'<div class="card" style="padding:12px 14px">'
+        +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regions Tracked</div>'
+        +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:700;color:var(--navy)">'+rows.length+'</div>'
+      +'</div>';
+  }
+
+  if(natChartRegionalI) natChartRegionalI.destroy();
+  natChartRegionalI = new Chart(cv.getContext('2d'), {
+    type:'bar',
+    data:{
+      labels: rows.map(function(p){return p.region;}),
+      datasets:[{
+        label:'National average (TZS/kg)',
+        data: rows.map(function(p){return p.gov;}),
+        backgroundColor: 'rgba(201,168,76,.75)',
+        borderRadius:4
+      }]
+    },
+    options:{
+      responsive:true, indexAxis: rows.length>10 ? 'y' : 'x',
+      plugins:{
+        legend:{display:false},
+        tooltip:{ callbacks:{ label:function(ctx){ return (ctx.parsed.y!=null?ctx.parsed.y:ctx.parsed.x).toLocaleString()+' TZS/kg'; } } }
+      },
+      scales:{
+        x:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return typeof v==='number'? v.toLocaleString(): this.getLabelForValue(v);}} },
+        y:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A'} }
+      }
+    }
+  });
+}
 function natBuildCropSelect(){
   var sel = document.getElementById('natCropSelect'); if(!sel) return;
   var seen={}, order=[];
