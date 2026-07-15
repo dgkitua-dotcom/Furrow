@@ -253,6 +253,7 @@ footer a { color:var(--goldL); text-decoration:none; }
         </div>
         <div id="natRegionSummary" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px"></div>
         <canvas id="natChartRegional" height="160"></canvas>
+        <div id="natRegionTableWrap" style="margin-top:20px;border:1px solid var(--bdr);border-radius:8px;overflow:hidden"></div>
       </div>
       <div class="card">
         <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
@@ -509,6 +510,22 @@ function natRenderRegional(){
       }
     }
   });
+
+  var wrap = document.getElementById('natRegionTableWrap');
+  if(wrap){
+    var sorted = rows.slice().sort(function(a,b){ return a.region.localeCompare(b.region); });
+    wrap.innerHTML =
+      '<div style="display:grid;grid-template-columns:2fr 1fr;padding:10px 16px;background:var(--navy)">'
+        +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
+        +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average (TZS/kg)</span>'
+      +'</div>'
+      +sorted.map(function(p,i){
+        return '<div style="display:grid;grid-template-columns:2fr 1fr;align-items:center;padding:9px 16px;border-top:1px solid #F0EBD8;background:'+(i%2===0?'#fff':'var(--cream)')+'">'
+          +'<div style="font-size:12px">'+p.region+'</div>'
+          +'<div style="font-size:12px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
+        +'</div>';
+      }).join('');
+  }
 }
 function natBuildCropSelect(){
   var sel = document.getElementById('natCropSelect'); if(!sel) return;
