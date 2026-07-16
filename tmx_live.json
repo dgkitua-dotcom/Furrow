@@ -1,19 +1,19 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-07-16 15:26 EAT",
-  "session_date": "2026-07-15",
+  "fetched_at_eat": "2026-07-16 19:50 EAT",
+  "session_date": "2026-07-16",
   "rows": [
     {
       "commodity": "Cocoa",
       "warehouse": "Mbeya",
-      "low": 13020.0,
-      "high": 13020.0,
-      "clearing": 13020.0,
-      "change_tzs": 1900.0,
-      "change_raw": "1900",
-      "dir": "up",
-      "trade_date": "2026-07-15"
+      "low": 12180.0,
+      "high": 12180.0,
+      "clearing": 12180.0,
+      "change_tzs": -840.0,
+      "change_raw": "-840",
+      "dir": "dn",
+      "trade_date": "2026-07-16"
     },
     {
       "commodity": "Sesame Seeds",
