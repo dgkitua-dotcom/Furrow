@@ -1,6 +1,30 @@
 {
-  "updated": "15 Jul 2026",
+  "updated": "16 Jul 2026",
   "news": [
+    {
+      "date": "16 Jul 2026",
+      "tag": "Market Access",
+      "color": "green",
+      "title": "Tanzania coffee production projected to reach 1.6 million bags in 2026/27",
+      "body": "USDA's Foreign Agricultural Service forecasts Tanzania's coffee production rising 10.3% year-on-year to 1.6 million 60kg bags for the 2026/27 marketing year, up from 1.45 million bags. The growth is attributed to rehabilitated fields planted between 2019 and 2024 now reaching full maturity, alongside Robusta expansion in Kagera and Kigoma. Green coffee exports are forecast to rise 2.9% to 1.4 million bags.",
+      "source": "USDA Foreign Agricultural Service"
+    },
+    {
+      "date": "16 Jul 2026",
+      "tag": "Infrastructure",
+      "color": "green",
+      "title": "Warehouse Receipt System marks two decades of formalizing commodity trade",
+      "body": "Tanzania's Warehouse Receipt System (WRS) marked 20 years of operation, reporting cumulative trading volume of over 5.2 billion kilograms of produce across 18 major agricultural commodities since inception, and an estimated TZS 11.3 trillion in market value generated for producers across 23 mainland regions.",
+      "source": "Warehouse Receipt System"
+    },
+    {
+      "date": "16 Jul 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "NAESA begins consolidating rural agricultural extension services",
+      "body": "The newly launched National Agricultural Extension Services Agency (NAESA) has started merging regional extension frameworks, absorbing overlapping district-level and single-crop board resources into a single, digitized standard protocol for coordinating input distribution and pest mitigation across Tanzania's agricultural hubs.",
+      "source": "NAESA"
+    },
     {
       "date": "15 Jul 2026",
       "tag": "Livestock",
@@ -203,14 +227,6 @@
     },
     {
       "date": "1 Jul 2026",
-      "tag": "Policy",
-      "color": "green",
-      "title": "NAESA fully operational, unified advisory framework rolls out from new Dodoma headquarters",
-      "body": "The National Agricultural Extension Services Agency (NAESA) is now legally constituted and operating out of its permanent home at the Dr John Samuel Malecela Nane Nane Grounds in Dodoma. Under Acting CEO Dr. Wilhelm Leonard Mafuru, the agency has taken over unified supervision of extension advisory frameworks nationwide, harmonising digital protocols, mobile platforms and data-driven targeting to standardise training and support for Tanzania's roughly 35 million smallholder farmers.",
-      "source": "Kilimo Kwanza"
-    },
-    {
-      "date": "1 Jul 2026",
       "tag": "Trade Levy",
       "color": "red",
       "title": "Finance Act 2026 imposes new export levies on key agricultural co-products",
@@ -224,22 +240,6 @@
       "title": "Bank of Tanzania raises Central Bank Rate to 6.25% on energy and fertiliser cost risks",
       "body": "The Monetary Policy Committee has raised the Central Bank Rate to 6.25% for the third quarter of 2026. The move comes even as macroeconomic performance stays resilient, with H1 2026 real GDP growth tracking at 6%, and is intended to curb downstream inflation driven by globally elevated freight, fuel and fertiliser costs, all direct input costs for Tanzania's agricultural producers and traders.",
       "source": "TanzaniaInvest"
-    },
-    {
-      "date": "1 Jul 2026",
-      "tag": "Budget & Targets",
-      "color": "green",
-      "title": "Tanzania's 2026/27 Agriculture Budget targets 32.4% surge in cash crop production and major avocado export push",
-      "body": "Tanzania's 2026/27 Agriculture Budget sets aggressive growth targets across the sector. The Ministry of Agriculture is aiming for a 32.4% increase in traditional cash crop production, targeting over 2.1 million tonnes. Avocado has been positioned as a major strategic export crop, with a production target of 235,000 tonnes and an export target of 40,000 tonnes, backed by distribution of over 1.7 million subsidised seedlings to farmers nationwide.",
-      "source": "TanzaniaInvest"
-    },
-    {
-      "date": "30 Jun 2026",
-      "tag": "Cashew Industry",
-      "color": "red",
-      "title": "Sulphur shortage threatens Sh1.2 trillion cashewnut industry",
-      "body": "A nationwide shortage of sulphur, a critical input used to control fungal disease and protect cashew yields, is threatening Tanzania's Sh1.2 trillion cashewnut industry ahead of the new growing season. Industry stakeholders have raised concerns that without timely sulphur dusting, crop quality and yields across the major cashew-growing regions of Mtwara, Lindi and Ruvuma could be significantly affected.",
-      "source": "The Citizen"
     }
   ]
 }

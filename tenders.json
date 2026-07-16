@@ -1,30 +1,6 @@
 {
-  "updated": "15 Jul 2026",
+  "updated": "16 Jul 2026",
   "tenders": [
-    {
-      "ref": "TZT/142413118",
-      "body": "Multi-Partner Commercial Enterprise Framework",
-      "title": "Working Jointly in Agriculture, Commercial Joint Venture Operations Call",
-      "volume": "As per project specifications",
-      "deadline": "15 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Tech-enabled logistics partners, input suppliers, and agritech systems for co-execution of scaled joint production operations",
-      "status": "closing",
-      "notes": "Open commercial procurement call seeking technology-enabled logistics partners, input suppliers and agritech systems to co-execute scaled joint agricultural production operations in Tanzania.",
-      "url": "https://www.tanzaniatenders.com/products-services/agriculture-tenders/"
-    },
-    {
-      "ref": "TZT/144446185",
-      "body": "Eastern Africa Statistical Frameworks / Zanzibar Statistical Division",
-      "title": "National Food Balance Sheet (FBS) Digital Compilation Support, Consultancy",
-      "volume": "As per ECST call specifications",
-      "deadline": "15 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Consultants with expertise in statistical data architectures, digital compilation systems and food security data modelling",
-      "status": "closing",
-      "notes": "Provision of consulting services to design data collection architectures for the regional Food Balance Sheet (FBS) compilation tracking models. Deadline extended to 15 July 2026. TZT Ref No: 144446185 (ECST Call).",
-      "url": "https://www.tanzaniatenders.com/it-softwares-tenders.php"
-    },
     {
       "ref": "FAOTZ/ITB/2026/016",
       "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
@@ -81,7 +57,7 @@
       "deadline": "17 Jul 2026",
       "value": "To be determined",
       "eligibility": "Firms able to design and operate automated regional crop cess and revenue collection frameworks",
-      "status": "open",
+      "status": "closing",
       "notes": "Technical execution contract to design and operate automated regional crop cess and revenue collection frameworks.",
       "url": "https://www.tendersontime.com"
     },
@@ -144,6 +120,18 @@
       "status": "open",
       "notes": "Provision of security services for Mzumbe University's Mbeya Campus College.",
       "url": "https://nest.go.tz"
+    },
+    {
+      "ref": "TanzaniaTenders/535139587",
+      "body": "TARURA - Mara Regional Office",
+      "title": "Routine Road Maintenance and Safety Infrastructure Works (Bunda District)",
+      "volume": "19.7km of rural road connections",
+      "deadline": "17 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance and safety infrastructure contractors",
+      "status": "closing",
+      "notes": "Culvert installations, spot improvements, and periodic safety maintenance across 19.7km of rural road connections in Bunda District.",
+      "url": "https://www.tanzaniatenders.com"
     }
   ]
 }
