@@ -1,5 +1,5 @@
 {
-  "updated": "16 Jul 2026",
+  "updated": "17 Jul 2026",
   "tenders": [
     {
       "ref": "FAOTZ/ITB/2026/016",
@@ -132,6 +132,42 @@
       "status": "closing",
       "notes": "Culvert installations, spot improvements, and periodic safety maintenance across 19.7km of rural road connections in Bunda District.",
       "url": "https://www.tanzaniatenders.com"
+    },
+    {
+      "ref": "NeST/99-2025-2026-C-27",
+      "body": "Ministry of Livestock and Fisheries",
+      "title": "Consultancy Services for Landing Sites and Fish Market Georeferencing",
+      "volume": "1,200 landing sites and 20 major fish markets",
+      "deadline": "27 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Firms with GIS/georeferencing and needs-assessment experience",
+      "status": "open",
+      "notes": "Needs assessments and complete georeferencing mapping for 1,200 landing sites and 20 major fish markets across inland and marine waterbodies.",
+      "url": "https://nest.go.tz"
+    },
+    {
+      "ref": "TR36/023/2026/2027/W/02",
+      "body": "TANROADS - Singida Regional Office",
+      "title": "Routine Maintenance of Key Grains Transportation Corridors (Singida)",
+      "volume": "As per project specifications",
+      "deadline": "23 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "notes": "Preventive road maintenance and routine structural works along the paved Singida - Malendi road section to safeguard logistics corridors.",
+      "url": "https://nest.go.tz"
+    },
+    {
+      "ref": "TR152/007/2025/2026/G/21",
+      "body": "Bank of Tanzania - Zanzibar Sub-Head Office",
+      "title": "Supply and Installation of 200KVA Three-Phase Static UPS",
+      "volume": "1 x 200KVA static UPS system",
+      "deadline": "23 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Suppliers of industrial UPS/power backup systems",
+      "status": "open",
+      "notes": "Complete supply, electrical integration, testing, and commissioning of a heavy-duty static UPS system to secure transaction networks.",
+      "url": "https://nest.go.tz"
     }
   ]
 }

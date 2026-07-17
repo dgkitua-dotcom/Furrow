@@ -1,6 +1,30 @@
 {
-  "updated": "16 Jul 2026",
+  "updated": "17 Jul 2026",
   "news": [
+    {
+      "date": "17 Jul 2026",
+      "tag": "Agritech",
+      "color": "green",
+      "title": "New tobacco seed varieties spark yield gains in Tabora",
+      "body": "Field trials at Tanzania Tobacco Research Institute (TORITA) centres in Tumbi, Mtanila and Kahama found new AOV (Alliance One Varieties) tobacco seeds reaching yields of 3,275 kg/ha, compared with roughly 1,350 kg/ha for traditional seed types. Alliance One's extension officer for Kaliua said the varieties also show improved disease resistance, supporting higher farmer incomes and export potential.",
+      "source": "TORITA / The Citizen"
+    },
+    {
+      "date": "17 Jul 2026",
+      "tag": "Agritech",
+      "color": "blue",
+      "title": "Sokoine University's Ethnic Voices AI project wins international award",
+      "body": "Sokoine University of Agriculture (SUA) won the \"Best Use Case Award\" for its Ethnic Voices Project, recognised for integrating localized data, AI and extension training to support smallholder farmer outreach and voice processing across diverse rural languages.",
+      "source": "Sokoine University of Agriculture"
+    },
+    {
+      "date": "17 Jul 2026",
+      "tag": "Policy",
+      "color": "green",
+      "title": "NFRA opens non-GMO purchases for 2026/27 buffer stock",
+      "body": "The National Food Reserve Agency (NFRA) has activated its purchase portals for the 2026/27 season, targeting bulk acquisitions of non-GMO white maize, white sorghum and paddy rice. Cooperative unions (AMCOS) and local suppliers are mobilizing logistics to meet delivery thresholds.",
+      "source": "National Food Reserve Agency (NFRA)"
+    },
     {
       "date": "16 Jul 2026",
       "tag": "Market Access",
@@ -200,30 +224,6 @@
       "title": "One Acre Fund Tanzania overhauling commercial market-access model across key production zones",
       "body": "One Acre Fund Tanzania is executing a major overhaul of its commercial market-access structure across key production zones including Iringa, Mbeya, Njombe and Moshi. The mandate centres on deploying data-driven systems that connect rural producers directly into secure, higher-value B2B commercial value chains. One Acre Fund serves over 100,000 farmers in Tanzania. Their new model is being closely tracked by institutional investors and digital platforms looking to design compatible B2B integration frameworks.",
       "source": "One Acre Fund / ReliefWeb"
-    },
-    {
-      "date": "6 Jul 2026",
-      "tag": "Investment",
-      "color": "green",
-      "title": "Agriculture emerges as Tanzania's top private capital magnet",
-      "body": "Data from the Tanzania Impact Investment Forum (TIIF) reveals that agriculture, agribusiness value chains, and digital innovations are leading the country's new capital inflows. Key institutional investors and development finance institutions are actively pivoting from primary production toward innovation-driven sectors, specifically targeting platforms that bridge the gap to global investment networks and scale post-harvest loss solutions.",
-      "source": "The Citizen / Tanzania Impact Investment Forum"
-    },
-    {
-      "date": "Jul 2026",
-      "tag": "Mechanisation",
-      "color": "blue",
-      "title": "Africa Conference on Sustainable Agricultural Mechanization convenes in Dar es Salaam",
-      "body": "The Africa Conference on Sustainable Agricultural Mechanization recently brought together regional governments and innovators in Dar es Salaam. The dominant focus was accelerating the adoption of data-driven services and inclusive digital tools across smallholder farming systems. The market is shifting rapidly from pure manual labour to tech-assisted decision intelligence, with particular emphasis on boosting productivity for women and youth in agriculture.",
-      "source": "Africa Conference on Sustainable Agricultural Mechanization"
-    },
-    {
-      "date": "2 Jul 2026",
-      "tag": "Investment",
-      "color": "green",
-      "title": "FINAS 2026 Summit spotlights Africa's $100 billion agricultural financing gap",
-      "body": "The Financing Agri-Food Systems Sustainably (FINAS) 2026 Summit concluded in Nairobi, bringing together over 1,000 policymakers, investors and agribusiness leaders to address Africa's estimated $100 billion annual agricultural financing gap. The summit emphasised the urgent need to unlock investment to combat rising production costs, climate change and heavy reliance on food imports. For Tanzania's agricultural sector, the discussions highlight a critical opportunity to attract institutional capital into the supply chain.",
-      "source": "People's Daily / FINAS 2026"
     },
     {
       "date": "1 Jul 2026",
