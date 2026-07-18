@@ -150,6 +150,9 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .news-modal-body { font-size: 14px; color: var(--tx); line-height: 1.85; margin-bottom: 20px; }
 .news-modal-source { font-size: 12px; color: var(--mu); padding-top: 16px; border-top: 1px solid var(--bdr); display: flex; align-items: center; gap: 6px; }
 .news-modal-source::before { content: '—'; color: var(--gold); font-weight: 700; }
+.news-modal-link { font-size: 12px; margin-top: 8px; }
+.news-modal-link a { color: var(--navy); font-weight: 700; text-decoration: none; border-bottom: 1px solid var(--gold); padding-bottom: 1px; }
+.news-modal-link a:hover { color: var(--gold); }
 @media (max-width: 480px) {
   .news-modal-card { padding: 30px 22px 24px; max-height: 90vh; }
   .news-modal-title { font-size: 20px; }
@@ -391,6 +394,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
     <div class="news-modal-title" id="newsModalTitle"></div>
     <div class="news-modal-body" id="newsModalBody"></div>
     <div class="news-modal-source" id="newsModalSource"></div>
+    <div class="news-modal-link" id="newsModalLink"></div>
   </div>
 </div>
 
@@ -805,6 +809,9 @@ function openNewsModal(i){
   document.getElementById('newsModalTitle').textContent = n.title;
   document.getElementById('newsModalBody').textContent  = n.body;
   document.getElementById('newsModalSource').textContent = n.source;
+  document.getElementById('newsModalLink').innerHTML = n.url
+    ? '<a href="'+n.url+'" target="_blank" rel="noopener noreferrer">Read source &rarr;</a>'
+    : '';
   document.getElementById('newsModalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
