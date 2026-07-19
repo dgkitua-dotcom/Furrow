@@ -152,7 +152,10 @@ footer a { color:var(--goldL); text-decoration:none; }
     <div class="section-label">FURROW Analytics</div>
     <h1>Market Data &amp; Analytics</h1>
     <p class="sub">Consolidated Tanzania agricultural market data, national price trends, regional comparisons and seasonal supply windows, all in one place. Updated with every price bulletin.</p>
-    <p class="sub" style="margin-top:6px;font-size:11px">Last updated: <span id="lastUpdated">&mdash;</span></p>
+    <p class="sub" style="margin-top:6px;font-size:11px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <span>Last updated: <span id="lastUpdated">&mdash;</span></span>
+      <span class="session-pill" id="natPill"></span>
+    </p>
   </div>
 </section>
 
@@ -701,6 +704,21 @@ function renderCropSummaryAndTable(commodity, rows){
     }).join('');
 }
 
+function isWeekend(){
+  var day = eatNow().getDay();
+  return day === 0 || day === 6; /* Sunday=0, Saturday=6 */
+}
+function renderNatPill(){
+  var pill = document.getElementById('natPill'); if(!pill) return;
+  if(isWeekend()){
+    pill.classList.add('closed');
+    pill.innerHTML = '<span class="live-dot" style="background:rgba(255,255,255,.4)"></span>Weekend &middot; no new bulletin';
+  } else {
+    pill.classList.remove('closed');
+    pill.innerHTML = '<span class="live-dot"></span>Weekday updates active';
+  }
+}
+renderNatPill();
 init();
 
 /* ── TMX Live Session Board ── */
