@@ -188,6 +188,9 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .hb-hdr-title { font-size: 9px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .09em; }
 .hb-live { display: flex; align-items: center; gap: 5px; }
 .hb-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; animation: pulse 2s infinite; }
+.session-pill { display:inline-flex; align-items:center; gap:7px; background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.4); color:#4ADE80; font-size:9px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:5px 12px; border-radius:20px; }
+.session-pill.closed { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.2); color:rgba(255,255,255,.55); }
+.session-pill .live-dot { width:5px; height:5px; border-radius:50%; background:#4ADE80; }
 @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
 .hb-dot-lbl { font-size: 9px; color: rgba(255,255,255,.35); }
 .hb-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.04); transition: background .12s; }
@@ -491,6 +494,7 @@ html { scroll-behavior: smooth; }
             <div class="hb-dot"></div>
             <span class="hb-dot-lbl">Updated <span id="heroDate">10 Jul 2026</span></span>
           </div>
+          <span class="session-pill" id="natPill" style="margin-left:8px"></span>
         </div>
         <div id="heroBoard"></div>
         <div class="hb-footer">
@@ -1507,6 +1511,23 @@ function sbGoTo(i){
   var hs = document.querySelector('.hero-stats');
   if (hs) statsIo.observe(hs);
 })();
+
+function eatNow(){ return new Date(Date.now() + (3*60 + new Date().getTimezoneOffset())*60000); }
+function isWeekend(){
+  var day = eatNow().getDay();
+  return day === 0 || day === 6;
+}
+function renderNatPill(){
+  var pill = document.getElementById('natPill'); if(!pill) return;
+  if(isWeekend()){
+    pill.classList.add('closed');
+    pill.innerHTML = '<span class="live-dot" style="background:rgba(255,255,255,.4)"></span>Weekend &middot; no new bulletin';
+  } else {
+    pill.classList.remove('closed');
+    pill.innerHTML = '<span class="live-dot"></span>Weekday updates active';
+  }
+}
+renderNatPill();
 
 if (location.hash === '#launch') { try { openCS(); } catch(e){} }
 loadPrices();
