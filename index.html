@@ -189,8 +189,9 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
 .hb-live { display: flex; align-items: center; gap: 5px; }
 .hb-dot { width: 6px; height: 6px; border-radius: 50%; background: #4ADE80; animation: pulse 2s infinite; }
 .session-pill { display:inline-flex; align-items:center; gap:7px; background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.4); color:#4ADE80; font-size:9px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:5px 12px; border-radius:20px; }
-.session-pill.closed { background:rgba(255,255,255,.05); border-color:rgba(255,255,255,.2); color:rgba(255,255,255,.55); }
+.session-pill.closed { background:rgba(220,38,38,.1); border-color:rgba(220,38,38,.4); color:#F87171; }
 .session-pill .live-dot { width:5px; height:5px; border-radius:50%; background:#4ADE80; }
+.session-pill.closed .live-dot { background:#F87171; }
 @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.3} }
 .hb-dot-lbl { font-size: 9px; color: rgba(255,255,255,.35); }
 .hb-row { display: flex; align-items: center; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid rgba(255,255,255,.04); transition: background .12s; }
