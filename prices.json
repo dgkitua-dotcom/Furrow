@@ -1,5 +1,5 @@
 {
-  "updated": "18 Jul 2026",
+  "updated": "20 Jul 2026",
   "source_note": "National average prices compiled from weekly agricultural bulletins, Monday morning session, 13 Jul 2026. All prices TZS/kg.",
   "prices": [
     {
@@ -815,7 +815,7 @@
     {
       "crop": "Kahawa Arabica — CPU",
       "region": "Tanzania (Farm Gate)",
-      "gov": 13204,
+      "gov": 11813,
       "source": "TCB"
     },
     {
@@ -827,19 +827,19 @@
     {
       "crop": "Kahawa Robusta — Maganda",
       "region": "Tanzania (Farm Gate)",
-      "gov": 4127,
+      "gov": 3854,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 20124,
+      "gov": 22721,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Robusta — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 10836,
+      "gov": 11121,
       "source": "TCB"
     },
     {

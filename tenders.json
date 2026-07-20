@@ -1,18 +1,6 @@
 {
-  "updated": "18 Jul 2026",
+  "updated": "20 Jul 2026",
   "tenders": [
-    {
-      "ref": "FAOTZ/ITB/2026/016",
-      "body": "Food and Agriculture Organization of the United Nations (FAO Tanzania)",
-      "title": "Supervision of Livestock Infrastructure Construction, Charcoal Earth Dams & Boreholes",
-      "volume": "Multiple sites across primary livestock corridors",
-      "deadline": "19 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Engineering supervision firms with experience in civil works monitoring, water infrastructure and rural construction supervision",
-      "status": "open",
-      "notes": "Field procurement for engineering supervision firms to monitor infrastructure rehabilitation and civil construction works of charcoal earth dams, solar-powered boreholes and production-level water points across primary livestock corridors.",
-      "url": "https://www.developmentaid.org/tenders/in-tanzania"
-    },
     {
       "ref": "TR160/2025/2026/C/08",
       "body": "Tanzania Official Seed Certification Institute (TOSCI), via NeST",
@@ -48,18 +36,6 @@
       "status": "open",
       "notes": "Seeking a specialised evaluation team to assess agricultural value chains and build data-driven approaches to optimise climate-resilient farming and producer-owned business ecosystems in Tanzania. Published via Devex International Procurement Board.",
       "url": "https://www.devex.com/jobs/tender-for-mid-term-review-2026-1445125"
-    },
-    {
-      "ref": "TendersOnTime/144950641",
-      "body": "Local Government Authorities",
-      "title": "Procurement of Non-Consultancy Services for Crop Revenue Collection",
-      "volume": "As per project specifications",
-      "deadline": "17 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Firms able to design and operate automated regional crop cess and revenue collection frameworks",
-      "status": "closing",
-      "notes": "Technical execution contract to design and operate automated regional crop cess and revenue collection frameworks.",
-      "url": "https://www.tendersontime.com"
     },
     {
       "ref": "TendersOnTime/145034724",
@@ -168,6 +144,18 @@
       "status": "open",
       "notes": "Complete supply, electrical integration, testing, and commissioning of a heavy-duty static UPS system to secure transaction networks.",
       "url": "https://nest.go.tz"
+    },
+    {
+      "ref": "TR36/023/2026/2027/W/06",
+      "body": "TANROADS - Singida Regional Office",
+      "title": "Routine Maintenance and Major Repair Works along Rungwa - Itigi - Mkiwa Unpaved Trunk Road (T022)",
+      "volume": "As per project specifications",
+      "deadline": "23 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "notes": "Routine maintenance and major repair works along the unpaved Rungwa - Itigi - Mkiwa trunk road (T022).",
+      "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ]
 }

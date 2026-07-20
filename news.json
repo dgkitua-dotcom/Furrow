@@ -1,6 +1,32 @@
 {
-  "updated": "18 Jul 2026",
+  "updated": "20 Jul 2026",
   "news": [
+    {
+      "date": "20 Jul 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "EAC lawmakers refine harmonized Seed and Plant Varieties Bill",
+      "body": "The East African Community (EAC) Secretariat held a three-day sensitisation session in Moshi for EALA Committee members to refine the EAC Seed and Plant Varieties Bill. Supported by AGRA and the AfDB-funded ENSURE project, discussions centred on protecting indigenous seeds, safeguarding farmers' rights, and accelerating regional seed variety releases.",
+      "source": "EAC Secretariat"
+    },
+    {
+      "date": "20 Jul 2026",
+      "tag": "Infrastructure",
+      "color": "green",
+      "title": "Tanzania to host World Aquaculture 2026 conference in Dar es Salaam",
+      "body": "Officially launched by the Ministry of Livestock and Fisheries at TAFICO premises, Tanzania will host WA26T from December 1-4, 2026, at the Julius Nyerere International Convention Centre (JNICC), alongside the African Chapter's AFRAQ2026. Over 2,000 delegates from 100+ countries are expected, positioning Tanzania at the centre of Blue Economy discussions.",
+      "source": "The Fish Site",
+      "url": "https://thefishsite.com/articles/tanzania-launches-world-aquaculture-2026-conference"
+    },
+    {
+      "date": "20 Jul 2026",
+      "tag": "Policy",
+      "color": "green",
+      "title": "Ministry directs leadership shift across agriculture institutions",
+      "body": "Agriculture Minister Daniel Chongolo directed heads of institutions under the Ministry of Agriculture, during capacity-building sessions in Arusha, to reduce operational burdens and take full accountability for performance, as part of the ministry's 2026/27 push for results-driven governance.",
+      "source": "Tanzania Ministry of Agriculture",
+      "url": "https://www.kilimo.go.tz"
+    },
     {
       "date": "18 Jul 2026",
       "tag": "Agritech",
@@ -27,30 +53,6 @@
       "body": "Regional development entities are establishing five new solar-powered aggregation points in high-volume export zones, aimed at preserving quality for high-value perishables ahead of terminal packing.",
       "source": "TAHA Digital Hub",
       "url": "https://taha.or.tz"
-    },
-    {
-      "date": "17 Jul 2026",
-      "tag": "Agritech",
-      "color": "green",
-      "title": "New tobacco seed varieties spark yield gains in Tabora",
-      "body": "Field trials at Tanzania Tobacco Research Institute (TORITA) centres in Tumbi, Mtanila and Kahama found new AOV (Alliance One Varieties) tobacco seeds reaching yields of 3,275 kg/ha, compared with roughly 1,350 kg/ha for traditional seed types. Alliance One's extension officer for Kaliua said the varieties also show improved disease resistance, supporting higher farmer incomes and export potential.",
-      "source": "TORITA / The Citizen"
-    },
-    {
-      "date": "17 Jul 2026",
-      "tag": "Agritech",
-      "color": "blue",
-      "title": "Sokoine University's Ethnic Voices AI project wins international award",
-      "body": "Sokoine University of Agriculture (SUA) won the \"Best Use Case Award\" for its Ethnic Voices Project, recognised for integrating localized data, AI and extension training to support smallholder farmer outreach and voice processing across diverse rural languages.",
-      "source": "Sokoine University of Agriculture"
-    },
-    {
-      "date": "17 Jul 2026",
-      "tag": "Policy",
-      "color": "green",
-      "title": "NFRA opens non-GMO purchases for 2026/27 buffer stock",
-      "body": "The National Food Reserve Agency (NFRA) has activated its purchase portals for the 2026/27 season, targeting bulk acquisitions of non-GMO white maize, white sorghum and paddy rice. Cooperative unions (AMCOS) and local suppliers are mobilizing logistics to meet delivery thresholds.",
-      "source": "National Food Reserve Agency (NFRA)"
     },
     {
       "date": "16 Jul 2026",
