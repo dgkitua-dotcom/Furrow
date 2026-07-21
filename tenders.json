@@ -1,5 +1,5 @@
 {
-  "updated": "20 Jul 2026",
+  "updated": "21 Jul 2026",
   "tenders": [
     {
       "ref": "TR160/2025/2026/C/08",
@@ -155,6 +155,42 @@
       "eligibility": "Road maintenance contractors",
       "status": "open",
       "notes": "Routine maintenance and major repair works along the unpaved Rungwa - Itigi - Mkiwa trunk road (T022).",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/014/2026/2027/W/12",
+      "body": "TARURA - Morogoro Regional Office",
+      "title": "Spot Improvement Works along Tomondo - Vuleni, Kibungo Kungwe, and Ngerengere Corridors",
+      "volume": "As per project specifications",
+      "deadline": "24 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "notes": "Spot improvement works along the Tomondo - Vuleni, Kibungo Kungwe, and Ngerengere road corridors.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR36/009/2026/2027/W/07",
+      "body": "TANROADS - Kilimanjaro Regional Office",
+      "title": "Routine/Recurrent Maintenance along Same - Kisiwani - Mkomazi East Trunk Corridor",
+      "volume": "As per project specifications",
+      "deadline": "24 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "notes": "Routine and recurrent maintenance along the Same - Kisiwani - Mkomazi East trunk road corridor.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "99/2025/2026/G/115",
+      "body": "Ministry of Livestock and Fisheries",
+      "title": "Supply of Surveillance Drones for Field Operations",
+      "volume": "As per project specifications",
+      "deadline": "29 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Suppliers of surveillance drone systems",
+      "status": "open",
+      "notes": "Supply of surveillance drones to support field operations for the Ministry of Livestock and Fisheries.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ]

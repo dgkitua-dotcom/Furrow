@@ -1,31 +1,32 @@
 {
-  "updated": "20 Jul 2026",
+  "updated": "21 Jul 2026",
   "news": [
     {
-      "date": "20 Jul 2026",
-      "tag": "Policy",
+      "date": "21 Jul 2026",
+      "tag": "Investment",
+      "color": "green",
+      "title": "Tanzania and Egypt agree to expand agri-sector investment and trade",
+      "body": "Following state visit talks between President Samia Suluhu Hassan and Egyptian President Abdel Fattah El-Sisi in Dar es Salaam, the two countries agreed to deepen cooperation in agriculture, livestock and irrigation technology, with Tanzania offering the Ruvu Ranch for joint livestock development and both sides pursuing investment in cold-chain and logistics infrastructure.",
+      "source": "The Citizen",
+      "url": "https://www.thecitizen.co.tz/tanzania/news/national/-dar-cairo-seal-deal-to-deepen-economic-ties-across-key-sectors-5531142"
+    },
+    {
+      "date": "21 Jul 2026",
+      "tag": "Investment",
       "color": "blue",
-      "title": "EAC lawmakers refine harmonized Seed and Plant Varieties Bill",
-      "body": "The East African Community (EAC) Secretariat held a three-day sensitisation session in Moshi for EALA Committee members to refine the EAC Seed and Plant Varieties Bill. Supported by AGRA and the AfDB-funded ENSURE project, discussions centred on protecting indigenous seeds, safeguarding farmers' rights, and accelerating regional seed variety releases.",
-      "source": "EAC Secretariat"
+      "title": "Proparco injects $12 million into ARAF II to scale agribusiness finance",
+      "body": "Development finance institution Proparco committed $12 million to the Acumen Resilient Agriculture Fund II (ARAF II), a venture capital fund providing early-stage equity and debt financing for high-impact agribusinesses across East and West Africa. ARAF has assessed nearly 700 investment opportunities and backed 14 companies to date; ARAF II plans to back roughly 20 more.",
+      "source": "Ecofin Agency",
+      "url": "https://www.ecofinagency.com/news-agriculture/1807-57517-proparco-announces-12-million-for-african-agribusinesses"
     },
     {
-      "date": "20 Jul 2026",
-      "tag": "Infrastructure",
-      "color": "green",
-      "title": "Tanzania to host World Aquaculture 2026 conference in Dar es Salaam",
-      "body": "Officially launched by the Ministry of Livestock and Fisheries at TAFICO premises, Tanzania will host WA26T from December 1-4, 2026, at the Julius Nyerere International Convention Centre (JNICC), alongside the African Chapter's AFRAQ2026. Over 2,000 delegates from 100+ countries are expected, positioning Tanzania at the centre of Blue Economy discussions.",
-      "source": "The Fish Site",
-      "url": "https://thefishsite.com/articles/tanzania-launches-world-aquaculture-2026-conference"
-    },
-    {
-      "date": "20 Jul 2026",
-      "tag": "Policy",
-      "color": "green",
-      "title": "Ministry directs leadership shift across agriculture institutions",
-      "body": "Agriculture Minister Daniel Chongolo directed heads of institutions under the Ministry of Agriculture, during capacity-building sessions in Arusha, to reduce operational burdens and take full accountability for performance, as part of the ministry's 2026/27 push for results-driven governance.",
-      "source": "Tanzania Ministry of Agriculture",
-      "url": "https://www.kilimo.go.tz"
+      "date": "21 Jul 2026",
+      "tag": "Agritech",
+      "color": "gray",
+      "title": "SUA releases written interview results for agriculture development positions",
+      "body": "Sokoine University of Agriculture (SUA) released outcome notifications for candidates who sat the July 20 agricultural extension, research and technical staffing evaluations, part of the university's drive to strengthen field personnel deployment for ongoing field station research.",
+      "source": "Sokoine University of Agriculture",
+      "url": "https://www.sua.ac.tz"
     },
     {
       "date": "18 Jul 2026",
