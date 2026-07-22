@@ -774,7 +774,7 @@ function renderTmxBoard(){
   pill.className = 'session-pill' + (open ? '' : ' closed');
   pill.innerHTML = open ? '<span class="live-dot"></span>Session open' : 'Session closed';
   document.getElementById('tmxSync').innerHTML =
-    'Last synced <b>'+(TMX.fetched_at_eat||'&mdash;')+'</b><br>auto-refreshes every 60 min in trade hours';
+    'Last synced <b>'+(TMX.fetched_at_eat||'&mdash;')+'</b>';
   document.getElementById('tmxStale').innerHTML = looksStale(TMX.fetched_at_eat)
     ? '<div class="stale-bar"><span class="stale-dot"></span>Live sync delayed &middot; showing last confirmed session data &middot; retrying automatically</div>' : '';
   var t = document.getElementById('tmxTable');
