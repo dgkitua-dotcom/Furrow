@@ -1,5 +1,5 @@
 {
-  "updated": "21 Jul 2026",
+  "updated": "22 Jul 2026",
   "source_note": "National average prices compiled from weekly agricultural bulletins, Monday morning session, 13 Jul 2026. All prices TZS/kg.",
   "prices": [
     {
@@ -916,14 +916,14 @@
     },
     {
       "crop": "Korosho (Raw Cashew Nuts) — Premium RCN",
-      "region": "Tanzania (Farmgate)",
-      "gov": 4020,
+      "region": "Tanzania (Farmgate, off-season · last auction Nov 2025)",
+      "gov": 3520,
       "source": "CBT"
     },
     {
       "crop": "Korosho (Raw Cashew Nuts) — Standard Floor",
-      "region": "Tanzania (Farmgate)",
-      "gov": 3600,
+      "region": "Tanzania (Farmgate, off-season · last auction Nov 2025)",
+      "gov": 2550,
       "source": "CBT"
     },
     {
@@ -935,7 +935,7 @@
     {
       "crop": "Pamba Daraja B (Cotton Grade B)",
       "region": "Tanzania (Farmgate)",
-      "gov": 1250,
+      "gov": 1240,
       "source": "CDT"
     },
     {

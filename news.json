@@ -1,6 +1,24 @@
 {
-  "updated": "21 Jul 2026",
+  "updated": "22 Jul 2026",
   "news": [
+    {
+      "date": "22 Jul 2026",
+      "tag": "Investment",
+      "color": "green",
+      "title": "AGRA urges greater agricultural investment to spread Tanzania's growth gains",
+      "body": "Briefing journalists in Dodoma, AGRA Tanzania Country Director Vianey Rweyendela urged expanded public and private investment in agriculture, arguing that directing more capital into the sector that employs the majority of Tanzanians is essential for spreading the benefits of economic growth and accelerating rural development. He pointed to the transformation of the Majimoto area in Katavi Region -- now a dense rice-milling hub -- as an example of how targeted agricultural investment and supporting infrastructure attract banking, logistics and employment, drawing on outcomes from AGRA-government partnership projects across Kigoma, Rukwa, Katavi, Tabora and Dodoma.",
+      "source": "AllAfrica / Daily News",
+      "url": "https://allafrica.com/stories/202607210394.html"
+    },
+    {
+      "date": "22 Jul 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "Government moves to streamline overlapping inspections for small producers",
+      "body": "A senior official in the Prime Minister's Office (Labour Department), Odo Hekela, said agencies responsible for agriculture, environment, labour and social security have agreed a coordinated approach to streamline overlapping compliance inspections for producers and investors. Speaking at a stakeholders' meeting on the proposed guidelines, he said the aim is to let producers self-assess compliance before inspectors visit, easing long-standing complaints about duplicative regulatory checks on smallholder processors and agro-dealers while still safeguarding product quality and standards.",
+      "source": "The Citizen",
+      "url": "https://www.thecitizen.co.tz/tanzania/business/tanzania-to-simplify-producer-inspections-5532922"
+    },
     {
       "date": "21 Jul 2026",
       "tag": "Investment",
@@ -206,22 +224,6 @@
       "title": "Government mandates digital transformation for AMCOS and SACCOs across Tanzania",
       "body": "The Ministry of Agriculture has announced accelerated state backing for digital transformation within Tanzania's cooperative sector. The directive requires all AMCOS and SACCOS to migrate to digital systems for financial administration and record management, with the explicit aim of enforcing transparency and curbing fund mismanagement. The move is part of a broader government strategy to modernise cooperative governance and build verifiable financial track records that can unlock formal credit access for smallholder producers.",
       "source": "Ministry of Agriculture Tanzania"
-    },
-    {
-      "date": "7 Jul 2026",
-      "tag": "AgriTech",
-      "color": "blue",
-      "title": "Private capital shifts toward post-harvest tech and digital supply chain platforms",
-      "body": "High-level investment updates from regional forums confirm that primary capital flows in Tanzania and East Africa are moving away from raw cultivation support toward innovation-driven digital platforms designed to mitigate post-harvest losses and bridge smallholders to international trade networks. Multi-partner architectures are focusing heavily on secure digital tools to scale smallholder operations, with data-assisted decision intelligence replacing manual labour frameworks as the dominant model for commercial agri-investment.",
-      "source": "Tanzania Impact Investment Forum / Regional Agricultural Conventions"
-    },
-    {
-      "date": "7 Jul 2026",
-      "tag": "Digital Finance",
-      "color": "blue",
-      "title": "FPO digitisation and rural fintech integration accelerate across East Africa",
-      "body": "Multi-million dollar multilateral programmes, including World Bank-backed Food Systems Resilience Projects, are actively driving Farmer Producer Organizations onto centralised ERP frameworks to build clean, auditable data repositories. Simultaneously, institutional financing initiatives are pushing for cloud-hosted transaction ledgers with embedded credit-scoring tools via mobile money (M-Pesa and Airtel Money) to facilitate rural asset financing. A bilateral UN and Ministry of Agriculture initiative has committed over $950,000 toward regional Data Coordination Units building secure public APIs that expose crop yield, soil mapping, and climate predictive metrics directly to private sector agritech systems.",
-      "source": "World Bank FSRP / FAO Tanzania / UN Joint Programme UNJP/URT/167/UNJ"
     },
     {
       "date": "7 Jul 2026",
