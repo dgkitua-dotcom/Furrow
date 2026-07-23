@@ -349,6 +349,25 @@ footer a { color:var(--goldL); text-decoration:none; }
 </footer>
 
 <script>
+/* ── Unit-aware price formatting (added 23 Jul 2026) ──────────────────
+   prices.json rows may carry:
+     "unit"        absent = TZS/kg; TCB coffee auction rows are USD/kg
+     "low"/"high"  published range (ASTA); "gov" is the midpoint and is
+                   for charting only — never render gov on its own when
+                   low/high are present. */
+function fpUnit(p){ return (p && p.unit) ? p.unit : 'TZS/kg'; }
+function fpIsTzs(p){ return !p || !p.unit || /TZS/i.test(p.unit); }
+function fpNum(p,v){ return fpIsTzs(p) ? Math.round(v).toLocaleString() : Number(v).toFixed(2); }
+function fpVal(p){
+  if(!p || typeof p.gov !== 'number') return '&mdash;';
+  return (p.low!=null && p.high!=null) ? fpNum(p,p.low)+' &ndash; '+fpNum(p,p.high) : fpNum(p,p.gov);
+}
+function fpRange(p,lo,hi){ return fpNum(p,lo)+' &ndash; '+fpNum(p,hi); }
+function fpTick(p){ return fpUnit(p).split('/')[0]+' '+fpVal(p)+'/kg'; }
+function fpLo(p){ return (p.low!=null?p.low:p.gov); }
+function fpHi(p){ return (p.high!=null?p.high:p.gov); }
+</script>
+<script>
 var PRICES = null, NAT_HISTORY = [];
 var chartTrendsI=null, chartRegionalI=null, chartMovementI=null, natChartTrendsI=null, natChartMovementI=null;
 var NAT_CROP_COLORS = {
@@ -462,20 +481,22 @@ function natRenderRegional(){
   var rows = PRICES.prices.filter(function(p){ return p.crop===natRegionCurrentCrop && !/National Average/i.test(p.region); })
     .sort(function(a,b){ return b.gov - a.gov; });
   var natRow = PRICES.prices.filter(function(p){ return p.crop===natRegionCurrentCrop && /National Average/i.test(p.region); })[0];
+  var unitRow = natRow || rows[0];
 
   var summary = document.getElementById('natRegionSummary');
   if(summary){
-    var govVals = rows.map(function(p){return p.gov;}).filter(function(v){return typeof v==='number';});
-    var minV = govVals.length ? Math.min.apply(null, govVals) : 0;
-    var maxV = govVals.length ? Math.max.apply(null, govVals) : 0;
+    var loVals = rows.map(fpLo).filter(function(v){return typeof v==='number';});
+    var hiVals = rows.map(fpHi).filter(function(v){return typeof v==='number';});
+    var minV = loVals.length ? Math.min.apply(null, loVals) : 0;
+    var maxV = hiVals.length ? Math.max.apply(null, hiVals) : 0;
     summary.innerHTML =
       '<div class="card" style="padding:12px 14px">'
         +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">National Average</div>'
-        +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:700;color:var(--navy)">'+(natRow?natRow.gov.toLocaleString():'&mdash;')+' <span style="font-size:11px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
+        +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:20px;font-weight:700;color:var(--navy)">'+(natRow?fpVal(natRow):'&mdash;')+' <span style="font-size:11px;color:var(--mu);font-family:Inter,sans-serif">'+fpUnit(unitRow)+'</span></div>'
       +'</div>'
       +'<div class="card" style="padding:12px 14px">'
         +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Price Range</div>'
-        +'<div style="font-size:15px;font-weight:700;color:var(--navy)">'+minV.toLocaleString()+' &ndash; '+maxV.toLocaleString()+'</div>'
+        +'<div style="font-size:15px;font-weight:700;color:var(--navy)">'+fpRange(unitRow,minV,maxV)+'</div>'
       +'</div>'
       +'<div class="card" style="padding:12px 14px">'
         +'<div style="font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px">Regions Tracked</div>'
@@ -489,7 +510,7 @@ function natRenderRegional(){
     data:{
       labels: rows.map(function(p){return p.region;}),
       datasets:[{
-        label:'National average (TZS/kg)',
+        label:'National average ('+fpUnit(unitRow)+')',
         data: rows.map(function(p){return p.gov;}),
         backgroundColor: 'rgba(201,168,76,.75)',
         borderRadius:4
@@ -499,7 +520,7 @@ function natRenderRegional(){
       responsive:true, maintainAspectRatio:false, indexAxis: rows.length>10 ? 'y' : 'x',
       plugins:{
         legend:{display:false},
-        tooltip:{ callbacks:{ label:function(ctx){ return (ctx.parsed.y!=null?ctx.parsed.y:ctx.parsed.x).toLocaleString()+' TZS/kg'; } } }
+        tooltip:{ callbacks:{ label:function(ctx){ var rp=rows[ctx.dataIndex]; return fpVal(rp)+' '+fpUnit(rp); } } }
       },
       scales: rows.length>10 ? {
         x:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', callback:function(v){return v.toLocaleString();}} },
@@ -517,12 +538,12 @@ function natRenderRegional(){
     wrap.innerHTML =
       '<div style="display:grid;grid-template-columns:2fr 1fr;padding:10px 16px;background:var(--navy)">'
         +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
-        +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average (TZS/kg)</span>'
+        +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average ('+fpUnit(unitRow)+')</span>'
       +'</div>'
       +sorted.map(function(p,i){
         return '<div style="display:grid;grid-template-columns:2fr 1fr;align-items:center;padding:9px 16px;border-top:1px solid #F0EBD8;background:'+(i%2===0?'#fff':'var(--cream)')+'">'
           +'<div style="font-size:12px">'+p.region+'</div>'
-          +'<div style="font-size:12px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
+          +'<div style="font-size:12px;font-weight:600;color:var(--navy)">'+fpVal(p)+'</div>'
         +'</div>';
       }).join('');
   }
@@ -534,7 +555,7 @@ function renderStats(){
   var govVals = [];
   PRICES.prices.forEach(function(p){
     crops[p.crop]=1; regions[p.region]=1;
-    if(typeof p.gov === 'number') govVals.push(p.gov);
+    if(typeof p.gov === 'number' && fpIsTzs(p)) govVals.push(p.gov);
   });
   function card(val,lbl,color){
     return '<div class="card" style="padding:16px;text-align:left">'
@@ -849,7 +870,7 @@ function toggleChartsSection(){
 TICKER_PRICE_HTML = prices.map(function(p){
 return '<span class="tick">'
 +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
-+'<span>TZS '+p.gov.toLocaleString()+'/kg</span>'
++'<span>'+fpTick(p)+'</span>'
 +'</span>';
 }).join('');
 renderCombinedTicker();

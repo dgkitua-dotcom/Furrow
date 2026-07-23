@@ -6,6 +6,25 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZBLYSVVN7"></script>
 <script>
+/* ── Unit-aware price formatting (added 23 Jul 2026) ──────────────────
+   prices.json rows may carry:
+     "unit"        absent = TZS/kg; TCB coffee auction rows are USD/kg
+     "low"/"high"  published range (ASTA); "gov" is the midpoint and is
+                   for charting only — never render gov on its own when
+                   low/high are present. */
+function fpUnit(p){ return (p && p.unit) ? p.unit : 'TZS/kg'; }
+function fpIsTzs(p){ return !p || !p.unit || /TZS/i.test(p.unit); }
+function fpNum(p,v){ return fpIsTzs(p) ? Math.round(v).toLocaleString() : Number(v).toFixed(2); }
+function fpVal(p){
+  if(!p || typeof p.gov !== 'number') return '&mdash;';
+  return (p.low!=null && p.high!=null) ? fpNum(p,p.low)+' &ndash; '+fpNum(p,p.high) : fpNum(p,p.gov);
+}
+function fpRange(p,lo,hi){ return fpNum(p,lo)+' &ndash; '+fpNum(p,hi); }
+function fpTick(p){ return fpUnit(p).split('/')[0]+' '+fpVal(p)+'/kg'; }
+function fpLo(p){ return (p.low!=null?p.low:p.gov); }
+function fpHi(p){ return (p.high!=null?p.high:p.gov); }
+</script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -932,7 +951,7 @@ function buildTicker(){
   t.innerHTML = doubled.map(function(p){
     return '<span class="tick">'
       +'<span class="tick-crop">'+p.crop.toUpperCase()+' &middot; '+p.region.toUpperCase()+'</span>'
-      +'<span>TZS '+p.gov.toLocaleString()+'/kg</span>'
+      +'<span>'+fpTick(p)+'</span>'
       +'</span>';
   }).join('');
 }
@@ -944,7 +963,7 @@ function buildHeroBoard(){
     return '<div class="hb-row">'
       +'<div><div class="hb-crop">'+p.crop+'</div><div class="hb-region">'+p.region+'</div></div>'
       +'<div class="hb-right">'
-      +'<div class="hb-price">'+p.gov.toLocaleString()+' <span class="hb-unit">TZS/kg</span></div>'
+      +'<div class="hb-price">'+fpVal(p)+' <span class="hb-unit">'+fpUnit(p)+'</span></div>'
       +'</div></div>';
   }).join('');
   var hd = document.getElementById('heroDate'); if(hd) hd.textContent = PRICES.updated;
@@ -987,19 +1006,20 @@ function renderCropDetail(){
   var nat = entries.filter(function(p){ return /National Average/i.test(p.region); })[0];
   var rep = nat || entries[0];
   var regionOnly = entries.filter(function(p){ return !/National Average/i.test(p.region); });
-  var govVals = regionOnly.map(function(p){ return p.gov; }).filter(function(v){ return typeof v==='number'; });
-  var minVal = govVals.length ? Math.min.apply(null, govVals) : rep.gov;
-  var maxVal = govVals.length ? Math.max.apply(null, govVals) : rep.gov;
+  var loVals = regionOnly.map(fpLo).filter(function(v){ return typeof v==='number'; });
+  var hiVals = regionOnly.map(fpHi).filter(function(v){ return typeof v==='number'; });
+  var minVal = loVals.length ? Math.min.apply(null, loVals) : fpLo(rep);
+  var maxVal = hiVals.length ? Math.max.apply(null, hiVals) : fpHi(rep);
 
   summary.style.display = 'grid';
   summary.innerHTML =
     '<div class="card" style="padding:16px">'
       +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">'+(nat?'National Average':rep.region+' Average')+'</div>'
-      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-weight:700;color:var(--navy)">'+rep.gov.toLocaleString()+' <span style="font-size:13px;color:var(--mu);font-family:Inter,sans-serif">TZS/kg</span></div>'
+      +'<div style="font-family:\'Cormorant Garamond\',serif;font-size:26px;font-weight:700;color:var(--navy)">'+fpVal(rep)+' <span style="font-size:13px;color:var(--mu);font-family:Inter,sans-serif">'+fpUnit(rep)+'</span></div>'
     +'</div>'
     +'<div class="card" style="padding:16px">'
       +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regional Range</div>'
-      +'<div style="font-size:18px;font-weight:700;color:var(--navy)">'+minVal.toLocaleString()+' &ndash; '+maxVal.toLocaleString()+'</div>'
+      +'<div style="font-size:18px;font-weight:700;color:var(--navy)">'+fpRange(rep,minVal,maxVal)+'</div>'
     +'</div>'
     +'<div class="card" style="padding:16px">'
       +'<div style="font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">Regions Tracked</div>'
@@ -1015,13 +1035,13 @@ function renderCropDetail(){
   wrap.innerHTML =
     '<div style="display:grid;grid-template-columns:2fr 1fr;padding:10px 18px;background:var(--navy)">'
       +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Region</span>'
-      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average (TZS/kg)</span>'
+      +'<span style="font-size:9px;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:.08em">Average ('+fpUnit(rep)+')</span>'
     +'</div>'
     +rows.map(function(p,i){
       var isNat = /National Average/i.test(p.region);
       return '<div style="display:grid;grid-template-columns:2fr 1fr;align-items:center;padding:10px 18px;border-top:1px solid #F0EBD8;background:'+(isNat?'var(--goldP)':(i%2===0?'#fff':'var(--cream)'))+'">'
         +'<div style="font-size:12px;font-weight:'+(isNat?'700':'400')+';color:var(--tx)">'+p.region+'</div>'
-        +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+p.gov.toLocaleString()+'</div>'
+        +'<div style="font-size:13px;font-weight:600;color:var(--navy)">'+fpVal(p)+'</div>'
       +'</div>';
     }).join('');
 }

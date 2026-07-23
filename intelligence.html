@@ -6,6 +6,25 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3ZBLYSVVN7"></script>
 <script>
+/* ── Unit-aware price formatting (added 23 Jul 2026) ──────────────────
+   prices.json rows may carry:
+     "unit"        absent = TZS/kg; TCB coffee auction rows are USD/kg
+     "low"/"high"  published range (ASTA); "gov" is the midpoint and is
+                   for charting only — never render gov on its own when
+                   low/high are present. */
+function fpUnit(p){ return (p && p.unit) ? p.unit : 'TZS/kg'; }
+function fpIsTzs(p){ return !p || !p.unit || /TZS/i.test(p.unit); }
+function fpNum(p,v){ return fpIsTzs(p) ? Math.round(v).toLocaleString() : Number(v).toFixed(2); }
+function fpVal(p){
+  if(!p || typeof p.gov !== 'number') return '&mdash;';
+  return (p.low!=null && p.high!=null) ? fpNum(p,p.low)+' &ndash; '+fpNum(p,p.high) : fpNum(p,p.gov);
+}
+function fpRange(p,lo,hi){ return fpNum(p,lo)+' &ndash; '+fpNum(p,hi); }
+function fpTick(p){ return fpUnit(p).split('/')[0]+' '+fpVal(p)+'/kg'; }
+function fpLo(p){ return (p.low!=null?p.low:p.gov); }
+function fpHi(p){ return (p.high!=null?p.high:p.gov); }
+</script>
+<script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -509,6 +528,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; font-weight: 600; lin
       <h2 class="section-title">Tenders &amp; Procurement Opportunities</h2>
       <p class="section-sub">Active tenders from international agencies, development partners and public procurement portals seeking agricultural commodities, consulting and transport services.</p>
     </div>
+    <div id="tenderFilterBar" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px"></div>
     <div style="display:flex;flex-direction:column;gap:16px" id="tenderGrid">
       <!-- Populated by JS -->
     </div>
@@ -601,6 +621,8 @@ var PRICES = {
 
 var NEWS    = [];
 var TENDERS = [];
+var TENDER_FILTERS = null;   /* tenders.json "filters" block */
+var TENDER_ACTIVE  = null;   /* sector -> bool */
 
 /* ── Helpers ── */
 function col(dir){ return dir==='up'?'#1E6B4A':dir==='dn'?'#8B1A1A':'#5A6A7A'; }
@@ -823,16 +845,57 @@ function closeNewsModal(e){
 }
 
 /* ── Tenders ── */
+var SECTOR_LABEL = { 'agriculture':'Agriculture', 'agri-logistics':'Agri-logistics', 'other':'Other' };
+
+function tenderSectors(){
+  var seen={}, out=[];
+  TENDERS.forEach(function(t){ var s=t.sector||'other'; if(!seen[s]){ seen[s]=1; out.push(s); } });
+  return out.sort();
+}
+function initTenderFilter(){
+  if(TENDER_ACTIVE) return;
+  var all = tenderSectors();
+  var def = (TENDER_FILTERS && TENDER_FILTERS.default_visible) ? TENDER_FILTERS.default_visible : all;
+  TENDER_ACTIVE = {};
+  all.forEach(function(s){ TENDER_ACTIVE[s] = def.indexOf(s) !== -1; });
+}
+function toggleTenderSector(s){
+  initTenderFilter();
+  TENDER_ACTIVE[s] = !TENDER_ACTIVE[s];
+  buildTenderFilterBar(); buildTenders();
+}
+function buildTenderFilterBar(){
+  var bar = document.getElementById('tenderFilterBar'); if(!bar) return;
+  initTenderFilter();
+  var secs = tenderSectors();
+  if(secs.length < 2){ bar.innerHTML = ''; return; }
+  var counts = {};
+  TENDERS.forEach(function(t){ var s=t.sector||'other'; counts[s]=(counts[s]||0)+1; });
+  bar.innerHTML = secs.map(function(s){
+    var on = TENDER_ACTIVE[s];
+    var desc = (TENDER_FILTERS && TENDER_FILTERS.sector && TENDER_FILTERS.sector[s]) ? TENDER_FILTERS.sector[s] : '';
+    return '<button type="button" onclick="toggleTenderSector(\''+s+'\')" title="'+desc.replace(/"/g,'&quot;')+'"'
+      +' aria-pressed="'+(on?'true':'false')+'"'
+      +' style="cursor:pointer;font-family:inherit;padding:7px 15px;border-radius:999px;font-size:11px;font-weight:700;'
+      +'letter-spacing:.03em;transition:all .18s;'
+      +'border:1px solid '+(on?'var(--navy)':'var(--bdr)')+';'
+      +'background:'+(on?'var(--navy)':'#fff')+';color:'+(on?'var(--gold)':'var(--mu)')+'">'
+      +(SECTOR_LABEL[s]||s)+' <span style="opacity:.7;font-weight:500">'+(counts[s]||0)+'</span></button>';
+  }).join('');
+}
+
 function buildTenders(){
   var el = document.getElementById('tenderGrid'); if(!el) return;
-  if(!TENDERS.length){
+  initTenderFilter();
+  var visible = TENDERS.filter(function(t){ return TENDER_ACTIVE[t.sector||'other']; });
+  if(!visible.length){
     el.innerHTML='<div style="padding:32px 28px;background:#fff;border:1px solid var(--bdr);border-radius:8px;text-align:center">'
-      +'<div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px">No active tenders at this time</div>'
-      +'<div style="font-size:12px;color:var(--mu)">New procurement opportunities will be posted here as they are released. Check back soon.</div>'
+      +'<div style="font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px">'+(TENDERS.length ? 'No tenders in this category' : 'No active tenders at this time')+'</div>'
+      +'<div style="font-size:12px;color:var(--mu)">'+(TENDERS.length ? 'No tenders match the selected categories \u2014 try enabling another above.' : 'New procurement opportunities will be posted here as they are released. Check back soon.')+'</div>'
       +'</div>';
     return;
   }
-  el.innerHTML = TENDERS.map(function(t){
+  el.innerHTML = visible.map(function(t){
     var statusBadge = t.status==='open'
       ? '<span class="badge badge-green">Open</span>'
       : '<span class="badge" style="background:#FEF3C7;color:#7C5500">Closing Soon</span>';
@@ -844,7 +907,7 @@ function buildTenders(){
         +'View Full Tender &#8599;</a>'
       : '';
     return '<div class="tender-card">'
-      +'<div class="tender-ref">'+t.ref+'</div>'
+      +'<div class="tender-ref">'+t.ref+(t.sector?' <span style="display:inline-block;margin-left:6px;padding:2px 8px;border-radius:999px;background:var(--cream);border:1px solid var(--bdr);font-size:9px;font-weight:700;color:var(--mu);text-transform:uppercase;letter-spacing:.05em">'+(SECTOR_LABEL[t.sector]||t.sector)+'</span>':'')+'</div>'
       +'<div class="tender-title">'+t.title+'</div>'
       +'<div class="tender-meta">'
       +'<div class="tender-meta-item"><span class="tender-meta-label">Body:</span><span>'+t.body+'</span></div>'
@@ -890,9 +953,16 @@ async function loadNews(){
 async function loadTenders(){
   try {
     var res = await fetch('tenders.json?v='+Date.now());
-    if(res.ok){ var data = await res.json(); if(data && data.tenders && data.tenders.length) TENDERS = data.tenders; }
+    if(res.ok){
+      var data = await res.json();
+      if(data && data.tenders && data.tenders.length){
+        TENDERS = data.tenders;
+        TENDER_FILTERS = data.filters || null;
+        TENDER_ACTIVE = null;
+      }
+    }
   } catch(e){}
-  buildTenders();
+  buildTenderFilterBar(); buildTenders();
 }
 
 /* ── Load ads.json and render billboard + sidebar ── */
