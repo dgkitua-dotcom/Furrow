@@ -1,6 +1,6 @@
 {
-  "updated": "22 Jul 2026",
-  "source_note": "National average prices compiled from weekly agricultural bulletins, Monday morning session, 13 Jul 2026. All prices TZS/kg.",
+  "updated": "23 Jul 2026",
+  "source_note": "National average prices compiled from weekly agricultural bulletins, 23 Jul 2026. Staples in TZS/kg. Coffee auction lines converted from TCB's published $/kg at 2,633.45 TZS/USD (22 Jul 2026).",
   "prices": [
     {
       "crop": "Mahindi (Maize)",
@@ -809,37 +809,37 @@
     {
       "crop": "Kahawa Arabica — H/Arabica Maganda",
       "region": "Tanzania (Farm Gate)",
-      "gov": 5439,
+      "gov": 5852,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — CPU",
       "region": "Tanzania (Farm Gate)",
-      "gov": 11813,
+      "gov": 12191,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — HP",
       "region": "Tanzania (Farm Gate)",
-      "gov": 9065,
+      "gov": 9753,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Robusta — Maganda",
       "region": "Tanzania (Farm Gate)",
-      "gov": 3854,
+      "gov": 3878,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 22721,
+      "gov": 18961,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Robusta — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 11121,
+      "gov": 10270,
       "source": "TCB"
     },
     {

@@ -1,5 +1,5 @@
 {
-  "updated": "22 Jul 2026",
+  "updated": "23 Jul 2026",
   "tenders": [
     {
       "ref": "TR160/2025/2026/C/08",
@@ -179,6 +179,18 @@
       "eligibility": "Road maintenance contractors",
       "status": "closing",
       "notes": "Routine maintenance along the Lyambalyamfipa - Mpanda trunk road (T009) and Kawajense - Mnyamasi junction, safeguarding grain-belt logistics corridors in Katavi. Listed in the 22 Jul bulletin; not independently confirmed -- verify on the NeST portal (filter by tender no.) before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR36/009/2026/2027/W/02",
+      "body": "TANROADS - Kilimanjaro Regional Office",
+      "title": "Routine Maintenance along Mkomazi West (Tanga/KLM Border) - Same - Himo Jct - KIA Corridor",
+      "volume": "As per project specifications",
+      "deadline": "24 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "notes": "Routine maintenance along the Mkomazi West (Tanga/Kilimanjaro border) - Same - Himo Junction - KIA corridor, a primary produce haulage route between the northern highlands and the Tanga corridor. Submission closes 04:00 PM. Listed in the 23 Jul bulletin; verify on the NeST portal (filter by tender no.) before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "updated": "22 Jul 2026",
+  "updated": "23 Jul 2026",
   "news": [
     {
       "date": "22 Jul 2026",
@@ -36,15 +36,6 @@
       "body": "Development finance institution Proparco committed $12 million to the Acumen Resilient Agriculture Fund II (ARAF II), a venture capital fund providing early-stage equity and debt financing for high-impact agribusinesses across East and West Africa. ARAF has assessed nearly 700 investment opportunities and backed 14 companies to date; ARAF II plans to back roughly 20 more.",
       "source": "Ecofin Agency",
       "url": "https://www.ecofinagency.com/news-agriculture/1807-57517-proparco-announces-12-million-for-african-agribusinesses"
-    },
-    {
-      "date": "21 Jul 2026",
-      "tag": "Agritech",
-      "color": "gray",
-      "title": "SUA releases written interview results for agriculture development positions",
-      "body": "Sokoine University of Agriculture (SUA) released outcome notifications for candidates who sat the July 20 agricultural extension, research and technical staffing evaluations, part of the university's drive to strengthen field personnel deployment for ongoing field station research.",
-      "source": "Sokoine University of Agriculture",
-      "url": "https://www.sua.ac.tz"
     },
     {
       "date": "18 Jul 2026",
@@ -232,6 +223,15 @@
       "title": "One Acre Fund Tanzania overhauling commercial market-access model across key production zones",
       "body": "One Acre Fund Tanzania is executing a major overhaul of its commercial market-access structure across key production zones including Iringa, Mbeya, Njombe and Moshi. The mandate centres on deploying data-driven systems that connect rural producers directly into secure, higher-value B2B commercial value chains. One Acre Fund serves over 100,000 farmers in Tanzania. Their new model is being closely tracked by institutional investors and digital platforms looking to design compatible B2B integration frameworks.",
       "source": "One Acre Fund / ReliefWeb"
+    },
+    {
+      "date": "7 Jul 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "EAC agriculture ministers adopt RASIP 2026-2035 and activate regional Rice Desk",
+      "body": "At the 19th Session of the Sectoral Council on Agriculture and Food Security in Dar es Salaam, EAC ministers adopted the Regional Agri-Food Systems Investment Plan (RASIP) 2026-2035, calling for expanded investment in agricultural infrastructure, climate resilience, digital technologies, agricultural financing and cross-border trade. Ministers also brought a regional Rice Desk into operation to cut the bloc's rice import bill, endorsed the Youth in Agri-Food Systems (YASE) platform, and directed partner states to align national investment plans with the CAADP Kampala Declaration. Reference item: retained beyond the standard 30-day window as a regional investment framework.",
+      "source": "EAC Secretariat / Xinhua",
+      "url": "https://english.news.cn/africa/20260707/69d4321df3e947538398a91d7a6b28da/c.html"
     },
     {
       "date": "1 Jul 2026",
