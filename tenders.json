@@ -11,7 +11,8 @@
       "eligibility": "Consultancy firms with experience in digital certification systems, e-labelling, supply chain authentication and stakeholder sensitization in the agricultural inputs sector",
       "status": "closing",
       "notes": "Designing and executing sensitization protocols for seed sector stakeholders on deployment of cryptographic e-labels to verify input supply-chain authenticity. Published via the National e-Procurement System of Tanzania (NeST).",
-      "url": "https://nest.go.tz/tenders/published-tenders?category=C"
+      "url": "https://nest.go.tz/tenders/published-tenders?category=C",
+      "sector": "agriculture"
     },
     {
       "ref": "UNGM/300103",
@@ -23,7 +24,8 @@
       "eligibility": "Consulting firms with expertise in circular economy, organic waste recovery, urban waste stream mapping and composting logistics",
       "status": "open",
       "notes": "Mapping urban and market organic streams in Dar es Salaam to identify scalable, technology-backed options for corporate organic waste recovery and regional composting logistics. Flagship DMDP2 portfolio, published via UN Global Marketplace.",
-      "url": "https://www.ungm.org/Public/Notice/300103"
+      "url": "https://www.ungm.org/Public/Notice/300103",
+      "sector": "agriculture"
     },
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -35,7 +37,8 @@
       "eligibility": "Specialised multi-country evaluation teams with expertise in agricultural value chain assessment, climate-resilient farming systems and producer-owned business ecosystem analysis",
       "status": "open",
       "notes": "Seeking a specialised evaluation team to assess agricultural value chains and build data-driven approaches to optimise climate-resilient farming and producer-owned business ecosystems in Tanzania. Published via Devex International Procurement Board.",
-      "url": "https://www.devex.com/jobs/tender-for-mid-term-review-2026-1445125"
+      "url": "https://www.devex.com/jobs/tender-for-mid-term-review-2026-1445125",
+      "sector": "agriculture"
     },
     {
       "ref": "TendersOnTime/145034724",
@@ -47,7 +50,8 @@
       "eligibility": "Firms with construction supervision experience for cross-border infrastructure projects",
       "status": "open",
       "notes": "Provision of supervision services for Phase 1 construction of the Manyovu/Mugina One Stop Border Post on the Tanzania side, to streamline cross-border trade logistics.",
-      "url": "https://www.tanroads.go.tz/tenders"
+      "url": "https://www.tanroads.go.tz/tenders",
+      "sector": "agri-logistics"
     },
     {
       "ref": "Tendersinfo/535124615",
@@ -59,7 +63,8 @@
       "eligibility": "Suppliers of solar pumping systems with commissioning capability",
       "status": "open",
       "notes": "Supply and commissioning of solar-powered pumping systems for agricultural water access.",
-      "url": "https://www.tendersinfo.com"
+      "url": "https://www.tendersinfo.com",
+      "sector": "agriculture"
     },
     {
       "ref": "Tendersinfo/534513276",
@@ -71,7 +76,8 @@
       "eligibility": "Suppliers of agricultural tractors and implements",
       "status": "closing",
       "notes": "Procurement of one tractor and its implements under the Agriculture Financing and Development Programme (AFDP). Note: could not independently confirm this exact 2026 deadline/reference; a similarly-titled TARI tractor tender found via search had a different deadline (17 Nov 2025) and reference number -- verify directly on tari.go.tz before relying on this date.",
-      "url": "https://www.tari.go.tz"
+      "url": "https://www.tari.go.tz",
+      "sector": "agriculture"
     },
     {
       "ref": "TanzaniaTenders/535139587",
@@ -83,7 +89,8 @@
       "eligibility": "Road maintenance and safety infrastructure contractors",
       "status": "open",
       "notes": "Culvert installations, spot improvements, and periodic safety maintenance across 19.7km of rural road connections in Bunda District. Deadline extended from 17 Jul to 24 Jul 2026 per 18 Jul bulletin.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
+      "url": "https://nest.go.tz/tenders/published-tenders",
+      "sector": "agri-logistics"
     },
     {
       "ref": "NeST/99-2025-2026-C-27",
@@ -95,7 +102,8 @@
       "eligibility": "Firms with GIS/georeferencing and needs-assessment experience",
       "status": "open",
       "notes": "Needs assessments and complete georeferencing mapping for 1,200 landing sites and 20 major fish markets across inland and marine waterbodies.",
-      "url": "https://nest.go.tz"
+      "url": "https://nest.go.tz",
+      "sector": "agriculture"
     },
     {
       "ref": "TR36/023/2026/2027/W/02",
@@ -107,7 +115,8 @@
       "eligibility": "Road maintenance contractors",
       "status": "closing",
       "notes": "Preventive road maintenance and routine structural works along the paved Singida - Malendi road section to safeguard logistics corridors.",
-      "url": "https://nest.go.tz"
+      "url": "https://nest.go.tz",
+      "sector": "agri-logistics"
     },
     {
       "ref": "TR152/007/2025/2026/G/21",
@@ -119,7 +128,8 @@
       "eligibility": "Suppliers of industrial UPS/power backup systems",
       "status": "closing",
       "notes": "Complete supply, electrical integration, testing, and commissioning of a heavy-duty static UPS system to secure transaction networks.",
-      "url": "https://nest.go.tz"
+      "url": "https://nest.go.tz",
+      "sector": "other"
     },
     {
       "ref": "TR36/023/2026/2027/W/06",
@@ -131,7 +141,8 @@
       "eligibility": "Road maintenance contractors",
       "status": "closing",
       "notes": "Routine maintenance and major repair works along the unpaved Rungwa - Itigi - Mkiwa trunk road (T022).",
-      "url": "https://nest.go.tz/tenders/published-tenders"
+      "url": "https://nest.go.tz/tenders/published-tenders",
+      "sector": "agri-logistics"
     },
     {
       "ref": "S10/014/2026/2027/W/12",
@@ -143,7 +154,8 @@
       "eligibility": "Road maintenance contractors",
       "status": "open",
       "notes": "Spot improvement works along the Tomondo - Vuleni, Kibungo Kungwe, and Ngerengere road corridors.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
+      "url": "https://nest.go.tz/tenders/published-tenders",
+      "sector": "agri-logistics"
     },
     {
       "ref": "TR36/009/2026/2027/W/07",
@@ -155,7 +167,8 @@
       "eligibility": "Road maintenance contractors",
       "status": "open",
       "notes": "Routine and recurrent maintenance along the Same - Kisiwani - Mkomazi East trunk road corridor.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
+      "url": "https://nest.go.tz/tenders/published-tenders",
+      "sector": "agri-logistics"
     },
     {
       "ref": "99/2025/2026/G/115",
@@ -167,7 +180,8 @@
       "eligibility": "Suppliers of surveillance drone systems",
       "status": "open",
       "notes": "Supply of surveillance drones to support field operations for the Ministry of Livestock and Fisheries.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
+      "url": "https://nest.go.tz/tenders/published-tenders",
+      "sector": "agriculture"
     },
     {
       "ref": "TR36/007/2026/2027/W/01",
@@ -179,7 +193,8 @@
       "eligibility": "Road maintenance contractors",
       "status": "closing",
       "notes": "Routine maintenance along the Lyambalyamfipa - Mpanda trunk road (T009) and Kawajense - Mnyamasi junction, safeguarding grain-belt logistics corridors in Katavi. Listed in the 22 Jul bulletin; not independently confirmed -- verify on the NeST portal (filter by tender no.) before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
+      "url": "https://nest.go.tz/tenders/published-tenders",
+      "sector": "agri-logistics"
     },
     {
       "ref": "TR36/009/2026/2027/W/02",
@@ -191,7 +206,19 @@
       "eligibility": "Road maintenance contractors",
       "status": "open",
       "notes": "Routine maintenance along the Mkomazi West (Tanga/Kilimanjaro border) - Same - Himo Junction - KIA corridor, a primary produce haulage route between the northern highlands and the Tanga corridor. Submission closes 04:00 PM. Listed in the 23 Jul bulletin; verify on the NeST portal (filter by tender no.) before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
+      "url": "https://nest.go.tz/tenders/published-tenders",
+      "sector": "agri-logistics"
     }
-  ]
+  ],
+  "filters": {
+    "sector": {
+      "agriculture": "Direct agricultural, fisheries or agri-input scope",
+      "agri-logistics": "Roads, corridors and border posts carrying produce; indirect but material to traders",
+      "other": "No agricultural connection - hidden by default"
+    },
+    "default_visible": [
+      "agriculture",
+      "agri-logistics"
+    ]
+  }
 }

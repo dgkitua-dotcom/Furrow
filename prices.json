@@ -1,6 +1,6 @@
 {
   "updated": "23 Jul 2026",
-  "source_note": "National average prices compiled from weekly agricultural bulletins, 23 Jul 2026. Staples in TZS/kg. Coffee auction lines converted from TCB's published $/kg at 2,633.45 TZS/USD (22 Jul 2026).",
+  "source_note": "Staple national/regional averages compiled from weekly agricultural bulletins, 23 Jul 2026. All figures TZS/kg unless a row carries an explicit \"unit\". Rows with \"low\"/\"high\" are published as a range; \"gov\" holds the midpoint for charting only and should not be rendered on its own. TCB coffee auction lines are stored in USD/kg exactly as the board publishes them.",
   "prices": [
     {
       "crop": "Mahindi (Maize)",
@@ -833,14 +833,16 @@
     {
       "crop": "Kahawa Arabica — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 18961,
-      "source": "TCB"
+      "gov": 7.2,
+      "source": "TCB",
+      "unit": "USD/kg"
     },
     {
       "crop": "Kahawa Robusta — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 10270,
-      "source": "TCB"
+      "gov": 3.9,
+      "source": "TCB",
+      "unit": "USD/kg"
     },
     {
       "crop": "Kakao (Cocoa Beans) — Mbeya",
@@ -955,6 +957,31 @@
       "region": "Mwanza",
       "gov": 1300,
       "source": "MAFC"
+    },
+    {
+      "crop": "Parachichi Daraja A (Avocado Grade A, fresh export, sizes 14-24)",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 1600,
+      "low": 1500,
+      "high": 1700,
+      "source": "ASTA"
+    },
+    {
+      "crop": "Parachichi Daraja B (Avocado Grade B, Hass, sizes 14-20)",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 1850,
+      "low": 1700,
+      "high": 2000,
+      "source": "ASTA"
+    },
+    {
+      "crop": "Parachichi — Usindikaji (Avocado, processing grade)",
+      "region": "Tanzania (Farm Gate)",
+      "gov": 920,
+      "source": "ASTA"
     }
-  ]
+  ],
+  "source_detail": {
+    "ASTA": "Avocado Society of Tanzania weekly farm-gate pricing bulletin, Week 30/2026 (20-26 Jul), published 20 Jul 2026. Grades displayed A-before-B; ASTA's own bulletin lists them in the reverse order. Refreshes weekly by ISO week number."
+  }
 }
