@@ -1,5 +1,5 @@
 {
-  "updated": "23 Jul 2026",
+  "updated": "24 Jul 2026",
   "news": [
     {
       "date": "22 Jul 2026",
@@ -122,6 +122,15 @@
       "source": "FAO GIEWS"
     },
     {
+      "date": "14 Jul 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "Tanzania to present national potato strategy at 13th World Potato Congress in Kenya",
+      "body": "Tanzania will take its National Potato Development Strategy to the 13th World Potato Congress, convening in Naivasha, Kenya from 26-30 October 2026 - the first Congress held in Sub-Saharan Africa. Agriculture Minister Daniel Chongolo's April 2026 roadmap targets a rise from 2.96 million to 3.0 million tonnes by 2026/27, on the back of an 89.1% production surge from 1.47 million to 2.78 million tonnes between the 2023/24 and 2024/25 seasons. The delegation will present the Potato Council of Tanzania (registered June 2024, chaired by Beno Mgaya), a 16-variety national catalogue, and cooperative case studies including Isowelo AMCOS, which secured a TZS 1 billion CRDB Bank loan. The Southern Highlands account for 70-80% of national potato output. Tanzania is Africa's sixth-largest potato producer.",
+      "source": "Kilimo Kwanza",
+      "url": "https://kilimokwanza.org/13th-world-potato-congress-october-2026-why-tanzanias-potato-development-strategy-signals-a-paradigm-shift-for-african-agriculture/"
+    },
+    {
       "date": "13 Jul 2026",
       "tag": "Digital Finance",
       "color": "blue",
@@ -216,14 +225,6 @@
       "title": "Government mandates digital transformation for AMCOS and SACCOs across Tanzania",
       "body": "The Ministry of Agriculture has announced accelerated state backing for digital transformation within Tanzania's cooperative sector. The directive requires all AMCOS and SACCOS to migrate to digital systems for financial administration and record management, with the explicit aim of enforcing transparency and curbing fund mismanagement. The move is part of a broader government strategy to modernise cooperative governance and build verifiable financial track records that can unlock formal credit access for smallholder producers.",
       "source": "Ministry of Agriculture Tanzania"
-    },
-    {
-      "date": "7 Jul 2026",
-      "tag": "Market Access",
-      "color": "green",
-      "title": "One Acre Fund Tanzania overhauling commercial market-access model across key production zones",
-      "body": "One Acre Fund Tanzania is executing a major overhaul of its commercial market-access structure across key production zones including Iringa, Mbeya, Njombe and Moshi. The mandate centres on deploying data-driven systems that connect rural producers directly into secure, higher-value B2B commercial value chains. One Acre Fund serves over 100,000 farmers in Tanzania. Their new model is being closely tracked by institutional investors and digital platforms looking to design compatible B2B integration frameworks.",
-      "source": "One Acre Fund / ReliefWeb"
     },
     {
       "date": "7 Jul 2026",

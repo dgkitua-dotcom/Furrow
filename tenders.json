@@ -1,19 +1,6 @@
 {
-  "updated": "23 Jul 2026",
+  "updated": "24 Jul 2026",
   "tenders": [
-    {
-      "ref": "TR160/2025/2026/C/08",
-      "body": "Tanzania Official Seed Certification Institute (TOSCI), via NeST",
-      "title": "Public Awareness and E-Label System Integration Consultancy",
-      "volume": "As per consultancy specifications",
-      "deadline": "23 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Consultancy firms with experience in digital certification systems, e-labelling, supply chain authentication and stakeholder sensitization in the agricultural inputs sector",
-      "status": "closing",
-      "notes": "Designing and executing sensitization protocols for seed sector stakeholders on deployment of cryptographic e-labels to verify input supply-chain authenticity. Published via the National e-Procurement System of Tanzania (NeST).",
-      "url": "https://nest.go.tz/tenders/published-tenders?category=C",
-      "sector": "agriculture"
-    },
     {
       "ref": "UNGM/300103",
       "body": "United Nations International Procurement / Government of Tanzania (DMDP2 Portfolio)",
@@ -48,7 +35,7 @@
       "deadline": "24 Jul 2026",
       "value": "To be determined",
       "eligibility": "Firms with construction supervision experience for cross-border infrastructure projects",
-      "status": "open",
+      "status": "closing",
       "notes": "Provision of supervision services for Phase 1 construction of the Manyovu/Mugina One Stop Border Post on the Tanzania side, to streamline cross-border trade logistics.",
       "url": "https://www.tanroads.go.tz/tenders",
       "sector": "agri-logistics"
@@ -67,19 +54,6 @@
       "sector": "agriculture"
     },
     {
-      "ref": "Tendersinfo/534513276",
-      "body": "Tanzania Agricultural Research Institute (TARI)",
-      "title": "Procurement of 1 Tractor and Its Implements Under AFDP Project",
-      "volume": "1 tractor and implements",
-      "deadline": "23 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Suppliers of agricultural tractors and implements",
-      "status": "closing",
-      "notes": "Procurement of one tractor and its implements under the Agriculture Financing and Development Programme (AFDP). Note: could not independently confirm this exact 2026 deadline/reference; a similarly-titled TARI tractor tender found via search had a different deadline (17 Nov 2025) and reference number -- verify directly on tari.go.tz before relying on this date.",
-      "url": "https://www.tari.go.tz",
-      "sector": "agriculture"
-    },
-    {
       "ref": "TanzaniaTenders/535139587",
       "body": "TARURA - Mara Regional Office",
       "title": "Routine Road Maintenance and Safety Infrastructure Works (Bunda District)",
@@ -87,7 +61,7 @@
       "deadline": "24 Jul 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance and safety infrastructure contractors",
-      "status": "open",
+      "status": "closing",
       "notes": "Culvert installations, spot improvements, and periodic safety maintenance across 19.7km of rural road connections in Bunda District. Deadline extended from 17 Jul to 24 Jul 2026 per 18 Jul bulletin.",
       "url": "https://nest.go.tz/tenders/published-tenders",
       "sector": "agri-logistics"
@@ -106,45 +80,6 @@
       "sector": "agriculture"
     },
     {
-      "ref": "TR36/023/2026/2027/W/02",
-      "body": "TANROADS - Singida Regional Office",
-      "title": "Routine Maintenance of Key Grains Transportation Corridors (Singida)",
-      "volume": "As per project specifications",
-      "deadline": "23 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "notes": "Preventive road maintenance and routine structural works along the paved Singida - Malendi road section to safeguard logistics corridors.",
-      "url": "https://nest.go.tz",
-      "sector": "agri-logistics"
-    },
-    {
-      "ref": "TR152/007/2025/2026/G/21",
-      "body": "Bank of Tanzania - Zanzibar Sub-Head Office",
-      "title": "Supply and Installation of 200KVA Three-Phase Static UPS",
-      "volume": "1 x 200KVA static UPS system",
-      "deadline": "23 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Suppliers of industrial UPS/power backup systems",
-      "status": "closing",
-      "notes": "Complete supply, electrical integration, testing, and commissioning of a heavy-duty static UPS system to secure transaction networks.",
-      "url": "https://nest.go.tz",
-      "sector": "other"
-    },
-    {
-      "ref": "TR36/023/2026/2027/W/06",
-      "body": "TANROADS - Singida Regional Office",
-      "title": "Routine Maintenance and Major Repair Works along Rungwa - Itigi - Mkiwa Unpaved Trunk Road (T022)",
-      "volume": "As per project specifications",
-      "deadline": "23 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "notes": "Routine maintenance and major repair works along the unpaved Rungwa - Itigi - Mkiwa trunk road (T022).",
-      "url": "https://nest.go.tz/tenders/published-tenders",
-      "sector": "agri-logistics"
-    },
-    {
       "ref": "S10/014/2026/2027/W/12",
       "body": "TARURA - Morogoro Regional Office",
       "title": "Spot Improvement Works along Tomondo - Vuleni, Kibungo Kungwe, and Ngerengere Corridors",
@@ -152,7 +87,7 @@
       "deadline": "24 Jul 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance contractors",
-      "status": "open",
+      "status": "closing",
       "notes": "Spot improvement works along the Tomondo - Vuleni, Kibungo Kungwe, and Ngerengere road corridors.",
       "url": "https://nest.go.tz/tenders/published-tenders",
       "sector": "agri-logistics"
@@ -165,7 +100,7 @@
       "deadline": "24 Jul 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance contractors",
-      "status": "open",
+      "status": "closing",
       "notes": "Routine and recurrent maintenance along the Same - Kisiwani - Mkomazi East trunk road corridor.",
       "url": "https://nest.go.tz/tenders/published-tenders",
       "sector": "agri-logistics"
@@ -184,19 +119,6 @@
       "sector": "agriculture"
     },
     {
-      "ref": "TR36/007/2026/2027/W/01",
-      "body": "TANROADS - Katavi Regional Office",
-      "title": "Routine Maintenance along Lyambalyamfipa - Mpanda Trunk Road (T009) & Kawajense - Mnyamasi Jct",
-      "volume": "As per project specifications",
-      "deadline": "23 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "notes": "Routine maintenance along the Lyambalyamfipa - Mpanda trunk road (T009) and Kawajense - Mnyamasi junction, safeguarding grain-belt logistics corridors in Katavi. Listed in the 22 Jul bulletin; not independently confirmed -- verify on the NeST portal (filter by tender no.) before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders",
-      "sector": "agri-logistics"
-    },
-    {
       "ref": "TR36/009/2026/2027/W/02",
       "body": "TANROADS - Kilimanjaro Regional Office",
       "title": "Routine Maintenance along Mkomazi West (Tanga/KLM Border) - Same - Himo Jct - KIA Corridor",
@@ -204,10 +126,49 @@
       "deadline": "24 Jul 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance contractors",
-      "status": "open",
+      "status": "closing",
       "notes": "Routine maintenance along the Mkomazi West (Tanga/Kilimanjaro border) - Same - Himo Junction - KIA corridor, a primary produce haulage route between the northern highlands and the Tanga corridor. Submission closes 04:00 PM. Listed in the 23 Jul bulletin; verify on the NeST portal (filter by tender no.) before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders",
       "sector": "agri-logistics"
+    },
+    {
+      "ref": "TR36/003/2026/2027/W/17",
+      "body": "TANROADS - Dodoma Regional Office",
+      "title": "Routine/Recurrent Maintenance (45.65km), Bridge Preventive and Periodic Works (10km), Ihumwa - Hombolo - Mayamaya Corridor",
+      "volume": "45.65km routine, 10km periodic, plus bridge works",
+      "deadline": "29 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Maintenance along the Ihumwa - Hombolo - Mayamaya corridor serving Dodoma's grain and sunflower belt. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "Y9/2026/2027/W/01",
+      "body": "Tanzania Airports Authority (TAA)",
+      "title": "Construction of the New Terminal Building and Associated Infrastructure, Mwanza Airport",
+      "volume": "As per project specifications",
+      "deadline": "13 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Building and airport infrastructure contractors",
+      "status": "open",
+      "sector": "other",
+      "notes": "New passenger terminal and associated works at Mwanza Airport. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/002/2026/2027/W/55",
+      "body": "TARURA - Dar es Salaam Regional Office",
+      "title": "Upgrading of Kichangani Mikwambe Road (0.3km) to Rigid Pavement, Kigamboni District",
+      "volume": "0.3km rigid pavement",
+      "deadline": "29 Jul 2026",
+      "value": "To be determined",
+      "eligibility": "Road works contractors",
+      "status": "open",
+      "sector": "other",
+      "notes": "Urban road upgrade in Kigamboni. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],
   "filters": {
