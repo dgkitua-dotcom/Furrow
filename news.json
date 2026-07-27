@@ -1,5 +1,5 @@
 {
-  "updated": "24 Jul 2026",
+  "updated": "27 Jul 2026",
   "news": [
     {
       "date": "22 Jul 2026",
@@ -47,6 +47,15 @@
       "url": "https://kilimokwanza.org/avocado-market-prices-remain-firm-as-tanzania-heads-into-peak-mid-year-supply/"
     },
     {
+      "date": "21 Jul 2026",
+      "tag": "Environment",
+      "color": "green",
+      "title": "One district's pesticide-container recovery scheme tackles rural contamination",
+      "body": "Kilimo Kwanza profiles a district-level programme establishing safe collection points for used agrochemical containers, curbing hazardous reuse and contamination of local water systems and crop supply chains. Built on field pilots and farmer-education campaigns led by district officials, the scheme is presented as a replicable model for managing Tanzania's agricultural chemical waste.",
+      "source": "Kilimo Kwanza",
+      "url": "https://kilimokwanza.org/the-second-life-of-poison-how-one-district-is-solving-tanzanias-silent-pesticide-crisis/"
+    },
+    {
       "date": "18 Jul 2026",
       "tag": "Agritech",
       "color": "green",
@@ -74,6 +83,15 @@
       "url": "https://taha.or.tz"
     },
     {
+      "date": "17 Jul 2026",
+      "tag": "Capital Markets",
+      "color": "green",
+      "title": "DSE weekly equity turnover rises 10.75% to TZS 177bn in Week 29",
+      "body": "The Dar es Salaam Stock Exchange recorded equity turnover of TZS 177.04 billion for the week of 13-17 July, up 10.75% week-on-week, with 63.87 million shares across 14,339 deals. Total market capitalisation closed at TZS 35.72 trillion, the DSEI up 0.72%. The quarter showed broader strength: Q2 2026 market cap rose 79.11% to TZS 35.18 trillion and equity turnover jumped 227.24%. Agribusiness-linked and agro-industrial counters drew part of the institutional interest.",
+      "source": "TanzaniaInvest / DSE",
+      "url": "https://www.tanzaniainvest.com/finance/capitalmarkets/dse-performance-q2-2026"
+    },
+    {
       "date": "16 Jul 2026",
       "tag": "Market Access",
       "color": "green",
@@ -93,9 +111,10 @@
       "date": "16 Jul 2026",
       "tag": "Policy",
       "color": "blue",
-      "title": "NAESA begins consolidating rural agricultural extension services",
-      "body": "The newly launched National Agricultural Extension Services Agency (NAESA) has started merging regional extension frameworks, absorbing overlapping district-level and single-crop board resources into a single, digitized standard protocol for coordinating input distribution and pest mitigation across Tanzania's agricultural hubs.",
-      "source": "NAESA"
+      "title": "Chongolo demands results-driven leadership to lift farmer productivity",
+      "body": "Agriculture Minister Daniel Chongolo has pressed ministry officials for a results-driven approach tied directly to measurable gains in farmer productivity, signalling a shift in how sector performance is judged. The message aligns with the ministry's 2026/27 targets across cash crops, horticulture and avocado exports.",
+      "source": "Kilimo Kwanza",
+      "url": "https://kilimokwanza.org/strategic-shift-agriculture-minister-chongolo-demands-results-driven-leadership-to-boost-farmer-productivity/"
     },
     {
       "date": "15 Jul 2026",
@@ -147,6 +166,15 @@
       "source": "National Irrigation Commission"
     },
     {
+      "date": "13 Jul 2026",
+      "tag": "Infrastructure",
+      "color": "blue",
+      "title": "Tanzania invests TZS 429bn in Tanga Port expansion, plans new 300m berth",
+      "body": "Finance Minister Khamis Mussa Omar, inspecting progress on 13 July, confirmed the government has put over TZS 429 billion into expanding the Port of Tanga, lifting annual capacity to 3 million tonnes from 0.75 million and allowing larger vessels. Vessel calls rose from about 100 a year to 616 in the year to June 2026, and cargo more than quadrupled to 2.17 million tonnes. A new 300-metre berth is planned. The upgrade cuts transit times for grain, tea and horticulture exports from the Northern Zone, and pairs with the 50km Tanga-Pangani road.",
+      "source": "TanzaniaInvest / The Citizen",
+      "url": "https://www.tanzaniainvest.com/transport/tanga-port-expansion-investment"
+    },
+    {
       "date": "12 Jul 2026",
       "tag": "Input Regulation",
       "color": "red",
@@ -187,46 +215,6 @@
       "source": "Planning Commission / UN High-level Political Forum"
     },
     {
-      "date": "10 Jul 2026",
-      "tag": "Input Regulation",
-      "color": "red",
-      "title": "TFRA cracks down on digital fertiliser subsidy sabotage in Simiyu",
-      "body": "The Tanzania Fertilizer Regulatory Authority (TFRA) Lake Zone unit, working with state security agencies in Simiyu region, has arrested unregistered fertiliser traders and agents for bypassing the national digital input subsidy platform. Field arrests included distributors in Bariadi Urban found smuggling stock and inflating Urea prices to TZS 150,000 per bag, far above the government's strict indicative cap of TZS 86,250. TFRA has warned all input distributors that selling outside the digital database or hiking prices will result in immediate asset seizure and criminal prosecution. TFRA has since extended strict field audits across the Lake Zone's cotton hubs to protect the national digital voucher database, with agents caught processing stock outside the automated platform facing immediate blacklisting.",
-      "source": "Tanzania Fertilizer Regulatory Authority (TFRA)"
-    },
-    {
-      "date": "10 Jul 2026",
-      "tag": "Youth & Research",
-      "color": "green",
-      "title": "National Youth Leaders Lab launched for rice and horticulture value chains",
-      "body": "The Agriculture Extension and Youth Activity (AEYA) framework has officially launched a new \"New Leaders Lab\" call for action research. Backed by the Ministry of Agriculture, the strategic investment injects targeted technical resources into postgraduate researchers to optimise data infrastructure and post-harvest management across the high-growth rice and horticulture clusters in Morogoro, Kilombero and Mpimbwe districts.",
-      "source": "Agriculture Extension and Youth Activity (AEYA) / Ministry of Agriculture"
-    },
-    {
-      "date": "10 Jul 2026",
-      "tag": "Livestock",
-      "color": "blue",
-      "title": "Tanga livestock framework integrates mastitis diagnostic technology",
-      "body": "Field extension teams from Sokoine University of Agriculture (SUA) have launched a multi-district dairy training rollout across Tanga. Funded under regional innovation grants, the programme introduces new diagnostic tools and targeted field treatments directly to livestock cooperatives to curb production losses from mastitis and protect regional commercial milk supply lanes.",
-      "source": "Sokoine University of Agriculture (SUA)"
-    },
-    {
-      "date": "8 Jul 2026",
-      "tag": "Digital Finance",
-      "color": "green",
-      "title": "TCDC and Mixx renew digital financial partnership for Tanzania's cooperative sector",
-      "body": "The Tanzania Cooperative Development Commission (TCDC) and Mixx by Yas have renewed their partnership in Dodoma. The initiative modernises financial systems across cooperative societies, which collectively process between TZS 5 trillion and TZS 7 trillion annually, by embedding digital transaction systems to build audit transparency and enhance credit access for smallholder farmers. The partnership represents a significant step toward formalising financial flows within Tanzania's cooperative value chain.",
-      "source": "Tanzania Cooperative Development Commission (TCDC) / Mixx by Yas"
-    },
-    {
-      "date": "8 Jul 2026",
-      "tag": "Policy",
-      "color": "blue",
-      "title": "Government mandates digital transformation for AMCOS and SACCOs across Tanzania",
-      "body": "The Ministry of Agriculture has announced accelerated state backing for digital transformation within Tanzania's cooperative sector. The directive requires all AMCOS and SACCOS to migrate to digital systems for financial administration and record management, with the explicit aim of enforcing transparency and curbing fund mismanagement. The move is part of a broader government strategy to modernise cooperative governance and build verifiable financial track records that can unlock formal credit access for smallholder producers.",
-      "source": "Ministry of Agriculture Tanzania"
-    },
-    {
       "date": "7 Jul 2026",
       "tag": "Policy",
       "color": "blue",
@@ -234,6 +222,15 @@
       "body": "At the 19th Session of the Sectoral Council on Agriculture and Food Security in Dar es Salaam, EAC ministers adopted the Regional Agri-Food Systems Investment Plan (RASIP) 2026-2035, calling for expanded investment in agricultural infrastructure, climate resilience, digital technologies, agricultural financing and cross-border trade. Ministers also brought a regional Rice Desk into operation to cut the bloc's rice import bill, endorsed the Youth in Agri-Food Systems (YASE) platform, and directed partner states to align national investment plans with the CAADP Kampala Declaration. Reference item: retained beyond the standard 30-day window as a regional investment framework.",
       "source": "EAC Secretariat / Xinhua",
       "url": "https://english.news.cn/africa/20260707/69d4321df3e947538398a91d7a6b28da/c.html"
+    },
+    {
+      "date": "2 Jul 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "NAESA goes live as Tanzania's national agricultural extension agency",
+      "body": "The National Agricultural Extension Services Agency (NAESA) is now operational, coordinating and supervising extension services nationally, channelling technologies from researchers to extension officers and farmers, and improving advisory efficiency. Early deployment connects district extension teams with TARI research stations on disease management and post-harvest storage. The launch drew active public debate, including concern over possible duplication with existing local-government supervision.",
+      "source": "Kilimo Kwanza",
+      "url": "https://kilimokwanza.org/naesa-is-now-official-tanzanias-national-extension-agency-goes-live-kilimokwanza-org/"
     },
     {
       "date": "1 Jul 2026",

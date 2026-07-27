@@ -191,6 +191,42 @@
         "Ulezi (Finger Millet)": 2100,
         "Viazi mviringo (Potato)": 1000
       }
+    },
+    {
+      "date": "25 Jul 2026",
+      "national_avg": {
+        "Mahindi (Maize)": 600,
+        "Mchele (Rice)": 2100,
+        "Maharage (Beans)": 2000,
+        "Mtama (Sorghum)": 1500,
+        "Uwele (Bulrush Millet)": 1600,
+        "Ulezi (Finger Millet)": 2100,
+        "Viazi mviringo (Potato)": 1000
+      }
+    },
+    {
+      "date": "26 Jul 2026",
+      "national_avg": {
+        "Mahindi (Maize)": 600,
+        "Mchele (Rice)": 2100,
+        "Maharage (Beans)": 2000,
+        "Mtama (Sorghum)": 1500,
+        "Uwele (Bulrush Millet)": 1600,
+        "Ulezi (Finger Millet)": 2100,
+        "Viazi mviringo (Potato)": 1000
+      }
+    },
+    {
+      "date": "27 Jul 2026",
+      "national_avg": {
+        "Mahindi (Maize)": 600,
+        "Mchele (Rice)": 2100,
+        "Maharage (Beans)": 2000,
+        "Mtama (Sorghum)": 1500,
+        "Uwele (Bulrush Millet)": 1600,
+        "Ulezi (Finger Millet)": 2100,
+        "Viazi mviringo (Potato)": 1000
+      }
     }
   ]
 }
