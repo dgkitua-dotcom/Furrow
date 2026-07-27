@@ -1,9 +1,64 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-07-24 20:16 EAT",
-  "session_date": "2026-07-24",
+  "fetched_at_eat": "2026-07-27 08:53 EAT",
+  "session_date": "2026-07-25",
   "rows": [
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Lindi",
+      "low": 2310.0,
+      "high": 2770.0,
+      "clearing": 2770.0,
+      "change_tzs": 100.0,
+      "change_raw": "100",
+      "dir": "up",
+      "trade_date": "2026-07-25"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Mtwara",
+      "low": 2210.0,
+      "high": 2230.0,
+      "clearing": 2230.0,
+      "change_tzs": -400.0,
+      "change_raw": "-400",
+      "dir": "dn",
+      "trade_date": "2026-07-25"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Dodoma",
+      "low": 2360.0,
+      "high": 2580.0,
+      "clearing": 2580.0,
+      "change_tzs": 60.0,
+      "change_raw": "60",
+      "dir": "up",
+      "trade_date": "2026-07-25"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Katavi",
+      "low": 2250.0,
+      "high": 2250.0,
+      "clearing": 2250.0,
+      "change_tzs": -110.0,
+      "change_raw": "-110",
+      "dir": "dn",
+      "trade_date": "2026-07-25"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Kigoma",
+      "low": 2210.0,
+      "high": 2210.0,
+      "clearing": 2210.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-07-25"
+    },
     {
       "commodity": "Sesame Seeds",
       "warehouse": "Morogoro",
@@ -13,28 +68,6 @@
       "change_tzs": -130.0,
       "change_raw": "-130",
       "dir": "dn",
-      "trade_date": "2026-07-24"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Dodoma",
-      "low": 2250.0,
-      "high": 2520.0,
-      "clearing": 2520.0,
-      "change_tzs": 100.0,
-      "change_raw": "100",
-      "dir": "up",
-      "trade_date": "2026-07-24"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Katavi",
-      "low": 2240.0,
-      "high": 2360.0,
-      "clearing": 2360.0,
-      "change_tzs": 110.0,
-      "change_raw": "110",
-      "dir": "up",
       "trade_date": "2026-07-24"
     },
     {
@@ -146,17 +179,6 @@
       "change_raw": "4950",
       "dir": "up",
       "trade_date": "2026-07-20"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Lindi",
-      "low": 2530.0,
-      "high": 2670.0,
-      "clearing": 2670.0,
-      "change_tzs": -70.0,
-      "change_raw": "-70",
-      "dir": "dn",
-      "trade_date": "2026-07-19"
     },
     {
       "commodity": "Sesame Seeds",
@@ -751,17 +773,6 @@
       "change_raw": "0",
       "dir": "flat",
       "trade_date": "2025-08-14"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Mtwara",
-      "low": 2620.0,
-      "high": 2630.0,
-      "clearing": 2630.0,
-      "change_tzs": 10.0,
-      "change_raw": "10",
-      "dir": "up",
-      "trade_date": "2025-07-18"
     }
   ]
 }
