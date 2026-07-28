@@ -1,5 +1,5 @@
 {
-  "updated": "27 Jul 2026",
+  "updated": "28 Jul 2026",
   "news": [
     {
       "date": "22 Jul 2026",
@@ -18,6 +18,15 @@
       "body": "A senior official in the Prime Minister's Office (Labour Department), Odo Hekela, said agencies responsible for agriculture, environment, labour and social security have agreed a coordinated approach to streamline overlapping compliance inspections for producers and investors. Speaking at a stakeholders' meeting on the proposed guidelines, he said the aim is to let producers self-assess compliance before inspectors visit, easing long-standing complaints about duplicative regulatory checks on smallholder processors and agro-dealers while still safeguarding product quality and standards.",
       "source": "The Citizen",
       "url": "https://www.thecitizen.co.tz/tanzania/business/tanzania-to-simplify-producer-inspections-5532922"
+    },
+    {
+      "date": "22 Jul 2026",
+      "tag": "Market Access",
+      "color": "green",
+      "title": "Kagera coffee auctions earn farmers over TZS 29bn as Robusta prices firm",
+      "body": "Tanzania Coffee Board auctions in Kagera between 9 and 16 July earned growers more than TZS 29 billion (about USD 10.98M), on strong local and international demand. The 9 July session alone moved 3.75 million kg of cherry coffee worth TZS 17.04 billion, with cherry peaking at TZS 5,310/kg and clean coffee reaching TZS 11,010/kg. Rwele AMCOS in Kyerwa sold 113,500 kg of Robusta at TZS 4,600/kg; Ngara Farmers' AMCOS moved 61,827 kg of certified Arabica averaging TZS 5,505/kg. TCB reminded buyers to collect purchases within 72 hours or incur a TZS 5/kg storage charge.",
+      "source": "Food Business MEA / TCB",
+      "url": "https://www.foodbusinessmea.com/tanzania-coffee-farmers-earn-over-us10-98m-as-kagera-coffee-auctions-deliver-strong-prices/"
     },
     {
       "date": "21 Jul 2026",
@@ -151,14 +160,6 @@
     },
     {
       "date": "13 Jul 2026",
-      "tag": "Digital Finance",
-      "color": "blue",
-      "title": "TCDC rolls out comprehensive SACCOS compliance directives for digital input funds",
-      "body": "Following up on the Ministry's transparency mandate, the Tanzania Cooperative Development Commission (TCDC) has issued strict operational audit directives targeting agricultural cooperative financing facilities. The guidelines mandate that any AMCOS or SACCOS processing digital input funds must present real-time accounting data sheets to regional cooperative officers to retain active disbursement standing.",
-      "source": "Tanzania Cooperative Development Commission (TCDC)"
-    },
-    {
-      "date": "13 Jul 2026",
       "tag": "Infrastructure",
       "color": "green",
       "title": "National Irrigation Commission fast-tracks 2026 outlays covering 230,000 hectares",
@@ -197,14 +198,6 @@
       "title": "Coffee and tea cooperatives coordinate direct export corridors to Russian buyers",
       "body": "Tanzanian coffee and tea export clusters and cooperative networks are coordinating direct logistical corridors with buyers in Russia to capture expanded market share. The initiative aims to bypass international intermediary brokers and boost direct trade lines, maximising the hard-currency clearings that return to domestic cooperative networks.",
       "source": "Export cooperative networks / trade reports"
-    },
-    {
-      "date": "11 Jul 2026",
-      "tag": "Policy",
-      "color": "green",
-      "title": "Ministry launches five-year ASEAP II plan to drive climate adaptation capital",
-      "body": "The Ministry of Agriculture has officially rolled out the second phase of the Agricultural Sector Environmental Action Plan (ASEAP II) in Dodoma. The five-year framework prioritises channelling public-private commercial capital directly into technology-backed adaptation methods, aiming to buffer smallholder farmers against shifting rainfall baselines and emerging crop pests.",
-      "source": "Ministry of Agriculture Tanzania"
     },
     {
       "date": "11 Jul 2026",
@@ -247,6 +240,15 @@
       "title": "Bank of Tanzania raises Central Bank Rate to 6.25% on energy and fertiliser cost risks",
       "body": "The Monetary Policy Committee has raised the Central Bank Rate to 6.25% for the third quarter of 2026. The move comes even as macroeconomic performance stays resilient, with H1 2026 real GDP growth tracking at 6%, and is intended to curb downstream inflation driven by globally elevated freight, fuel and fertiliser costs, all direct input costs for Tanzania's agricultural producers and traders.",
       "source": "TanzaniaInvest"
+    },
+    {
+      "date": "28 Apr 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "Ministry and TARI push 1.7m subsidised avocado seedlings toward 235,000t export target",
+      "body": "The Ministry of Agriculture, with TARI, is distributing over 1.7 million subsidised avocado seedlings across key growing zones to support a 2026/27 production target of 235,000 tonnes (up from 201,354 in 2024/25) and 40,000 tonnes of exports. The programme also trains 9,500 farmers and 500 extension officers. Avocado output sits within a broader cash-crop target of 2.12 million tonnes for 2026/27, a 32% rise on 2025/26.",
+      "source": "TanzaniaInvest",
+      "url": "https://www.tanzaniainvest.com/agriculture/agriculture-budget-2026-2027-cash-crop-target"
     }
   ]
 }

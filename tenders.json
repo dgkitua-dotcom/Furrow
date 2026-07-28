@@ -1,19 +1,6 @@
 {
-  "updated": "27 Jul 2026",
+  "updated": "28 Jul 2026",
   "tenders": [
-    {
-      "ref": "UNGM/300103",
-      "body": "United Nations International Procurement / Government of Tanzania (DMDP2 Portfolio)",
-      "title": "Feasibility Studies for Circular Organic Waste Management & Composting, Dar es Salaam",
-      "volume": "Large-scale consulting framework",
-      "deadline": "27 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Consulting firms with expertise in circular economy, organic waste recovery, urban waste stream mapping and composting logistics",
-      "status": "closing",
-      "notes": "Mapping urban and market organic streams in Dar es Salaam to identify scalable, technology-backed options for corporate organic waste recovery and regional composting logistics. Flagship DMDP2 portfolio, published via UN Global Marketplace.",
-      "url": "https://www.ungm.org/Public/Notice/300103",
-      "sector": "agriculture"
-    },
     {
       "ref": "NORGES-VEL/TZ/2026",
       "body": "The Royal Norwegian Society for Development (Norges Vel)",
@@ -38,19 +25,6 @@
       "status": "open",
       "notes": "Supply and commissioning of solar-powered pumping systems for agricultural water access.",
       "url": "https://www.tendersinfo.com",
-      "sector": "agriculture"
-    },
-    {
-      "ref": "NeST/99-2025-2026-C-27",
-      "body": "Ministry of Livestock and Fisheries",
-      "title": "Consultancy Services for Landing Sites and Fish Market Georeferencing",
-      "volume": "1,200 landing sites and 20 major fish markets",
-      "deadline": "27 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Firms with GIS/georeferencing and needs-assessment experience",
-      "status": "closing",
-      "notes": "Needs assessments and complete georeferencing mapping for 1,200 landing sites and 20 major fish markets across inland and marine waterbodies.",
-      "url": "https://nest.go.tz",
       "sector": "agriculture"
     },
     {
@@ -142,6 +116,45 @@
       "status": "open",
       "sector": "other",
       "notes": "Supplier pre-qualification for security and fire staff uniforms at Dar Central Port. Closes 10:00 AM. Listed in the 27 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/017/2026/2027/W/14",
+      "body": "TARURA - Urambo District Council",
+      "title": "Periodic Maintenance Izimbili-Kangeme-Tebela (2km) & Concrete Drain Construction",
+      "volume": "2km plus concrete drainage",
+      "deadline": "3 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Rural road maintenance and drainage in Urambo, a tobacco and food-crop district. Closes 10:00 AM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR36/026/2026/2027/W/04",
+      "body": "TANROADS - Songwe Regional Office",
+      "title": "Routine/Recurrent & Bridge Preventive Works, Shigamba-Ibaba-Isongole Unpaved Roads",
+      "volume": "As per project specifications",
+      "deadline": "5 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Maintenance and bridge works on unpaved roads in Songwe's highland crop belt. Closes 02:00 PM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "LGA/001/2026/2027/W/09",
+      "body": "Dodoma City Council",
+      "title": "Construction of Sports Playgrounds at Miyuji Area, Dodoma",
+      "volume": "As per project specifications",
+      "deadline": "4 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Building/works contractors",
+      "status": "open",
+      "sector": "other",
+      "notes": "Sports playground construction in Dodoma. Non-agricultural. Closes 02:00 PM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],
