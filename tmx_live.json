@@ -1,9 +1,64 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-07-29 16:05 EAT",
-  "session_date": "2026-07-28",
+  "fetched_at_eat": "2026-07-29 18:17 EAT",
+  "session_date": "2026-07-29",
   "rows": [
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Dodoma",
+      "low": 2390.0,
+      "high": 2490.0,
+      "clearing": 2490.0,
+      "change_tzs": -50.0,
+      "change_raw": "-50",
+      "dir": "dn",
+      "trade_date": "2026-07-29"
+    },
+    {
+      "commodity": "Soy Beans",
+      "warehouse": "Ruvuma",
+      "low": 1210.0,
+      "high": 1210.0,
+      "clearing": 1210.0,
+      "change_tzs": -40.0,
+      "change_raw": "-40",
+      "dir": "dn",
+      "trade_date": "2026-07-29"
+    },
+    {
+      "commodity": "GreenGrams",
+      "warehouse": "Dar es salaam",
+      "low": 1500.0,
+      "high": 1540.0,
+      "clearing": 1540.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-07-29"
+    },
+    {
+      "commodity": "GreenGrams",
+      "warehouse": "Simiyu",
+      "low": 1350.0,
+      "high": 1350.0,
+      "clearing": 1350.0,
+      "change_tzs": 140.0,
+      "change_raw": "140",
+      "dir": "up",
+      "trade_date": "2026-07-29"
+    },
+    {
+      "commodity": "Cocoa",
+      "warehouse": "Mbeya",
+      "low": 12200.0,
+      "high": 12520.0,
+      "clearing": 12520.0,
+      "change_tzs": -80.0,
+      "change_raw": "-80",
+      "dir": "dn",
+      "trade_date": "2026-07-29"
+    },
     {
       "commodity": "Sesame Seeds",
       "warehouse": "Manyara",
@@ -12,17 +67,6 @@
       "clearing": 2440.0,
       "change_tzs": 30.0,
       "change_raw": "30",
-      "dir": "up",
-      "trade_date": "2026-07-28"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Dodoma",
-      "low": 2420.0,
-      "high": 2540.0,
-      "clearing": 2540.0,
-      "change_tzs": 10.0,
-      "change_raw": "10",
       "dir": "up",
       "trade_date": "2026-07-28"
     },
@@ -38,17 +82,6 @@
       "trade_date": "2026-07-28"
     },
     {
-      "commodity": "GreenGrams",
-      "warehouse": "Simiyu",
-      "low": 1210.0,
-      "high": 1210.0,
-      "clearing": 1210.0,
-      "change_tzs": -210.0,
-      "change_raw": "-210",
-      "dir": "dn",
-      "trade_date": "2026-07-28"
-    },
-    {
       "commodity": "Pigeon peas",
       "warehouse": "Simiyu",
       "low": 1470.0,
@@ -58,17 +91,6 @@
       "change_raw": "10",
       "dir": "up",
       "trade_date": "2026-07-28"
-    },
-    {
-      "commodity": "GreenGrams",
-      "warehouse": "Dar es salaam",
-      "low": 1510.0,
-      "high": 1540.0,
-      "clearing": 1540.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-07-27"
     },
     {
       "commodity": "Sesame Seeds",
@@ -156,17 +178,6 @@
       "change_tzs": -300.0,
       "change_raw": "-300",
       "dir": "dn",
-      "trade_date": "2026-07-22"
-    },
-    {
-      "commodity": "Cocoa",
-      "warehouse": "Mbeya",
-      "low": 12600.0,
-      "high": 12600.0,
-      "clearing": 12600.0,
-      "change_tzs": 420.0,
-      "change_raw": "420",
-      "dir": "up",
       "trade_date": "2026-07-22"
     },
     {
@@ -313,17 +324,6 @@
       "trade_date": "2026-06-18"
     },
     {
-      "commodity": "Soy Beans",
-      "warehouse": "Ruvuma",
-      "low": 1250.0,
-      "high": 1250.0,
-      "clearing": 1250.0,
-      "change_tzs": 150.0,
-      "change_raw": "150",
-      "dir": "up",
-      "trade_date": "2026-06-12"
-    },
-    {
       "commodity": "GreenGrams",
       "warehouse": "Shinyanga",
       "low": 1330.0,
@@ -457,17 +457,6 @@
     },
     {
       "commodity": "Chick peas",
-      "warehouse": "Manyara",
-      "low": 850.0,
-      "high": 890.0,
-      "clearing": 890.0,
-      "change_tzs": 20.0,
-      "change_raw": "20",
-      "dir": "up",
-      "trade_date": "2025-12-31"
-    },
-    {
-      "commodity": "Chick peas",
       "warehouse": "Simiyu",
       "low": 850.0,
       "high": 850.0,
@@ -475,6 +464,17 @@
       "change_tzs": -10.0,
       "change_raw": "-10",
       "dir": "dn",
+      "trade_date": "2025-12-31"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Manyara",
+      "low": 850.0,
+      "high": 890.0,
+      "clearing": 890.0,
+      "change_tzs": 20.0,
+      "change_raw": "20",
+      "dir": "up",
       "trade_date": "2025-12-31"
     },
     {
