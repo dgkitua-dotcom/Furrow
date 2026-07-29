@@ -1,5 +1,5 @@
 {
-  "updated": "28 Jul 2026",
+  "updated": "29 Jul 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -35,7 +35,7 @@
       "deadline": "29 Jul 2026",
       "value": "To be determined",
       "eligibility": "Suppliers of surveillance drone systems",
-      "status": "open",
+      "status": "closing",
       "notes": "Supply of surveillance drones to support field operations for the Ministry of Livestock and Fisheries.",
       "url": "https://nest.go.tz/tenders/published-tenders",
       "sector": "agriculture"
@@ -48,7 +48,7 @@
       "deadline": "29 Jul 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "agri-logistics",
       "notes": "Maintenance along the Ihumwa - Hombolo - Mayamaya corridor serving Dodoma's grain and sunflower belt. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -74,7 +74,7 @@
       "deadline": "29 Jul 2026",
       "value": "To be determined",
       "eligibility": "Road works contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "Urban road upgrade in Kigamboni. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -155,6 +155,45 @@
       "status": "open",
       "sector": "other",
       "notes": "Sports playground construction in Dodoma. Non-agricultural. Closes 02:00 PM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR36/021/2026/2027/W/22",
+      "body": "TANROADS - Shinyanga Regional Office",
+      "title": "Bridge Preventive Maintenance, Manonga-Nyasamba Paved Trunk Road",
+      "volume": "As per project specifications",
+      "deadline": "4 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Bridge/road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Bridge preventive works on the Manonga (Tabora/Shinyanga border) - Nyasamba (Shinyanga/Mwanza border) paved trunk road, a Lake Zone grain haulage route. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR36/024/2026/2027/W/17",
+      "body": "TANROADS - Songwe Regional Office",
+      "title": "Routine Maintenance & Bridge Preventive Works, Mpemba-Isongole (TZ/Malawi Border) Paved Trunk Road",
+      "volume": "As per project specifications",
+      "deadline": "3 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Maintenance on the Mpemba-Isongole paved trunk road to the Malawi border, a cross-border produce corridor. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "FA/2026/2027/74289/TR177/0009/G/02",
+      "body": "Medical Stores Department (MSD) - Kilimanjaro Zone",
+      "title": "Supply of Office Consumables and Stationery (Framework Agreement)",
+      "volume": "As per framework specifications",
+      "deadline": "4 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Office-supply vendors",
+      "status": "open",
+      "sector": "other",
+      "notes": "Framework supply of office consumables and stationery for MSD Kilimanjaro Zone. Non-agricultural. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],

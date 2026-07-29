@@ -1,6 +1,33 @@
 {
-  "updated": "28 Jul 2026",
+  "updated": "29 Jul 2026",
   "news": [
+    {
+      "date": "29 Jul 2026",
+      "tag": "Market Access",
+      "color": "green",
+      "title": "COPRA to use Nanenane 2026 to connect cereal producers with markets and off-takers",
+      "body": "The Cereals and Other Produce Regulatory Authority (COPRA) will use the National Nanenane Agricultural Exhibition, running 1-8 August 2026 at the Dr John Malecela grounds in Dodoma, to link cereal and mixed-crop stakeholders with market, trade, technology and value-addition opportunities. Under the Nanenane 2026 theme \"Know the Market; Increase Productivity to Deliver Vision 2050,\" COPRA will host a dedicated Maize Workshop on 5 August and a Digital Agribusiness Influencers Day on 7 August. DG Irene Madeje Mlola said the focus is on giving stakeholders accurate market information and formal-trade access to improve production and trade decisions.",
+      "source": "HabariLeo / COPRA",
+      "url": "https://habarileo.co.tz/copra-kuwafungulia-wadau-fursa-za-masoko-kupitia-nanenane/"
+    },
+    {
+      "date": "28 Jul 2026",
+      "tag": "Value Chains",
+      "color": "green",
+      "title": "Tanzania positions Morogoro as an emerging East African spice-processing hub",
+      "body": "A landmark agroforestry initiative is being used to build Morogoro into a regional centre for spice production and processing, integrating tree crops with spice cultivation to raise smallholder incomes and add value before export. The programme is presented as a template for climate-resilient, value-added horticulture in Tanzania's eastern zone.",
+      "source": "Kilimo Kwanza",
+      "url": "https://kilimokwanza.org/category/news/"
+    },
+    {
+      "date": "27 Jul 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "Dodoma RC orders on-schedule completion of Nanenane exhibition grounds",
+      "body": "Dodoma Regional Commissioner Rosemary Senyamule has directed officials to complete key infrastructure at the John Samuel Malecela Exhibition Grounds in Nzuguni on schedule, so the venue is ready to receive exhibitors and visitors for the 1-8 August Nanenane exhibition. The ministry's extension services division said all inspection directives would be implemented promptly to ensure the grounds are fully prepared.",
+      "source": "Daily News",
+      "url": "https://dailynews.co.tz/dodoma-rc-orders-timely-nanenane-preparations/"
+    },
     {
       "date": "22 Jul 2026",
       "tag": "Investment",
@@ -200,23 +227,6 @@
       "source": "Export cooperative networks / trade reports"
     },
     {
-      "date": "11 Jul 2026",
-      "tag": "Investment",
-      "color": "green",
-      "title": "FYDP IV launched: national road map routes funding into agro-processing hubs and cold chains",
-      "body": "At the UN High-level Political Forum in New York, Tanzania's Planning Commission announced the launch of the Fourth Five-Year National Development Plan (FYDP IV). The master blueprint routes funding heavily into establishing regional agro-processing hubs and advanced cold-chain infrastructure, with the explicit goal of scaling the commercial value of the country's crop exports.",
-      "source": "Planning Commission / UN High-level Political Forum"
-    },
-    {
-      "date": "7 Jul 2026",
-      "tag": "Policy",
-      "color": "blue",
-      "title": "EAC agriculture ministers adopt RASIP 2026-2035 and activate regional Rice Desk",
-      "body": "At the 19th Session of the Sectoral Council on Agriculture and Food Security in Dar es Salaam, EAC ministers adopted the Regional Agri-Food Systems Investment Plan (RASIP) 2026-2035, calling for expanded investment in agricultural infrastructure, climate resilience, digital technologies, agricultural financing and cross-border trade. Ministers also brought a regional Rice Desk into operation to cut the bloc's rice import bill, endorsed the Youth in Agri-Food Systems (YASE) platform, and directed partner states to align national investment plans with the CAADP Kampala Declaration. Reference item: retained beyond the standard 30-day window as a regional investment framework.",
-      "source": "EAC Secretariat / Xinhua",
-      "url": "https://english.news.cn/africa/20260707/69d4321df3e947538398a91d7a6b28da/c.html"
-    },
-    {
       "date": "2 Jul 2026",
       "tag": "Policy",
       "color": "blue",
@@ -240,15 +250,6 @@
       "title": "Bank of Tanzania raises Central Bank Rate to 6.25% on energy and fertiliser cost risks",
       "body": "The Monetary Policy Committee has raised the Central Bank Rate to 6.25% for the third quarter of 2026. The move comes even as macroeconomic performance stays resilient, with H1 2026 real GDP growth tracking at 6%, and is intended to curb downstream inflation driven by globally elevated freight, fuel and fertiliser costs, all direct input costs for Tanzania's agricultural producers and traders.",
       "source": "TanzaniaInvest"
-    },
-    {
-      "date": "28 Apr 2026",
-      "tag": "Policy",
-      "color": "blue",
-      "title": "Ministry and TARI push 1.7m subsidised avocado seedlings toward 235,000t export target",
-      "body": "The Ministry of Agriculture, with TARI, is distributing over 1.7 million subsidised avocado seedlings across key growing zones to support a 2026/27 production target of 235,000 tonnes (up from 201,354 in 2024/25) and 40,000 tonnes of exports. The programme also trains 9,500 farmers and 500 extension officers. Avocado output sits within a broader cash-crop target of 2.12 million tonnes for 2026/27, a 32% rise on 2025/26.",
-      "source": "TanzaniaInvest",
-      "url": "https://www.tanzaniainvest.com/agriculture/agriculture-budget-2026-2027-cash-crop-target"
     }
   ]
 }
