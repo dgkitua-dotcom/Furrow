@@ -1,5 +1,5 @@
 {
-  "updated": "29 Jul 2026",
+  "updated": "30 Jul 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -28,32 +28,6 @@
       "sector": "agriculture"
     },
     {
-      "ref": "99/2025/2026/G/115",
-      "body": "Ministry of Livestock and Fisheries",
-      "title": "Supply of Surveillance Drones for Field Operations",
-      "volume": "As per project specifications",
-      "deadline": "29 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Suppliers of surveillance drone systems",
-      "status": "closing",
-      "notes": "Supply of surveillance drones to support field operations for the Ministry of Livestock and Fisheries.",
-      "url": "https://nest.go.tz/tenders/published-tenders",
-      "sector": "agriculture"
-    },
-    {
-      "ref": "TR36/003/2026/2027/W/17",
-      "body": "TANROADS - Dodoma Regional Office",
-      "title": "Routine/Recurrent Maintenance (45.65km), Bridge Preventive and Periodic Works (10km), Ihumwa - Hombolo - Mayamaya Corridor",
-      "volume": "45.65km routine, 10km periodic, plus bridge works",
-      "deadline": "29 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Maintenance along the Ihumwa - Hombolo - Mayamaya corridor serving Dodoma's grain and sunflower belt. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
       "ref": "Y9/2026/2027/W/01",
       "body": "Tanzania Airports Authority (TAA)",
       "title": "Construction of the New Terminal Building and Associated Infrastructure, Mwanza Airport",
@@ -64,19 +38,6 @@
       "status": "open",
       "sector": "other",
       "notes": "New passenger terminal and associated works at Mwanza Airport. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "S10/002/2026/2027/W/55",
-      "body": "TARURA - Dar es Salaam Regional Office",
-      "title": "Upgrading of Kichangani Mikwambe Road (0.3km) to Rigid Pavement, Kigamboni District",
-      "volume": "0.3km rigid pavement",
-      "deadline": "29 Jul 2026",
-      "value": "To be determined",
-      "eligibility": "Road works contractors",
-      "status": "closing",
-      "sector": "other",
-      "notes": "Urban road upgrade in Kigamboni. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -194,6 +155,45 @@
       "status": "open",
       "sector": "other",
       "notes": "Framework supply of office consumables and stationery for MSD Kilimanjaro Zone. Non-agricultural. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR36/024/2026/2027/W/13",
+      "body": "TANROADS - Songwe Regional Office",
+      "title": "Routine/Recurrent Maintenance, Mahenje-Hasamba-Vwawa & Regional Paved Sections",
+      "volume": "As per project specifications",
+      "deadline": "3 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Maintenance on the Mahenje-Hasamba-Vwawa paved sections in Songwe's highland crop belt. Closes 02:00 PM. Listed in the 30 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR36/024/2026/2027/W/10",
+      "body": "TANROADS - Songwe Regional Office",
+      "title": "Routine/Recurrent Maintenance, Kakozi-Ilonga Regional Road & Ihanda-Niumba District Road",
+      "volume": "As per project specifications",
+      "deadline": "3 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Maintenance on the Kakozi-Ilonga and Ihanda-Niumba roads serving Songwe farming areas. Closes 02:00 PM. Listed in the 30 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR18/2026/2027/C/02",
+      "body": "Ministry / Executive Agency Framework",
+      "title": "Provision of Consultancy Services for Specialized Public Projects",
+      "volume": "As per consultancy specifications",
+      "deadline": "3 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Consultancy firms",
+      "status": "open",
+      "sector": "other",
+      "notes": "General public-projects consultancy framework; no stated agricultural scope. Closes 02:00 PM. Listed in the 30 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],
