@@ -1,5 +1,5 @@
 {
-  "updated": "30 Jul 2026",
+  "updated": "31 Jul 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -22,7 +22,7 @@
       "deadline": "31 Jul 2026",
       "value": "To be determined",
       "eligibility": "Suppliers of solar pumping systems with commissioning capability",
-      "status": "open",
+      "status": "closing",
       "notes": "Supply and commissioning of solar-powered pumping systems for agricultural water access.",
       "url": "https://www.tendersinfo.com",
       "sector": "agriculture"
@@ -194,6 +194,45 @@
       "status": "open",
       "sector": "other",
       "notes": "General public-projects consultancy framework; no stated agricultural scope. Closes 02:00 PM. Listed in the 30 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR36/003/2026/2027/W/07",
+      "body": "TANROADS - Dodoma Regional Office",
+      "title": "Routine Maintenance, Gairo-Dodoma-Kintinku Trunk Road (Chamwino Ikulu Jct - Nzuguni Jct)",
+      "volume": "As per project specifications",
+      "deadline": "3 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Maintenance on the Gairo-Dodoma-Kintinku trunk road, a central grain-belt corridor. Closes 02:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "FA/2025/2026/250/TR198/G/03",
+      "body": "Rural Energy Agency (REA)",
+      "title": "Supply, Installation & Commissioning of Institutional Improved Cook Stove (ICS) Systems",
+      "volume": "As per framework specifications",
+      "deadline": "7 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Clean-cookstove/energy systems suppliers",
+      "status": "open",
+      "sector": "other",
+      "notes": "Institutional improved cookstove systems framework under REA. Clean-energy, not agricultural. Closes 12:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "FA/2026/2027/8884/52/034/G/01",
+      "body": "Morogoro Regional Referral Hospital",
+      "title": "Supply of Motor Vehicle Spare Parts (Tyres and Batteries)",
+      "volume": "As per framework specifications",
+      "deadline": "4 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Automotive parts suppliers",
+      "status": "open",
+      "sector": "other",
+      "notes": "Vehicle tyres and batteries for Morogoro Regional Referral Hospital. Non-agricultural. Closes 02:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],

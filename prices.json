@@ -1,6 +1,6 @@
 {
-  "updated": "30 Jul 2026",
-  "source_note": "Staple national/regional averages compiled from weekly agricultural bulletins, 30 Jul 2026. All figures TZS/kg unless a row carries an explicit \"unit\". Rows with \"low\"/\"high\" are published as a range; \"gov\" holds the midpoint for charting only and should not be rendered on its own. TCB coffee auction lines are stored in USD/kg exactly as the board publishes them.",
+  "updated": "31 Jul 2026",
+  "source_note": "Staple national/regional averages compiled from weekly agricultural bulletins, 31 Jul 2026. All figures TZS/kg unless a row carries an explicit \"unit\". Rows with \"low\"/\"high\" are published as a range; \"gov\" holds the midpoint for charting only and should not be rendered on its own. TCB coffee auction lines are stored in USD/kg exactly as the board publishes them.",
   "prices": [
     {
       "crop": "Mahindi (Maize)",
@@ -809,31 +809,31 @@
     {
       "crop": "Kahawa Arabica — H/Arabica Maganda",
       "region": "Tanzania (Farm Gate)",
-      "gov": 5852,
+      "gov": 5915,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — CPU",
       "region": "Tanzania (Farm Gate)",
-      "gov": 12191,
+      "gov": 12323,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — HP",
       "region": "Tanzania (Farm Gate)",
-      "gov": 9753,
+      "gov": 9859,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Robusta — Maganda",
       "region": "Tanzania (Farm Gate)",
-      "gov": 3878,
+      "gov": 3867,
       "source": "TCB"
     },
     {
       "crop": "Kahawa Arabica — Clean (Auction)",
       "region": "Tanzania (Auction)",
-      "gov": 7.2,
+      "gov": 7.3,
       "source": "TCB",
       "unit": "USD/kg"
     },

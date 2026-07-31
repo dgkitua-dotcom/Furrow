@@ -1,6 +1,15 @@
 {
-  "updated": "30 Jul 2026",
+  "updated": "31 Jul 2026",
   "news": [
+    {
+      "date": "31 Jul 2026",
+      "tag": "Events",
+      "color": "green",
+      "title": "10th Africa Agri Expo confirmed for 2-3 September in Dar es Salaam",
+      "body": "The 10th Africa Agri Expo (AAE 2026), the Jubilee edition, will be held on 2-3 September 2026 at the Mwalimu J.K. Nyerere Trade Fair Grounds in Dar es Salaam, co-located with the 3rd Future Food, Livestock & Poultry Expo (FLIP 2026). Organised by TAB Group, the event is expected to draw around 10,000 visitors and 1,000 companies from 35 countries, connecting farmers, distributors, agribusiness and agtech firms, investors and policymakers. It is positioned as a gateway for agribusinesses seeking market access across East and Central Africa.",
+      "source": "Global Agriculture / The Chanzo",
+      "url": "https://thechanzo.com/2026/05/08/dar-es-salaam-to-host-africas-biggest-agricultural-business-expo-in-2026"
+    },
     {
       "date": "29 Jul 2026",
       "tag": "Market Access",
@@ -18,15 +27,6 @@
       "body": "A landmark agroforestry initiative is being used to build Morogoro into a regional centre for spice production and processing, integrating tree crops with spice cultivation to raise smallholder incomes and add value before export. The programme is presented as a template for climate-resilient, value-added horticulture in Tanzania's eastern zone.",
       "source": "Kilimo Kwanza",
       "url": "https://kilimokwanza.org/category/news/"
-    },
-    {
-      "date": "27 Jul 2026",
-      "tag": "Policy",
-      "color": "blue",
-      "title": "Dodoma RC orders on-schedule completion of Nanenane exhibition grounds",
-      "body": "Dodoma Regional Commissioner Rosemary Senyamule has directed officials to complete key infrastructure at the John Samuel Malecela Exhibition Grounds in Nzuguni on schedule, so the venue is ready to receive exhibitors and visitors for the 1-8 August Nanenane exhibition. The ministry's extension services division said all inspection directives would be implemented promptly to ensure the grounds are fully prepared.",
-      "source": "Daily News",
-      "url": "https://dailynews.co.tz/dodoma-rc-orders-timely-nanenane-preparations/"
     },
     {
       "date": "22 Jul 2026",
