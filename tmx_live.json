@@ -1,9 +1,31 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-08-03 15:33 EAT",
-  "session_date": "2026-08-01",
+  "fetched_at_eat": "2026-08-03 18:49 EAT",
+  "session_date": "2026-08-03",
   "rows": [
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Manyara",
+      "low": 2480.0,
+      "high": 2480.0,
+      "clearing": 2480.0,
+      "change_tzs": 10.0,
+      "change_raw": "10",
+      "dir": "up",
+      "trade_date": "2026-08-03"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Simiyu",
+      "low": 1540.0,
+      "high": 1570.0,
+      "clearing": 1570.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-03"
+    },
     {
       "commodity": "Sesame Seeds",
       "warehouse": "Dodoma",
@@ -27,15 +49,15 @@
       "trade_date": "2026-08-01"
     },
     {
-      "commodity": "Pigeon peas",
-      "warehouse": "Simiyu",
-      "low": 1490.0,
-      "high": 1570.0,
-      "clearing": 1570.0,
-      "change_tzs": 50.0,
-      "change_raw": "50",
+      "commodity": "Chick peas",
+      "warehouse": "Manyara",
+      "low": 1230.0,
+      "high": 1230.0,
+      "clearing": 1230.0,
+      "change_tzs": 340.0,
+      "change_raw": "340",
       "dir": "up",
-      "trade_date": "2026-08-01"
+      "trade_date": "2026-07-31"
     },
     {
       "commodity": "Chick peas",
@@ -61,17 +83,6 @@
     },
     {
       "commodity": "Chick peas",
-      "warehouse": "Manyara",
-      "low": 1230.0,
-      "high": 1230.0,
-      "clearing": 1230.0,
-      "change_tzs": 340.0,
-      "change_raw": "340",
-      "dir": "up",
-      "trade_date": "2026-07-31"
-    },
-    {
-      "commodity": "Chick peas",
       "warehouse": "Mwanza",
       "low": 1270.0,
       "high": 1270.0,
@@ -91,17 +102,6 @@
       "change_raw": "440",
       "dir": "up",
       "trade_date": "2026-07-31"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Manyara",
-      "low": 2470.0,
-      "high": 2470.0,
-      "clearing": 2470.0,
-      "change_tzs": 30.0,
-      "change_raw": "30",
-      "dir": "up",
-      "trade_date": "2026-07-30"
     },
     {
       "commodity": "Sesame Seeds",
