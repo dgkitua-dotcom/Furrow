@@ -1,9 +1,42 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-07-31 18:25 EAT",
-  "session_date": "2026-07-31",
+  "fetched_at_eat": "2026-08-03 09:34 EAT",
+  "session_date": "2026-08-01",
   "rows": [
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Dodoma",
+      "low": 2390.0,
+      "high": 2390.0,
+      "clearing": 2390.0,
+      "change_tzs": 180.0,
+      "change_raw": "180",
+      "dir": "up",
+      "trade_date": "2026-08-01"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Mbeya",
+      "low": 2370.0,
+      "high": 2370.0,
+      "clearing": 2370.0,
+      "change_tzs": 150.0,
+      "change_raw": "150",
+      "dir": "up",
+      "trade_date": "2026-08-01"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Simiyu",
+      "low": 1490.0,
+      "high": 1570.0,
+      "clearing": 1570.0,
+      "change_tzs": 50.0,
+      "change_raw": "50",
+      "dir": "up",
+      "trade_date": "2026-08-01"
+    },
     {
       "commodity": "Chick peas",
       "warehouse": "Singida",
@@ -58,6 +91,28 @@
       "change_raw": "440",
       "dir": "up",
       "trade_date": "2026-07-31"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Manyara",
+      "low": 2470.0,
+      "high": 2470.0,
+      "clearing": 2470.0,
+      "change_tzs": 30.0,
+      "change_raw": "30",
+      "dir": "up",
+      "trade_date": "2026-07-30"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Pwani",
+      "low": 2370.0,
+      "high": 2720.0,
+      "clearing": 2720.0,
+      "change_tzs": 470.0,
+      "change_raw": "470",
+      "dir": "up",
+      "trade_date": "2026-07-30"
     },
     {
       "commodity": "Coffee-Robusta Clean",
@@ -137,39 +192,6 @@
       "trade_date": "2026-07-30"
     },
     {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Manyara",
-      "low": 2470.0,
-      "high": 2470.0,
-      "clearing": 2470.0,
-      "change_tzs": 30.0,
-      "change_raw": "30",
-      "dir": "up",
-      "trade_date": "2026-07-30"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Pwani",
-      "low": 2370.0,
-      "high": 2720.0,
-      "clearing": 2720.0,
-      "change_tzs": 470.0,
-      "change_raw": "470",
-      "dir": "up",
-      "trade_date": "2026-07-30"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Dodoma",
-      "low": 2210.0,
-      "high": 2210.0,
-      "clearing": 2210.0,
-      "change_tzs": -280.0,
-      "change_raw": "-280",
-      "dir": "dn",
-      "trade_date": "2026-07-30"
-    },
-    {
       "commodity": "Soy Beans",
       "warehouse": "Ruvuma",
       "low": 1210.0,
@@ -182,17 +204,6 @@
     },
     {
       "commodity": "GreenGrams",
-      "warehouse": "Dar es salaam",
-      "low": 1500.0,
-      "high": 1540.0,
-      "clearing": 1540.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-07-29"
-    },
-    {
-      "commodity": "GreenGrams",
       "warehouse": "Simiyu",
       "low": 1350.0,
       "high": 1350.0,
@@ -200,6 +211,17 @@
       "change_tzs": 140.0,
       "change_raw": "140",
       "dir": "up",
+      "trade_date": "2026-07-29"
+    },
+    {
+      "commodity": "GreenGrams",
+      "warehouse": "Dar es salaam",
+      "low": 1500.0,
+      "high": 1540.0,
+      "clearing": 1540.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
       "trade_date": "2026-07-29"
     },
     {
@@ -221,17 +243,6 @@
       "clearing": 2480.0,
       "change_tzs": 20.0,
       "change_raw": "20",
-      "dir": "up",
-      "trade_date": "2026-07-28"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Simiyu",
-      "low": 1470.0,
-      "high": 1520.0,
-      "clearing": 1520.0,
-      "change_tzs": 10.0,
-      "change_raw": "10",
       "dir": "up",
       "trade_date": "2026-07-28"
     },
@@ -322,17 +333,6 @@
       "change_raw": "-300",
       "dir": "dn",
       "trade_date": "2026-07-22"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Mbeya",
-      "low": 2220.0,
-      "high": 2220.0,
-      "clearing": 2220.0,
-      "change_tzs": -30.0,
-      "change_raw": "-30",
-      "dir": "dn",
-      "trade_date": "2026-07-21"
     },
     {
       "commodity": "GreenGrams",
