@@ -1,5 +1,5 @@
 {
-  "updated": "3 Aug 2026",
+  "updated": "4 Aug 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -28,19 +28,6 @@
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
-      "ref": "535506360 / TARURA-MARA-2026",
-      "body": "TARURA - Mara Regional Office",
-      "title": "Construction of Mori Bridge (30m Span), Mara Region",
-      "volume": "30m span bridge",
-      "deadline": "3 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Bridge and small-works contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Bridge construction improving rural access in Mara's crop and livestock zone. Closes 02:00 PM. Listed in the 27 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
       "ref": "535506481 / TARURA-RORYA-2026",
       "body": "TARURA - Mara Regional Office",
       "title": "Spot Improvement (56.50km) and Box Culverts, Rorya District",
@@ -48,7 +35,7 @@
       "deadline": "4 Aug 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "agri-logistics",
       "notes": "Rural road spot improvement and box culverts in Rorya District, Mara. Closes 02:00 PM. Listed in the 27 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -61,22 +48,9 @@
       "deadline": "4 Aug 2026",
       "value": "To be determined",
       "eligibility": "Uniform and PPE suppliers",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "Supplier pre-qualification for security and fire staff uniforms at Dar Central Port. Closes 10:00 AM. Listed in the 27 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "S10/017/2026/2027/W/14",
-      "body": "TARURA - Urambo District Council",
-      "title": "Periodic Maintenance Izimbili-Kangeme-Tebela (2km) & Concrete Drain Construction",
-      "volume": "2km plus concrete drainage",
-      "deadline": "3 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Rural road maintenance and drainage in Urambo, a tobacco and food-crop district. Closes 10:00 AM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -100,7 +74,7 @@
       "deadline": "4 Aug 2026",
       "value": "To be determined",
       "eligibility": "Building/works contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "Sports playground construction in Dodoma. Non-agricultural. Closes 02:00 PM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -113,22 +87,9 @@
       "deadline": "4 Aug 2026",
       "value": "To be determined",
       "eligibility": "Bridge/road maintenance contractors",
-      "status": "open",
-      "sector": "agri-logistics",
-      "notes": "Bridge preventive works on the Manonga (Tabora/Shinyanga border) - Nyasamba (Shinyanga/Mwanza border) paved trunk road, a Lake Zone grain haulage route. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "TR36/024/2026/2027/W/17",
-      "body": "TANROADS - Songwe Regional Office",
-      "title": "Routine Maintenance & Bridge Preventive Works, Mpemba-Isongole (TZ/Malawi Border) Paved Trunk Road",
-      "volume": "As per project specifications",
-      "deadline": "3 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
       "status": "closing",
       "sector": "agri-logistics",
-      "notes": "Maintenance on the Mpemba-Isongole paved trunk road to the Malawi border, a cross-border produce corridor. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
+      "notes": "Bridge preventive works on the Manonga (Tabora/Shinyanga border) - Nyasamba (Shinyanga/Mwanza border) paved trunk road, a Lake Zone grain haulage route. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -139,61 +100,9 @@
       "deadline": "4 Aug 2026",
       "value": "To be determined",
       "eligibility": "Office-supply vendors",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "Framework supply of office consumables and stationery for MSD Kilimanjaro Zone. Non-agricultural. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "TR36/024/2026/2027/W/13",
-      "body": "TANROADS - Songwe Regional Office",
-      "title": "Routine/Recurrent Maintenance, Mahenje-Hasamba-Vwawa & Regional Paved Sections",
-      "volume": "As per project specifications",
-      "deadline": "3 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Maintenance on the Mahenje-Hasamba-Vwawa paved sections in Songwe's highland crop belt. Closes 02:00 PM. Listed in the 30 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "TR36/024/2026/2027/W/10",
-      "body": "TANROADS - Songwe Regional Office",
-      "title": "Routine/Recurrent Maintenance, Kakozi-Ilonga Regional Road & Ihanda-Niumba District Road",
-      "volume": "As per project specifications",
-      "deadline": "3 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Maintenance on the Kakozi-Ilonga and Ihanda-Niumba roads serving Songwe farming areas. Closes 02:00 PM. Listed in the 30 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "TR18/2026/2027/C/02",
-      "body": "Ministry / Executive Agency Framework",
-      "title": "Provision of Consultancy Services for Specialized Public Projects",
-      "volume": "As per consultancy specifications",
-      "deadline": "3 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Consultancy firms",
-      "status": "closing",
-      "sector": "other",
-      "notes": "General public-projects consultancy framework; no stated agricultural scope. Closes 02:00 PM. Listed in the 30 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "TR36/003/2026/2027/W/07",
-      "body": "TANROADS - Dodoma Regional Office",
-      "title": "Routine Maintenance, Gairo-Dodoma-Kintinku Trunk Road (Chamwino Ikulu Jct - Nzuguni Jct)",
-      "volume": "As per project specifications",
-      "deadline": "3 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Maintenance on the Gairo-Dodoma-Kintinku trunk road, a central grain-belt corridor. Closes 02:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -217,7 +126,7 @@
       "deadline": "4 Aug 2026",
       "value": "To be determined",
       "eligibility": "Automotive parts suppliers",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "Vehicle tyres and batteries for Morogoro Regional Referral Hospital. Non-agricultural. Closes 02:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -259,6 +168,32 @@
       "status": "open",
       "sector": "agri-logistics",
       "notes": "Gravel-standard upgrade of the Ichemba-Kanoge-Mwongozo feeder road in Tabora's tobacco/food belt. Closes 04:00 PM. Listed in the 3 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/009/2026/2027/W/85",
+      "body": "TARURA - Kilimanjaro Regional Office",
+      "title": "Rehabilitation Works, Kilomeni-Sofe-Mringeni Road & Bridge Structure",
+      "volume": "As per project specifications",
+      "deadline": "10 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road/bridge works contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Road and bridge rehabilitation on the Kilomeni-Sofe-Mringeni route in Kilimanjaro's highland farming area. Closes 10:05 AM. Listed in the 4 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/2026/2027/C/04",
+      "body": "Tanzania Petroleum Development Corporation (TANOIL)",
+      "title": "Consultancy for Quality Management System ISO Certification",
+      "volume": "As per consultancy specifications",
+      "deadline": "13 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "ISO/QMS consultancy firms",
+      "status": "open",
+      "sector": "other",
+      "notes": "ISO QMS certification consultancy for TANOIL (petroleum agency). Non-agricultural. Closes 03:00 PM. Listed in the 4 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],
