@@ -1,9 +1,75 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-08-04 16:06 EAT",
-  "session_date": "2026-08-03",
+  "fetched_at_eat": "2026-08-04 18:32 EAT",
+  "session_date": "2026-08-04",
   "rows": [
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Morogoro",
+      "low": 2355.0,
+      "high": 2355.0,
+      "clearing": 2355.0,
+      "change_tzs": -125.0,
+      "change_raw": "-125",
+      "dir": "dn",
+      "trade_date": "2026-08-04"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Dodoma",
+      "low": 2240.0,
+      "high": 2240.0,
+      "clearing": 2240.0,
+      "change_tzs": -150.0,
+      "change_raw": "-150",
+      "dir": "dn",
+      "trade_date": "2026-08-04"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Simiyu",
+      "low": 1520.0,
+      "high": 1580.0,
+      "clearing": 1580.0,
+      "change_tzs": 10.0,
+      "change_raw": "10",
+      "dir": "up",
+      "trade_date": "2026-08-04"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Shinyanga",
+      "low": 1350.0,
+      "high": 1400.0,
+      "clearing": 1400.0,
+      "change_tzs": 110.0,
+      "change_raw": "110",
+      "dir": "up",
+      "trade_date": "2026-08-04"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Singida",
+      "low": 1280.0,
+      "high": 1320.0,
+      "clearing": 1320.0,
+      "change_tzs": 50.0,
+      "change_raw": "50",
+      "dir": "up",
+      "trade_date": "2026-08-04"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Mwanza",
+      "low": 1310.0,
+      "high": 1310.0,
+      "clearing": 1310.0,
+      "change_tzs": 40.0,
+      "change_raw": "40",
+      "dir": "up",
+      "trade_date": "2026-08-04"
+    },
     {
       "commodity": "Sesame Seeds",
       "warehouse": "Manyara",
@@ -14,28 +80,6 @@
       "change_raw": "10",
       "dir": "up",
       "trade_date": "2026-08-03"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Simiyu",
-      "low": 1540.0,
-      "high": 1570.0,
-      "clearing": 1570.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-08-03"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Dodoma",
-      "low": 2390.0,
-      "high": 2390.0,
-      "clearing": 2390.0,
-      "change_tzs": 180.0,
-      "change_raw": "180",
-      "dir": "up",
-      "trade_date": "2026-08-01"
     },
     {
       "commodity": "Sesame Seeds",
@@ -61,45 +105,12 @@
     },
     {
       "commodity": "Chick peas",
-      "warehouse": "Singida",
-      "low": 1210.0,
-      "high": 1270.0,
-      "clearing": 1270.0,
-      "change_tzs": 460.0,
-      "change_raw": "460",
-      "dir": "up",
-      "trade_date": "2026-07-31"
-    },
-    {
-      "commodity": "Chick peas",
       "warehouse": "Geita",
       "low": 1230.0,
       "high": 1230.0,
       "clearing": 1230.0,
       "change_tzs": 380.0,
       "change_raw": "380",
-      "dir": "up",
-      "trade_date": "2026-07-31"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Mwanza",
-      "low": 1270.0,
-      "high": 1270.0,
-      "clearing": 1270.0,
-      "change_tzs": 390.0,
-      "change_raw": "390",
-      "dir": "up",
-      "trade_date": "2026-07-31"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Shinyanga",
-      "low": 1280.0,
-      "high": 1290.0,
-      "clearing": 1290.0,
-      "change_tzs": 440.0,
-      "change_raw": "440",
       "dir": "up",
       "trade_date": "2026-07-31"
     },
@@ -234,17 +245,6 @@
       "change_raw": "-80",
       "dir": "dn",
       "trade_date": "2026-07-29"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Morogoro",
-      "low": 2480.0,
-      "high": 2480.0,
-      "clearing": 2480.0,
-      "change_tzs": 20.0,
-      "change_raw": "20",
-      "dir": "up",
-      "trade_date": "2026-07-28"
     },
     {
       "commodity": "Sesame Seeds",
