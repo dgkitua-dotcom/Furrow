@@ -1,5 +1,5 @@
 {
-  "updated": "4 Aug 2026",
+  "updated": "5 Aug 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -28,32 +28,6 @@
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
-      "ref": "535506481 / TARURA-RORYA-2026",
-      "body": "TARURA - Mara Regional Office",
-      "title": "Spot Improvement (56.50km) and Box Culverts, Rorya District",
-      "volume": "56.50km spot improvement plus culverts",
-      "deadline": "4 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Rural road spot improvement and box culverts in Rorya District, Mara. Closes 02:00 PM. Listed in the 27 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "535506411 / TPA-DAR-2026",
-      "body": "Tanzania Ports Authority (TPA) - Dar es Salaam Central Port",
-      "title": "Pre-qualification: Security & Fire Staff Uniforms, Dar Port",
-      "volume": "As per framework specifications",
-      "deadline": "4 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Uniform and PPE suppliers",
-      "status": "closing",
-      "sector": "other",
-      "notes": "Supplier pre-qualification for security and fire staff uniforms at Dar Central Port. Closes 10:00 AM. Listed in the 27 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
       "ref": "TR36/026/2026/2027/W/04",
       "body": "TANROADS - Songwe Regional Office",
       "title": "Routine/Recurrent & Bridge Preventive Works, Shigamba-Ibaba-Isongole Unpaved Roads",
@@ -61,48 +35,9 @@
       "deadline": "5 Aug 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "agri-logistics",
       "notes": "Maintenance and bridge works on unpaved roads in Songwe's highland crop belt. Closes 02:00 PM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "LGA/001/2026/2027/W/09",
-      "body": "Dodoma City Council",
-      "title": "Construction of Sports Playgrounds at Miyuji Area, Dodoma",
-      "volume": "As per project specifications",
-      "deadline": "4 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Building/works contractors",
-      "status": "closing",
-      "sector": "other",
-      "notes": "Sports playground construction in Dodoma. Non-agricultural. Closes 02:00 PM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "TR36/021/2026/2027/W/22",
-      "body": "TANROADS - Shinyanga Regional Office",
-      "title": "Bridge Preventive Maintenance, Manonga-Nyasamba Paved Trunk Road",
-      "volume": "As per project specifications",
-      "deadline": "4 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Bridge/road maintenance contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Bridge preventive works on the Manonga (Tabora/Shinyanga border) - Nyasamba (Shinyanga/Mwanza border) paved trunk road, a Lake Zone grain haulage route. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "FA/2026/2027/74289/TR177/0009/G/02",
-      "body": "Medical Stores Department (MSD) - Kilimanjaro Zone",
-      "title": "Supply of Office Consumables and Stationery (Framework Agreement)",
-      "volume": "As per framework specifications",
-      "deadline": "4 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Office-supply vendors",
-      "status": "closing",
-      "sector": "other",
-      "notes": "Framework supply of office consumables and stationery for MSD Kilimanjaro Zone. Non-agricultural. Closes 02:00 PM. Listed in the 29 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -116,19 +51,6 @@
       "status": "open",
       "sector": "other",
       "notes": "Institutional improved cookstove systems framework under REA. Clean-energy, not agricultural. Closes 12:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "FA/2026/2027/8884/52/034/G/01",
-      "body": "Morogoro Regional Referral Hospital",
-      "title": "Supply of Motor Vehicle Spare Parts (Tyres and Batteries)",
-      "volume": "As per framework specifications",
-      "deadline": "4 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Automotive parts suppliers",
-      "status": "closing",
-      "sector": "other",
-      "notes": "Vehicle tyres and batteries for Morogoro Regional Referral Hospital. Non-agricultural. Closes 02:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -194,6 +116,45 @@
       "status": "open",
       "sector": "other",
       "notes": "ISO QMS certification consultancy for TANOIL (petroleum agency). Non-agricultural. Closes 03:00 PM. Listed in the 4 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/2026/2027/C/04 (TARURA-Mzinga)",
+      "body": "TARURA - Coastal / Dar es Salaam Operations",
+      "title": "Consultancy: Feasibility, ESIA & Design for Mlamleni, Churwi & Utungemwago Bridges (Mzinga River)",
+      "volume": "3 bridge structures",
+      "deadline": "13 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Engineering consultancy firms",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Feasibility, ESIA, detailed design and tender documents for three bridges across the Mzinga River, improving rural produce access in Coastal/Dar. Closes 03:00 PM. NOTE: the bulletin lists this under ref S10/2026/2027/C/04, the same reference already carried for a separate TANOIL ISO consultancy — verify the correct tender number on the NeST portal before relying on it.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/009/2026/2027/W/92",
+      "body": "TARURA - Kilimanjaro Regional Office",
+      "title": "Upgrading of Msuya Road to Bitumen (Msuya Bypass Phase III, 6.195km), Mwanga District",
+      "volume": "6.195km bitumen upgrade",
+      "deadline": "11 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road works contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Bitumen upgrade of Msuya road in Mwanga, a Kilimanjaro farming district. Closes 10:00 AM. Listed in the 5 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/009/2026/2027/W/88",
+      "body": "TARURA - Kilimanjaro Regional Office",
+      "title": "Routine Maintenance & Spot Improvement, Siha East/North/South Divisions",
+      "volume": "As per project specifications",
+      "deadline": "10 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Maintenance and spot improvement across Siha divisions in Kilimanjaro's crop belt. Closes 11:00 AM. Listed in the 5 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],
