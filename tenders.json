@@ -1,5 +1,5 @@
 {
-  "updated": "5 Aug 2026",
+  "updated": "6 Aug 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -25,19 +25,6 @@
       "status": "open",
       "sector": "other",
       "notes": "New passenger terminal and associated works at Mwanza Airport. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "TR36/026/2026/2027/W/04",
-      "body": "TANROADS - Songwe Regional Office",
-      "title": "Routine/Recurrent & Bridge Preventive Works, Shigamba-Ibaba-Isongole Unpaved Roads",
-      "volume": "As per project specifications",
-      "deadline": "5 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Maintenance and bridge works on unpaved roads in Songwe's highland crop belt. Closes 02:00 PM. Listed in the 28 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -155,6 +142,45 @@
       "status": "open",
       "sector": "agri-logistics",
       "notes": "Maintenance and spot improvement across Siha divisions in Kilimanjaro's crop belt. Closes 11:00 AM. Listed in the 5 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/025/2026/2027/W/39",
+      "body": "Local Government Authority / Regional Health Office",
+      "title": "Construction of OPD, Laboratory, Radiology and Mortuary Buildings",
+      "volume": "As per project specifications",
+      "deadline": "12 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Building contractors",
+      "status": "open",
+      "sector": "other",
+      "notes": "Health-facility construction (OPD, lab, radiology, mortuary). Non-agricultural. Closes 02:00 PM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR103/2026/2027/G/54",
+      "body": "Public Sector IT Agency / Treasury Procurement",
+      "title": "Supply & Commissioning of Enterprise Hardware & Firewall Systems",
+      "volume": "As per specifications",
+      "deadline": "11 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Enterprise IT/security vendors",
+      "status": "open",
+      "sector": "other",
+      "notes": "Enterprise hardware and firewall systems. Non-agricultural. Closes 10:00 AM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR235/2026/2027/C/06",
+      "body": "Ministry of Works / TANROADS Consultancy Framework",
+      "title": "Consultancy: Feasibility Study, ESIA & Detailed Engineering Design",
+      "volume": "As per consultancy specifications",
+      "deadline": "14 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Engineering consultancy firms",
+      "status": "open",
+      "sector": "other",
+      "notes": "General roads feasibility/ESIA/design consultancy with no stated crop or corridor scope. Closes 10:00 AM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],

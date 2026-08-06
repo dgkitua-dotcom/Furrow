@@ -1,6 +1,15 @@
 {
-  "updated": "5 Aug 2026",
+  "updated": "6 Aug 2026",
   "news": [
+    {
+      "date": "5 Aug 2026",
+      "tag": "Market Access",
+      "color": "green",
+      "title": "Cotton Board urges cleaner lint as contamination discounts 75% of export bales",
+      "body": "Tanzania Cotton Board agricultural officer Dotto Ntumba, speaking at the Nyamhongolo grounds in Ilemela (Mwanza), urged farmers and AMCOS unions to stop mixing seed cotton with water, sand and other foreign matter, which is degrading national lint quality. More than 70% of Tanzania's cotton lint is exported, but contamination now causes over 75% of it to sell at discounted prices on international markets. Ntumba said global cotton trade is priced on quality grades set only after laboratory sampling and analysis, and pressed growers to prepare farms early and meet cleanliness standards to protect export margins.",
+      "source": "Daily News / allAfrica",
+      "url": "https://dailynews.co.tz/farmers-told-to-improve-cotton-quality/"
+    },
     {
       "date": "1 Aug 2026",
       "tag": "Livestock",
@@ -45,15 +54,6 @@
       "body": "Briefing journalists in Dodoma, AGRA Tanzania Country Director Vianey Rweyendela urged expanded public and private investment in agriculture, arguing that directing more capital into the sector that employs the majority of Tanzanians is essential for spreading the benefits of economic growth and accelerating rural development. He pointed to the transformation of the Majimoto area in Katavi Region -- now a dense rice-milling hub -- as an example of how targeted agricultural investment and supporting infrastructure attract banking, logistics and employment, drawing on outcomes from AGRA-government partnership projects across Kigoma, Rukwa, Katavi, Tabora and Dodoma.",
       "source": "AllAfrica / Daily News",
       "url": "https://allafrica.com/stories/202607210394.html"
-    },
-    {
-      "date": "22 Jul 2026",
-      "tag": "Policy",
-      "color": "blue",
-      "title": "Government moves to streamline overlapping inspections for small producers",
-      "body": "A senior official in the Prime Minister's Office (Labour Department), Odo Hekela, said agencies responsible for agriculture, environment, labour and social security have agreed a coordinated approach to streamline overlapping compliance inspections for producers and investors. Speaking at a stakeholders' meeting on the proposed guidelines, he said the aim is to let producers self-assess compliance before inspectors visit, easing long-standing complaints about duplicative regulatory checks on smallholder processors and agro-dealers while still safeguarding product quality and standards.",
-      "source": "The Citizen",
-      "url": "https://www.thecitizen.co.tz/tanzania/business/tanzania-to-simplify-producer-inspections-5532922"
     },
     {
       "date": "22 Jul 2026",
