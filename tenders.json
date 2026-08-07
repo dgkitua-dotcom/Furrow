@@ -1,5 +1,5 @@
 {
-  "updated": "6 Aug 2026",
+  "updated": "7 Aug 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -35,7 +35,7 @@
       "deadline": "7 Aug 2026",
       "value": "To be determined",
       "eligibility": "Clean-cookstove/energy systems suppliers",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "Institutional improved cookstove systems framework under REA. Clean-energy, not agricultural. Closes 12:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -48,7 +48,7 @@
       "deadline": "7 Aug 2026",
       "value": "To be determined",
       "eligibility": "Certified-seed suppliers",
-      "status": "open",
+      "status": "closing",
       "sector": "agriculture",
       "notes": "Certified-seed supply framework under COPRA. Closes 02:00 PM. Listed in the 3 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -74,7 +74,7 @@
       "deadline": "7 Aug 2026",
       "value": "To be determined",
       "eligibility": "Road works contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "agri-logistics",
       "notes": "Gravel-standard upgrade of the Ichemba-Kanoge-Mwongozo feeder road in Tabora's tobacco/food belt. Closes 04:00 PM. Listed in the 3 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -181,6 +181,19 @@
       "status": "open",
       "sector": "other",
       "notes": "General roads feasibility/ESIA/design consultancy with no stated crop or corridor scope. Closes 10:00 AM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/009/2026/2027/W/42",
+      "body": "TARURA - Kilimanjaro Regional Office (Same District)",
+      "title": "Periodic Maintenance to Gravel Standard, Parane-Kitubwa-Kirongwe Road",
+      "volume": "As per project specifications",
+      "deadline": "7 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road maintenance contractors",
+      "status": "closing",
+      "sector": "agri-logistics",
+      "notes": "Gravel-standard maintenance of the Parane-Kitubwa-Kirongwe road in Same District, Kilimanjaro. Closes 11:03 AM today. Listed in the 7 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],
