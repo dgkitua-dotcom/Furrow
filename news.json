@@ -1,6 +1,24 @@
 {
-  "updated": "7 Aug 2026",
+  "updated": "10 Aug 2026",
   "news": [
+    {
+      "date": "8 Aug 2026",
+      "tag": "Policy",
+      "color": "blue",
+      "title": "President Samia closes Nanenane 2026 with three directives and a 9.4% growth pledge",
+      "body": "Closing the 2026 National Nanenane exhibition at the John Malecela Grounds in Dodoma on 8 August, President Samia Suluhu Hassan issued three directives: the Ministries of Agriculture, Livestock and Fisheries with PMO-RALG are to resolve persistent farmer-herder conflicts; exhibition zones are to expand into the Southern regions; and innovations shown to farmers must be practical for real adoption. She said agriculture's growth is projected to average 9.4% in international performance reports within two years, and directed that farmers be guaranteed markets for their produce. The annual Farmers' Day climax will now be permanently hosted at the Dodoma grounds while launch events rotate among regions. Ministers cited BBT youth projects expanding to 18 councils and livestock-sector value rising from TZS 26.5tn (2020/21) to TZS 35.2tn (2024/25).",
+      "source": "The Citizen",
+      "url": "https://www.thecitizen.co.tz/tanzania/news/national/samia-orders-joint-action-to-resolve-farmer-herder-conflicts-5551632"
+    },
+    {
+      "date": "8 Aug 2026",
+      "tag": "Trade Policy",
+      "color": "green",
+      "title": "Government confirms edible-oil import ban to protect domestic oilseed farmers",
+      "body": "At the Nanenane closing, Agriculture Minister Daniel Chongolo confirmed a standing ban on edible-oil imports except during periods of verified domestic supply deficits, framed as a measure to motivate oilseed farmers under the NEOS strategy. He said Tanzania needs about 700,000 tonnes of cooking oil a year against domestic production of roughly 306,000 tonnes, leaving a large deficit the country currently fills through costly imports. The policy directly affects sunflower and other oilseed demand and pricing, and complements the National Edible Oil Strategy (NEOS) 2026-2035 launched earlier in the month.",
+      "source": "The Citizen",
+      "url": "https://www.thecitizen.co.tz/tanzania/news/national/samia-orders-joint-action-to-resolve-farmer-herder-conflicts-5551632"
+    },
     {
       "date": "5 Aug 2026",
       "tag": "Market Access",
@@ -63,24 +81,6 @@
       "body": "Tanzania Coffee Board auctions in Kagera between 9 and 16 July earned growers more than TZS 29 billion (about USD 10.98M), on strong local and international demand. The 9 July session alone moved 3.75 million kg of cherry coffee worth TZS 17.04 billion, with cherry peaking at TZS 5,310/kg and clean coffee reaching TZS 11,010/kg. Rwele AMCOS in Kyerwa sold 113,500 kg of Robusta at TZS 4,600/kg; Ngara Farmers' AMCOS moved 61,827 kg of certified Arabica averaging TZS 5,505/kg. TCB reminded buyers to collect purchases within 72 hours or incur a TZS 5/kg storage charge.",
       "source": "Food Business MEA / TCB",
       "url": "https://www.foodbusinessmea.com/tanzania-coffee-farmers-earn-over-us10-98m-as-kagera-coffee-auctions-deliver-strong-prices/"
-    },
-    {
-      "date": "21 Jul 2026",
-      "tag": "Investment",
-      "color": "green",
-      "title": "Tanzania and Egypt agree to expand agri-sector investment and trade",
-      "body": "Following state visit talks between President Samia Suluhu Hassan and Egyptian President Abdel Fattah El-Sisi in Dar es Salaam, the two countries agreed to deepen cooperation in agriculture, livestock and irrigation technology, with Tanzania offering the Ruvu Ranch for joint livestock development and both sides pursuing investment in cold-chain and logistics infrastructure.",
-      "source": "The Citizen",
-      "url": "https://www.thecitizen.co.tz/tanzania/news/national/-dar-cairo-seal-deal-to-deepen-economic-ties-across-key-sectors-5531142"
-    },
-    {
-      "date": "21 Jul 2026",
-      "tag": "Investment",
-      "color": "blue",
-      "title": "Proparco injects $12 million into ARAF II to scale agribusiness finance",
-      "body": "Development finance institution Proparco committed $12 million to the Acumen Resilient Agriculture Fund II (ARAF II), a venture capital fund providing early-stage equity and debt financing for high-impact agribusinesses across East and West Africa. ARAF has assessed nearly 700 investment opportunities and backed 14 companies to date; ARAF II plans to back roughly 20 more.",
-      "source": "Ecofin Agency",
-      "url": "https://www.ecofinagency.com/news-agriculture/1807-57517-proparco-announces-12-million-for-african-agribusinesses"
     },
     {
       "date": "21 Jul 2026",

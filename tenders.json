@@ -1,5 +1,5 @@
 {
-  "updated": "7 Aug 2026",
+  "updated": "10 Aug 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -28,58 +28,6 @@
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
-      "ref": "FA/2025/2026/250/TR198/G/03",
-      "body": "Rural Energy Agency (REA)",
-      "title": "Supply, Installation & Commissioning of Institutional Improved Cook Stove (ICS) Systems",
-      "volume": "As per framework specifications",
-      "deadline": "7 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Clean-cookstove/energy systems suppliers",
-      "status": "closing",
-      "sector": "other",
-      "notes": "Institutional improved cookstove systems framework under REA. Clean-energy, not agricultural. Closes 12:00 PM. Listed in the 31 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "FA/2026/2027/75918/267/G/01",
-      "body": "Cereals and Other Produce Regulatory Authority (COPRA)",
-      "title": "Supply of Certified Seeds (Closed Framework Agreement)",
-      "volume": "As per framework specifications",
-      "deadline": "7 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Certified-seed suppliers",
-      "status": "closing",
-      "sector": "agriculture",
-      "notes": "Certified-seed supply framework under COPRA. Closes 02:00 PM. Listed in the 3 Aug bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "FA/2026/2027/89/TR135/G/03",
-      "body": "Livestock Training Agency (LITA)",
-      "title": "Supply of Animal Feeds at Temeke Campus",
-      "volume": "As per framework specifications",
-      "deadline": "8 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Animal-feed suppliers",
-      "status": "open",
-      "sector": "agriculture",
-      "notes": "Animal-feed supply for LITA's Temeke campus. Closes 03:00 PM. Listed in the 3 Aug bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "S10/025/2026/2027/W/36",
-      "body": "TARURA - Tabora Regional Office",
-      "title": "Upgrading to Gravel Standard, Ichemba-Kanoge-Mwongozo Road",
-      "volume": "As per project specifications",
-      "deadline": "7 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road works contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Gravel-standard upgrade of the Ichemba-Kanoge-Mwongozo feeder road in Tabora's tobacco/food belt. Closes 04:00 PM. Listed in the 3 Aug bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
       "ref": "S10/009/2026/2027/W/85",
       "body": "TARURA - Kilimanjaro Regional Office",
       "title": "Rehabilitation Works, Kilomeni-Sofe-Mringeni Road & Bridge Structure",
@@ -87,7 +35,7 @@
       "deadline": "10 Aug 2026",
       "value": "To be determined",
       "eligibility": "Road/bridge works contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "agri-logistics",
       "notes": "Road and bridge rehabilitation on the Kilomeni-Sofe-Mringeni route in Kilimanjaro's highland farming area. Closes 10:05 AM. Listed in the 4 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -139,7 +87,7 @@
       "deadline": "10 Aug 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "agri-logistics",
       "notes": "Maintenance and spot improvement across Siha divisions in Kilimanjaro's crop belt. Closes 11:00 AM. Listed in the 5 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -184,16 +132,42 @@
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
-      "ref": "S10/009/2026/2027/W/42",
-      "body": "TARURA - Kilimanjaro Regional Office (Same District)",
-      "title": "Periodic Maintenance to Gravel Standard, Parane-Kitubwa-Kirongwe Road",
+      "ref": "TR116/2026/2027/G/02",
+      "body": "Tanzania Fertilizer Regulatory Authority (TFRA)",
+      "title": "Supply, Installation, Commissioning & Training: Specialized Laboratory Equipment",
+      "volume": "As per specifications",
+      "deadline": "14 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Laboratory-equipment suppliers",
+      "status": "open",
+      "sector": "agriculture",
+      "notes": "Fertiliser-testing laboratory equipment for TFRA, supporting input-quality regulation. Closes 02:00 PM. Listed in the 10 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/001/2026/2027/W/46",
+      "body": "TARURA - Arusha Regional Office (Arumeru District)",
+      "title": "Periodic Maintenance, Kikatiti-Sakila Maji ya Chai & Sabato-Embaseni Corridors",
       "volume": "As per project specifications",
-      "deadline": "7 Aug 2026",
+      "deadline": "14 Aug 2026",
       "value": "To be determined",
       "eligibility": "Road maintenance contractors",
-      "status": "closing",
+      "status": "open",
       "sector": "agri-logistics",
-      "notes": "Gravel-standard maintenance of the Parane-Kitubwa-Kirongwe road in Same District, Kilimanjaro. Closes 11:03 AM today. Listed in the 7 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "notes": "Maintenance of the Kikatiti-Sakila and Sabato-Embaseni corridors in Arumeru, an Arusha horticulture belt. Closes 10:00 AM. Listed in the 10 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR158/2026/2027/C/08",
+      "body": "Dar es Salaam Water Supply and Sanitation Authority (DAWASA)",
+      "title": "Consultancy: Supervision of Lower Ruvu Treatment Expansion",
+      "volume": "As per consultancy specifications",
+      "deadline": "14 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Engineering consultancy firms",
+      "status": "open",
+      "sector": "other",
+      "notes": "Water-treatment expansion supervision for DAWASA. Non-agricultural. Closes 02:00 PM. Listed in the 10 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],
