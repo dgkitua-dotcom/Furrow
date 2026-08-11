@@ -220,10 +220,15 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <div class="grid-2">
       <div class="card">
-        <h2>National Averages Over Time</h2>
-        <p class="sub" style="margin-bottom:16px;min-height:36px">National average price (TZS/kg) per staple crop, tracked across every FURROW price bulletin.</p>
-        <div class="chart-box"><canvas id="natChartTrends"></canvas></div>
-        <p id="natTrendNote" class="sub" style="font-size:11px;margin-top:10px"></p>
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:16px">
+          <div style="min-height:36px">
+            <h2>Regional Coverage</h2>
+            <p class="sub" style="margin:0">Which of Tanzania's regions report staple prices this bulletin, shaded by how many of the seven staples each covers.</p>
+          </div>
+          <select id="natCoverageCropSelect" onchange="natRenderCoverage()"></select>
+        </div>
+        <div id="natCoverageMap"></div>
+        <p id="natCoverageNote" class="sub" style="font-size:11px;margin-top:10px"></p>
       </div>
       <div class="card">
         <h2>TMX Auction Prices Over Time</h2>
@@ -281,8 +286,8 @@ footer a { color:var(--goldL); text-decoration:none; }
   <div class="container">
     <div class="grid-2">
       <div class="card">
-        <h2>National Averages Movement</h2>
-        <p class="sub" style="margin-bottom:16px">Number of staple crops rising vs falling at each price bulletin.</p>
+        <h2>Cumulative TMX Movement</h2>
+        <p class="sub" style="margin-bottom:16px">Running net direction of TMX auction entries — up minus down, summed across every sync.</p>
         <canvas id="natChartMovement" height="150"></canvas>
       </div>
       <div class="card">
@@ -388,9 +393,75 @@ async function init(){
   if(!PRICES){ document.getElementById('lastUpdated').textContent = 'data unavailable'; return; }
   document.getElementById('lastUpdated').textContent = PRICES.updated;
   try { renderStats(); } catch(e){ console.error('renderStats failed:', e); }
-  try { natRenderTrends(); } catch(e){ console.error('natRenderTrends failed:', e); }
-  try { natRenderMovement(); } catch(e){ console.error('natRenderMovement failed:', e); }
+  try { natBuildCoverageCropSelect(); natRenderCoverage(); } catch(e){ console.error('natRenderCoverage failed:', e); }
   try { natBuildRegionCropSelect(); natRenderRegional(); } catch(e){ console.error('natBuildRegionCropSelect/natRenderRegional failed:', e); }
+}
+
+// ---- Regional coverage map (schematic geographic tile map of Tanzania) ----
+var TZ_REGION_GRID = {
+  "Kagera":[0,0],"Mwanza":[1,0],"Mara":[2,0],"Arusha":[3,0],"Kilimanjaro":[4,0],
+  "Geita":[1,1],"Simiyu":[2,1],"Manyara":[3,1],"Tanga":[4,1],
+  "Kigoma":[0,2],"Shinyanga":[1,2],"Singida":[2,2],
+  "Tabora":[1,3],"Dodoma":[2,3],"Morogoro":[3,3],"Pwani":[4,3],"Dar es Salaam":[5,3],
+  "Katavi":[0,4],"Iringa":[2,4],
+  "Rukwa":[0,5],"Mbeya":[1,5],"Njombe":[2,5],"Lindi":[4,5],
+  "Songwe":[1,6],"Ruvuma":[2,6],"Mtwara":[4,6]
+};
+var COVERAGE_SCALE = ['#E5E0D0','#CFE0D0','#A9CDB4','#78B394','#489974','#1E6B4A'];
+function natBuildCoverageCropSelect(){
+  var sel = document.getElementById('natCoverageCropSelect'); if(!sel || !PRICES) return;
+  var seen={}, order=['(All staples)'];
+  PRICES.prices.forEach(function(p){ if(p.source==='MAFC' && !seen[p.crop]){ seen[p.crop]=1; order.push(p.crop); } });
+  var cur = sel.value || '(All staples)';
+  sel.innerHTML = order.map(function(c){return '<option value="'+c+'">'+c+'</option>';}).join('');
+  sel.value = order.indexOf(cur)>=0 ? cur : '(All staples)';
+}
+function natRenderCoverage(){
+  var host = document.getElementById('natCoverageMap'); if(!host || !PRICES) return;
+  var sel = document.getElementById('natCoverageCropSelect');
+  var mode = sel ? sel.value : '(All staples)';
+  var staples = {};
+  PRICES.prices.forEach(function(p){ if(p.source==='MAFC' && !/National Average/i.test(p.region)) staples[p.crop]=1; });
+  var stapleCount = Object.keys(staples).length || 7;
+  var cov = {};
+  PRICES.prices.forEach(function(p){
+    if(p.source!=='MAFC' || /National Average/i.test(p.region)) return;
+    if(mode!=='(All staples)' && p.crop!==mode) return;
+    if(!(p.region in cov)) cov[p.region]=0;
+    if(typeof p.gov==='number') cov[p.region]++;
+  });
+  function shade(region){
+    if(!(region in cov)) return COVERAGE_SCALE[0];
+    var n = cov[region];
+    if(mode!=='(All staples)') return n>0 ? COVERAGE_SCALE[5] : COVERAGE_SCALE[0];
+    return n===0?COVERAGE_SCALE[0]:COVERAGE_SCALE[Math.min(5,1+Math.floor(n/stapleCount*4.999))];
+  }
+  var COLS=6, ROWS=7, CELL=100, PAD=7, w=COLS*CELL, h=ROWS*CELL, cells='';
+  Object.keys(TZ_REGION_GRID).forEach(function(name){
+    var g=TZ_REGION_GRID[name], x=g[0]*CELL, y=g[1]*CELL, fill=shade(name);
+    var inData=(name in cov), n=cov[name]||0;
+    var txt = inData ? (mode==='(All staples)' ? (name+': '+n+'/'+stapleCount) : (name+(n>0?': covered':': no data'))) : (name+': not tracked');
+    var tcol = (inData && (mode!=='(All staples)' ? n>0 : n>=Math.ceil(stapleCount*0.4))) ? '#FFFFFF' : '#6B6552';
+    var short = name==='Dar es Salaam'?'Dar':name.length>9?name.slice(0,8)+'\u2026':name;
+    cells += '<g><title>'+txt+'</title>'
+      +'<rect x="'+(x+PAD)+'" y="'+(y+PAD)+'" width="'+(CELL-2*PAD)+'" height="'+(CELL-2*PAD)+'" rx="12" fill="'+fill+'" stroke="#FFFFFF" stroke-width="2"/>'
+      +'<text x="'+(x+CELL/2)+'" y="'+(y+CELL/2-4)+'" text-anchor="middle" font-size="12" font-weight="600" fill="'+tcol+'" font-family="Inter,sans-serif">'+short+'</text>'
+      +(mode==='(All staples)' && inData ? '<text x="'+(x+CELL/2)+'" y="'+(y+CELL/2+14)+'" text-anchor="middle" font-size="11" fill="'+tcol+'" font-family="Inter,sans-serif" opacity="0.85">'+n+'/'+stapleCount+'</text>' : '')
+      +'</g>';
+  });
+  var legend='';
+  if(mode==='(All staples)'){
+    var labs=['0','1-2','2-3','3-4','4-5','6-7'];
+    legend='<div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:12px;font-size:10px;color:var(--mu)"><span>Staples covered:</span>'
+      +COVERAGE_SCALE.map(function(c,i){return '<span style="display:inline-flex;align-items:center;gap:3px"><span style="width:12px;height:12px;border-radius:3px;background:'+c+';border:1px solid #E0DAC8"></span>'+labs[i]+'</span>';}).join('')+'</div>';
+  } else {
+    legend='<div style="display:flex;align-items:center;gap:14px;margin-top:12px;font-size:10px;color:var(--mu)">'
+      +'<span style="display:inline-flex;align-items:center;gap:4px"><span style="width:12px;height:12px;border-radius:3px;background:'+COVERAGE_SCALE[5]+'"></span>Covered</span>'
+      +'<span style="display:inline-flex;align-items:center;gap:4px"><span style="width:12px;height:12px;border-radius:3px;background:'+COVERAGE_SCALE[0]+';border:1px solid #E0DAC8"></span>No data</span></div>';
+  }
+  host.innerHTML='<svg viewBox="0 0 '+w+' '+h+'" width="100%" style="max-height:360px;display:block" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Regional data coverage map of Tanzania">'+cells+'</svg>'+legend;
+  var live=Object.keys(cov).length, note=document.getElementById('natCoverageNote');
+  if(note) note.textContent = mode==='(All staples)' ? (live+' of 26 mainland regions reporting this bulletin; greyed regions are outside current coverage.') : ('Regions reporting '+mode+' this bulletin.');
 }
 
 function natRenderTrends(){
@@ -427,34 +498,39 @@ function natRenderTrends(){
 
 function natRenderMovement(){
   var cv = document.getElementById('natChartMovement');
-  if(!cv || typeof Chart==='undefined' || !NAT_HISTORY.length) return;
-  var labels = NAT_HISTORY.map(function(h){return h.date;});
-  var risingData = [], fallingData = [];
-  NAT_HISTORY.forEach(function(h, i){
-    if(i === 0){ risingData.push(0); fallingData.push(0); return; }
-    var prev = NAT_HISTORY[i-1].national_avg || {};
-    var cur  = h.national_avg || {};
-    var up = 0, dn = 0;
-    Object.keys(cur).forEach(function(crop){
-      if(!(crop in prev)) return;
-      if(cur[crop] > prev[crop]) up++;
-      else if(cur[crop] < prev[crop]) dn++;
-    });
-    risingData.push(up); fallingData.push(dn);
+  if(!cv || typeof Chart==='undefined') return;
+  if(typeof TMX_HISTORY==='undefined' || !TMX_HISTORY.length){
+    if(natChartMovementI){ natChartMovementI.destroy(); natChartMovementI=null; }
+    return;
+  }
+  var labels = TMX_HISTORY.map(function(h){return h.synced_at;});
+  var cum = [], running = 0;
+  TMX_HISTORY.forEach(function(h){
+    var rows = h.rows||[];
+    var up = rows.filter(function(r){return r.dir==='up';}).length;
+    var dn = rows.filter(function(r){return r.dir==='dn';}).length;
+    running += (up - dn); cum.push(running);
   });
+  var endPos = cum.length && cum[cum.length-1] >= 0;
   if(natChartMovementI) natChartMovementI.destroy();
   natChartMovementI = new Chart(cv.getContext('2d'), {
     type:'line',
     data:{ labels:labels, datasets:[
-      { label:'Rising', data:risingData, borderColor:'#1E6B4A', backgroundColor:'rgba(30,107,74,.1)', fill:true, tension:.3, pointRadius:3 },
-      { label:'Falling', data:fallingData, borderColor:'#8B1A1A', backgroundColor:'rgba(139,26,26,.08)', fill:true, tension:.3, pointRadius:3 }
+      { label:'Cumulative net (up \u2212 down)', data:cum,
+        borderColor: endPos?'#1E6B4A':'#8B1A1A',
+        backgroundColor: endPos?'rgba(30,107,74,.10)':'rgba(139,26,26,.08)',
+        fill:'origin', tension:.3, pointRadius:3 }
     ]},
     options:{
       responsive:true,
-      plugins:{ legend:{ position:'bottom', labels:{font:{size:10}, boxWidth:12, color:'#22303E'} } },
+      plugins:{
+        legend:{ position:'bottom', labels:{font:{size:10}, boxWidth:12, color:'#22303E'} },
+        tooltip:{ callbacks:{ label:function(ctx){ var v=ctx.parsed.y; return 'Net '+(v>0?'+':'')+v+' since first sync'; } } }
+      },
       scales:{
         x:{ grid:{display:false}, ticks:{font:{size:10}, color:'#5A6A7A'} },
-        y:{ beginAtZero:true, grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', precision:0} }
+        y:{ grid:{color:'#F0EBD8'}, ticks:{font:{size:10}, color:'#5A6A7A', precision:0},
+            title:{display:true, text:'Cumulative net entries', font:{size:10}, color:'#5A6A7A'} }
       }
     }
   });
@@ -763,6 +839,7 @@ async function loadTmx(){
     if(r2.ok){ var d2 = await r2.json(); if(d2 && d2.history) TMX_HISTORY = d2.history; }
   } catch(e){}
   buildCropSelect(); renderRegional(); renderTrends(); renderMovement();
+  try { natRenderMovement(); } catch(e){ console.error('natRenderMovement (cumulative TMX) failed:', e); }
 }
 
 function fmtNum(v){ return (v===null||v===undefined) ? '&mdash;' : Math.round(v).toLocaleString(); }
