@@ -1,5 +1,5 @@
 {
-  "updated": "10 Aug 2026",
+  "updated": "11 Aug 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -25,19 +25,6 @@
       "status": "open",
       "sector": "other",
       "notes": "New passenger terminal and associated works at Mwanza Airport. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "S10/009/2026/2027/W/85",
-      "body": "TARURA - Kilimanjaro Regional Office",
-      "title": "Rehabilitation Works, Kilomeni-Sofe-Mringeni Road & Bridge Structure",
-      "volume": "As per project specifications",
-      "deadline": "10 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road/bridge works contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Road and bridge rehabilitation on the Kilomeni-Sofe-Mringeni route in Kilimanjaro's highland farming area. Closes 10:05 AM. Listed in the 4 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -74,22 +61,9 @@
       "deadline": "11 Aug 2026",
       "value": "To be determined",
       "eligibility": "Road works contractors",
-      "status": "open",
-      "sector": "agri-logistics",
-      "notes": "Bitumen upgrade of Msuya road in Mwanga, a Kilimanjaro farming district. Closes 10:00 AM. Listed in the 5 Aug bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "S10/009/2026/2027/W/88",
-      "body": "TARURA - Kilimanjaro Regional Office",
-      "title": "Routine Maintenance & Spot Improvement, Siha East/North/South Divisions",
-      "volume": "As per project specifications",
-      "deadline": "10 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road maintenance contractors",
       "status": "closing",
       "sector": "agri-logistics",
-      "notes": "Maintenance and spot improvement across Siha divisions in Kilimanjaro's crop belt. Closes 11:00 AM. Listed in the 5 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "notes": "Bitumen upgrade of Msuya road in Mwanga, a Kilimanjaro farming district. Closes 10:00 AM. Listed in the 5 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -113,7 +87,7 @@
       "deadline": "11 Aug 2026",
       "value": "To be determined",
       "eligibility": "Enterprise IT/security vendors",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "Enterprise hardware and firewall systems. Non-agricultural. Closes 10:00 AM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -168,6 +142,32 @@
       "status": "open",
       "sector": "other",
       "notes": "Water-treatment expansion supervision for DAWASA. Non-agricultural. Closes 02:00 PM. Listed in the 10 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "TR263/2025/2026/NC/58",
+      "body": "National Housing Corporation (NHC)",
+      "title": "Provision of Staff Transport Service (NHC HQ & Dar es Salaam Regions)",
+      "volume": "As per service specifications",
+      "deadline": "17 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Transport-service providers",
+      "status": "open",
+      "sector": "other",
+      "notes": "Staff transport services for NHC. Non-agricultural. Closes 02:00 PM. Listed in the 11 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "S10/009/2026/2027/W/43",
+      "body": "TARURA - Kilimanjaro Regional Office",
+      "title": "Upgrading of Chankoko Jct-Mvungwe Road to Gravel & Pedestrian Bridge",
+      "volume": "As per project specifications",
+      "deadline": "14 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Road/bridge works contractors",
+      "status": "open",
+      "sector": "agri-logistics",
+      "notes": "Gravel upgrade and pedestrian bridge on the Chankoko-Mvungwe road in Kilimanjaro's farming area. Closes 11:30 AM. Listed in the 11 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],
