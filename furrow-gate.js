@@ -49,10 +49,12 @@
   /* ---- styles ------------------------------------------------------------ */
   const CSS = `
   .fg-blur { filter: blur(7px); pointer-events: none; user-select: none; transition: filter .25s ease; }
+  /* keep the nav + free ticker sharp and above the overlay's backdrop blur */
+  body.fg-locked nav, body.fg-locked .ticker-wrap { position: relative; z-index: 4200; filter: none !important; }
   .fg-overlay {
     position: fixed; inset: 0; z-index: 4000; display: none;
     align-items: center; justify-content: center; padding: 20px;
-    background: rgba(11,28,46,.55); backdrop-filter: blur(2px);
+    background: rgba(11,28,46,.55);
   }
   .fg-overlay.open { display: flex; }
   .fg-card {
@@ -101,13 +103,13 @@
     <div class="fg-wm">FU<u>RR</u>OW</div>
     <span class="fg-tag">powered by Gabrison Capital</span>
     <h2 class="fg-h">Subscriber access</h2>
-    <p class="fg-sub">The live price ticker is free to all. Full market intelligence — regional prices, board rates, tenders and news — is for subscribers. Enter your access password to continue.</p>
+    <p class="fg-sub">Live prices, moving in real time — always free. Go deeper with a FURROW subscription: regional price breakdowns, coffee, cotton and cashew board rates, active tenders, and daily agribusiness intelligence. Sign in to continue.</p>
     <label class="fg-label" for="fgPw">Password</label>
     <input class="fg-input" id="fgPw" type="password" placeholder="Enter subscriber or admin password" autocomplete="off" onkeydown="if(event.key==='Enter')window.__fgLogin()"/>
     <button class="fg-btn" onclick="window.__fgLogin()">Unlock</button>
     <div class="fg-msg" id="fgMsg"></div>
     <p class="fg-alt">No subscription yet? <a onclick="window.__fgView('register')">Register &amp; request access</a></p>
-    <p class="fg-note">The price ticker at the top of the page stays free and live even without logging in.</p>
+    <p class="fg-note">Live prices stay free, right here at the top of the page — no sign-in needed.</p>
   `;
 
   const REGISTER_VIEW = `
@@ -149,7 +151,7 @@
     <button class="fg-btn gold" onclick="window.__fgRegister()">Submit request</button>
     <div class="fg-msg" id="fgMsg2"></div>
     <p class="fg-alt">Already a subscriber? <a onclick="window.__fgView('login')">Back to login</a></p>
-    <p class="fg-note">Submitting opens your email app with the details pre-filled, addressed to FURROW. Your request reaches us once you hit send.</p>
+    <p class="fg-note">We'll review your request and follow up with subscription details and pricing. A team member is usually in touch within one business day.</p>
   `;
 
   /* ---- build DOM --------------------------------------------------------- */
@@ -213,6 +215,7 @@
 
   function grantAccess() {
     setUnlocked(true);
+    document.body.classList.remove("fg-locked");
     overlay.classList.remove("open");
     blur(false);
     logoutBtn.classList.add("show");
@@ -257,13 +260,14 @@
       "&body=" + encodeURIComponent(lines.join("\n"));
     window.location.href = href;
     msg.className = "fg-msg ok";
-    msg.textContent = "Opening your email app… hit send to reach us. We'll be in touch.";
+    msg.textContent = "Thank you — your request is on its way. Please send the email that just opened, and we'll be in touch shortly.";
   }
 
   /* ---- gate on load ------------------------------------------------------ */
   function gate() {
     if (unlocked()) { blur(false); logoutBtn && logoutBtn.classList.add("show"); return; }
     blur(true);
+    document.body.classList.add("fg-locked");
     overlay.classList.add("open");
     document.body.style.overflow = "hidden";
   }
