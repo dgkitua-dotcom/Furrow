@@ -49,9 +49,10 @@
   /* ---- styles ------------------------------------------------------------ */
   const CSS = `
   .fg-blur { filter: blur(7px); pointer-events: none; user-select: none; transition: filter .25s ease; }
-  /* keep the nav + free ticker sharp; ticker sits above the blur but BELOW the login card */
-  body.fg-locked nav { position: relative; z-index: 4400; filter: none !important; }
-  body.fg-locked .ticker-wrap { position: sticky; z-index: 4100; filter: none !important; }
+  /* keep the nav + free ticker sharp; ticker sits above the blur but BELOW the login card.
+     IMPORTANT: preserve the nav's own sticky positioning so it doesn't scroll away when locked. */
+  body.fg-locked nav { z-index: 4400 !important; filter: none !important; }
+  body.fg-locked .ticker-wrap { z-index: 4100 !important; filter: none !important; }
   /* dark wash sits BELOW the ticker so the ticker stays visible; card layer sits ABOVE */
   .fg-backdrop {
     position: fixed; inset: 0; z-index: 3900; display: none;
@@ -60,14 +61,14 @@
   .fg-backdrop.open { display: block; }
   .fg-overlay {
     position: fixed; inset: 0; z-index: 4200; display: none;
-    align-items: center; justify-content: center; padding: 20px;
-    background: transparent; pointer-events: none;
+    align-items: flex-start; justify-content: center; padding: 104px 20px 24px;
+    background: transparent; pointer-events: none; overflow-y: auto;
   }
   .fg-overlay.open { display: flex; }
   .fg-overlay .fg-card { pointer-events: auto; }
   .fg-card {
     background: #fff; border: 1px solid #E0DAC8; border-radius: 16px;
-    width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto;
+    width: 100%; max-width: 440px; max-height: calc(100vh - 130px); overflow-y: auto;
     box-shadow: 0 20px 60px rgba(0,0,0,.28); padding: 30px 28px; position: relative; z-index: 4300;
     font-family: Inter, system-ui, sans-serif; color: #0B1C2E;
   }
@@ -191,7 +192,7 @@
   }
 
   function view(which) {
-    card.className = "fg-card" + (which === "register" ? " wide" : "");
+    card.className = "fg-card";
     card.innerHTML = which === "register" ? REGISTER_VIEW : LOGIN_VIEW;
     setTimeout(function () { const f = document.getElementById(which === "register" ? "fgName" : "fgPw"); if (f) f.focus(); }, 40);
   }
