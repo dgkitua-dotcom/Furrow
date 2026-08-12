@@ -1,5 +1,5 @@
 {
-  "updated": "11 Aug 2026",
+  "updated": "12 Aug 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -54,19 +54,6 @@
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
-      "ref": "S10/009/2026/2027/W/92",
-      "body": "TARURA - Kilimanjaro Regional Office",
-      "title": "Upgrading of Msuya Road to Bitumen (Msuya Bypass Phase III, 6.195km), Mwanga District",
-      "volume": "6.195km bitumen upgrade",
-      "deadline": "11 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Road works contractors",
-      "status": "closing",
-      "sector": "agri-logistics",
-      "notes": "Bitumen upgrade of Msuya road in Mwanga, a Kilimanjaro farming district. Closes 10:00 AM. Listed in the 5 Aug bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
       "ref": "S10/025/2026/2027/W/39",
       "body": "Local Government Authority / Regional Health Office",
       "title": "Construction of OPD, Laboratory, Radiology and Mortuary Buildings",
@@ -74,22 +61,9 @@
       "deadline": "12 Aug 2026",
       "value": "To be determined",
       "eligibility": "Building contractors",
-      "status": "open",
-      "sector": "other",
-      "notes": "Health-facility construction (OPD, lab, radiology, mortuary). Non-agricultural. Closes 02:00 PM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "TR103/2026/2027/G/54",
-      "body": "Public Sector IT Agency / Treasury Procurement",
-      "title": "Supply & Commissioning of Enterprise Hardware & Firewall Systems",
-      "volume": "As per specifications",
-      "deadline": "11 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Enterprise IT/security vendors",
       "status": "closing",
       "sector": "other",
-      "notes": "Enterprise hardware and firewall systems. Non-agricultural. Closes 10:00 AM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "notes": "Health-facility construction (OPD, lab, radiology, mortuary). Non-agricultural. Closes 02:00 PM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -168,6 +142,19 @@
       "status": "open",
       "sector": "agri-logistics",
       "notes": "Gravel upgrade and pedestrian bridge on the Chankoko-Mvungwe road in Kilimanjaro's farming area. Closes 11:30 AM. Listed in the 11 Aug bulletin; verify on the NeST portal before relying on the exact date.",
+      "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "LITA-MADABA-2026 (ref TBC)",
+      "body": "Livestock Training Agency (LITA) - Madaba Campus",
+      "title": "Supply of Animal Feeds at Madaba Campus",
+      "volume": "As per framework specifications",
+      "deadline": "14 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Animal-feed suppliers",
+      "status": "open",
+      "sector": "agriculture",
+      "notes": "Animal-feed supply for LITA's Madaba campus. Closes 02:00 PM. The bulletin gave no tender reference number for this item — search under 'Livestock Training Agency' on the NeST portal and confirm the reference before relying on it.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     }
   ],

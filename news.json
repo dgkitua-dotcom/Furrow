@@ -1,6 +1,24 @@
 {
-  "updated": "11 Aug 2026",
+  "updated": "12 Aug 2026",
   "news": [
+    {
+      "date": "12 Aug 2026",
+      "tag": "Food Safety",
+      "color": "green",
+      "title": "TMDA tightens veterinary-medicine controls to protect milk and meat supply",
+      "body": "The Tanzania Medicines and Medical Devices Authority (TMDA) has issued new operational guidelines to curb misuse of human pharmaceuticals in livestock management, strengthening food-safety compliance across milk and meat supply chains. The move targets residue risks in animal-derived foods and complements wider livestock-sector productivity efforts.",
+      "source": "FURROW bulletin / TMDA",
+      "url": ""
+    },
+    {
+      "date": "11 Aug 2026",
+      "tag": "Livestock",
+      "color": "blue",
+      "title": "TALIRI to roll out village livestock demonstration farms across Mwanza",
+      "body": "The Tanzania Livestock Research Institute (TALIRI) Mabuki will establish village-level livestock demonstration farms across Mwanza Region to spread modern practices and secure raw materials for agro-processors. At least three farms per district are planned, with Kwimba and Misungwi first, operational within this financial year. Mabuki research coordinator Dr Godfrey Chasama, speaking at Nanenane, said the programme promotes hybrid cattle and poultry and improved goats such as the Malya breed, developed from local and imported genetics (Kamorai from Pakistan, Boer from South Africa). Farmers noted a gap in rural veterinary access and village-level follow-up after exhibitions.",
+      "source": "Daily News / allAfrica",
+      "url": "https://dailynews.co.tz/taliri-to-roll-out-demo-livestock-farms-in-mwanza/"
+    },
     {
       "date": "8 Aug 2026",
       "tag": "Policy",
@@ -81,24 +99,6 @@
       "body": "Tanzania Coffee Board auctions in Kagera between 9 and 16 July earned growers more than TZS 29 billion (about USD 10.98M), on strong local and international demand. The 9 July session alone moved 3.75 million kg of cherry coffee worth TZS 17.04 billion, with cherry peaking at TZS 5,310/kg and clean coffee reaching TZS 11,010/kg. Rwele AMCOS in Kyerwa sold 113,500 kg of Robusta at TZS 4,600/kg; Ngara Farmers' AMCOS moved 61,827 kg of certified Arabica averaging TZS 5,505/kg. TCB reminded buyers to collect purchases within 72 hours or incur a TZS 5/kg storage charge.",
       "source": "Food Business MEA / TCB",
       "url": "https://www.foodbusinessmea.com/tanzania-coffee-farmers-earn-over-us10-98m-as-kagera-coffee-auctions-deliver-strong-prices/"
-    },
-    {
-      "date": "21 Jul 2026",
-      "tag": "Market Access",
-      "color": "green",
-      "title": "ASTA Week 30 bulletin: avocado farm-gate prices hold firm into peak supply",
-      "body": "The Avocado Society of Tanzania's weekly pricing bulletin for the week of 20-26 July reports stable farm-gate pricing across grades. Fresh export fruit sizes 14-24 traded at TZS 1,500-1,700/kg, Hass sizes 14-20 at TZS 1,700-2,000/kg, and processing-grade fruit held at TZS 920/kg. Dar es Salaam and Mwanza are the primary demand centres. ASTA notes East Africa-Europe shipping capacity is supporting the price floor through late July, and that fresh-export pricing requires GAP certification, brix of at least 8, and size uniformity. Buyer demand favours 500-1,000kg consignments, which rewards smallholder aggregation over individual farm export.",
-      "source": "Avocado Society of Tanzania (ASTA) / Kilimo Kwanza",
-      "url": "https://kilimokwanza.org/avocado-market-prices-remain-firm-as-tanzania-heads-into-peak-mid-year-supply/"
-    },
-    {
-      "date": "21 Jul 2026",
-      "tag": "Environment",
-      "color": "green",
-      "title": "One district's pesticide-container recovery scheme tackles rural contamination",
-      "body": "Kilimo Kwanza profiles a district-level programme establishing safe collection points for used agrochemical containers, curbing hazardous reuse and contamination of local water systems and crop supply chains. Built on field pilots and farmer-education campaigns led by district officials, the scheme is presented as a replicable model for managing Tanzania's agricultural chemical waste.",
-      "source": "Kilimo Kwanza",
-      "url": "https://kilimokwanza.org/the-second-life-of-poison-how-one-district-is-solving-tanzanias-silent-pesticide-crisis/"
     },
     {
       "date": "18 Jul 2026",
