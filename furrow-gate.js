@@ -49,18 +49,26 @@
   /* ---- styles ------------------------------------------------------------ */
   const CSS = `
   .fg-blur { filter: blur(7px); pointer-events: none; user-select: none; transition: filter .25s ease; }
-  /* keep the nav + free ticker sharp and above the overlay's backdrop blur */
-  body.fg-locked nav, body.fg-locked .ticker-wrap { position: relative; z-index: 4200; filter: none !important; }
-  .fg-overlay {
-    position: fixed; inset: 0; z-index: 4000; display: none;
-    align-items: center; justify-content: center; padding: 20px;
+  /* keep the nav + free ticker sharp; ticker sits above the blur but BELOW the login card */
+  body.fg-locked nav { position: relative; z-index: 4400; filter: none !important; }
+  body.fg-locked .ticker-wrap { position: sticky; z-index: 4100; filter: none !important; }
+  /* dark wash sits BELOW the ticker so the ticker stays visible; card layer sits ABOVE */
+  .fg-backdrop {
+    position: fixed; inset: 0; z-index: 3900; display: none;
     background: rgba(11,28,46,.55);
   }
+  .fg-backdrop.open { display: block; }
+  .fg-overlay {
+    position: fixed; inset: 0; z-index: 4200; display: none;
+    align-items: center; justify-content: center; padding: 20px;
+    background: transparent; pointer-events: none;
+  }
   .fg-overlay.open { display: flex; }
+  .fg-overlay .fg-card { pointer-events: auto; }
   .fg-card {
     background: #fff; border: 1px solid #E0DAC8; border-radius: 16px;
     width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto;
-    box-shadow: 0 20px 60px rgba(0,0,0,.28); padding: 30px 28px; position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,.28); padding: 30px 28px; position: relative; z-index: 4300;
     font-family: Inter, system-ui, sans-serif; color: #0B1C2E;
   }
   .fg-card.wide { max-width: 560px; }
@@ -162,10 +170,13 @@
     return e;
   }
 
-  let overlay, card, logoutBtn;
+  let overlay, card, logoutBtn, backdrop;
 
   function buildGate() {
     document.head.appendChild(el("style", null, CSS));
+
+    backdrop = el("div", { class: "fg-backdrop", id: "fgBackdrop" });
+    document.body.appendChild(backdrop);
 
     overlay = el("div", { class: "fg-overlay", id: "fgOverlay" });
     card = el("div", { class: "fg-card" });
@@ -186,7 +197,7 @@
   }
 
   /* ---- blur / unblur : everything except nav + ticker -------------------- */
-  const KEEP_FREE = ["nav", ".ticker-wrap", "#fgOverlay", "#fgLogout"];
+  const KEEP_FREE = ["nav", ".ticker-wrap", "#fgOverlay", "#fgBackdrop", "#fgLogout"];
   function isFree(node) {
     return KEEP_FREE.some(sel => (node.matches && node.matches(sel)) || (node.closest && node.closest(sel)));
   }
@@ -216,6 +227,7 @@
   function grantAccess() {
     setUnlocked(true);
     document.body.classList.remove("fg-locked");
+    backdrop.classList.remove("open");
     overlay.classList.remove("open");
     blur(false);
     logoutBtn.classList.add("show");
@@ -268,6 +280,7 @@
     if (unlocked()) { blur(false); logoutBtn && logoutBtn.classList.add("show"); return; }
     blur(true);
     document.body.classList.add("fg-locked");
+    backdrop.classList.add("open");
     overlay.classList.add("open");
     document.body.style.overflow = "hidden";
   }
