@@ -28,8 +28,8 @@
   "use strict";
 
   /* ---- CONFIG : replace these two lines using hashgen.html ---------------- */
-  const SUBSCRIBER_HASH = "8600c3a403bbb972fe7f99e9194572057be4da9816faaa1f5c2f1b9ceaf0802c"; // pw: furrow2026
-  const ADMIN_HASH      = "78263e182bfcae1e5d2adb340b263603fe7aad47a686b988424940869b2a7a8a"; // pw: gabrison-admin
+  const SUBSCRIBER_HASH = "0ce2c333144584b1f5aaaf62a6163f12a44e9999ff96c8e3c659fdbe08c9ff99"; // client password
+  const ADMIN_HASH      = "d334c378717cc1bf704dd09086208d7eaacda47a06986da82596e7ac1e77eb8d"; // admin password
 
   const CONTACT_EMAIL = "info@joinfurrow.com"; // where Register / quotation requests are emailed
   const SESSION_KEY   = "furrow_access_v1";
