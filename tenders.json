@@ -1,5 +1,5 @@
 {
-  "updated": "12 Aug 2026",
+  "updated": "13 Aug 2026",
   "tenders": [
     {
       "ref": "NORGES-VEL/TZ/2026",
@@ -22,7 +22,7 @@
       "deadline": "13 Aug 2026",
       "value": "To be determined",
       "eligibility": "Building and airport infrastructure contractors",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "New passenger terminal and associated works at Mwanza Airport. Submission closes 02:00 PM. Listed in the 24 Jul bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -35,7 +35,7 @@
       "deadline": "13 Aug 2026",
       "value": "To be determined",
       "eligibility": "ISO/QMS consultancy firms",
-      "status": "open",
+      "status": "closing",
       "sector": "other",
       "notes": "ISO QMS certification consultancy for TANOIL (petroleum agency). Non-agricultural. Closes 03:00 PM. Listed in the 4 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
@@ -48,22 +48,9 @@
       "deadline": "13 Aug 2026",
       "value": "To be determined",
       "eligibility": "Engineering consultancy firms",
-      "status": "open",
+      "status": "closing",
       "sector": "agri-logistics",
       "notes": "Feasibility, ESIA, detailed design and tender documents for three bridges across the Mzinga River, improving rural produce access in Coastal/Dar. Closes 03:00 PM. NOTE: the bulletin lists this under ref S10/2026/2027/C/04, the same reference already carried for a separate TANOIL ISO consultancy — verify the correct tender number on the NeST portal before relying on it.",
-      "url": "https://nest.go.tz/tenders/published-tenders"
-    },
-    {
-      "ref": "S10/025/2026/2027/W/39",
-      "body": "Local Government Authority / Regional Health Office",
-      "title": "Construction of OPD, Laboratory, Radiology and Mortuary Buildings",
-      "volume": "As per project specifications",
-      "deadline": "12 Aug 2026",
-      "value": "To be determined",
-      "eligibility": "Building contractors",
-      "status": "closing",
-      "sector": "other",
-      "notes": "Health-facility construction (OPD, lab, radiology, mortuary). Non-agricultural. Closes 02:00 PM. Listed in the 6 Aug bulletin; verify on the NeST portal before relying on the exact date.",
       "url": "https://nest.go.tz/tenders/published-tenders"
     },
     {
@@ -156,6 +143,19 @@
       "sector": "agriculture",
       "notes": "Animal-feed supply for LITA's Madaba campus. Closes 02:00 PM. The bulletin gave no tender reference number for this item — search under 'Livestock Training Agency' on the NeST portal and confirm the reference before relying on it.",
       "url": "https://nest.go.tz/tenders/published-tenders"
+    },
+    {
+      "ref": "NFRA-AUCTION-2026 (notice)",
+      "body": "National Food Reserve Agency (NFRA)",
+      "title": "Public Asset & Equipment Auction — Chang'ombe & Kipawa Zonal Depots",
+      "volume": "Surplus assets and equipment",
+      "deadline": "18 Aug 2026",
+      "value": "To be determined",
+      "eligibility": "Registered bidders / auctioneers",
+      "status": "open",
+      "sector": "agriculture",
+      "notes": "NFRA public auction of surplus assets and equipment at its Chang'ombe and Kipawa grain depots in Dar es Salaam. Active notice window 11-18 August; this is an auction notice rather than a NeST tender, and had no NeST reference number in the bulletin. Confirm details on NFRA's official announcements portal (nfra.go.tz) before acting.",
+      "url": "https://www.nfra.go.tz"
     }
   ],
   "filters": {

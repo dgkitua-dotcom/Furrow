@@ -1,6 +1,15 @@
 {
-  "updated": "12 Aug 2026",
+  "updated": "13 Aug 2026",
   "news": [
+    {
+      "date": "13 Aug 2026",
+      "tag": "Logistics",
+      "color": "blue",
+      "title": "NFRA issues public auction notices for surplus assets at Kipawa and Chang'ombe depots",
+      "body": "The National Food Reserve Agency (NFRA) has issued public auction notices covering surplus inventory and equipment at its Kipawa and Chang'ombe zonal depots in Dar es Salaam, as part of routine asset optimisation across central grain-distribution hubs. The Kipawa zone runs modern warehouses and silos with capacity of tens of thousands of tonnes and covers surplus and deficit regions across the eastern and southern corridor. Auction window noted as 11-18 August. Details should be confirmed on NFRA's official announcements portal before acting.",
+      "source": "FURROW bulletin / NFRA",
+      "url": "https://www.nfra.go.tz"
+    },
     {
       "date": "12 Aug 2026",
       "tag": "Food Safety",
@@ -151,15 +160,6 @@
       "title": "Warehouse Receipt System marks two decades of formalizing commodity trade",
       "body": "Tanzania's Warehouse Receipt System (WRS) marked 20 years of operation, reporting cumulative trading volume of over 5.2 billion kilograms of produce across 18 major agricultural commodities since inception, and an estimated TZS 11.3 trillion in market value generated for producers across 23 mainland regions.",
       "source": "Warehouse Receipt System"
-    },
-    {
-      "date": "16 Jul 2026",
-      "tag": "Policy",
-      "color": "blue",
-      "title": "Chongolo demands results-driven leadership to lift farmer productivity",
-      "body": "Agriculture Minister Daniel Chongolo has pressed ministry officials for a results-driven approach tied directly to measurable gains in farmer productivity, signalling a shift in how sector performance is judged. The message aligns with the ministry's 2026/27 targets across cash crops, horticulture and avocado exports.",
-      "source": "Kilimo Kwanza",
-      "url": "https://kilimokwanza.org/strategic-shift-agriculture-minister-chongolo-demands-results-driven-leadership-to-boost-farmer-productivity/"
     },
     {
       "date": "15 Jul 2026",
