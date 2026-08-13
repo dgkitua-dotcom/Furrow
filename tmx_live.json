@@ -1,9 +1,152 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-08-13 16:37 EAT",
-  "session_date": "2026-08-12",
+  "fetched_at_eat": "2026-08-13 18:06 EAT",
+  "session_date": "2026-08-13",
   "rows": [
+    {
+      "commodity": "Coffee-Robusta",
+      "warehouse": "Kagera",
+      "low": 4010.0,
+      "high": 4530.0,
+      "clearing": 4530.0,
+      "change_tzs": -330.0,
+      "change_raw": "-330",
+      "dir": "dn",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Coffee-Robusta Clean Certified",
+      "warehouse": "Kagera",
+      "low": 10000.0,
+      "high": 11000.0,
+      "clearing": 11000.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Coffee-Arabica Clean Certified",
+      "warehouse": "Kagera",
+      "low": 10000.0,
+      "high": 12000.0,
+      "clearing": 12000.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Coffee-Robusta Certified",
+      "warehouse": "Kagera",
+      "low": 4490.0,
+      "high": 4530.0,
+      "clearing": 4530.0,
+      "change_tzs": -480.0,
+      "change_raw": "-480",
+      "dir": "dn",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Manyara",
+      "low": 1270.0,
+      "high": 1270.0,
+      "clearing": 1270.0,
+      "change_tzs": 10.0,
+      "change_raw": "10",
+      "dir": "up",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Mwanza",
+      "low": 1250.0,
+      "high": 1250.0,
+      "clearing": 1250.0,
+      "change_tzs": -20.0,
+      "change_raw": "-20",
+      "dir": "dn",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Shinyanga",
+      "low": 1270.0,
+      "high": 1290.0,
+      "clearing": 1290.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Sesame Seeds",
+      "warehouse": "Pwani",
+      "low": 2310.0,
+      "high": 2310.0,
+      "clearing": 2310.0,
+      "change_tzs": -410.0,
+      "change_raw": "-410",
+      "dir": "dn",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Manyara",
+      "low": 1210.0,
+      "high": 1210.0,
+      "clearing": 1210.0,
+      "change_tzs": -190.0,
+      "change_raw": "-190",
+      "dir": "dn",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Kigoma",
+      "low": 1220.0,
+      "high": 1310.0,
+      "clearing": 1310.0,
+      "change_tzs": 660.0,
+      "change_raw": "660",
+      "dir": "up",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Simiyu",
+      "low": 1400.0,
+      "high": 1450.0,
+      "clearing": 1450.0,
+      "change_tzs": -50.0,
+      "change_raw": "-50",
+      "dir": "dn",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Cocoa",
+      "warehouse": "Mbeya",
+      "low": 12800.0,
+      "high": 12800.0,
+      "clearing": 12800.0,
+      "change_tzs": -1840.0,
+      "change_raw": "-1840",
+      "dir": "dn",
+      "trade_date": "2026-08-13"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Simiyu",
+      "low": 1250.0,
+      "high": 1280.0,
+      "clearing": 1280.0,
+      "change_tzs": 10.0,
+      "change_raw": "10",
+      "dir": "up",
+      "trade_date": "2026-08-12"
+    },
     {
       "commodity": "Chick peas",
       "warehouse": "Singida",
@@ -28,78 +171,12 @@
     },
     {
       "commodity": "Chick peas",
-      "warehouse": "Manyara",
-      "low": 1250.0,
-      "high": 1260.0,
-      "clearing": 1260.0,
-      "change_tzs": -30.0,
-      "change_raw": "-30",
-      "dir": "dn",
-      "trade_date": "2026-08-12"
-    },
-    {
-      "commodity": "Chick peas",
       "warehouse": "Dodoma",
       "low": 1280.0,
       "high": 1280.0,
       "clearing": 1280.0,
       "change_tzs": 390.0,
       "change_raw": "390",
-      "dir": "up",
-      "trade_date": "2026-08-12"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Mwanza",
-      "low": 1240.0,
-      "high": 1270.0,
-      "clearing": 1270.0,
-      "change_tzs": -20.0,
-      "change_raw": "-20",
-      "dir": "dn",
-      "trade_date": "2026-08-12"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Shinyanga",
-      "low": 1260.0,
-      "high": 1290.0,
-      "clearing": 1290.0,
-      "change_tzs": -20.0,
-      "change_raw": "-20",
-      "dir": "dn",
-      "trade_date": "2026-08-12"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Simiyu",
-      "low": 1250.0,
-      "high": 1280.0,
-      "clearing": 1280.0,
-      "change_tzs": 10.0,
-      "change_raw": "10",
-      "dir": "up",
-      "trade_date": "2026-08-12"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Manyara",
-      "low": 1400.0,
-      "high": 1400.0,
-      "clearing": 1400.0,
-      "change_tzs": 40.0,
-      "change_raw": "40",
-      "dir": "up",
-      "trade_date": "2026-08-12"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Simiyu",
-      "low": 1410.0,
-      "high": 1500.0,
-      "clearing": 1500.0,
-      "change_tzs": 20.0,
-      "change_raw": "20",
       "dir": "up",
       "trade_date": "2026-08-12"
     },
@@ -115,17 +192,6 @@
       "trade_date": "2026-08-12"
     },
     {
-      "commodity": "Pigeon peas",
-      "warehouse": "Singida",
-      "low": 1390.0,
-      "high": 1390.0,
-      "clearing": 1390.0,
-      "change_tzs": 440.0,
-      "change_raw": "440",
-      "dir": "up",
-      "trade_date": "2026-08-11"
-    },
-    {
       "commodity": "Sesame Seeds",
       "warehouse": "Dodoma",
       "low": 2450.0,
@@ -133,6 +199,17 @@
       "clearing": 2450.0,
       "change_tzs": 210.0,
       "change_raw": "210",
+      "dir": "up",
+      "trade_date": "2026-08-11"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Singida",
+      "low": 1390.0,
+      "high": 1390.0,
+      "clearing": 1390.0,
+      "change_tzs": 440.0,
+      "change_raw": "440",
       "dir": "up",
       "trade_date": "2026-08-11"
     },
@@ -159,50 +236,6 @@
       "trade_date": "2026-08-07"
     },
     {
-      "commodity": "Coffee-Robusta Certified",
-      "warehouse": "Kagera",
-      "low": 4400.0,
-      "high": 5010.0,
-      "clearing": 5010.0,
-      "change_tzs": 300.0,
-      "change_raw": "300",
-      "dir": "up",
-      "trade_date": "2026-08-06"
-    },
-    {
-      "commodity": "Coffee-Robusta",
-      "warehouse": "Kagera",
-      "low": 4060.0,
-      "high": 4860.0,
-      "clearing": 4860.0,
-      "change_tzs": 150.0,
-      "change_raw": "150",
-      "dir": "up",
-      "trade_date": "2026-08-06"
-    },
-    {
-      "commodity": "Coffee-Robusta Clean Certified",
-      "warehouse": "Kagera",
-      "low": 10000.0,
-      "high": 11000.0,
-      "clearing": 11000.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-08-06"
-    },
-    {
-      "commodity": "Coffee-Arabica Clean Certified",
-      "warehouse": "Kagera",
-      "low": 11000.0,
-      "high": 12000.0,
-      "clearing": 12000.0,
-      "change_tzs": -20.0,
-      "change_raw": "-20",
-      "dir": "dn",
-      "trade_date": "2026-08-06"
-    },
-    {
       "commodity": "Coffee-Arabica Clean",
       "warehouse": "Kagera",
       "low": 11700.0,
@@ -212,17 +245,6 @@
       "change_raw": "0",
       "dir": "flat",
       "trade_date": "2026-08-06"
-    },
-    {
-      "commodity": "Cocoa",
-      "warehouse": "Mbeya",
-      "low": 13960.0,
-      "high": 14640.0,
-      "clearing": 14640.0,
-      "change_tzs": 2120.0,
-      "change_raw": "2120",
-      "dir": "up",
-      "trade_date": "2026-08-05"
     },
     {
       "commodity": "Sesame Seeds",
@@ -267,17 +289,6 @@
       "change_raw": "150",
       "dir": "up",
       "trade_date": "2026-08-01"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Pwani",
-      "low": 2370.0,
-      "high": 2720.0,
-      "clearing": 2720.0,
-      "change_tzs": 470.0,
-      "change_raw": "470",
-      "dir": "up",
-      "trade_date": "2026-07-30"
     },
     {
       "commodity": "Coffee-Robusta Clean",
@@ -336,6 +347,17 @@
     },
     {
       "commodity": "Sesame Seeds",
+      "warehouse": "Kigoma",
+      "low": 2210.0,
+      "high": 2210.0,
+      "clearing": 2210.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-07-25"
+    },
+    {
+      "commodity": "Sesame Seeds",
       "warehouse": "Lindi",
       "low": 2310.0,
       "high": 2770.0,
@@ -365,17 +387,6 @@
       "change_tzs": -110.0,
       "change_raw": "-110",
       "dir": "dn",
-      "trade_date": "2026-07-25"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Kigoma",
-      "low": 2210.0,
-      "high": 2210.0,
-      "clearing": 2210.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
       "trade_date": "2026-07-25"
     },
     {
@@ -652,17 +663,6 @@
       "change_raw": "50",
       "dir": "up",
       "trade_date": "2025-12-01"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Kigoma",
-      "low": 650.0,
-      "high": 650.0,
-      "clearing": 650.0,
-      "change_tzs": -140.0,
-      "change_raw": "-140",
-      "dir": "dn",
-      "trade_date": "2025-11-25"
     },
     {
       "commodity": "Pigeon peas",
