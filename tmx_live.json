@@ -1,7 +1,7 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-08-13 18:06 EAT",
+  "fetched_at_eat": "2026-08-14 09:21 EAT",
   "session_date": "2026-08-13",
   "rows": [
     {
@@ -129,10 +129,10 @@
       "commodity": "Cocoa",
       "warehouse": "Mbeya",
       "low": 12800.0,
-      "high": 12800.0,
-      "clearing": 12800.0,
-      "change_tzs": -1840.0,
-      "change_raw": "-1840",
+      "high": 12940.0,
+      "clearing": 12940.0,
+      "change_tzs": -1700.0,
+      "change_raw": "-1700",
       "dir": "dn",
       "trade_date": "2026-08-13"
     },
