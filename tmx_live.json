@@ -1,9 +1,31 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-09-16 17:49 EAT",
+  "fetched_at_eat": "2026-09-17 12:56 EAT",
   "session_date": "2026-09-16",
   "rows": [
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Dodoma",
+      "low": 1260.0,
+      "high": 1260.0,
+      "clearing": 1260.0,
+      "change_tzs": -10.0,
+      "change_raw": "-10",
+      "dir": "dn",
+      "trade_date": "2026-09-16"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Manyara",
+      "low": 1260.0,
+      "high": 1300.0,
+      "clearing": 1300.0,
+      "change_tzs": 30.0,
+      "change_raw": "30",
+      "dir": "up",
+      "trade_date": "2026-09-16"
+    },
     {
       "commodity": "Pigeon peas",
       "warehouse": "Dodoma",
@@ -38,37 +60,26 @@
       "trade_date": "2026-09-16"
     },
     {
-      "commodity": "Pigeon peas",
-      "warehouse": "Ruvuma",
-      "low": 1360.0,
-      "high": 1430.0,
-      "clearing": 1430.0,
-      "change_tzs": 30.0,
-      "change_raw": "30",
+      "commodity": "Cocoa",
+      "warehouse": "Mbeya",
+      "low": 12770.0,
+      "high": 12770.0,
+      "clearing": 12770.0,
+      "change_tzs": 100.0,
+      "change_raw": "100",
       "dir": "up",
-      "trade_date": "2026-09-15"
+      "trade_date": "2026-09-16"
     },
     {
-      "commodity": "Chick peas",
-      "warehouse": "Dodoma",
-      "low": 1270.0,
-      "high": 1270.0,
-      "clearing": 1270.0,
-      "change_tzs": -60.0,
-      "change_raw": "-60",
+      "commodity": "Cocoa",
+      "warehouse": "Morogoro",
+      "low": 12870.0,
+      "high": 12870.0,
+      "clearing": 12870.0,
+      "change_tzs": -1450.0,
+      "change_raw": "-1450",
       "dir": "dn",
-      "trade_date": "2026-09-15"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Manyara",
-      "low": 1270.0,
-      "high": 1270.0,
-      "clearing": 1270.0,
-      "change_tzs": -70.0,
-      "change_raw": "-70",
-      "dir": "dn",
-      "trade_date": "2026-09-15"
+      "trade_date": "2026-09-16"
     },
     {
       "commodity": "Chick peas",
@@ -116,12 +127,34 @@
     },
     {
       "commodity": "Pigeon peas",
+      "warehouse": "Ruvuma",
+      "low": 1360.0,
+      "high": 1430.0,
+      "clearing": 1430.0,
+      "change_tzs": 30.0,
+      "change_raw": "30",
+      "dir": "up",
+      "trade_date": "2026-09-15"
+    },
+    {
+      "commodity": "Chick peas",
       "warehouse": "Arusha",
-      "low": 1570.0,
-      "high": 1570.0,
-      "clearing": 1570.0,
-      "change_tzs": 460.0,
-      "change_raw": "460",
+      "low": 1310.0,
+      "high": 1310.0,
+      "clearing": 1310.0,
+      "change_tzs": 440.0,
+      "change_raw": "440",
+      "dir": "up",
+      "trade_date": "2026-09-14"
+    },
+    {
+      "commodity": "Chick peas",
+      "warehouse": "Mwanza",
+      "low": 1310.0,
+      "high": 1360.0,
+      "clearing": 1360.0,
+      "change_tzs": 30.0,
+      "change_raw": "30",
       "dir": "up",
       "trade_date": "2026-09-14"
     },
@@ -138,45 +171,23 @@
     },
     {
       "commodity": "Pigeon peas",
+      "warehouse": "Arusha",
+      "low": 1570.0,
+      "high": 1570.0,
+      "clearing": 1570.0,
+      "change_tzs": 460.0,
+      "change_raw": "460",
+      "dir": "up",
+      "trade_date": "2026-09-14"
+    },
+    {
+      "commodity": "Pigeon peas",
       "warehouse": "Mtwara",
       "low": 1210.0,
       "high": 1520.0,
       "clearing": 1520.0,
       "change_tzs": 70.0,
       "change_raw": "70",
-      "dir": "up",
-      "trade_date": "2026-09-14"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Arusha",
-      "low": 1310.0,
-      "high": 1310.0,
-      "clearing": 1310.0,
-      "change_tzs": 440.0,
-      "change_raw": "440",
-      "dir": "up",
-      "trade_date": "2026-09-14"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Mwanza",
-      "low": 1340.0,
-      "high": 1360.0,
-      "clearing": 1360.0,
-      "change_tzs": 30.0,
-      "change_raw": "30",
-      "dir": "up",
-      "trade_date": "2026-09-14"
-    },
-    {
-      "commodity": "Cocoa",
-      "warehouse": "Mbeya",
-      "low": 12670.0,
-      "high": 12670.0,
-      "clearing": 12670.0,
-      "change_tzs": 150.0,
-      "change_raw": "150",
       "dir": "up",
       "trade_date": "2026-09-14"
     },
@@ -214,6 +225,17 @@
       "trade_date": "2026-09-10"
     },
     {
+      "commodity": "Chick peas",
+      "warehouse": "Tabora",
+      "low": 1210.0,
+      "high": 1280.0,
+      "clearing": 1280.0,
+      "change_tzs": 180.0,
+      "change_raw": "180",
+      "dir": "up",
+      "trade_date": "2026-09-08"
+    },
+    {
       "commodity": "Pigeon peas",
       "warehouse": "Singida",
       "low": 1610.0,
@@ -232,17 +254,6 @@
       "clearing": 1510.0,
       "change_tzs": 710.0,
       "change_raw": "710",
-      "dir": "up",
-      "trade_date": "2026-09-08"
-    },
-    {
-      "commodity": "Chick peas",
-      "warehouse": "Tabora",
-      "low": 1210.0,
-      "high": 1280.0,
-      "clearing": 1280.0,
-      "change_tzs": 180.0,
-      "change_raw": "180",
       "dir": "up",
       "trade_date": "2026-09-08"
     },
@@ -289,83 +300,6 @@
       "change_raw": "150",
       "dir": "up",
       "trade_date": "2026-09-02"
-    },
-    {
-      "commodity": "Cocoa",
-      "warehouse": "Morogoro",
-      "low": 14320.0,
-      "high": 14320.0,
-      "clearing": 14320.0,
-      "change_tzs": 1420.0,
-      "change_raw": "1420",
-      "dir": "up",
-      "trade_date": "2026-09-02"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Babati",
-      "low": 1440.0,
-      "high": 1440.0,
-      "clearing": 1440.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-08-31"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Bariadi",
-      "low": 1490.0,
-      "high": 1590.0,
-      "clearing": 1590.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-08-31"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Hanang",
-      "low": 1410.0,
-      "high": 1440.0,
-      "clearing": 1440.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-08-31"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Itilima",
-      "low": 1580.0,
-      "high": 1580.0,
-      "clearing": 1580.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-08-31"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Kongwa",
-      "low": 1280.0,
-      "high": 1300.0,
-      "clearing": 1300.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-08-31"
-    },
-    {
-      "commodity": "Pigeon peas",
-      "warehouse": "Meatu",
-      "low": 1550.0,
-      "high": 1550.0,
-      "clearing": 1550.0,
-      "change_tzs": 0.0,
-      "change_raw": "0",
-      "dir": "flat",
-      "trade_date": "2026-08-31"
     },
     {
       "commodity": "Chick peas",
@@ -494,6 +428,72 @@
       "low": 1170.0,
       "high": 1190.0,
       "clearing": 1190.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-31"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Babati",
+      "low": 1440.0,
+      "high": 1440.0,
+      "clearing": 1440.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-31"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Bariadi",
+      "low": 1490.0,
+      "high": 1590.0,
+      "clearing": 1590.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-31"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Hanang",
+      "low": 1410.0,
+      "high": 1440.0,
+      "clearing": 1440.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-31"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Itilima",
+      "low": 1580.0,
+      "high": 1580.0,
+      "clearing": 1580.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-31"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Kongwa",
+      "low": 1280.0,
+      "high": 1300.0,
+      "clearing": 1300.0,
+      "change_tzs": 0.0,
+      "change_raw": "0",
+      "dir": "flat",
+      "trade_date": "2026-08-31"
+    },
+    {
+      "commodity": "Pigeon peas",
+      "warehouse": "Meatu",
+      "low": 1550.0,
+      "high": 1550.0,
+      "clearing": 1550.0,
       "change_tzs": 0.0,
       "change_raw": "0",
       "dir": "flat",
