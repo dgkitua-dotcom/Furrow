@@ -1,9 +1,20 @@
 {
   "status": "ok",
   "source": "Tanzania Mercantile Exchange (TMX), official market-data feed",
-  "fetched_at_eat": "2026-10-13 00:41 EAT",
-  "session_date": "2026-10-10",
+  "fetched_at_eat": "2026-10-13 15:36 EAT",
+  "session_date": "2026-10-13",
   "rows": [
+    {
+      "commodity": "Cocoa",
+      "warehouse": "Mbeya",
+      "low": 13220.0,
+      "high": 13220.0,
+      "clearing": 13220.0,
+      "change_tzs": 1000.0,
+      "change_raw": "1000",
+      "dir": "up",
+      "trade_date": "2026-10-13"
+    },
     {
       "commodity": "Pigeon peas",
       "warehouse": "Arusha",
@@ -128,7 +139,7 @@
     {
       "commodity": "Chick peas",
       "warehouse": "Singida",
-      "low": 1560.0,
+      "low": 1540.0,
       "high": 1560.0,
       "clearing": 1560.0,
       "change_tzs": -10.0,
@@ -138,14 +149,14 @@
     },
     {
       "commodity": "Cocoa",
-      "warehouse": "Mbeya",
-      "low": 12200.0,
-      "high": 12220.0,
-      "clearing": 12220.0,
-      "change_tzs": 500.0,
-      "change_raw": "500",
-      "dir": "up",
-      "trade_date": "2026-10-08"
+      "warehouse": "Morogoro",
+      "low": 12120.0,
+      "high": 12120.0,
+      "clearing": 12120.0,
+      "change_tzs": -750.0,
+      "change_raw": "-750",
+      "dir": "dn",
+      "trade_date": "2026-10-07"
     },
     {
       "commodity": "Chick peas",
@@ -155,17 +166,6 @@
       "clearing": 1450.0,
       "change_tzs": -30.0,
       "change_raw": "-30",
-      "dir": "dn",
-      "trade_date": "2026-10-07"
-    },
-    {
-      "commodity": "Cocoa",
-      "warehouse": "Morogoro",
-      "low": 12120.0,
-      "high": 12120.0,
-      "clearing": 12120.0,
-      "change_tzs": -750.0,
-      "change_raw": "-750",
       "dir": "dn",
       "trade_date": "2026-10-07"
     },
@@ -721,6 +721,17 @@
     },
     {
       "commodity": "Sesame Seeds",
+      "warehouse": "Mtwara",
+      "low": 2210.0,
+      "high": 2230.0,
+      "clearing": 2230.0,
+      "change_tzs": -400.0,
+      "change_raw": "-400",
+      "dir": "dn",
+      "trade_date": "2026-07-25"
+    },
+    {
+      "commodity": "Sesame Seeds",
       "warehouse": "Lindi",
       "low": 2310.0,
       "high": 2770.0,
@@ -749,17 +760,6 @@
       "clearing": 2250.0,
       "change_tzs": -110.0,
       "change_raw": "-110",
-      "dir": "dn",
-      "trade_date": "2026-07-25"
-    },
-    {
-      "commodity": "Sesame Seeds",
-      "warehouse": "Mtwara",
-      "low": 2210.0,
-      "high": 2230.0,
-      "clearing": 2230.0,
-      "change_tzs": -400.0,
-      "change_raw": "-400",
       "dir": "dn",
       "trade_date": "2026-07-25"
     },
@@ -930,17 +930,6 @@
     },
     {
       "commodity": "Cashew Nuts",
-      "warehouse": "Lindi",
-      "low": 1660.0,
-      "high": 1720.0,
-      "clearing": 1720.0,
-      "change_tzs": -10.0,
-      "change_raw": "-10",
-      "dir": "dn",
-      "trade_date": "2026-01-23"
-    },
-    {
-      "commodity": "Cashew Nuts",
       "warehouse": "Mtwara",
       "low": 1510.0,
       "high": 1880.0,
@@ -948,6 +937,17 @@
       "change_tzs": 80.0,
       "change_raw": "80",
       "dir": "up",
+      "trade_date": "2026-01-23"
+    },
+    {
+      "commodity": "Cashew Nuts",
+      "warehouse": "Lindi",
+      "low": 1660.0,
+      "high": 1720.0,
+      "clearing": 1720.0,
+      "change_tzs": -10.0,
+      "change_raw": "-10",
+      "dir": "dn",
       "trade_date": "2026-01-23"
     },
     {
@@ -974,17 +974,6 @@
     },
     {
       "commodity": "Cashew Nuts",
-      "warehouse": "Singida",
-      "low": 2670.0,
-      "high": 2790.0,
-      "clearing": 2790.0,
-      "change_tzs": 20.0,
-      "change_raw": "20",
-      "dir": "up",
-      "trade_date": "2026-01-20"
-    },
-    {
-      "commodity": "Cashew Nuts",
       "warehouse": "Mbeya",
       "low": 1760.0,
       "high": 1760.0,
@@ -992,6 +981,17 @@
       "change_tzs": -50.0,
       "change_raw": "-50",
       "dir": "dn",
+      "trade_date": "2026-01-20"
+    },
+    {
+      "commodity": "Cashew Nuts",
+      "warehouse": "Singida",
+      "low": 2670.0,
+      "high": 2790.0,
+      "clearing": 2790.0,
+      "change_tzs": 20.0,
+      "change_raw": "20",
+      "dir": "up",
       "trade_date": "2026-01-20"
     },
     {
